@@ -122,6 +122,27 @@ $ rspec or bundle exec rspec
 
 ## Database :floppy_disk:
 
+| job_opportunity | type |
+| -------- | -------- |
+| title | string |
+| description_job | string |
+| skills | string |
+| salary_range | float |
+| level | string |
+| deadline | date |
+| job_opportunity_id | integer |
+
+| profile | type |
+| -------- | -------- |
+| full_name | string |
+| social_name | string |
+| date_of_birth | date |
+| formation | string |
+| profile_description | string |
+| experience | string |
+| photograph |  |
+| profile_id | integer |
+
 ## Rotas
 
 Para ver as rotas disponíveis na aplicação, execute: 
