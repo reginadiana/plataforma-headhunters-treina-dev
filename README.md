@@ -104,7 +104,7 @@ git clone
 ```
 ...
 
-## Como rodar a aplicação :arrow_forward:
+## Rodando a aplicação :arrow_forward:
 
 ```
 $ rails server or rails s
@@ -112,7 +112,7 @@ $ rails server or rails s
 
 > Depois, acesse http://localhost:3000 para ver a aplicação
 
-## Como rodar os testes :memo:
+## Rodando os testes :memo:
 
 ```
 $ cd rental-cars-treina-dev-1
