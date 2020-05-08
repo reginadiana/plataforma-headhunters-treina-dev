@@ -14,7 +14,7 @@
 
 :small_orange_diamond: [Pré-requisitos](#pré-requisitos-package)
 
-:small_orange_diamond: [Configurações](#configurações-arrow_forward)
+:small_orange_diamond: [Configurações](#configurações)
 
 :small_orange_diamond: [Rodando a aplicação](#rodando-a-aplicação)
 
