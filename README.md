@@ -16,7 +16,7 @@
 
 :small_orange_diamond: [Configurações](#configurações)
 
-:small_orange_diamond: [Rodando a aplicação](#rodando-a-aplicação)
+:small_orange_diamond: [Rodando a aplicação](#rodando-a-aplicação-arrow_forward)
 
 :small_orange_diamond: [Rodando os testes](#rodando-os-testes-memo)
 
@@ -112,7 +112,7 @@ $ rails server or rails s
 
 > Depois, acesse http://localhost:3000 para ver a aplicação
 
-## Como rodar os testes
+## Como rodar os testes :memo:
 
 ```
 $ cd rental-cars-treina-dev-1
