@@ -6,7 +6,7 @@
 
 ## Lista de Conteúdos
 
-:small_orange_diamond: [Descrição do Projeto](#descrição-do-projeto-checkered_flag)
+:small_orange_diamond: [Descrição do Projeto](#descrição-do-projeto)
 
 :small_orange_diamond: [Funcionalidades](#funcionalidades)
 
@@ -93,7 +93,9 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 
 :warning: [Yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#windows-stable) versão >=1.22.4 
 
-## Como rodar a aplicação :arrow_forward:
+## Configurações
+
+### Iniciando/Configurando banco de dados
 
 No terminal, clone o projeto: 
 
@@ -102,6 +104,14 @@ git clone
 ```
 ...
 
+## Como rodar a aplicação :arrow_forward:
+
+```
+$ rails server or rails s
+```
+
+> Depois, acesse http://localhost:3000 para ver a aplicação
+
 ## Como rodar os testes
 
 ```
@@ -109,10 +119,7 @@ $ cd rental-cars-treina-dev-1
 $ rspec or bundle exec rspec
 ```
 
-## JSON :floppy_disk:
-
-
-## Iniciando/Configurando banco de dados
+## Database :floppy_disk:
 
 ## Rotas
 
