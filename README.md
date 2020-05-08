@@ -77,7 +77,7 @@ Os **candidatos** podem:
 :books: Devise 
 
 
-## Pré-requesitos :package:
+## Pré-requisitos :package:
 
 Algumas instalações serão necessárias antes de iniciar o projeto. 
 
