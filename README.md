@@ -74,8 +74,9 @@ Os **candidatos** podem:
 
 :books: Ruby on Rails
 
-:books: Devise 
+:books: **Devise** para autenticação de usuários
 
+:books: **Capybara** para escrever e executar testes
 
 ## Pré-requisitos :package:
 
