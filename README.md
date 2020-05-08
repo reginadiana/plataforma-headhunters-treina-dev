@@ -1,124 +1,133 @@
-<h1>Titulo ou Arte do Projeto</h1> 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46378210/81453266-7ccdbc80-915f-11ea-9b07-fdfb166e60bd.png" alt="Titulo do Projeto"/>
+</p>
 
 > Status do Projeto: em desenvolvimento :warning: 
 
-### Tópicos 
+## Lista de Conteúdos
 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
+:small_orange_diamond: [Descrição do Projeto](#descrição-do-projeto-checkered_flag)
 
-:small_blue_diamond: [Funcionalidades](#funcionalidades)
+:small_orange_diamond: [Funcionalidades](#funcionalidades)
 
-:small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
+:small_orange_diamond: [Layout da Aplicação](#layout-da-aplicação-dash)
 
-:small_blue_diamond: [Pré-requesitos](#pré-requesitos)
+:small_orange_diamond: [Pré-requisitos](#pré-requisitos-package)
 
-:small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
+:small_orange_diamond: [Configurações](#configurações-arrow_forward)
 
-... 
+:small_orange_diamond: [Rodando a aplicação](#rodando-a-aplicação)
 
-Insira os tópicos do README em links para facilitar a navegação do leitor
+:small_orange_diamond: [Rodando os testes](#rodando-os-testes-memo)
+
+:small_orange_diamond: [Database](#database-floppy_disk)
+
+:small_orange_diamond: [Rotas](#rotas)
+
+:small_orange_diamond: [Resolvendo Problemas](#resolvendo-problemas-exclamation)
+
+:small_orange_diamond: [Licença](#licença-trident)
 
 ## Descrição do projeto 
 
 <p align="justify">
-  Descrição breve do projeto compondo um paragrafo ou dois. 
+  O projeto é uma plataforma com foco em <strong>vagas de emprego</strong> para que recrutadores publiquem e recebam instrições, assim como candidatos possam buscar e se canditadar a elas.
 </p>
 
 ## Funcionalidades
 
-:heavy_check_mark: Funcionalidade 1  
+Os **headhunters** (recrutadores) podem: 
 
-:heavy_check_mark: Funcionalidade 2  
+:heavy_check_mark: Criar uma conta e uma vaga
 
-:heavy_check_mark: Funcionalidade 3  
+:heavy_check_mark: Ver os inscritos em uma vaga
 
-:heavy_check_mark: Funcionalidade 4  
+:heavy_check_mark: Escrever comentarios no perfil dos candidatos cadastrados a vaga  
 
-## Layout ou Deploy da Aplicação :dash:
+:heavy_check_mark: Marcar perfis como destaque
 
-> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
+:heavy_check_mark: Rejeitar perfils mandando um feedback
 
-... 
+:heavy_check_mark: Enviar proposta para o perfil
 
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
+:heavy_check_mark: Receber proposta do candidato 
+
+:heavy_check_mark: Encerrar as inscrições para uma vaga
+
+Os **candidatos** podem: 
+
+:heavy_check_mark: Criar uma conta 
+
+:heavy_check_mark: Completar o seu perfil
+
+:heavy_check_mark: Se inscrever em uma vaga
+
+:heavy_check_mark: Receber feedbacks negativos
+
+:heavy_check_mark: Receber propostas de handhunterss
+
+:heavy_check_mark: Aceitar e rejeitar propostas
+
+## Layout da Aplicação :dash:
+
+## Techs utilizadas
+
+:books: Ruby on Rails
+
+:books: Devise 
+
 
 ## Pré-requesitos
 
-:warning: [Node](https://nodejs.org/en/download/)
+Algumas instalações serão necessárias antes de iniciar o projeto. 
 
-...
+:warning: [Ruby](https://www.ruby-lang.org/pt/documentation/installation/) versão >=2.6.3
 
-Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação 
+:warning: [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html) versão >=6.0.2.2
+
+:warning: [Node](https://nodejs.org/en/download/) versão >=12.16.2
+
+:warning: [Gem](https://rubygems.org/pages/download?locale=pt-BR) versão >=3.1.2
+
+:warning: [Bundle](https://bundler.io/man/bundle-install.1.html) versão >=2.1.2
+
+:warning: [Yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#windows-stable) versão >=1.22.4 
 
 ## Como rodar a aplicação :arrow_forward:
 
 No terminal, clone o projeto: 
 
 ```
-git clone https://github.com/React-Bootcamp-WoMarkersCode/certificate-generator
+git clone 
 ```
-
-... 
-
-Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
+...
 
 ## Como rodar os testes
 
-Coloque um passo a passo para executar os testes
-
 ```
-$ npm test, rspec, etc 
+$ cd rental-cars-treina-dev-1
+$ rspec or bundle exec rspec
 ```
 
 ## JSON :floppy_disk:
 
-### Usuários: 
-
-|name|email|password|token|avatar|
-| -------- |-------- |-------- |-------- |-------- |
-|Lais Lima|laislima98@hotmail.com|lais123|true|https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-U_HbQAipum9lWln3APcBIwng7T46hdBA42EJv8Hf6Z4fDT3&usqp=CAU|
-
-... 
-
-Se quiser, coloque uma amostra do banco de dados 
 
 ## Iniciando/Configurando banco de dados
 
-Se for necessário configurar algo antes de iniciar o banco de dados insira os comandos a serem executados 
+## Rotas
 
-## Linguagens, dependencias e libs utilizadas :books:
+Para ver as rotas disponíveis na aplicação, execute: 
 
-- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [React PDF](https://react-pdf.org/)
-
-...
-
-Liste as tecnologias utilizadas no projeto que **não** forem reconhecidas pelo Github 
+```
+$ rails routes -g <name of controller>
+```
 
 ## Resolvendo Problemas :exclamation:
 
 Em [issues]() foram abertos alguns problemas gerados durante o desenvolvimento desse projeto e como foram resolvidos. 
 
-## Tarefas em aberto
+## Licença :trident:
 
-Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação
+The [MIT License](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/LICENSE) (MIT)
 
-:memo: Tarefa 1 
-
-:memo: Tarefa 2 
-
-:memo: Tarefa 3 
-
-## Desenvolvedores/Contribuintes :octocat:
-
-Liste o time responsável pelo desenvolvimento do projeto
-
-| [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |  [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |
-| :---: | :---: | :---: 
-
-## Licença 
-
-The [MIT License]() (MIT)
-
-Copyright :copyright: Ano - Titulo do Projeto
-
+Copyright :copyright: 2020 HandHunters
