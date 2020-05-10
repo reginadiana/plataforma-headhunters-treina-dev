@@ -12,6 +12,8 @@
 
 :small_orange_diamond: [Layout da Aplicação](#layout-da-aplicação-dash)
 
+:small_orange_diamond: [Gems instaladas](#gems-instaladas)
+
 :small_orange_diamond: [Pré-requisitos](#pré-requisitos-package)
 
 :small_orange_diamond: [Configurações](#configurações)
@@ -80,13 +82,17 @@ Os **candidatos** podem:
 
 ![Candidatos](https://user-images.githubusercontent.com/46378210/81507874-a5c48d80-92d6-11ea-8d6c-4c8bce5aa730.png)
 
-## Techs utilizadas
+## Gems instaladas
 
-:books: Ruby on Rails
+:books: [**Devise**](https://github.com/heartcombo/devise) para autenticação de usuários (recrutadores e candidatos)
 
-:books: **Devise** para autenticação de usuários
+:books: [**RSpec**](https://github.com/rspec/rspec-rails) para escrever e executar testes unitários, isto é, de baixo nível 
 
-:books: **Capybara** para escrever e executar testes
+:books: [**Capybara**](https://github.com/teamcapybara/capybara) para escrever e executar testes de integração, isto é, de alto nível
+
+:books: [**Factory_Bot_Rails**](https://github.com/thoughtbot/factory_bot_rails) para otimizar a escrita de testes
+
+:books: [**SimpleCov**](https://github.com/colszowka/simplecov) para  gerar relatórios referentes a cobertura de testes
 
 ## Pré-requisitos :package:
 
@@ -131,6 +137,8 @@ $ rspec or bundle exec rspec
 ```
 
 ## Database :floppy_disk:
+
+O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
 
 | job_opportunity | type |
 | -------- | -------- |
