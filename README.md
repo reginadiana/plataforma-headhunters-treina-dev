@@ -163,7 +163,7 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | company_expectations | string | Expectavidas da Empresa | |
 | job_opportunity_id | integer |  | |
 
-| profile | type |PT-BR-i18n| Validações |
+| candidate | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
 | full_name | string | Nome Completo | Obrigatório |
 | social_name | string | Nome Social | Máximo de 30 caracteres e obrigatório |
@@ -172,9 +172,31 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | profile_description | string | Descrição | Obrigatório |
 | experience | string | Experiencia | |
 | photograph |  | Avatar | Aceita tipos .png e .jpg |
-| profile_id | integer |  | |
+| candidate_id | integer |  | |
 
-||
+| comment | type | PT-BR-i18n | Validações |
+| -------- | -------- | -------- | -------- |
+| candidate | **object** | Texto | Obrigatório | 
+| text | string | Texto | Obrigatório | 
+| date | data | Data de Publicação | Gerado automaticamente |
+| comment_id | integer | | |
+
+| feedback | type | PT-BR-i18n | Validações |
+| -------- | -------- | -------- | -------- |
+| job_opportunity | **object** | Vaga |  | 
+| candidate | **object** | Texto | Obrigatório | 
+| text | string | Texto |  | 
+| status | boolean | Status |  |
+| feedback_id | integer | | |
+
+| proposal | type | PT-BR-i18n | Validações |
+| -------- | -------- | -------- | -------- |
+| job_opportunity | **object** | Vaga |  | 
+| candidate | **object** | Texto | Obrigatório | 
+| text | string | Texto |  | 
+| status | boolean | Status |  |
+| feedback_id | integer | | |
+
 
 ## Rotas
 
