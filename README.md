@@ -148,15 +148,20 @@ $ rspec or bundle exec rspec
 
 O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
 
-| job_opportunity | type |PT-BR|
-| -------- | -------- |
-| title | string |
-| description_job | string |
-| skills | string |
-| salary_range | float |
-| level | string |
-| deadline | date |
-| job_opportunity_id | integer |
+| job_opportunity | type |PT-BR-i18n| Validações |
+| -------- | -------- | -------- |  -------- | 
+| title | string | Titulo | Máximo 50 caracteres e obrigatório | 
+| company | string | Empresa | Deve ser único,  máximo 50 caracteres e obrigatório|
+| description_job | string | Descrição | Obrigatório|
+| skills | string | Habilidades | Obrigatório|
+| salary_range | float | Faixa Salarial | Maior que 0 e obrigatório |
+| level | **objeto** | Nível | |
+| deadline | date | Data Límite | Não deve estar no passado e obrigatório |
+| region | string | Região | Obrigatório |
+| benefits | string | Beneficios | |
+| office_functions | string | Funções do Cargo | Obrigatório |
+| company_expectations | string | Expectavidas da Empresa | |
+| job_opportunity_id | integer | Vaga ID| |
 
 | profile | type |
 | -------- | -------- |
