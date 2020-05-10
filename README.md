@@ -161,18 +161,18 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | benefits | string | Beneficios | |
 | office_functions | string | Funções do Cargo | Obrigatório |
 | company_expectations | string | Expectavidas da Empresa | |
-| job_opportunity_id | integer | Vaga ID| |
+| job_opportunity_id | integer |  | |
 
-| profile | type |
-| -------- | -------- |
-| full_name | string |
-| social_name | string |
-| date_of_birth | date |
-| formation | string |
-| profile_description | string |
-| experience | string |
-| photograph |  |
-| profile_id | integer |
+| profile | type |PT-BR-i18n| Validações |
+| -------- | -------- | -------- | -------- |
+| full_name | string | Nome Completo | Obrigatório |
+| social_name | string | Nome Social | Máximo de 30 caracteres e obrigatório |
+| date_of_birth | date | Data de Nascimento |Não aceita datas futuras |
+| formation | string | Formação | |
+| profile_description | string | Descrição | Obrigatório |
+| experience | string | Experiencia | |
+| photograph |  | Avatar | Aceita tipos .png e .jpg |
+| profile_id | integer |  | |
 
 ||
 
