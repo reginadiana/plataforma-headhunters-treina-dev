@@ -84,6 +84,24 @@ Os **candidatos** podem:
 
 ![Candidatos](https://user-images.githubusercontent.com/46378210/81507874-a5c48d80-92d6-11ea-8d6c-4c8bce5aa730.png)
 
+### Permissões 
+
+| Controller | Action | Descrição | Permitido à | 
+| -------- | -------- | -------- |  -------- | 
+| Vaga | Index | Lista de todas as vagas | Headhunter e Candidato |
+| Vaga | Show | Informações da vaga | Headhunter e Candidato |
+| Vaga | New | Criar vaga | Headhunter |
+| Vaga | Edit | Editar informações da vaga | Headhunter |
+| Vaga | Delete | Encerrar vaga | Headhunter |
+
+| Controller | Action | Descrição | Permitido à | 
+| -------- | -------- | -------- |  -------- | 
+| Candidato | Index | Lista de Candidatos | Headhunter |
+| andidato | Show | Perfil do Candidato | Headhunter e Candidato |
+| Candidato | New | Criar Perfil | Candidato |
+| Candidato | Edit | Editar informações do perfil | Canidato |
+| Candidato | Delete | Encerrar conta | Candidato |
+
 ## Techs
 
 :bookmark: Ruby on Rails
