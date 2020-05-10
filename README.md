@@ -4,6 +4,8 @@
 
 > Status do Projeto: em desenvolvimento :warning: 
 
+:memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
+
 ## Lista de Conteúdos
 
 :small_orange_diamond: [Descrição do Projeto](#descrição-do-projeto)
@@ -82,6 +84,12 @@ Os **candidatos** podem:
 
 ![Candidatos](https://user-images.githubusercontent.com/46378210/81507874-a5c48d80-92d6-11ea-8d6c-4c8bce5aa730.png)
 
+## Techs
+
+:bookmark: Ruby on Rails
+
+:bookmark: [I18n](https://guides.rubyonrails.org/i18n.html) 
+
 ## Gems instaladas
 
 :books: [**Devise**](https://github.com/heartcombo/devise) para autenticação de usuários (recrutadores e candidatos)
@@ -90,7 +98,7 @@ Os **candidatos** podem:
 
 :books: [**Capybara**](https://github.com/teamcapybara/capybara) para escrever e executar testes de integração, isto é, de alto nível
 
-:books: [**Factory_Bot_Rails**](https://github.com/thoughtbot/factory_bot_rails) para otimizar a escrita de testes
+:books: [**Factory Bot Rails**](https://github.com/thoughtbot/factory_bot_rails) para otimizar a escrita de testes
 
 :books: [**SimpleCov**](https://github.com/colszowka/simplecov) para  gerar relatórios referentes a cobertura de testes
 
@@ -140,7 +148,7 @@ $ rspec or bundle exec rspec
 
 O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
 
-| job_opportunity | type |
+| job_opportunity | type |PT-BR|
 | -------- | -------- |
 | title | string |
 | description_job | string |
@@ -160,6 +168,8 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | experience | string |
 | photograph |  |
 | profile_id | integer |
+
+||
 
 ## Rotas
 
