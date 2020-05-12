@@ -166,7 +166,7 @@ $ rspec or bundle exec rspec
 
 O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
 
-> Uma vaga de emprego possui muitos ca
+> Uma vaga de emprego possui muitos candidatos
 
 | job_opportunity | type |PT-BR-i18n| Validações |
 | -------- | -------- | -------- |  -------- | 
@@ -181,8 +181,12 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | benefits | string | Beneficios | |
 | office_functions | string | Funções do Cargo | Obrigatório |
 | company_expectations | string | Expectavidas da Empresa | |
-| **candidates | array | Lista de Candidatos** | |
 | job_opportunity_id | integer |  | |
+
+| level | type | PT-BR-i18n | Validações |
+| -------- | -------- | -------- | -------- |
+| name | string | Nome | Obrigatório |
+| level_id |  |  |  |
 
 | candidate | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
@@ -197,11 +201,13 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 
 > Quando uma candidatura é criada 
 
-| comment | type | PT-BR-i18n | Validações |
+| appy_job | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
 | candidate | **object** | Candidato | Obrigatório | 
 | job_opportunity | **object** | Vaga | Obrigatório | 
-| comment_id | integer | | |
+| candidate_id | integer | | | 
+| job_opportunity_id | integer | | | 
+| appy_job_id | integer | | |
 
 > Candidato possui muitos comentarios em seu pefil
 
