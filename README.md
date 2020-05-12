@@ -166,6 +166,8 @@ $ rspec or bundle exec rspec
 
 O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
 
+> Uma vaga de emprego possui muitos ca
+
 | job_opportunity | type |PT-BR-i18n| Validações |
 | -------- | -------- | -------- |  -------- | 
 | title | string | Titulo | Máximo 50 caracteres e obrigatório | 
@@ -179,6 +181,7 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | benefits | string | Beneficios | |
 | office_functions | string | Funções do Cargo | Obrigatório |
 | company_expectations | string | Expectavidas da Empresa | |
+| **candidates | array | Lista de Candidatos** | |
 | job_opportunity_id | integer |  | |
 
 | candidate | type | PT-BR-i18n | Validações |
@@ -189,32 +192,45 @@ O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.
 | formation | string | Formação | |
 | profile_description | string | Descrição | Obrigatório |
 | experience | string | Experiencia | |
-| photograph |  | Avatar | Aceita tipos .png e .jpg |
-| candidate_id | integer |  | |
+| photograph | image | Avatar | Aceita tipos .png e .jpg |
+| candidate_id | integer | | |
+
+> Quando uma candidatura é criada 
 
 | comment | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
-| candidate | **object** | Texto | Obrigatório | 
+| candidate | **object** | Candidato | Obrigatório | 
+| job_opportunity | **object** | Vaga | Obrigatório | 
+| comment_id | integer | | |
+
+> Candidato possui muitos comentarios em seu pefil
+
+| comment | type | PT-BR-i18n | Validações |
+| -------- | -------- | -------- | -------- |
+| candidate | **object** | Candidato | Obrigatório | 
 | text | string | Texto | Obrigatório | 
 | date | data | Data de Publicação | Gerado automaticamente |
 | comment_id | integer | | |
 
 | feedback | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
-| job_opportunity | **object** | Vaga |  | 
+| job_opportunity | **object** | Vaga | Obrigatório | 
 | candidate | **object** | Texto | Obrigatório | 
-| text | string | Texto |  | 
-| status | boolean | Status |  |
+| text | string | Texto | Obrigatório | 
+| status | boolean | Status | Gerado automaticamente: Em espera |
 | feedback_id | integer | | |
+
+Status: Aceito, Recusado, Em espera
 
 | proposal | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
-| job_opportunity | **object** | Vaga |  | 
+| job_opportunity | **object** | Vaga | Obrigatório | 
 | candidate | **object** | Texto | Obrigatório | 
-| text | string | Texto |  | 
-| status | boolean | Status |  |
+| text | string | Texto | Obrigatório | 
+| status | boolean | Status | Gerado automaticamente: Em espera |
 | feedback_id | integer | | |
 
+Status: Aceito, Recusado, Em espera
 
 ## Rotas
 
