@@ -1,0 +1,16 @@
+Started GET "/" for 127.0.0.1 at 2020-05-12 18:04:00 -0300
+  [1m[35m (14.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2020-05-12 18:04:01 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/diana/.rvm/gems/ruby-2.6.3/gems/railties-6.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /home/diana/.rvm/gems/ruby-2.6.3/gems/railties-6.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/diana/.rvm/gems/ruby-2.6.3/gems/railties-6.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 67.9ms | Allocations: 491)
+  Rendered /home/diana/.rvm/gems/ruby-2.6.3/gems/railties-6.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 66.8ms | Allocations: 503)
+Completed 200 OK in 122ms (Views: 94.8ms | ActiveRecord: 0.0ms | Allocations: 2811)
+
+
+Completed 200 OK in 167ms (Views: 93.5ms | ActiveRecord: 0.0ms | Allocations: 3308)
+
+
