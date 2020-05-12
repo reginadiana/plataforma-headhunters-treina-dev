@@ -6,6 +6,8 @@
 
 :memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
 
+:memo: Planejamento da [construcao do projeto](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/PLANEJAMENTO.md)
+
 ## Lista de Conteúdos
 
 :small_orange_diamond: [Descrição do Projeto](#descrição-do-projeto)
