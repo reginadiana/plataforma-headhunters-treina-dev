@@ -100,6 +100,7 @@
 | comment | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
 | candidate | **object** | Candidato | Obrigatório | 
+| user | **object** | Recrutador | Obrigatório | 
 | text | string | Texto | Obrigatório | 
 | date | data | Data de Publicação | Gerado automaticamente |
 | comment_id | integer | | |
