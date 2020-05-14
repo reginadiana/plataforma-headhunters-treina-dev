@@ -1,11 +1,14 @@
-<div>
-	<div>
+<div class="home-page">
+	<div class="div-home-candidato">
 		<h1>Encontrar um novo desafio profissional</h1>
 		<%= image_tag("home-candidato.jpg", size: "500x500", alt: "Candidato Home")%>
+		<h4 class="li-entrar"><%= link_to 'Sou candidato', new_user_session_path%></h4>
 	</div>
 
-	<div>
+	<div class="div-home-recrutador">
 		<h1>Acertar em cheio em cada contratação</h1>
 		<%= image_tag("home-recrutador.jpg", size: "500x500", alt: "Recrutador Home")%>
+		<h4 class="li-entrar"><%= link_to 'Sou recrutador', new_headhunter_session_path%></h4>
 	</div>
 </div>
+ 

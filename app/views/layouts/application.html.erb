@@ -12,24 +12,10 @@
 	</head>
 
 	<body>
-		<nav class="menu">
-			<div class="logo"><%= image_tag("logo.png", size: "200x50", alt: "Logo")%></div>
-			<li><%= link_to 'Home', root_path%></li>
-			<% if user_signed_in?%>
-				<li class="li-sair"><%= link_to 'Sair', destroy_user_session_path, method: :delete%></li>
-				<%= 'Candidato' %>
-			<% else %>
-				<h4 class="li-entrar"><%= link_to 'Sou candidato', new_user_session_path%></h4>
-			<% end %> 
-
-			<% if headhunter_signed_in?%>
-				<li class="li-sair"><%= link_to 'Sair', destroy_user_session_path, method: :delete%></li>
-				<%= 'Recrutador' %>
-			<% else %>
-				<h4 class="li-entrar"><%= link_to 'Sou recrutador', new_headhunter_session_path%></h4>
-			<% end %> 
-
-		<nav>
+    	<nav class="menu">
+		<div class="logo"><%= image_tag("logo.png", size: "150x50", alt: "Logo")%></div>
+		<li><%= link_to 'Home', root_path%></li>
+	</nav>
 
 		<% if flash[:notice] %>
 			<p class="msg-alert"><%= flash[:notice] %></p>
