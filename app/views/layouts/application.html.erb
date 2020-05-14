@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProjectVagas</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>Vagas de Emprego</title>
+		<link rel="icon" href="https://pbs.twimg.com/profile_images/1222171329564151808/kr7p_kEz_400x400.jpg"/>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+
+	<body>
+		<nav class="menu">
+			<div class="logo"><%= image_tag("logo.png", size: "200x50", alt: "Logo")%></div>
+			<li><%= link_to 'Home', root_path%></li>
+			<% if user_signed_in?%>
+				<li class="li-sair"><%= link_to 'Sair', destroy_user_session_path, method: :delete%></li>
+			<% else %>
+				<h4 class="li-entrar"><%= link_to 'Login/Cadastro', new_user_session_path%></h4>
+			<% end %> 
+		<nav>
+
+		<% if flash[:notice] %>
+			<p class="msg-alert"><%= flash[:notice] %></p>
+		<% end %>
+
+		<% if flash[:alert] %>
+			<p class="msg-error"><%= flash[:alert] %></p>
+		<% end %>
+
+		<%= yield %>
+	</body>
 </html>
