@@ -17,9 +17,18 @@
 			<li><%= link_to 'Home', root_path%></li>
 			<% if user_signed_in?%>
 				<li class="li-sair"><%= link_to 'Sair', destroy_user_session_path, method: :delete%></li>
+				<%= 'Candidato' %>
 			<% else %>
-				<h4 class="li-entrar"><%= link_to 'Login/Cadastro', new_user_session_path%></h4>
+				<h4 class="li-entrar"><%= link_to 'Sou candidato', new_user_session_path%></h4>
 			<% end %> 
+
+			<% if headhunter_signed_in?%>
+				<li class="li-sair"><%= link_to 'Sair', destroy_user_session_path, method: :delete%></li>
+				<%= 'Recrutador' %>
+			<% else %>
+				<h4 class="li-entrar"><%= link_to 'Sou recrutador', new_headhunter_session_path%></h4>
+			<% end %> 
+
 		<nav>
 
 		<% if flash[:notice] %>

@@ -57,3 +57,15 @@ Processing by HomeController#index as HTML
 [Webpacker] Everything's up-to-date. Nothing to do
 Completed 200 OK in 463ms (Views: 371.0ms | ActiveRecord: 0.0ms | Allocations: 12328)
   [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-14 15:34:55 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 129.3ms | Allocations: 7765)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 308ms (Views: 220.1ms | ActiveRecord: 0.0ms | Allocations: 12459)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
