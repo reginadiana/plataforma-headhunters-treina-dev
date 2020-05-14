@@ -1,0 +1,8 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      level: Nível do Cargo
+    attributes:
+      level:
+       name: Nível do Cargo
