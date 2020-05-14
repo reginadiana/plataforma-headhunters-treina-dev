@@ -6,6 +6,8 @@
 
 :memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
 
+:memo: Planejamento da [construcao do projeto](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/PLANEJAMENTO.md)
+
 ## Lista de Conteúdos
 
 :small_orange_diamond: [Descrição do Projeto](#descrição-do-projeto)
@@ -72,36 +74,6 @@ Os **candidatos** podem:
 
 :heavy_check_mark: Aceitar e rejeitar propostas
 
-## Layout da Aplicação :dash:
-
-## Rascunho das telas
-
-### Aplicação visivel aos Headhunters (Recrutadores)
-
-![Headhunters](https://user-images.githubusercontent.com/46378210/81507879-abba6e80-92d6-11ea-9b4e-45453604a235.png)
-
-### Aplicação visivel aos candidatos
-
-![Candidatos](https://user-images.githubusercontent.com/46378210/81507874-a5c48d80-92d6-11ea-8d6c-4c8bce5aa730.png)
-
-### Permissões 
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Vaga | Index | Lista de todas as vagas | Headhunter e Candidato |
-| Vaga | Show | Informações da vaga | Headhunter e Candidato |
-| Vaga | New | Criar vaga | Headhunter |
-| Vaga | Edit | Editar informações da vaga | Headhunter |
-| Vaga | Delete | Encerrar vaga | Headhunter |
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Candidato | Index | Lista de Candidatos | Headhunter |
-| andidato | Show | Perfil do Candidato | Headhunter e Candidato |
-| Candidato | New | Criar Perfil | Candidato |
-| Candidato | Edit | Editar informações do perfil | Canidato |
-| Candidato | Delete | Encerrar conta | Candidato |
-
 ## Techs
 
 :bookmark: Ruby on Rails
@@ -165,56 +137,6 @@ $ rspec or bundle exec rspec
 ## Database :floppy_disk:
 
 O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
-
-| job_opportunity | type |PT-BR-i18n| Validações |
-| -------- | -------- | -------- |  -------- | 
-| title | string | Titulo | Máximo 50 caracteres e obrigatório | 
-| company | string | Empresa | Deve ser único,  máximo 50 caracteres e obrigatório|
-| description_job | string | Descrição | Obrigatório|
-| skills | string | Habilidades | Obrigatório|
-| salary_range | float | Faixa Salarial | Maior que 0 e obrigatório |
-| level | **objeto** | Nível | |
-| deadline | date | Data Límite | Não deve estar no passado e obrigatório |
-| region | string | Região | Obrigatório |
-| benefits | string | Beneficios | |
-| office_functions | string | Funções do Cargo | Obrigatório |
-| company_expectations | string | Expectavidas da Empresa | |
-| job_opportunity_id | integer |  | |
-
-| candidate | type | PT-BR-i18n | Validações |
-| -------- | -------- | -------- | -------- |
-| full_name | string | Nome Completo | Obrigatório |
-| social_name | string | Nome Social | Máximo de 30 caracteres e obrigatório |
-| date_of_birth | date | Data de Nascimento |Não aceita datas futuras |
-| formation | string | Formação | |
-| profile_description | string | Descrição | Obrigatório |
-| experience | string | Experiencia | |
-| photograph |  | Avatar | Aceita tipos .png e .jpg |
-| candidate_id | integer |  | |
-
-| comment | type | PT-BR-i18n | Validações |
-| -------- | -------- | -------- | -------- |
-| candidate | **object** | Texto | Obrigatório | 
-| text | string | Texto | Obrigatório | 
-| date | data | Data de Publicação | Gerado automaticamente |
-| comment_id | integer | | |
-
-| feedback | type | PT-BR-i18n | Validações |
-| -------- | -------- | -------- | -------- |
-| job_opportunity | **object** | Vaga |  | 
-| candidate | **object** | Texto | Obrigatório | 
-| text | string | Texto |  | 
-| status | boolean | Status |  |
-| feedback_id | integer | | |
-
-| proposal | type | PT-BR-i18n | Validações |
-| -------- | -------- | -------- | -------- |
-| job_opportunity | **object** | Vaga |  | 
-| candidate | **object** | Texto | Obrigatório | 
-| text | string | Texto |  | 
-| status | boolean | Status |  |
-| feedback_id | integer | | |
-
 
 ## Rotas
 
