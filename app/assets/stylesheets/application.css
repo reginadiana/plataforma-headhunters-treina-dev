@@ -30,6 +30,28 @@
 	color: rgb(232, 44, 79);
 }
 
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 20px 20px;
+	z-index: 1;
+}
+
+.dropdown-content li {
+	padding: 3%;
+}
+
+.dropdown-content li:hover {
+	background-color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
 /*Home*/
 .home-page {
 	display: grid;
@@ -41,12 +63,12 @@
 /*Parte do candidato e recrutador*/
 .div-home-candidato, .div-home-recrutador {
 	padding: 3%;
-	background-color: rgb(232, 44, 79);
+	background-color: rgb(232, 44, 79); /*Rosa*/
 	color: white;
 }
 
 .div-home-candidato {
-	background-color: rgb(50, 86, 161);
+	background-color: rgb(50, 86, 161); /*Azul*/
 }
 
 /*Titulo*/
@@ -78,6 +100,214 @@
 .div-home-candidato h4 a {
 	color: rgb(50, 86, 161);
 }
+
+/*Formularios de Login e Cadastro de Candidatos e Recrutadores*/
+/*Mobile First*/
+
+/*Titulo e formulario*/
+.form-session {
+	display: block;
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5%; 
+	width: 100%;
+}
+
+.form-session h2 {
+	color: rgb(50, 86, 161);
+	margin-bottom: 5%;
+}
+
+.form, .form-headhunter {
+	margin-bottom: 3%;
+}
+
+/*Titulo e subtitulo*/
+.title {
+	color: rgb(50, 86, 161);
+	margin-bottom: 3%;
+}
+
+/*Titulo para recrutador*/
+.form-session .h2-form-headhunter {
+	color: rgb(232, 44, 79);	
+}
+
+/*Campos*/
+.field input {
+	display: block;
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	padding: 2px 10px;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+/*Check-box*/
+.check {
+	margin-bottom: 3%;
+}
+
+/*Entrar - Button - Candidatos*/
+.actions button {
+	
+	width: 75%;
+	background-color: white;
+	border-color: rgb(50, 86, 161);
+	height: 50px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-weight: bold;
+	color: rgb(50, 86, 161);
+	margin-bottom: 3%;
+}
+
+.actions button:hover {
+	border-color: transparent;
+	background-color: rgb(50, 86, 161);
+	color: white;
+}
+
+/*Entrar - Button - Headhunters*/
+.form-headhunter .actions button {
+	border-color: rgb(232, 44, 79);
+	color: rgb(232, 44, 79);
+}
+
+.form-headhunter .actions button:hover {
+	border-color: transparent;
+	background-color: rgb(232, 44, 79);
+	color: white;
+}
+
+/*Criar conta como candidato*/
+.link-sign-up {
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	padding: 3%;
+	width: 70%;
+	background-color: rgb(50, 86, 161);
+	border-color: transparent;
+	border-radius: 5px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.link-sign-up:hover {
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.link-sign-up a {
+	color: white;
+}
+
+/*Criar conta - headhunter*/
+.form-headhunter .link-sign-up {
+	background-color: rgb(232, 44, 79);
+}
+
+/*Link para enviar instrucoes por e-mail*/
+.actions .send-email-password {
+	font-size: 15px;
+	border-radius: 0px;
+	width: 70%;
+	background-color: gray;
+	margin-top: -1%;
+	margin-bottom: 5%;
+}
+
+/*Mensagens de erro e alerta*/
+.msg-error, .msg-alert  {
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: red;
+	text-align: center;
+	background-color: #efefef;
+	padding: 1%;
+	width: 70%;
+	margin-bottom: 3%;
+}
+
+/*Mensagens de erro*/
+.msg-alert {
+	color: orange;
+	background-color: #f9f9f9;
+	font-weight: bold;
+}
+
+/*Responsividade*/
+
+/*Desktop*/
+@media screen and (min-width: 1000px){
+	/*Campos*/
+	.field input, .actions button {
+		width: 30%;
+		margin-bottom: 1%;
+		margin-top: 1%;
+	}
+	
+	/*Entrar - Button*/
+	.actions button {
+		width: 20%;
+	}
+	.link-sign-up {
+		width: 18%;
+		padding: 1%;
+	}
+
+	/*Check-box*/
+	.check {
+		margin-bottom: 1%;
+	}
+
+	/*Link para enviar instrucoes por e-mail*/
+	.actions .send-email-password {
+		width: 30%;
+		margin-top: 0%;
+	}	
+
+	/*Mensagens de erro*/
+	.msg-error, .msg-alert  {
+		width: 20%;
+	}
+}
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1000px){
+	/*Campos*/
+	.field input, .actions button {
+		width: 50%;
+		margin-bottom: 1%;
+		margin-top: 1%;
+	}
+
+	/*Entrar - Button*/
+	.actions button {
+		width: 50%;
+	}
+
+	.link-sign-up {
+		width: 45%;
+		padding: 2%;
+	}
+
+	/*Link para enviar instrucoes por e-mail*/
+	.actions .send-email-password {
+		width: 50%;
+		margin-top: 0%;
+	}
+}
+
 
 /*Desktop*/
 @media screen and (min-width: 1000px){

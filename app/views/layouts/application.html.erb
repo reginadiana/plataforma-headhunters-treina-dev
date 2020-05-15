@@ -15,6 +15,31 @@
     	<nav class="menu">
 		<div class="logo"><%= image_tag("logo.png", size: "150x50", alt: "Logo")%></div>
 		<li><%= link_to 'Home', root_path%></li>
+
+		<% if user_signed_in? %>
+			<div class="dropdown">
+				<button>Recursos para Candidato</button>
+				<div class="dropdown-content">
+					<li><%= link_to 'Lista de Vagas', root_path%></li>
+					<li><%= link_to 'Minhas Vagas', root_path%></li>
+					<li><%= link_to 'Minhas Propostas', root_path%></li>
+					<li><%= link_to 'Meus Feedbacks', root_path%></li>
+				</div>
+			</div>
+			<li class="li-sair"><%= link_to 'Sair', destroy_user_session_path, method: :delete%></li>
+		<% else %>
+			<% if headhunter_signed_in? %>
+				<div class="dropdown">
+					<button>Recursos para Recrutador</button>
+					<div class="dropdown-content">
+						<li><%= link_to 'Lista de Candidatos', root_path%></li>
+						<li><%= link_to 'Minhas Vagas', root_path%></li>
+					</div>
+				</div>
+
+				<li class="li-sair"><%= link_to 'Sair', destroy_headhunter_session_path, method: :delete%></li>
+			<% end %>
+		<% end %> 
 	</nav>
 
 		<% if flash[:notice] %>

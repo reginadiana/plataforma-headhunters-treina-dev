@@ -1,0 +1,177 @@
+/*Mobile First*/
+
+/*Titulo e formulario*/
+.form-session {
+	display: block;
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.form {
+	margin-bottom: 3%;
+}
+
+/*Titulo e subtitulo*/
+.title {
+	color: #0e9f59;
+	margin-bottom: 3%;
+}
+
+/*Campos*/
+.field input {
+	display: block;
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	padding: 2px 10px;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+/*Check-box*/
+.check {
+	margin-bottom: 3%;
+}
+
+/*Entrar - Button*/
+.actions button {
+	
+	width: 70%;
+	background-color: #11c76f;
+	border-color: transparent;
+	height: 50px;
+	border-radius: 25px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+.actions button:hover {
+	transition: 0.5s;
+	background-color: #0e9f59;
+}
+
+/*Link para criar uma conta*/
+.link-sign-up {
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	padding: 3%;
+	width: 65%;
+	background-color: #efefef;
+	border-color: transparent;
+	border-radius: 25px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.link-sign-up:hover {
+	transition: 0.5s;
+	background-color: #dcdcdc;
+}
+
+.link-sign-up a {
+	color: #11c76f;
+}
+
+/*Link para enviar instrucoes por e-mail*/
+.actions .send-email-password {
+	font-size: 15px;
+	border-radius: 0px;
+	width: 70%;
+	background-color: gray;
+	margin-top: -1%;
+	margin-bottom: 5%;
+}
+
+/*Mensagens de erro e alerta*/
+.msg-error, .msg-alert  {
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: red;
+	text-align: center;
+	background-color: #efefef;
+	padding: 1%;
+	width: 70%;
+	margin-bottom: 3%;
+}
+
+/*Mensagens de erro*/
+.msg-alert {
+	color: orange;
+	background-color: #f9f9f9;
+	font-weight: bold;
+}
+
+/*Responsividade*/
+
+/*Desktop*/
+@media screen and (min-width: 1000px){
+	/*Campos*/
+	.field input, .actions button {
+		width: 30%;
+		margin-bottom: 1%;
+		margin-top: 1%;
+	}
+	
+	/*Entrar - Button*/
+	.actions button {
+		width: 20%;
+	}
+	.link-sign-up {
+		width: 18%;
+		padding: 1%;
+	}
+
+	/*Check-box*/
+	.check {
+		margin-bottom: 1%;
+	}
+
+	/*Link para enviar instrucoes por e-mail*/
+	.actions .send-email-password {
+		width: 30%;
+		margin-top: 0%;
+	}	
+
+	/*Mensagens de erro*/
+	.msg-error, .msg-alert  {
+		width: 20%;
+	}
+}
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1000px){
+	/*Campos*/
+	.field input, .actions button {
+		width: 50%;
+		margin-bottom: 1%;
+		margin-top: 1%;
+	}
+
+	/*Entrar - Button*/
+	.actions button {
+		width: 30%;
+	}
+
+	.link-sign-up {
+		width: 25%;
+		padding: 2%;
+	}
+
+	/*Link para enviar instrucoes por e-mail*/
+	.actions .send-email-password {
+		width: 50%;
+		margin-top: 0%;
+	}
+}
+
