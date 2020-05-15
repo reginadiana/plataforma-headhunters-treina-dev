@@ -56,11 +56,11 @@
 
 | job_opportunity | type |PT-BR-i18n| Validações |
 | -------- | -------- | -------- |  -------- | 
-| title | string | Titulo | Máximo 50 caracteres e obrigatório | 
-| company | string | Empresa | Deve ser único,  máximo 50 caracteres e obrigatório|
+| title | string | Titulo | Deve ser único, Máximo 50 caracteres e obrigatório | 
+| company | string | Empresa | Máximo 50 caracteres e obrigatório|
 | description_job | string | Descrição | Obrigatório|
 | skills | string | Habilidades | Obrigatório|
-| salary_range | float | Faixa Salarial | Maior que 0 e obrigatório |
+| salary_range | float | Faixa Salarial | Maior que 1045 (salario minimo) e obrigatório |
 | level | **objeto** | Nível | |
 | deadline | date | Data Límite | Não deve estar no passado e obrigatório |
 | region | string | Região | Obrigatório |
