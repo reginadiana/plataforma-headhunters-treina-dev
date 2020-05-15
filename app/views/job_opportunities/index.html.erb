@@ -17,7 +17,7 @@
 						<p><%= job.title %></p>
 						<p><%= job.company %></p>
 						<p><%= job.region %></p>
-						<p><%= job.salary_range %></p>
+						<p><%= number_to_currency job.salary_range %></p>
 						<p><%= job.level.name %></p>
 						<p><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
 					</div>
@@ -28,7 +28,7 @@
 					<p><%= job.title %></p>
 					<p><%= job.company %></p>
 					<p><%= job.region %></p>
-					<p><%= job.salary_range %></p>
+					<p><%= number_to_currency job.salary_range %></p>
 					<p><%= job.level.name %></p>
 					<p><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
 				</div>

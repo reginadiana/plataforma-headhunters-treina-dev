@@ -1,0 +1,57 @@
+<% @job.errors.full_messages.each do |message| %>
+	<p class="msg-error"><%= message %></p>
+<% end %>
+
+<div class="form">
+	<%= form_with model: @job, local: true do |f| %>
+		<div class="field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+		<div class="field">
+			<%= f.label :company%>
+			<%= f.text_field :company %>
+		</div>
+		<div class="field">
+			<%= f.label :description_job%>
+			<%= f.text_area :description_job %>
+		</div>
+		<div class="field">
+			<%= f.label :skills%>
+			<%= f.text_field :skills %>
+		</div>
+		<div class="field">
+			<%= f.label :salary_range%>
+			<%= f.number_field :salary_range %>
+		</div>
+		<div class="field">
+			<%= f.label :deadline %>
+			<%= f.date_field :deadline %>
+		</div>
+		
+		<div class="selectors">
+			<div class="field">
+				<%= f.label :level_id %>
+				<%= f.collection_select :level_id, @levels, :id, :name %>
+			</div>
+		</div>
+		<div class="field">
+			<%= f.label :region %>
+			<%= f.text_field :region %>
+		</div>
+		<div class="field">
+			<%= f.label :benefits %>
+			<%= f.text_area :benefits  %>
+		</div>
+		<div class="field">
+			<%= f.label :office_functions %>
+			<%= f.text_area :office_functions %>
+		</div>
+		<div class="field">
+			<%= f.label :company_expectations %>
+			<%= f.text_area :company_expectations %>
+		</div>
+
+		<button class="button-enviar-form" type="submit">Enviar Vaga</button>
+	<% end %>
+</div>

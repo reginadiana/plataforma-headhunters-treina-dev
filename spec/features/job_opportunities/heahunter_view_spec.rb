@@ -27,7 +27,7 @@ feature 'Headhunter view jobs' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
-		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
+		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter, salary_range: 5000)
 
 		visit root_path
 		find("a#details-#{job_1.id}").click()
@@ -35,7 +35,7 @@ feature 'Headhunter view jobs' do
 		expect(page).to have_content("Desenvolvedor PHP")
 		expect(page).to have_content("#{job_1.company}")
 		expect(page).to have_content("#{job_1.region}")
-		expect(page).to have_content("#{job_1.salary_range}")
+		expect(page).to have_content("R$ 5.000,00")
 		expect(page).to have_content("#{job_1.level.name}")
 		expect(page).to have_content("#{job_1.description_job}")
 		expect(page).to have_content("#{job_1.skills}")

@@ -4,7 +4,7 @@
 	<p><%= @job.title %></p>
 	<p><%= @job.company %></p>
 	<p><%= @job.region %></p>
-	<p><%= @job.salary_range %></p>
+	<p><%= number_to_currency @job.salary_range %></p>
 	<p><%= @job.level.name %></p>
 </div>
 

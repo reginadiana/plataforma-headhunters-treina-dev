@@ -4,6 +4,7 @@ feature 'Headhunter register valid job' do
 
 	before :each do
 		headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
+		nivel = Level.create!(name: 'Pleno')
 
 		login_as headhunter, scope: :headhunter
 		visit root_path
@@ -32,7 +33,7 @@ feature 'Headhunter register valid job' do
 		expect(page).to have_content('PartYou')
 		expect(page).to have_content('Desenvolvimento de soluções para saude')
 		expect(page).to have_content('Machine Learning, IoT e Big data')
-		expect(page).to have_content('R$ 5000,00')
+		expect(page).to have_content('R$ 5.000,00')
 		expect(page).to have_content('04/05/2021')
 		expect(page).to have_content('Pleno')
 		expect(page).to have_content('AV. Washington Soares, 909, Fortaleza')
@@ -90,11 +91,11 @@ feature 'Headhunter register valid job' do
 
 		fill_in 'Faixa Salárial', with: 'numero'
 		click_on 'Enviar Vaga'
-		expect(page).to have_content('Faixa Salárial não é um numero')
+		expect(page).to have_content('Faixa Salárial não é um número')
 	end
 	scenario 'and salary_range must be greater than minimum wage' do
 
-		fill_in 'Faixa Salárial', with: '10000'
+		fill_in 'Faixa Salárial', with: '1000'
 		click_on 'Enviar Vaga'
 		expect(page).to have_content('Faixa Salárial deve ser maior que 1045')
 	end

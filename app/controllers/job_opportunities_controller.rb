@@ -8,21 +8,25 @@ class JobOpportunitiesController < ApplicationController
 	def show
 	    	@job = JobOpportunity.find(id)
 	end
+	def new
+		@job = JobOpportunity.new
+		@levels = Level.all		
+	end
 	def create
 		@job = JobOpportunity.new(require_params)
+		@job.headhunter = current_headhunter
+
             	if @job.save
 			flash[:notice] = 'Vaga criada com sucesso'	
 	    		redirect_to @job
 	    	else 
+			@levels = Level.all
 			render :new
 	    	end
 	end
-	def new
-		@job = JobOpportunity.new		
-	end
-
 	def edit
 		@job = JobOpportunity.find(id)
+		@levels = Level.all
 	end
 
 	def update
@@ -30,6 +34,7 @@ class JobOpportunitiesController < ApplicationController
 		if @job.update(require_params)
 			redirect_to @job
 		else
+			@levels = Level.all
 			render :edit
 		end
 	end
