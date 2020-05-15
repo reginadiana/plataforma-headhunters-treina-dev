@@ -8027,3 +8027,95 @@ Processing by Headhunters::RegistrationsController#new as HTML
 Completed 200 OK in 54ms (Views: 49.5ms | ActiveRecord: 0.0ms | Allocations: 6759)
 
 
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 12:02:15 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.9ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 0.0ms | Allocations: 5130)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 12:02:34 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"z9FpnH94TRN4Za7ySNb2bOsu7iyUB6h8JUTzXGXfTo/ecO88SAGmkAMtHq9+/i+Qfb62+4mpR/M+CJZ0YTp4zw==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (2.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 502ms (ActiveRecord: 2.3ms | Allocations: 4221)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 12:02:35 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.9ms | Allocations: 5874)
+
+
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 12:12:21 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Headhunters::SessionsController#new as HTML
+  [1m[36mHeadhunter Load (2.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 29ms (ActiveRecord: 2.3ms | Allocations: 1823)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 12:12:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 79ms (Views: 72.9ms | ActiveRecord: 0.8ms | Allocations: 5857)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 12:12:31 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 0.6ms | Allocations: 5830)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 12:38:20 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 42.9ms | Allocations: 1114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 117.2ms | ActiveRecord: 0.0ms | Allocations: 4840)
+
+
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 12:38:25 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 47.4ms | ActiveRecord: 0.0ms | Allocations: 5121)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 12:38:27 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"MJzJW2mRHpgL5YLIRuyS6x0xW6V3AC57sOYAdBgjX5GTcSD/d10rxmrpB5drfw12NtChD328VJvQ72/E54aDwQ==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 451ms (ActiveRecord: 1.1ms | Allocations: 2723)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 12:38:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 1.0ms | Allocations: 5871)
+
+

@@ -6,10 +6,10 @@ class JobOpportunity < ApplicationRecord
 	validates :title, uniqueness: true
 	validates :salary_range , :numericality => { greater_than: 1045 }
 
-	validate :deadline_date_cannot_be_in_the_past
+	validate :deadline_cannot_be_in_the_past
 
-	def deadline_date_cannot_be_in_the_past
-		if deadline_date.present? && deadline_date < Date.today
+	def deadline_cannot_be_in_the_past
+		if deadline.present? && deadline < Date.today
 			errors.add(:deadline, "não pode estar no passado")
 		end
 	end
