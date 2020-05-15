@@ -1,6 +1,6 @@
 class JobOpportunitiesController < ApplicationController
-
-	before_action :authenticate_user, only: [:new, :create, :edit, :update, :destroy] 
+	before_action :authenticate_visitor
+	before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy] 
 
 	def index
 	    	@jobs = JobOpportunity.all
@@ -70,10 +70,17 @@ class JobOpportunitiesController < ApplicationController
 		params[:id]
 	end
 
-	def authenticate_user
+	def authenticate_candidate
 	    
 	    if user_signed_in?
 	      redirect_to job_opportunities_path
 	    end
+	end
+	def authenticate_visitor
+		if not user_signed_in? 
+			if not headhunter_signed_in?
+				redirect_to root_path
+			end
+		end
 	end
 end  

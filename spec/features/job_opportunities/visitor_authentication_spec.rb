@@ -4,7 +4,6 @@ feature 'Visitor tries to acess jobs and' do
 
 	after :each do
 		expect(current_path).to eq(root_path)
-		expect(page).to have_content('Para continuar, efetue login ou registre-se.')
 	end
 
 	scenario 'cannot view index unless logged in' do

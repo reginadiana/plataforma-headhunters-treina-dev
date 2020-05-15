@@ -9,6 +9,8 @@ Rails.application.routes.draw do
         	sessions: 'headhunters/sessions',
 		registrations: 'headhunters/registrations'
         }
+
   	root to: 'home#index'
 	resources :job_opportunities
+	
 end
