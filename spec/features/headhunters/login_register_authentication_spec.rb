@@ -43,6 +43,27 @@ feature 'Headhunter authentication' do
 		end
   	end
 
+	context 'cannot acess candidate' do
+		scenario 'as headhunter' do
+			headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
+		
+			visit root_path
+			click_on 'Sou candidato'
+
+			expect(page).to have_content('Acessar conta como candidato')
+
+			fill_in 'Email', with: 'teste@teste.com.br'
+			fill_in 'Senha', with: '12345678'
+
+			within 'form' do
+				click_on 'Entrar'
+			end
+
+			expect(page).to have_content('Email ou senha inválida.')
+			expect(page).not_to have_link('Sair')
+		end
+	end
+
 	context 'log out' do
 		scenario 'successfully' do
 			headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
@@ -128,6 +149,35 @@ feature 'Headhunter authentication' do
 			end
 
 			expect(page).to have_content('Confirmação de senha não é igual a Senha')
+		end
+	end
+	context 'forgot password' do
+		before :each do
+			visit root_path
+			click_on 'Sou recrutador'
+			click_on 'Esqueceu sua senha?'
+			expect(current_path).to eq(new_headhunter_password_path)
+		end
+
+		scenario 'and reset a new password successfully' do
+			headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
+
+			fill_in 'Email', with: headhunter.email
+
+			click_on 'Enviar instruções por email'
+
+			expect(page).to have_content('Dentro de minutos, você receberá um e-mail com instruções para a troca da sua senha.')
+
+			expect(current_path).to eq(new_headhunter_session_path)
+		end
+		scenario 'but account not existent' do
+
+			fill_in 'Email', with: 'emailaleatorio@gmail.com'
+
+			click_on 'Enviar instruções por email'
+
+			expect(page).to have_content('Email não encontrado')
+			expect(current_path).to eq(headhunter_password_path)
 		end
 	end
 end

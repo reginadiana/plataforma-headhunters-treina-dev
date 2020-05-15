@@ -4,8 +4,7 @@ class JobOpportunity < ApplicationRecord
 
 	validates :title, :company, :description_job, :skills, :salary_range, :deadline, :office_functions, presence: true
 	validates :title, uniqueness: true
-	validates :salary_range , :numericality => { greater_than: 1045}
-	validates :deadline, :numericality => { greater_than: Date.today }
+	validates :salary_range , :numericality => { greater_than: 1045 }
 
 	validate :deadline_date_cannot_be_in_the_past
 
