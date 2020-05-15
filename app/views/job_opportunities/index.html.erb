@@ -14,13 +14,13 @@
 			<% if headhunter_signed_in? %>
 				<% if job.headhunter.email === current_headhunter.email %>
 					<div class="each-manufacturer">
-					<p><%= job.title %></p>
-					<p><%= job.company %></p>
-					<p><%= job.region %></p>
-					<p><%= job.salary_range %></p>
-					<p><%= job.level.name %></p>
-					<p><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
-				</div>
+						<p><%= job.title %></p>
+						<p><%= job.company %></p>
+						<p><%= job.region %></p>
+						<p><%= job.salary_range %></p>
+						<p><%= job.level.name %></p>
+						<p><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
+					</div>
 				<% end %>
 			<% end %>
 			<% if user_signed_in? %>

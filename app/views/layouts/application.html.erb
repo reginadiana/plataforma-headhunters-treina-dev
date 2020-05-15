@@ -5,9 +5,10 @@
 		<link rel="icon" href="https://pbs.twimg.com/profile_images/1222171329564151808/kr7p_kEz_400x400.jpg"/>
 
 		<%= csrf_meta_tags %>
-		<%= csp_meta_tag %>
-
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= csp_meta_tag %>	
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="home.css"/>  
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 

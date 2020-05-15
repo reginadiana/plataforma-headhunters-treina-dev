@@ -6,10 +6,10 @@ FactoryBot.define do
     skills { "Domínio da linguagem Ruby e do framework Ruby on Rails" }
     salary_range { "4000.00" }
     level 
-    deadline { "2020-09-14" }
+    deadline { "14/09/2020" }
     region { "Mocca - SP" }
     benefits { "Vale refeição, Academia" }
-    office_functions { "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para 				atendimento do negócio." }
+    office_functions { "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio." }
     company_expectations { "Profissional ativo e comunicativo" }
     headhunter
   end
