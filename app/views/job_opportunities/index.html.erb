@@ -14,7 +14,7 @@
 			<% if headhunter_signed_in? %>
 				<% if job.headhunter.email === current_headhunter.email %>
 					<div class="each-manufacturer">
-						<p><%= job.title %></p>
+						<p><%= link_to job.title, job %></p>
 						<p><%= job.company %></p>
 						<p><%= job.region %></p>
 						<p><%= number_to_currency job.salary_range %></p>
@@ -25,7 +25,7 @@
 			<% end %>
 			<% if user_signed_in? %>
 				<div class="each-manufacturer">
-					<p><%= job.title %></p>
+					<p><%= link_to job.title, job %></p>
 					<p><%= job.company %></p>
 					<p><%= job.region %></p>
 					<p><%= number_to_currency job.salary_range %></p>
