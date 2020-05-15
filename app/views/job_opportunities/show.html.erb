@@ -26,4 +26,6 @@
 <% if headhunter_signed_in? %>
 	<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
 	<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
+<% else %>
+	<p><%= link_to 'Quero me candidatar', root_path %></p>
 <% end %>

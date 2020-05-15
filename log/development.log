@@ -13635,3 +13635,1537 @@ puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
 puma (4.3.3) lib/puma/server.rb:472:in `process_client'
 puma (4.3.3) lib/puma/server.rb:328:in `block in run'
 puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 19:44:23 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.2ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 0.0ms | Allocations: 5123)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 19:53:08 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0dJRPsdCWLzN4XhcygPQhtSNWbznDNiw+ELEz1MPsl2+eF6ap2vh39wpqHDI/84FolePbhrrW0saiFP/QEgL5Q==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.4ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 440ms (ActiveRecord: 1.4ms | Allocations: 2882)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 19:53:08 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms | Allocations: 1244)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 19:53:08 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 160.0ms | Allocations: 17386)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 279ms (Views: 180.5ms | ActiveRecord: 8.5ms | Allocations: 25368)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 19:53:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-15 19:53:13 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (2.2ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:9:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 42.3ms | Allocations: 1851)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 70.4ms | ActiveRecord: 3.5ms | Allocations: 7513)
+
+
+Started GET "/job_opportunities/2/edit" for 127.0.0.1 at 2020-05-15 19:53:15 -0300
+Processing by JobOpportunitiesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:28:in `edit'
+  Rendering job_opportunities/edit.html.erb within layouts/application
+  [1m[36mLevel Load (1.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels"[0m
+  ↳ app/views/job_opportunities/_form.html.erb:35
+  Rendered job_opportunities/_form.html.erb (Duration: 116.5ms | Allocations: 4442)
+  Rendered job_opportunities/edit.html.erb within layouts/application (Duration: 122.8ms | Allocations: 4811)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 182ms (Views: 148.4ms | ActiveRecord: 3.0ms | Allocations: 10382)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 19:53:20 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 27ms (ActiveRecord: 0.9ms | Allocations: 1222)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 19:53:20 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 37.2ms | Allocations: 3858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 58.1ms | ActiveRecord: 4.1ms | Allocations: 8698)
+
+
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 19:53:27 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NLdrvMVik1cZgwl+D9sXJ+J/jmvpEzXvoLCYWylbnGnZHUnnDgVLT0kyQxnJcdJElNySmE+hTQDLeG3gcOENMg=="}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 0.9ms | Allocations: 2247)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 19:53:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 0.0ms | Allocations: 5020)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 19:53:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 19:53:30 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.4ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 5140)
+
+
+Started GET "/headhunters/sign_up" for 127.0.0.1 at 2020-05-15 19:53:38 -0300
+Processing by Headhunters::RegistrationsController#new as HTML
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 8.5ms | Allocations: 213)
+  Rendered headhunters/shared/_links.html.erb (Duration: 8.5ms | Allocations: 117)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 38.6ms | Allocations: 1773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 116.5ms | ActiveRecord: 0.0ms | Allocations: 6528)
+
+
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-15 19:54:03 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"UzlTkpo+/pm6D1Laiff+MLZYTPzUZMxGlgR9KcAYqvxgtozzf699nZ5fOhBRgVy310Gldgxx6nXOyXaYeAfeGw==", "headhunter"=>{"email"=>"camila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeadhunter Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "camila@gmail.com"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (11.2ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "camila@gmail.com"], ["encrypted_password", "$2a$11$.hdrPV/fzj1b95KOTGFxxeLdSS0IdvKwQNb4Lty./UXQm8tbGq7Oi"], ["created_at", "2020-05-15 22:54:04.305948"], ["updated_at", "2020-05-15 22:54:04.305948"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 714ms (ActiveRecord: 22.0ms | Allocations: 8973)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 19:54:04 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 20ms (ActiveRecord: 0.5ms | Allocations: 1388)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 19:54:04 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 57.7ms | Allocations: 2908)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 140ms (Views: 113.5ms | ActiveRecord: 3.1ms | Allocations: 7753)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 19:54:04 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-05-15 19:54:19 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 22ms (ActiveRecord: 0.9ms | Allocations: 1222)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 19:54:19 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 2900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 87ms (Views: 52.4ms | ActiveRecord: 3.7ms | Allocations: 7738)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 19:54:21 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 16ms (ActiveRecord: 0.7ms | Allocations: 1226)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 19:54:21 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 2899)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 50.5ms | ActiveRecord: 2.9ms | Allocations: 7735)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 19:55:26 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (1.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:81:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 37.4ms | Allocations: 3422)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 131.0ms | ActiveRecord: 4.2ms | Allocations: 9657)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 19:55:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:07:15 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", nil], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", nil]]
+  ↳ app/views/job_opportunities/index.html.erb:12
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 20.6ms | Allocations: 3149)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 129ms (Views: 53.1ms | ActiveRecord: 2.9ms | Allocations: 16124)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:07:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 20:07:21 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pXlHSIaWl94o4FBw9qelOLLLPJWSbBhf2wPzu3c3oFos0y4PA6Kojby6J47K97lzacBmLEL/s/pM1GAo0B4XrA=="}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 0.5ms | Allocations: 2402)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:07:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 5814)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:07:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:07:24 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 8.2ms | Allocations: 558)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.5ms | Allocations: 1912)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 178ms (Views: 70.2ms | ActiveRecord: 0.0ms | Allocations: 12637)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:07:36 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"i62BWzb8Taz6Z1f9ffgKjzfi4Jbem3ZIN2eTigRikApw19/dG86MWiipRtjo5CPmEM8tNN4zDbCmD5jFqNxvHw==", "user"=>{"email"=>"diana22@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "diana22@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 33ms (ActiveRecord: 1.9ms | Allocations: 1923)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"i62BWzb8Taz6Z1f9ffgKjzfi4Jbem3ZIN2eTigRikApw19/dG86MWiipRtjo5CPmEM8tNN4zDbCmD5jFqNxvHw==", "user"=>{"email"=>"diana22@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 982)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 461ms (Views: 38.7ms | ActiveRecord: 0.0ms | Allocations: 5099)
+
+
+Started GET "/users/home.css" for 127.0.0.1 at 2020-05-15 20:07:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:07:46 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tzglCNLVWXdYXRYvyLFEUAeIs1POR3d1HV0IeXgtbNuNIYHKwgRugoiY2mMGUfXHtW7w+EMm09N0Ob+ZqhSXaw==", "user"=>{"email"=>"diana22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "diana22@yahoo.com.br"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 23ms (ActiveRecord: 1.1ms | Allocations: 1814)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"tzglCNLVWXdYXRYvyLFEUAeIs1POR3d1HV0IeXgtbNuNIYHKwgRugoiY2mMGUfXHtW7w+EMm09N0Ob+ZqhSXaw==", "user"=>{"email"=>"diana22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 983)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 453ms (Views: 36.0ms | ActiveRecord: 0.0ms | Allocations: 5039)
+
+
+Started GET "/users/home.css" for 127.0.0.1 at 2020-05-15 20:07:47 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:07:49 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"y5R+rkU7bnDnlmFUM6YLhozZo3QVR6KCa5WpIFOdsoTxjdpsVepZhTdTrRj9RroRPj/g35gmBiQC8R7AgaRJNA==", "user"=>{"email"=>"diana22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"y5R+rkU7bnDnlmFUM6YLhozZo3QVR6KCa5WpIFOdsoTxjdpsVepZhTdTrRj9RroRPj/g35gmBiQC8R7AgaRJNA==", "user"=>{"email"=>"diana22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 5004)
+
+
+Started GET "/users/home.css" for 127.0.0.1 at 2020-05-15 20:07:49 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:08:07 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"x5F8DgHavswN9Qy5Q2BRWbndrvSXCxgTtIPV1d25c539iNjMEQuJOd0wwPWNgODOCzvtXxpqvLXd52I1D4CILQ==", "user"=>{"email"=>"dianaregina22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dianaregina22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 457ms (ActiveRecord: 0.8ms | Allocations: 4158)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:08:07 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms | Allocations: 1171)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:08:07 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.4ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 187.5ms | Allocations: 18001)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 278ms (Views: 260.7ms | ActiveRecord: 4.9ms | Allocations: 22756)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:08:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-15 20:08:17 -0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mmuY4xlFIRvfIziRx57mkAKGbzNNT73IDT+5gkrZKxYyUNFK3a3NvwqCucDvKpBEl0oT+bLTVgQr2OSg0chYUw=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 0.6ms | Allocations: 2249)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:08:17 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1120)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 5022)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:08:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:08:21 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 91.7ms | Allocations: 558)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 130.1ms | Allocations: 1905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 209ms (Views: 198.8ms | ActiveRecord: 0.0ms | Allocations: 6688)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:08:26 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"PGMci12tB0cnKUbxAMvv1hoL0vGpAh/DIinZimF5WokDwOFXEkNHnRdMDdDV5RYs2pSRa3niH4qvotbpwQ01tA==", "headhunter"=>{"email"=>"lucas22@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.4ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 28ms (ActiveRecord: 1.4ms | Allocations: 1865)
+
+
+Processing by Headhunters::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"PGMci12tB0cnKUbxAMvv1hoL0vGpAh/DIinZimF5WokDwOFXEkNHnRdMDdDV5RYs2pSRa3niH4qvotbpwQ01tA==", "headhunter"=>{"email"=>"lucas22@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 450ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 5054)
+
+
+Started GET "/headhunters/home.css" for 127.0.0.1 at 2020-05-15 20:08:27 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/headhunters/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:08:40 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zoaaAZRnG3CY1FEEu0S4awyNur7pF7uijmojQzTwSqF59ymVDh00Xi9Oqg2tg/W8X+m1LChh4oa0IhWG39+umw==", "headhunter"=>{"email"=>"lucas22@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 81ms (ActiveRecord: 0.7ms | Allocations: 1814)
+
+
+Processing by Headhunters::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"zoaaAZRnG3CY1FEEu0S4awyNur7pF7uijmojQzTwSqF59ymVDh00Xi9Oqg2tg/W8X+m1LChh4oa0IhWG39+umw==", "headhunter"=>{"email"=>"lucas22@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1002)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 456ms (Views: 35.1ms | ActiveRecord: 0.0ms | Allocations: 5058)
+
+
+Started GET "/headhunters/home.css" for 127.0.0.1 at 2020-05-15 20:08:41 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/headhunters/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:09:24 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gUBSuh+uLfCI6rl6KkAKApgk+3TANd6w/JGkUDZe6oM2MeEuhdQC3j9wQnM8h0fVy0D05gFDh5TG2ZKV3XEOuQ==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 442ms (ActiveRecord: 0.7ms | Allocations: 3064)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:09:24 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms | Allocations: 1221)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:09:24 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", nil], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", nil]]
+  ↳ app/views/job_opportunities/index.html.erb:12
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 2806)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 99ms (Views: 40.5ms | ActiveRecord: 2.1ms | Allocations: 7611)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:09:25 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 20:09:31 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2ZoCPGk0ioU9sCde16HTHa7+I3s1egiSXgJrc0v7I27CD3IET0TKcLenH/OVJBW4eqBtg2p07foqfadBIrfLHQ=="}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.6ms | Allocations: 2151)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:09:31 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1119)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 77.9ms | ActiveRecord: 0.0ms | Allocations: 5020)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:09:31 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:09:38 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.2ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 48.6ms | ActiveRecord: 0.0ms | Allocations: 5120)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:09:41 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/T4IEXqruuE8T7+Di6d7kE5XHbQG4GFTgPfSwflncCNGSARWGDzyeewOX9cCWNYYEvI78PlXwTjwbmAH1I9Qfw==", "headhunter"=>{"email"=>"lucas22@outlook.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@outlook.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 498ms (ActiveRecord: 1.5ms | Allocations: 2738)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:09:41 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms | Allocations: 1223)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:09:41 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", nil], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", nil]]
+  ↳ app/views/job_opportunities/index.html.erb:12
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 2799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 48.9ms | ActiveRecord: 2.1ms | Allocations: 7591)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:09:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:10:02 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (1.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (1.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 142.4ms | Allocations: 15150)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 254ms (Views: 161.9ms | ActiveRecord: 14.3ms | Allocations: 27692)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:10:03 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 20:10:07 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SHaXfHhwCOivBkmRAPjpmI4DGgmqJkSRWc8NPuCrpfaKcuGenwDNrLfvctE00B/ktSElZJ2V5F0YbwERvE7nrQ=="}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 108ms (ActiveRecord: 0.5ms | Allocations: 2404)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:10:07 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 5136)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:10:07 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:10:10 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 2.3ms | Allocations: 142)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 18.8ms | Allocations: 1056)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 60.2ms | ActiveRecord: 0.0ms | Allocations: 5359)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 20:10:21 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"6e2vC6vlRwMp46k1OfMNyXdTNBOsIKlD8Nk0DkYQpMWH4HM2tjswxel/xrqHt7n2+z7bcBbG8HPJcZrxHZavPA==", "headhunter"=>{"email"=>"lucas22@outlook.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (2.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@outlook.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 439ms (ActiveRecord: 2.3ms | Allocations: 2783)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:10:22 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms | Allocations: 1225)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:10:22 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 28.7ms | Allocations: 2292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 128ms (Views: 59.5ms | ActiveRecord: 2.6ms | Allocations: 7181)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:10:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 20:15:26 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nADcXc6tWZJQhS+CI5Y8AQSmRuhGkrluRlGL6+G1+mTBHN1DYjh/OHwF95uTMptTcon3ooTtVsDTBAph0QEvCQ=="}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 0.6ms | Allocations: 2155)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:15:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 5004)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:15:26 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:15:29 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 142)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1054)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 39.1ms | ActiveRecord: 3.7ms | Allocations: 10606)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:15:30 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"i3+bWFsUcK4ZuM/LaIZFXpKmY3WMnS5MiT2mualqQFT4ioE/+x2KgONuk3sm8HY8XqKXgqQZXhl7BFrN+JPfJw==", "user"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 25ms (ActiveRecord: 1.2ms | Allocations: 1925)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"i3+bWFsUcK4ZuM/LaIZFXpKmY3WMnS5MiT2mualqQFT4ioE/+x2KgONuk3sm8HY8XqKXgqQZXhl7BFrN+JPfJw==", "user"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 458ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 5058)
+
+
+Started GET "/users/home.css" for 127.0.0.1 at 2020-05-15 20:15:31 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 20:15:44 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"YLz3VKyY+hlDK7zwCMXG9INoshZM+/sJ7t42AGJ1g2jWqOCid+RJ3CexfmrbvJG4cGssd8C/OxGBFlDZeP48tA==", "user"=>{"email"=>"dianaregina22@outlook.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dianaregina22@outlook.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 468ms (ActiveRecord: 1.1ms | Allocations: 2720)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:15:45 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 13ms (ActiveRecord: 1.1ms | Allocations: 1165)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:15:45 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.2ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 32.8ms | Allocations: 3270)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 61.7ms | ActiveRecord: 3.8ms | Allocations: 8119)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:15:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-15 20:15:54 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.4ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 24.3ms | Allocations: 1841)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 56.7ms | ActiveRecord: 3.2ms | Allocations: 7423)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:15:58 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (2.4ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (1.4ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 48.1ms | Allocations: 3237)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 74.1ms | ActiveRecord: 6.3ms | Allocations: 8063)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:50:16 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (0.9ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 38.1ms | Allocations: 3626)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 71.7ms | ActiveRecord: 4.3ms | Allocations: 9889)
+
+
+Started GET "/home.css" for 127.0.0.1 at 2020-05-15 20:50:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/home.css"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-15 20:50:18 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (2.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 47.9ms | Allocations: 1884)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 102.9ms | ActiveRecord: 4.2ms | Allocations: 7361)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 20:50:20 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms | Allocations: 1141)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 20:50:20 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:12
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 32.7ms | Allocations: 3237)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 53.3ms | ActiveRecord: 3.9ms | Allocations: 8074)
+
+

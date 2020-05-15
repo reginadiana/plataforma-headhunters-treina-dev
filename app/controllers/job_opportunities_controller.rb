@@ -3,7 +3,11 @@ class JobOpportunitiesController < ApplicationController
 	before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy] 
 
 	def index
-	    	@jobs = JobOpportunity.all
+		if headhunter_signed_in?
+			@jobs = JobOpportunity.where(headhunter: current_headhunter)
+		else 
+			@jobs = JobOpportunity.all
+		end
 	end
 	def show
 	    	@job = JobOpportunity.find(id)

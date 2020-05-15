@@ -23,6 +23,33 @@ feature 'Headhunter view jobs' do
 
 	end
 
+	scenario 'and headhunter can not see other jobs' do    
+		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as headhunter, scope: :headhunter
+
+		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
+		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
+	
+		visit root_path
+
+		expect(page).to have_content("Vagas Cadastradas")
+		expect(page).to have_link("Cadastrar nova Vaga")
+		expect(page).to have_link("Lista de Candidatos")
+
+		expect(page).to have_content("Nenhuma vaga cadastrada")
+
+	end
+
+	scenario 'and any job was register' do    
+		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as headhunter, scope: :headhunter
+	
+		visit root_path
+
+		expect(page).to have_content("Nenhuma vaga cadastrada")
+
+	end
+
 	scenario 'and view details' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
