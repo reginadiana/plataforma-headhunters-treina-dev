@@ -2,7 +2,21 @@ class JobOpportunity < ApplicationRecord
 	belongs_to :level
 	belongs_to :headhunter
 
-	validates :title, :company, :description_job, :skills, :salary_range, :deadline, :office_functions, presence: true
+	validates :title, 
+		:company,
+		:description_job,
+		:skills,
+		:salary_range,
+		:deadline,
+		:level,
+		:level_id,
+		:region,
+		:benefits,
+		:office_functions,
+		:company_expectations,
+		:headhunter,
+		:headhunter_id , presence: true
+
 	validates :title, uniqueness: true
 	validates :salary_range , :numericality => { greater_than: 1045 }
 
