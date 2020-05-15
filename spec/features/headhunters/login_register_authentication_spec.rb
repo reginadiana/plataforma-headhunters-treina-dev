@@ -25,7 +25,7 @@ feature 'Headhunter authentication' do
 			expect(page).to have_content( 'Recursos para Recrutador')
 			expect(page).not_to have_link('Entrar')
 			expect(page).to have_link('Sair')
-			expect(current_path).to eq(root_path)
+			expect(current_path).to eq(job_opportunities_path)
 		end
 
 		scenario 'and must fill in all fields' do

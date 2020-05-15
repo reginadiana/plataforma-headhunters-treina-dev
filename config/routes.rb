@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 		registrations: 'headhunters/registrations'
         }
   	root to: 'home#index'
+	resources :job_opportunities
 end

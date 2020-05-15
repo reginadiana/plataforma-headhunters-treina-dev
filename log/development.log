@@ -8119,3 +8119,987 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 1.0ms | Allocations: 5871)
 
 
+Started GET "/" for 127.0.0.1 at 2020-05-15 14:26:54 -0300
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 860ms (ActiveRecord: 0.0ms | Allocations: 70234)
+
+
+  
+NoMethodError (undefined method `current_user?' for #<HomeController:0x732240f0>
+Did you mean?  current_user):
+  
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for 127.0.0.1 at 2020-05-15 14:28:29 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 92ms (ActiveRecord: 5.2ms | Allocations: 7615)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:28:30 -0300
+  
+ActionController::RoutingError (uninitialized constant JobOpportunitiesController
+Did you mean?  JobOpportunity):
+  
+actionpack (6.0.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:36:36 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#index as HTML
+Completed 406 Not Acceptable in 70ms (ActiveRecord: 0.0ms | Allocations: 3674)
+
+
+  
+ActionController::MissingExactTemplate (JobOpportunitiesController#index is missing a template for request formats: text/html):
+  
+actionpack (6.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:52:54 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2663.0ms | Allocations: 199077)
+Completed 500 Internal Server Error in 2687ms (ActiveRecord: 6.8ms | Allocations: 200412)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `jobs' for #<#<Class:0x72b425e0>:0x72b40a38>
+Did you mean?  job
+               @jobs):
+    12: 	<div>
+    13: 		<% @jobs.each do |job| %>
+    14: 			<div class="each-manufacturer">
+    15: 				<p><%= jobs.title %></p>
+    16: 				<p><%= jobs.company %></p>
+    17: 				<p><%= jobs.region %></p>
+    18: 				<p><%= jobs.salary_range %></p>
+  
+app/views/job_opportunities/index.html.erb:15
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:53:13 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:19
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:19
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 160.5ms | Allocations: 11983)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 294ms (Views: 278.6ms | ActiveRecord: 8.0ms | Allocations: 20301)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:54:52 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:19
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:20
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:19
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:20
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 59.9ms | Allocations: 6473)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 91.0ms | ActiveRecord: 4.7ms | Allocations: 11699)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:56:47 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 106.5ms | Allocations: 4953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 139.0ms | ActiveRecord: 4.0ms | Allocations: 10322)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-15 14:57:56 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 26ms (ActiveRecord: 1.1ms | Allocations: 3078)
+
+
+  
+ActionController::MissingExactTemplate (JobOpportunitiesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:58:00 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (1.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (1.3ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 60.1ms | Allocations: 4552)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 83.1ms | ActiveRecord: 5.8ms | Allocations: 8498)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:58:39 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 50.1ms | Allocations: 5211)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 82.6ms | ActiveRecord: 4.0ms | Allocations: 10498)
+
+
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 14:58:42 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wAtHybxYJMBddyeYoT12to4G90frgeG5rmK2CGAqyH0qpDI6u7FX0/g7PFykZ3pezIk7XgTZgVdAIWii7O7Tsg=="}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 58ms (ActiveRecord: 1.1ms | Allocations: 5139)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 14:58:42 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 1343)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 48.9ms | ActiveRecord: 0.0ms | Allocations: 5855)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 14:58:44 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.4ms | Allocations: 644)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 39.5ms | Allocations: 2926)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 77.1ms | ActiveRecord: 4.4ms | Allocations: 14207)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 14:58:58 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zrdnPEVbInu8Oq/PaL9xIMpxZxOVTG/ohICh8j1NNILbuT/BAkkbg4mAHNsK/zMqgBlX2YURemIy8RXUoMfMYg==", "user"=>{"email"=>"dianaregina22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "dianaregina22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 528ms (ActiveRecord: 2.4ms | Allocations: 4460)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 14:58:59 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 13ms (ActiveRecord: 1.1ms | Allocations: 1169)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:58:59 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.2ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:27
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:33
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:34
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:33
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:34
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 59.7ms | Allocations: 5471)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 79.8ms | ActiveRecord: 5.3ms | Allocations: 9379)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:59:21 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:26
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:32
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:32
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 53.4ms | Allocations: 4484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 95.8ms | ActiveRecord: 3.9ms | Allocations: 9774)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-15 14:59:28 -0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G4+GuPJBFI0TgrFYRmsBivpzBSBFtdO7G2N7Wq7k7HzINLhPv6TUNmkn3eOiAStf07MMrltmD0BT8yE2fbf8yQ=="}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.5ms | Allocations: 2246)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 14:59:28 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.0ms | Allocations: 5837)
+
+
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 14:59:31 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 16.7ms | Allocations: 627)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 53.5ms | Allocations: 2079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 126.5ms | ActiveRecord: 0.0ms | Allocations: 7601)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 14:59:34 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WgveegG7BPG1VQ/RFZJzupT58fWqwbzv9prZOXzBYpRruBQdK/lpmLCUBWAVg/u6iqWCqf8gMxUV+4W/Cy1CGw==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (2.4ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 464ms (ActiveRecord: 2.4ms | Allocations: 4173)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-15 14:59:35 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms | Allocations: 1217)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 14:59:35 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 98.6ms | Allocations: 4662)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 119.3ms | ActiveRecord: 3.5ms | Allocations: 8567)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:01:23 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 2316.9ms | Allocations: 182035)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2359.8ms | Allocations: 186420)
+Completed 500 Internal Server Error in 2371ms (ActiveRecord: 3.1ms | Allocations: 187707)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x026fc328>:0x0271a9b8>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:04:22 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 1206.8ms | Allocations: 103557)
+Completed 500 Internal Server Error in 1219ms (ActiveRecord: 3.1ms | Allocations: 104844)
+
+
+  
+ActionView::Template::Error (undefined method `partial' for #<#<Class:0x7322aa68>:0x73228c68>):
+    13: 		<% @jobs.each do |job| %>
+    14: 			<% if headhunter_signed_in? %>
+    15: 				<% if job.headhunter.email === current_headhunter.email %>
+    16: 					<%= render partial "info_job", locals: {job: @job}%>
+    17: 				<% end %>
+    18: 			<% end %>
+    19: 			<% if user_signed_in? %>
+  
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:04:39 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 3722.4ms | Allocations: 182035)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 3786.4ms | Allocations: 186412)
+Completed 500 Internal Server Error in 3807ms (ActiveRecord: 4.8ms | Allocations: 187699)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x02b53978>:0x02b52310>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:06:35 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 2321.0ms | Allocations: 182045)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2364.1ms | Allocations: 186420)
+Completed 500 Internal Server Error in 2378ms (ActiveRecord: 2.9ms | Allocations: 187707)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x72ba56b8>:0x72ba4728>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:06:56 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 10.0ms | Allocations: 2703)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 54.0ms | Allocations: 7078)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 3.6ms | Allocations: 8363)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= @job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:07:54 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 2343.6ms | Allocations: 182033)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2385.2ms | Allocations: 186408)
+Completed 500 Internal Server Error in 2405ms (ActiveRecord: 2.9ms | Allocations: 187695)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x02c4ba48>:0x02c4ab18>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:08:17 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 2314.8ms | Allocations: 182032)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2368.3ms | Allocations: 186408)
+Completed 500 Internal Server Error in 2387ms (ActiveRecord: 3.9ms | Allocations: 187695)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x72b96460>:0x72b953b0>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:08:33 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 10.0ms | Allocations: 2702)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 59.0ms | Allocations: 7077)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 3.2ms | Allocations: 8362)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= @job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:09:46 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 19.7ms | Allocations: 2704)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 93.5ms | Allocations: 7082)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 5.4ms | Allocations: 8367)
+
+
+  
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= @job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:10:05 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/_info_job.html.erb (Duration: 2311.4ms | Allocations: 182038)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2360.9ms | Allocations: 186420)
+Completed 500 Internal Server Error in 2382ms (ActiveRecord: 3.5ms | Allocations: 187707)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x0150c168>:0x0156b790>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:11:47 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 82.5ms | Allocations: 5977)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 4.6ms | Allocations: 7262)
+
+
+  
+ActionView::Template::Error (Missing partial job_opportunities/__info_job, application/__info_job with {:locale=>[:"pt-BR"], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/diana/vagas/app/views"
+  * "/home/diana/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+  * "/home/diana/.rvm/gems/ruby-2.6.3/gems/actiontext-6.0.3/app/views"
+  * "/home/diana/.rvm/gems/ruby-2.6.3/gems/actionmailbox-6.0.3/app/views"
+):
+    13: 		<% @jobs.each do |job| %>
+    14: 			<% if headhunter_signed_in? %>
+    15: 				<% if job.headhunter.email === current_headhunter.email %>
+    16: 					<%= render partial: '_info_job', collection: @jobs %>
+    17: 				<% end %>
+    18: 			<% end %>
+    19: 			<% if user_signed_in? %>
+  
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:12:07 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 50.5ms | Allocations: 5978)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 3.1ms | Allocations: 7263)
+
+
+  
+ActionView::Template::Error (Missing partial job_opportunities/__info_job, application/__info_job with {:locale=>[:"pt-BR"], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/diana/vagas/app/views"
+  * "/home/diana/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+  * "/home/diana/.rvm/gems/ruby-2.6.3/gems/actiontext-6.0.3/app/views"
+  * "/home/diana/.rvm/gems/ruby-2.6.3/gems/actionmailbox-6.0.3/app/views"
+):
+    13: 		<% @jobs.each do |job| %>
+    14: 			<% if headhunter_signed_in? %>
+    15: 				<% if job.headhunter.email === current_headhunter.email %>
+    16: 					<%= render partial: '_info_job', collection: @jobs, locals: {size: 30} %>
+    17: 				<% end %>
+    18: 			<% end %>
+    19: 			<% if user_signed_in? %>
+  
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:12:24 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  Rendered collection of job_opportunities/_info_job.html.erb [2 times] (Duration: 2259.6ms | Allocations: 182144)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2301.6ms | Allocations: 186541)
+Completed 500 Internal Server Error in 2321ms (ActiveRecord: 2.9ms | Allocations: 187828)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x71c787f0>:0x71c8ec48>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:16
+app/views/job_opportunities/index.html.erb:13
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:12:54 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:11
+  Rendered collection of job_opportunities/_info_job.html.erb [2 times] (Duration: 3555.5ms | Allocations: 182024)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 3584.8ms | Allocations: 184931)
+Completed 500 Internal Server Error in 3598ms (ActiveRecord: 2.2ms | Allocations: 186218)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x72bea0a0>:0x72be8cc0>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:11
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:13:19 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:11
+  Rendered collection of job_opportunities/_info_job.html.erb [2 times] (Duration: 2215.1ms | Allocations: 182020)
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 2245.0ms | Allocations: 184767)
+Completed 500 Internal Server Error in 2272ms (ActiveRecord: 1.9ms | Allocations: 186054)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `job' for #<#<Class:0x72bfa570>:0x72bf9340>
+Did you mean?  @jobs):
+    1: <div class="each-manufacturer">
+    2: 	<p><%= job.title %></p>
+    3: 	<p><%= job.company %></p>
+    4: 	<p><%= job.region %></p>
+    5: 	<p><%= job.salary_range %></p>
+  
+app/views/job_opportunities/_info_job.html.erb:2
+app/views/job_opportunities/index.html.erb:11
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-15 15:16:26 -0300
+Processing by JobOpportunitiesController#index as HTML
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:4
+  [1m[36mJobOpportunity Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:15
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:21
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 54.3ms | Allocations: 5175)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 88.7ms | ActiveRecord: 4.4ms | Allocations: 10462)
+
+
