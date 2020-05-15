@@ -13981,3 +13981,1436 @@ Processing by HomeController#index as HTML
 [Webpacker] Everything's up-to-date. Nothing to do
 Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 1706)
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:36 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 183ms (Views: 121.1ms | ActiveRecord: 0.0ms | Allocations: 4931)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:37 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 89.1ms | Allocations: 3402)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 3.7ms | Allocations: 11930)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:37 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 1711)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:37 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1589)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2158)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (10.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$rS4.MsE9Gdkb4A56mrMXsOEXXbM5CwXpUtyFklz7BVK8pGabr.xVi"], ["created_at", "2020-05-15 16:26:37.709421"], ["updated_at", "2020-05-15 16:26:37.709421"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:37 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:37 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1987)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 2.7ms | Allocations: 8412)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:37 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 1711)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1596)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2164)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1589)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2156)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1589)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2156)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 18.8ms | Allocations: 1589)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 2156)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$3ipZgSh/3zh14qlBGUuZIuSGkUn0SaBRqcYWA.2dzaFIfsqUXzbQ."], ["created_at", "2020-05-15 16:26:38.327677"], ["updated_at", "2020-05-15 16:26:38.327677"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 24.3ms | Allocations: 1579)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 2146)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 1589)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms | Allocations: 2156)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.2ms | Allocations: 1589)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms | Allocations: 2156)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1595)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2153)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:38 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$76ZwDYkypwsBAhgOMAY4aO3SYY14wMB0In15sV04NgT.A5lM9NA1G"], ["created_at", "2020-05-15 16:26:39.073717"], ["updated_at", "2020-05-15 16:26:39.073717"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1581)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2148)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$OqT4x5C3uF8OLF1JEnNpeuCjq.mcVVasDWLy2QwrbCP0avH.Phk9S"], ["created_at", "2020-05-15 16:26:39.177380"], ["updated_at", "2020-05-15 16:26:39.177380"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1579)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2130)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:26:39 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1589)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "giovana@gmail.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.2ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "giovana@gmail.com.br"], ["encrypted_password", "$2a$04$L6c8NWPpqChtRRzV0FKE2exIo45uIr78vtszt3X8EzTo0vrEAFVkq"], ["created_at", "2020-05-15 16:26:39.766065"], ["updated_at", "2020-05-15 16:26:39.766065"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (18.6ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:26:39.896862"], ["updated_at", "2020-05-15 16:26:39.896862"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor PHP"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.3ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor PHP"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 1], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:26:39.955823"], ["updated_at", "2020-05-15 16:26:39.955823"], ["headhunter_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (0.7ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:26:39.971537"], ["updated_at", "2020-05-15 16:26:39.971537"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "email1@test.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (0.9ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "email1@test.com.br"], ["encrypted_password", "$2a$04$MZ1lzLLyjThvsA0ON03tGu/WW/Fs4cMD.2rxIFZ5E./Uyw.icklz."], ["created_at", "2020-05-15 16:26:39.992353"], ["updated_at", "2020-05-15 16:26:39.992353"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor Java"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.0ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor Java"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 2], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:26:40.006744"], ["updated_at", "2020-05-15 16:26:40.006744"], ["headhunter_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:40 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 1652)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "giovana@gmail.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.2ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "giovana@gmail.com.br"], ["encrypted_password", "$2a$04$iZR5FmTXVPPLeFGRMvRV5uHBUQwUUt6QVzpUYqkfek2PZeQpQNofa"], ["created_at", "2020-05-15 16:26:40.190513"], ["updated_at", "2020-05-15 16:26:40.190513"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (4.1ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:26:40.203869"], ["updated_at", "2020-05-15 16:26:40.203869"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor PHP"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.1ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor PHP"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 1], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:26:40.223047"], ["updated_at", "2020-05-15 16:26:40.223047"], ["headhunter_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:40 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 1660)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "giovana@gmail.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.2ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "giovana@gmail.com.br"], ["encrypted_password", "$2a$04$YsAbGpQUE1qVMKFYbLaamO2j3Gg4x1S5u.lDco6iwmzaCcCY6xlvu"], ["created_at", "2020-05-15 16:26:40.298880"], ["updated_at", "2020-05-15 16:26:40.298880"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (3.7ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:26:40.310350"], ["updated_at", "2020-05-15 16:26:40.310350"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "email2@test.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.0ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "email2@test.com.br"], ["encrypted_password", "$2a$04$Cl/OVgf.Ooezvjmz93pBlOoMa1eXBU9XJPQEE/lyWiuZeTxxsbqi."], ["created_at", "2020-05-15 16:26:40.333235"], ["updated_at", "2020-05-15 16:26:40.333235"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor Rails"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.1ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor Rails"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 1], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:26:40.347802"], ["updated_at", "2020-05-15 16:26:40.347802"], ["headhunter_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:40 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 1648)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:26:40 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1706)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:28:05 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 102ms (Views: 57.6ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:28:05 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 7.3ms | Allocations: 641)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 76.8ms | Allocations: 6004)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 163ms (Views: 101.1ms | ActiveRecord: 3.8ms | Allocations: 15367)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (2.9ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$JciQA96XyyQSzDbyVRhl..ZCxLiUp13bBlPi/R05dS5Et/koN/O8m"], ["created_at", "2020-05-15 16:28:05.566150"], ["updated_at", "2020-05-15 16:28:05.566150"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:28:05 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 60ms (ActiveRecord: 0.9ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:28:05 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 0.9ms | Allocations: 2129)
+  [1m[35m (3.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:28:33 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 57.9ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:28:33 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.3ms | Allocations: 641)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 55.5ms | Allocations: 6031)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 80.3ms | ActiveRecord: 3.7ms | Allocations: 15394)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.4ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$KbW3976wgUFEZRqsSYCsn.HG8kq74pjQrsZXvodEBvVME3DGFMfVK"], ["created_at", "2020-05-15 16:28:33.979976"], ["updated_at", "2020-05-15 16:28:33.979976"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:28:34 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 39ms (ActiveRecord: 1.0ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:28:34 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 0.9ms | Allocations: 2129)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:28:59 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 57.9ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:28:59 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.3ms | Allocations: 641)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 55.3ms | Allocations: 6046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 142ms (Views: 79.9ms | ActiveRecord: 3.8ms | Allocations: 15409)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.4ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$SYlTE1ox9pi4LLhQYBHMlOUBJmcvWNE39//DQDUNvPne05GP3vADu"], ["created_at", "2020-05-15 16:28:59.630167"], ["updated_at", "2020-05-15 16:28:59.630167"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:28:59 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 39ms (ActiveRecord: 1.0ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:28:59 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 0.9ms | Allocations: 2129)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:29:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 58.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:29:21 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.4ms | Allocations: 641)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 55.9ms | Allocations: 6059)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 80.5ms | ActiveRecord: 3.8ms | Allocations: 15422)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (3.0ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$i1OHwIxGnfhbhf9zXtnu6.8U2ozGatZg9S1pamgW6/RdeDPdSyz2a"], ["created_at", "2020-05-15 16:29:21.554883"], ["updated_at", "2020-05-15 16:29:21.554883"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:29:21 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 40ms (ActiveRecord: 0.9ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:29:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 1.0ms | Allocations: 2124)
+  [1m[35m (3.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:29:46 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 61.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:29:46 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 32.9ms | Allocations: 3402)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 3.8ms | Allocations: 11559)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:30:47 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 58.8ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:30:47 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.6ms | Allocations: 641)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 56.5ms | Allocations: 6073)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 145ms (Views: 81.5ms | ActiveRecord: 3.8ms | Allocations: 15436)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.5ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$5KuQWFjV8iaRUd1ghI54HuK4m7Tv2t5Peirrmc1lSXZdURIyAV1ie"], ["created_at", "2020-05-15 16:30:47.484409"], ["updated_at", "2020-05-15 16:30:47.484409"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:30:47 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 39ms (ActiveRecord: 1.1ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:30:47 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 0.9ms | Allocations: 2128)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:03 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 58.6ms | ActiveRecord: 0.0ms | Allocations: 4933)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:03 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.4ms | Allocations: 641)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 126.0ms | Allocations: 6190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 214ms (Views: 151.0ms | ActiveRecord: 3.9ms | Allocations: 15553)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.5ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$Z4c1DGFTp560WVi3xG1VbeXMDi6eq3OhdNcQ3hBv2Lk8.81EqwkmC"], ["created_at", "2020-05-15 16:33:03.609899"], ["updated_at", "2020-05-15 16:33:03.609899"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:03 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 40ms (ActiveRecord: 0.9ms | Allocations: 3313)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:03 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 0.9ms | Allocations: 2141)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:20 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 57.4ms | ActiveRecord: 0.0ms | Allocations: 4931)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 9.4ms | Allocations: 641)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 48.9ms | Allocations: 5921)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 75.4ms | ActiveRecord: 3.5ms | Allocations: 15653)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$6iLJ8ULiJp2zKtUy5ssDr.j/PHMDIXKJyEL3YGeT0Oiz9e5Qkfmqq"], ["created_at", "2020-05-15 16:33:21.201180"], ["updated_at", "2020-05-15 16:33:21.201180"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 39ms (ActiveRecord: 0.9ms | Allocations: 3304)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 1.0ms | Allocations: 2092)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 1700)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 909)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 2677)
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 267)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 909)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 2617)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$kMH3IvfzuG0bK6rOhZw0pODpgG.tZx6HnsPI6mWt0m.pezEQduKu6"], ["created_at", "2020-05-15 16:33:21.776764"], ["updated_at", "2020-05-15 16:33:21.776764"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1700)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.4ms | Allocations: 626)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 22.3ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 42.0ms | ActiveRecord: 3.0ms | Allocations: 9676)
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:21 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.1ms | Allocations: 608)
+Processing by Headhunters::SessionsController#new as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 912)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 2627)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1711)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 913)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 2689)
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 6.2ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 118)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.3ms | Allocations: 1703)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 59.7ms | ActiveRecord: 0.0ms | Allocations: 4860)
+Started POST "/users" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"test@test.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@test.com.br"], ["encrypted_password", "$2a$04$TohgiQUQEpoM1hbd8cIKWen4rBaO/b8.mekhJPq87b3N64xwe4jC2"], ["created_at", "2020-05-15 16:33:22.351586"], ["updated_at", "2020-05-15 16:33:22.351586"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 39ms (ActiveRecord: 2.9ms | Allocations: 2178)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 19.9ms | ActiveRecord: 0.5ms | Allocations: 2069)
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 1702)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 2692)
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 904)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 2611)
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$.SyXZfWo1LfCGdKON1znrOC3Ph5P/Ttkkvem9lsYVXeOLrRVFVhOG"], ["created_at", "2020-05-15 16:33:22.599664"], ["updated_at", "2020-05-15 16:33:22.599664"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/users" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.1ms | Allocations: 205)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1094)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 26.8ms | ActiveRecord: 1.5ms | Allocations: 4082)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 2676)
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 2607)
+Started POST "/users" for 127.0.0.1 at 2020-05-15 13:33:22 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 5.1ms | Allocations: 308)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1202)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 100.0ms | ActiveRecord: 0.0ms | Allocations: 4106)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 909)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 2681)
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 2607)
+Started POST "/users" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 4.5ms | Allocations: 319)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1211)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 28.5ms | ActiveRecord: 1.6ms | Allocations: 4589)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$9QCSfMrsePh0/ofZjxE6/esApHV6pf7iVQ7Vd7Qy3MRByJ6K/k0mO"], ["created_at", "2020-05-15 16:33:23.370642"], ["updated_at", "2020-05-15 16:33:23.370642"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 2676)
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 0.6ms | Allocations: 961)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.5ms | Allocations: 2049)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 33ms (ActiveRecord: 0.5ms | Allocations: 1461)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 1796)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 2673)
+Started GET "/users/password/new" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 136)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 903)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 3639)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$GqMw8B9kZxgTbVAsopTb/uQ5ouG0RYZHyHD.h9z5gp30SKPD/vynm"], ["created_at", "2020-05-15 16:33:23.871625"], ["updated_at", "2020-05-15 16:33:23.871625"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/users/password" for 127.0.0.1 at 2020-05-15 13:33:23 -0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br"}, "commit"=>"Enviar instruções por email"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["reset_password_token", "0f28d16162b962788cbebf993fe017204cffb1818187f3311abfc31193551f46"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (4.1ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "0f28d16162b962788cbebf993fe017204cffb1818187f3311abfc31193551f46"], ["reset_password_sent_at", "2020-05-15 16:33:25.136797"], ["updated_at", "2020-05-15 16:33:25.137820"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 6.5ms | Allocations: 266)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 38.1ms
+Delivered mail 5ebec45533ed8_f7b7c22dc4752b@diana-desktop.mail (30.3ms)
+Date: Fri, 15 May 2020 13:33:25 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: teste@teste.com.br
+Message-ID: <5ebec45533ed8_f7b7c22dc4752b@diana-desktop.mail>
+Subject: =?UTF-8?Q?Instru=C3=A7=C3=B5es_de_troca_de_senha?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello teste@teste.com.br!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost/users/password/edit?reset_password_token=wCLZyyxkqhf8a8RbMC9D">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://www.example.com/users/sign_in
+Completed 302 Found in 1337ms (ActiveRecord: 6.3ms | Allocations: 8591)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 2783)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 1711)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 2673)
+Started GET "/users/password/new" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 136)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 80.7ms | ActiveRecord: 0.0ms | Allocations: 2294)
+Started POST "/users/password" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"user"=>{"email"=>"emailaleatorio@gmail.com"}, "commit"=>"Enviar instruções por email"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "emailaleatorio@gmail.com"], ["LIMIT", 1]]
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.1ms | Allocations: 191)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 135)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 802)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 23.7ms | ActiveRecord: 0.6ms | Allocations: 3317)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 920)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 2682)
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$uRZOMSO9GBY5yBQ9tAjd1.Kr/nBesAYH.mqhiHQovdb2LVd8A3Vqe"], ["created_at", "2020-05-15 16:33:25.721807"], ["updated_at", "2020-05-15 16:33:25.721807"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 23ms (ActiveRecord: 0.5ms | Allocations: 1367)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.9ms | Allocations: 2118)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:25 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.7ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 2657)
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 267)
+Processing by Headhunters::SessionsController#new as HTML
+  Parameters: {"headhunter"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 2598)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$kbLl2WBvpHEZt.VW1GnvnuuwI3OMQS8dSibffTNId5d.XOJerCIw2"], ["created_at", "2020-05-15 16:33:26.100267"], ["updated_at", "2020-05-15 16:33:26.100267"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 2673)
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.5ms | Allocations: 515)
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 2630)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$JsVlAxphuI2ppq1ONz3cmOhi77pGhDlIhc3h5hnVmiDcH1tpgpDau"], ["created_at", "2020-05-15 16:33:26.331613"], ["updated_at", "2020-05-15 16:33:26.331613"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1699)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 2657)
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms | Allocations: 967)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.5ms | Allocations: 2095)
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms | Allocations: 1040)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 1791)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1700)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 2668)
+Started GET "/headhunters/sign_up" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::RegistrationsController#new as HTML
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 6.3ms | Allocations: 213)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 117)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 1683)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 4016)
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"test@test.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "test@test.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@test.com.br"], ["encrypted_password", "$2a$04$iiDJKP0fXspVUp0ocPJyiu/9S/DOMmPP7YwTs5QY9bxxbNYwHfOgq"], ["created_at", "2020-05-15 16:33:26.939391"], ["updated_at", "2020-05-15 16:33:26.939391"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 34ms (ActiveRecord: 2.9ms | Allocations: 1827)
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:26 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.5ms | Allocations: 2112)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 2676)
+Started GET "/headhunters/sign_up" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::RegistrationsController#new as HTML
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 2596)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$1ZXdLBmrGf346WxNSCDXtOimCMavVbMHfAv0cDJ5z79m8TtgYupNW"], ["created_at", "2020-05-15 16:33:27.183305"], ["updated_at", "2020-05-15 16:33:27.183305"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 2.9ms | Allocations: 189)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 1079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 26.5ms | ActiveRecord: 1.5ms | Allocations: 4003)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 2660)
+Started GET "/headhunters/sign_up" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::RegistrationsController#new as HTML
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 901)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 2592)
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 3.7ms | Allocations: 299)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.0ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1191)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 4031)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 2660)
+Started GET "/headhunters/sign_up" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::RegistrationsController#new as HTML
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 901)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 2592)
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 4.0ms | Allocations: 317)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.0ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1210)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 27.7ms | ActiveRecord: 1.5ms | Allocations: 4504)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 1701)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:27 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 915)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 2671)
+Started GET "/headhunters/password/new" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering headhunters/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 136)
+  Rendered headhunters/passwords/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 2668)
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "teste@teste.com.br"], ["encrypted_password", "$2a$04$iAOQe1jDo/ieUGxnJ4N8Oe5pwveHrQNZRszdH0Vqqoj9iOE3YskH6"], ["created_at", "2020-05-15 16:33:28.075847"], ["updated_at", "2020-05-15 16:33:28.075847"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/headhunters/password" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"teste@teste.com.br"}, "commit"=>"Enviar instruções por email"}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "teste@teste.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."reset_password_token" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["reset_password_token", "cf85481d74a8ba70347fa76dd2227caf32369bd3a7d5684fcf27ad65c9065942"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Update (4.1ms)[0m  [1m[33mUPDATE "headhunters" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "headhunters"."id" = ?[0m  [["reset_password_token", "cf85481d74a8ba70347fa76dd2227caf32369bd3a7d5684fcf27ad65c9065942"], ["reset_password_sent_at", "2020-05-15 16:33:28.128507"], ["updated_at", "2020-05-15 16:33:28.129631"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering headhunters/mailer/reset_password_instructions.html.erb
+  Rendered headhunters/mailer/reset_password_instructions.html.erb (Duration: 6.5ms | Allocations: 258)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 16.7ms
+Delivered mail 5ebec458288c7_f7b7c22dc476fc@diana-desktop.mail (15.8ms)
+Date: Fri, 15 May 2020 13:33:28 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: teste@teste.com.br
+Message-ID: <5ebec458288c7_f7b7c22dc476fc@diana-desktop.mail>
+Subject: =?UTF-8?Q?Instru=C3=A7=C3=B5es_de_troca_de_senha?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello teste@teste.com.br!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost/headhunters/password/edit?reset_password_token=SGjH-5AizP7J4SPioGyF">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://www.example.com/headhunters/sign_in
+Completed 302 Found in 71ms (ActiveRecord: 6.4ms | Allocations: 4923)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.6ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 2777)
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 169)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 1711)
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.5ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 2657)
+Started GET "/headhunters/password/new" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering headhunters/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.5ms | Allocations: 136)
+  Rendered headhunters/passwords/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 2276)
+Started POST "/headhunters/password" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"headhunter"=>{"email"=>"emailaleatorio@gmail.com"}, "commit"=>"Enviar instruções por email"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "emailaleatorio@gmail.com"], ["LIMIT", 1]]
+  Rendering headhunters/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.8ms | Allocations: 189)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.5ms | Allocations: 135)
+  Rendered headhunters/passwords/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 800)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 23.1ms | ActiveRecord: 0.6ms | Allocations: 3268)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "giovana@gmail.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "giovana@gmail.com.br"], ["encrypted_password", "$2a$04$gEMw.d58/e.Ady6zdx/4h.Uyd.jJpho0EB8QUe11ByCC4oZKlaHpO"], ["created_at", "2020-05-15 16:33:28.500987"], ["updated_at", "2020-05-15 16:33:28.500987"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (1.0ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:33:28.629174"], ["updated_at", "2020-05-15 16:33:28.629174"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor PHP"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.1ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor PHP"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 1], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:33:28.665189"], ["updated_at", "2020-05-15 16:33:28.665189"], ["headhunter_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (0.6ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:33:28.678632"], ["updated_at", "2020-05-15 16:33:28.678632"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "email1@test.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (0.9ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "email1@test.com.br"], ["encrypted_password", "$2a$04$uIOEtr3QSqdVWPrqNh/7vevPTRBGu.xcijir2lbiCVCTVS7PPdjZi"], ["created_at", "2020-05-15 16:33:28.699085"], ["updated_at", "2020-05-15 16:33:28.699085"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor Java"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.0ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor Java"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 2], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:33:28.713160"], ["updated_at", "2020-05-15 16:33:28.713160"], ["headhunter_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 1649)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "giovana@gmail.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "giovana@gmail.com.br"], ["encrypted_password", "$2a$04$50v1XiAyayGvJ6XXOAudjO5.iAkrzzu5R0UByXRLwBNTQDGGB4Wuu"], ["created_at", "2020-05-15 16:33:28.895166"], ["updated_at", "2020-05-15 16:33:28.895166"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (4.0ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:33:28.909580"], ["updated_at", "2020-05-15 16:33:28.909580"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor PHP"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.1ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor PHP"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 1], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:33:28.928621"], ["updated_at", "2020-05-15 16:33:28.928621"], ["headhunter_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:28 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 1660)
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "giovana@gmail.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (2.8ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "giovana@gmail.com.br"], ["encrypted_password", "$2a$04$27F8p/TDykVjDMBErcVhkevFq4uC27iinEkt9XgWxDQEnnEo6AUbq"], ["created_at", "2020-05-15 16:33:29.003674"], ["updated_at", "2020-05-15 16:33:29.003674"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLevel Create (1.0ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-15 16:33:29.016438"], ["updated_at", "2020-05-15 16:33:29.016438"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHeadhunter Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "email2@test.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.0ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "email2@test.com.br"], ["encrypted_password", "$2a$04$QArldvRuEu/CGW0uoI0SceUvuDqg.51PBFBo2AGx75hEj2r0bkIki"], ["created_at", "2020-05-15 16:33:29.035980"], ["updated_at", "2020-05-15 16:33:29.035980"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobOpportunity Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor Rails"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.1ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor Rails"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 1], ["deadline", "2020-09-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-15 16:33:29.050349"], ["updated_at", "2020-05-15 16:33:29.050349"], ["headhunter_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:29 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 1648)
+  [1m[35m (3.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-05-15 13:33:29 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 1709)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m

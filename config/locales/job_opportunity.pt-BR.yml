@@ -1,0 +1,21 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      job_opportunity: Vaga
+    attributes:
+      job_opportunity:
+        title: Titulo
+        company: Empresa
+        description_job: Descrição da Vaga
+        skills: Habilidades
+        salary_range: Faixa Salárial
+        deadline: Data Límite
+        level: Nível
+        level_id: Nível
+        region: Região
+        benefits: Beneficios
+        office_functions: Funções do Cargo
+        company_expectations: Expectivas da Empresa
+        headhunter: Recrutador
+        headhunter_id: Recrutador
