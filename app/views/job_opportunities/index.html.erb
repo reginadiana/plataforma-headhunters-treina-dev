@@ -1,4 +1,4 @@
-<div class="customers-div">
+<div class="job-div">
 	<h1>Vagas Cadastradas</h1>
 
 	<% if headhunter_signed_in? %>
@@ -9,14 +9,15 @@
 		<p><%= 'Nenhuma vaga cadastrada' %></p>
 	<% end %>
 
-	<% @jobs.each do |job| %>
-		<div class="each-manufacturer">
-			<p><%= link_to job.title, job %></p>
-			<p><%= job.company %></p>
-			<p><%= job.region %></p>
-			<p><%= number_to_currency job.salary_range %></p>
-			<p><%= job.level.name %></p>
-			<p><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
-		</div>
-	<% end %>
+	<div class="job-cards">
+		<% @jobs.each do |job| %>
+			<div class="each-job">
+				<p class="job-title-home"><%= link_to job.title, job %></p>
+
+				<p><%= job.company %> - <%= job.region %> </p>
+				<p><%= number_to_currency job.salary_range %> - <%= job.level.name %></p>
+				<p class="details-job-home"><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
+			</div>
+		<% end %>
+	</div>
 </div>

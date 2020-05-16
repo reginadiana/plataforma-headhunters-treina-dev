@@ -1,0 +1,78 @@
+/*Index - Job */
+.job-div {
+	background-color: white;
+	height: 100vh;
+}
+
+/*Vagas Cadastradas*/
+.job-div h1 {
+	font-weight: 300;
+	color: gray;
+	text-align: center;
+	padding: 3%;
+}
+
+/*Todos os cards*/
+.job-cards {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+/*Cada card de vaga*/
+.each-job {
+	border-top: solid;
+	border-bottom: solid;
+	border-top-color: #d9d9d9;
+	border-bottom-color: #d9d9d9;
+	background-color: white;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+}
+
+.each-job:hover {
+	background-color: #efefef;
+}
+
+/*Titulo - Index*/
+.job-title-home {
+	font-size: 25px;
+}
+
+/*Titulo - Index*/
+.job-title-home a {
+	color: black;
+}
+
+/*Pre-informacoes da vaga*/
+.each-job p {
+	margin-bottom: 2%;
+}
+
+/*Detalhes da vaga*/
+.details-job-home {
+	text-align: center;
+	background-color: #a1d3cb;
+	border-radius: 25px;
+	padding: 3%;
+	width: 30%;
+	font-size: 15px;
+}
+
+.details-job-home a {
+	color: black;
+}
+
+/*Desktop*/
+@media screen and (min-width: 1000px){
+	.job-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	/*Detalhes da vaga*/
+	.details-job-home {
+		padding: 2%;
+	}
+}

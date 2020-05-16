@@ -10,13 +10,15 @@
 		<%= stylesheet_link_tag "home" %>
 		<%= stylesheet_link_tag "session_user" %>
 		<%= stylesheet_link_tag "session_headhunter" %>
+		<%= stylesheet_link_tag "jobs" %>
+
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 
 	<body>
     	<nav class="menu">
-		<div class="logo"><%= image_tag("logo.png", size: "150x50", alt: "Logo")%></div>
+		<div class="logo"><%= image_tag("logo.png", size: "125x35", alt: "Logo")%></div>
 		<li><%= link_to 'Home', root_path%></li>
 
 		<% if user_signed_in? %>

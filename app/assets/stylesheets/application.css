@@ -16,18 +16,36 @@
 	margin-left: 5%;
 }
 
+/*Menu de session - usuario nao logado*/
 .menu {
-	display: flex;
-	justify-content: space-between;
+	display: block;
+	box-shadow: none;
+	padding: 5%;
 }
-
-/*Itens*/
 .menu li {
-	margin: 5%;
+	margin: 0%;
+	margin-top: 3%;
+	margin-right: 3%;
 }
 
 .menu li a {
 	color: rgb(232, 44, 79);
+}
+
+/*Recursos*/
+.dropdown button {
+	width: 50%;
+	text-align: center;
+	background-color: rgb(232, 44, 79);
+	border-color: transparent;
+	height: 50px;
+	border-radius: 5px;
+	padding: 3%;
+	font-size: 15px;
+	color: white;
+	font-weight: bold;
+	margin: 3%;
+	margin-left: 0%;
 }
 
 .dropdown-content {
@@ -75,20 +93,30 @@
 
 /*Responsividade*/
 
-/*Desktop*/
-@media screen and (min-width: 1000px){
-
-	/*Mensagens de erro*/
-	.msg-error, .msg-alert  {
-		width: 20%;
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 700px){
+	/*Recursos*/
+	.dropdown button {
+		height: 60px;
 	}
 }
 
 /*Desktop*/
-@media screen and (min-width: 1000px){
-	.menu li {
-		margin: 0%;
-		margin-top: 3%;
-		margin-right: 3%;
+@media screen and (min-width: 700px){
+	/*Mensagens de erro*/
+	.msg-error, .msg-alert  {
+		width: 20%;
+	}
+	.menu {
+		display: flex;
+		justify-content: space-between;
+		padding: 0%;
+	}
+	/*Recursos*/
+	.dropdown button {
+		width: 150%;
+		height: 40px;
+		margin-top: 20%;
+		margin-left: -25%;
 	}
 }
