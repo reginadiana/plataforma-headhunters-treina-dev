@@ -4,7 +4,7 @@ feature 'Candidate delete profile' do
 
 	scenario 'successfully' do
 		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as @user, scope: :user
+		login_as user, scope: :user
 
 		candidate = create(:candidate, user: user)
 

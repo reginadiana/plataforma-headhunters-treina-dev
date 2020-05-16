@@ -4,7 +4,7 @@ feature 'Candidate edits profile' do
 
 	before :each do
 		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as @user, scope: :user
+		login_as user, scope: :user
 
 		candidate = create(:candidate, user: user)
 
@@ -31,7 +31,7 @@ feature 'Candidate edits profile' do
 	scenario 'and date of birth can not in future' do
 
 		fill_in 'Data de Nascimento', with: '04/06/2030'
-		click_on 'Enviar Vaga'
+		click_on 'Enviar Perfil'
 		expect(page).to have_content('Data de Nascimento não pode estar no futuro')
 	end
 

@@ -25191,3 +25191,23 @@ Processing by CandidatesController#index as HTML
 Completed 200 OK in 198ms (Views: 169.8ms | ActiveRecord: 5.5ms | Allocations: 12387)
 
 
+Started GET "/candidates/2" for 127.0.0.1 at 2020-05-16 19:40:00 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:94:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:14:in `show'
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Candidate"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:11
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:20
+  [1m[36mLevel Load (1.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:21
+  Rendered candidates/show.html.erb within layouts/application (Duration: 60.2ms | Allocations: 4186)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 191ms (Views: 162.1ms | ActiveRecord: 6.8ms | Allocations: 15265)
+
+
