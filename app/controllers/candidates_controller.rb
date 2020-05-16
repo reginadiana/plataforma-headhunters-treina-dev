@@ -50,6 +50,7 @@ class CandidatesController < ApplicationController
 		@candidate = Candidate.find(id)
 		@candidate.destroy
 
+		flash[:alert] = 'Perfil excluido. Para acessar a plataforma, crie outro perfil.'
 		redirect_to new_candidate_path
 	end
 

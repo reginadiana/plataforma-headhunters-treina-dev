@@ -1,90 +1,73 @@
 require 'rails_helper'
 
-feature 'Headhunter view jobs' do
+feature 'Headhunter view candidate profile' do
 
 	scenario 'successfully' do    
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
-
-		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
-		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
+		
+		candidate_a = create(:candidate, full_name: 'Thiago Ventura')
+		candidate_b = create(:candidate, full_name: 'Fabio Akita')
 	
 		visit root_path
+		click_on "Lista de Candidatos"
+		
+		expect(current_path).to eq candidates_path
 
-		expect(page).to have_content("Vagas Cadastradas")
-		expect(page).to have_link("Cadastrar nova Vaga")
-		expect(page).to have_link("Lista de Candidatos")
+		expect(page).to have_content("Thiago Ventura")
+		expect(page).to have_content("#{candidate_a.profession}")
+		expect(page).to have_content("#{candidate_a.level.name}")
 
-		expect(page).to have_content("Desenvolvedor PHP")
-		expect(page).to have_link "details-#{job_1.id}"
-
-		expect(page).not_to have_content("Desenvolvedor Java")
-		expect(page).not_to have_link "details-#{job_2.id}"
-
+		expect(page).to have_content("Fabio Akita")
+		expect(page).to have_content("#{candidate_b.profession}")
+		expect(page).to have_content("#{candidate_b.level.name}")
 	end
 
-	scenario 'and headhunter can not see other jobs' do    
-		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as headhunter, scope: :headhunter
-
-		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
-		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
-	
-		visit root_path
-
-		expect(page).to have_content("Vagas Cadastradas")
-		expect(page).to have_link("Cadastrar nova Vaga")
-		expect(page).to have_link("Lista de Candidatos")
-
-		expect(page).to have_content("Nenhuma vaga cadastrada")
-
-	end
-
-	scenario 'and any job was register' do    
+	scenario 'and any profile was register' do    
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 	
-		visit root_path
+		visit root_path	
+		click_on "Lista de Candidatos"
 
-		expect(page).to have_content("Nenhuma vaga cadastrada")
-
+		expect(page).to have_content("Nenhum perfil cadastrado")
 	end
 
 	scenario 'and view details' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
-		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter, salary_range: 5000)
+		candidate = create(:candidate, full_name: 'Thiago Ventura')
 
 		visit root_path
-		find("a#details-#{job_1.id}").click()
+		click_on "Thiago Ventura"
 
-		expect(page).to have_content("Desenvolvedor PHP")
-		expect(page).to have_content("#{job_1.company}")
-		expect(page).to have_content("#{job_1.region}")
-		expect(page).to have_content("R$ 5.000,00")
-		expect(page).to have_content("#{job_1.level.name}")
-		expect(page).to have_content("#{job_1.description_job}")
-		expect(page).to have_content("#{job_1.skills}")
-		expect(page).to have_content I18n.l(job_1.deadline)
-		expect(page).to have_content("#{job_1.benefits}")
-		expect(page).to have_content("#{job_1.office_functions}")
-		expect(page).to have_content("#{job_1.company_expectations}")
+		expect(current_path).to eq candidate_path(candidate)
 
-		expect(page).to have_link "edit-#{job_1.id}"
-		expect(page).to have_link "delete-#{job_1.id}"
+		expect(page).to have_content("#{candidate.full_name}")
+		expect(page).to have_content("#{candidate.social_name}")
+		expect(page).to have_content("#{candidate.level.name}")
+		expect(page).to have_content("#{candidate.profession}")
+		expect(page).to have_content("#{candidate.profile_description}")
+		expect(page).to have_content I18n.l(candidate.date_of_birth, format: :long)
+		expect(page).to have_content("#{candidate.experience}")
+		expect(page).to have_content("#{candidate.formation}")
+		expect(page).to have_content("#{candidate.courses}")
+
+		expect(page).not_to have_link "Editar Perfil"
+		expect(page).not_to have_link "Deletar Perfil"
 	end
 
 	scenario 'and return to home page' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
-		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
-	
+		candidate = create(:candidate, full_name: 'Thiago Ventura')
+
 		visit root_path
-		find("a#details-#{job_1.id}").click()
+		click_on "Thiago Ventura"
 		click_on "Voltar"
 
-		expect(current_path).to eq job_opportunities_path
+		expect(current_path).to eq candidates_path
 	end
 end

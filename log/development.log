@@ -24564,3 +24564,158 @@ FOREIGN KEY ("level_id")
   [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor React"], ["LIMIT", 1]]
   [1m[36mJobOpportunity Create (1.1ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor React"], ["company", "Vindi"], ["description_job", "Desenvolvimento de Interfaces Dinamicas"], ["skills", "Domínio da linguagem JavaScript e do framework React"], ["salary_range", 5000.0], ["level_id", 6], ["deadline", "2022-05-14"], ["region", "Mogi das Cruzes - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-16 21:38:11.247400"], ["updated_at", "2020-05-16 21:38:11.247400"], ["headhunter_id", 2]]
   [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-16 18:39:20 -0300
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0/98QI92ZH+KmOsxhf47fXT0XnFfyy8mwrnChHJrDFZDNlmILfiGZJJo1IcKo9rAyq7ULxmIPNDhkofT/Er3wA=="}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 270ms (ActiveRecord: 9.0ms | Allocations: 10635)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-16 18:39:20 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 105.8ms | Allocations: 6458)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 425ms (Views: 362.5ms | ActiveRecord: 0.0ms | Allocations: 19856)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-16 18:39:22 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 1121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 172ms (Views: 163.7ms | ActiveRecord: 0.0ms | Allocations: 8999)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-16 18:39:25 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 27.1ms | Allocations: 644)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 128.1ms | Allocations: 3051)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 433ms (Views: 405.0ms | ActiveRecord: 0.0ms | Allocations: 13139)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-16 18:39:44 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"aIqCXHWNZlYw72KJEC9JYe4qWcFjSGTW1S+QnGL7PH3qNyWIAYXaJUXoM51nLJUdCUS2bbpj3UlOV3G7cih2Ow==", "user"=>{"email"=>"camila@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "camila@yahoo.com.br"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 81ms (ActiveRecord: 2.1ms | Allocations: 1989)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"aIqCXHWNZlYw72KJEC9JYe4qWcFjSGTW1S+QnGL7PH3qNyWIAYXaJUXoM51nLJUdCUS2bbpj3UlOV3G7cih2Ow==", "user"=>{"email"=>"camila@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 42.8ms | Allocations: 985)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1053ms (Views: 207.9ms | ActiveRecord: 0.0ms | Allocations: 9186)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-16 18:40:02 -0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"sprIY9Yp5HG5d3MND44q9m/qv7KOBojDuN1MSw0PmvwiU+2rdKcGaqGHTLuA08tL0bA17MhFmzWb9gkcgy5hag==", "user"=>{"email"=>"camila@outlook.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "camila@outlook.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 673ms (ActiveRecord: 1.4ms | Allocations: 6723)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-16 18:40:03 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+Redirected to http://localhost:3000/candidates/new
+Completed 302 Found in 21ms (ActiveRecord: 1.0ms | Allocations: 1222)
+
+
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-16 18:40:03 -0300
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:86:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:12:in `new'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 248ms (ActiveRecord: 8.1ms | Allocations: 13184)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-16 18:40:03 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:83:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (1.2ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 353.6ms | Allocations: 19449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 501ms (Views: 439.6ms | ActiveRecord: 18.5ms | Allocations: 30605)
+
+
+Started GET "/candidates/1" for 127.0.0.1 at 2020-05-16 18:40:07 -0300
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:86:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:9:in `show'
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Candidate"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:5
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:15
+  Rendered candidates/show.html.erb within layouts/application (Duration: 121.8ms | Allocations: 7092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 243ms (Views: 212.8ms | ActiveRecord: 9.2ms | Allocations: 17748)
+
+
+Started DELETE "/candidates/1" for 127.0.0.1 at 2020-05-16 18:40:21 -0300
+Processing by CandidatesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LTj5FpHxkfcBd+8PHKgTImxeBdcnwHRtk26byMxv3sB/nqRcfctNCDHR6qsTv2kvm/t1/4OMkOnvmOGqbb8mSQ==", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:86:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:50:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/candidates_controller.rb:51:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Candidate"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:51:in `destroy'
+  [1m[36mCandidate Destroy (1.2ms)[0m  [1m[31mDELETE FROM "candidates" WHERE "candidates"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/candidates_controller.rb:51:in `destroy'
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/candidates_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/candidates/new
+Completed 302 Found in 87ms (ActiveRecord: 22.5ms | Allocations: 6306)
+
+
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-16 18:40:21 -0300
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:86:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:12:in `new'
+  Rendering candidates/new.html.erb within layouts/application
+  [1m[36mLevel Load (1.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels"[0m
+  ↳ app/views/candidates/_form.html.erb:39
+  Rendered candidates/_form.html.erb (Duration: 87.7ms | Allocations: 4245)
+  Rendered candidates/new.html.erb within layouts/application (Duration: 94.6ms | Allocations: 4566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 225ms (Views: 194.0ms | ActiveRecord: 3.1ms | Allocations: 14906)
+
+
