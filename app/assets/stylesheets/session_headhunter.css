@@ -1,0 +1,22 @@
+/*Titulo para recrutador*/
+.form-session .h2-form-headhunter {
+	color: rgb(232, 44, 79);	
+}
+
+/*Entrar - Button - Headhunters*/
+.form-headhunter .actions button {
+	border-color: rgb(232, 44, 79);
+	color: rgb(232, 44, 79);
+}
+
+.form-headhunter .actions button:hover {
+	border-color: transparent;
+	background-color: rgb(232, 44, 79);
+	color: white;
+}
+
+
+/*Criar conta - headhunter*/
+.form-headhunter .link-sign-up {
+	background-color: rgb(232, 44, 79);
+}

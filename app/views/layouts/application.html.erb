@@ -7,8 +7,10 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>	
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="home.css"/>  
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag "home" %>
+		<%= stylesheet_link_tag "session_user" %>
+		<%= stylesheet_link_tag "session_headhunter" %>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
 

@@ -1,5 +1,3 @@
-/*Mobile First*/
-
 /*Titulo e formulario*/
 .form-session {
 	display: block;
@@ -7,16 +5,22 @@
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 5%; 
 	width: 100%;
 }
 
-.form {
+.form-session h2 {
+	color: rgb(50, 86, 161);
+	margin-bottom: 5%;
+}
+
+.form, .form-headhunter {
 	margin-bottom: 3%;
 }
 
 /*Titulo e subtitulo*/
 .title {
-	color: #0e9f59;
+	color: rgb(50, 86, 161);
 	margin-bottom: 3%;
 }
 
@@ -38,25 +42,27 @@
 	margin-bottom: 3%;
 }
 
-/*Entrar - Button*/
+/*Entrar - Button - Candidatos*/
 .actions button {
 	
-	width: 70%;
-	background-color: #11c76f;
-	border-color: transparent;
+	width: 75%;
+	background-color: white;
+	border-color: rgb(50, 86, 161);
 	height: 50px;
-	border-radius: 25px;
-	font-size: 20px;
-	color: white;
+	border-radius: 5px;
+	font-size: 15px;
 	font-weight: bold;
+	color: rgb(50, 86, 161);
+	margin-bottom: 3%;
 }
 
 .actions button:hover {
-	transition: 0.5s;
-	background-color: #0e9f59;
+	border-color: transparent;
+	background-color: rgb(50, 86, 161);
+	color: white;
 }
 
-/*Link para criar uma conta*/
+/*Criar conta como candidato*/
 .link-sign-up {
 	align-elements: center;
 	text-align: center;
@@ -64,21 +70,22 @@
 	margin-right: auto;
 	margin-bottom: 3%;
 	padding: 3%;
-	width: 65%;
-	background-color: #efefef;
+	width: 70%;
+	background-color: rgb(50, 86, 161);
 	border-color: transparent;
-	border-radius: 25px;
-	font-size: 20px;
+	border-radius: 5px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
+/*Criar conta como candidato*/
 .link-sign-up:hover {
-	transition: 0.5s;
-	background-color: #dcdcdc;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+/*Criar conta como candidato*/
 .link-sign-up a {
-	color: #11c76f;
+	color: white;
 }
 
 /*Link para enviar instrucoes por e-mail*/
@@ -91,32 +98,11 @@
 	margin-bottom: 5%;
 }
 
-/*Mensagens de erro e alerta*/
-.msg-error, .msg-alert  {
-	align-elements: center;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	color: red;
-	text-align: center;
-	background-color: #efefef;
-	padding: 1%;
-	width: 70%;
-	margin-bottom: 3%;
-}
-
-/*Mensagens de erro*/
-.msg-alert {
-	color: orange;
-	background-color: #f9f9f9;
-	font-weight: bold;
-}
-
 /*Responsividade*/
 
 /*Desktop*/
 @media screen and (min-width: 1000px){
-	/*Campos*/
+/*Campos*/
 	.field input, .actions button {
 		width: 30%;
 		margin-bottom: 1%;
@@ -127,6 +113,8 @@
 	.actions button {
 		width: 20%;
 	}
+
+	/*Criar conta como candidato*/
 	.link-sign-up {
 		width: 18%;
 		padding: 1%;
@@ -142,11 +130,6 @@
 		width: 30%;
 		margin-top: 0%;
 	}	
-
-	/*Mensagens de erro*/
-	.msg-error, .msg-alert  {
-		width: 20%;
-	}
 }
 
 /*Tablet*/
@@ -160,11 +143,12 @@
 
 	/*Entrar - Button*/
 	.actions button {
-		width: 30%;
+		width: 50%;
 	}
 
+	/*Criar conta como candidato*/
 	.link-sign-up {
-		width: 25%;
+		width: 45%;
 		padding: 2%;
 	}
 
@@ -174,4 +158,3 @@
 		margin-top: 0%;
 	}
 }
-

@@ -47,3 +47,15 @@
 	color: rgb(50, 86, 161);
 }
 
+/*Desktop*/
+@media screen and (min-width: 1000px){
+	.home-page {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.div-home-candidato, .div-home-recrutador {
+		margin: auto;
+		margin-bottom: 5%;
+	}
+}
+
