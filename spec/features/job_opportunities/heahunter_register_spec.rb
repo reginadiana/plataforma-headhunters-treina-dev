@@ -75,9 +75,7 @@ feature 'Headhunter register valid job' do
 		expect(page).to have_content('Faixa Salárial não pode ficar em branco')
 		expect(page).to have_content('Data de Contratação não pode ficar em branco')
 		expect(page).to have_content('Região não pode ficar em branco')
-		expect(page).to have_content('Beneficios não pode ficar em branco')
 		expect(page).to have_content('Funções do Cargo não pode ficar em branco')
-		expect(page).to have_content('Expectivas da Empresa não pode ficar em branco')
 
 	end
 

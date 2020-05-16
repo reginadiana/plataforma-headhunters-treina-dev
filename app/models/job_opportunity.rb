@@ -11,9 +11,7 @@ class JobOpportunity < ApplicationRecord
 		:level,
 		:level_id,
 		:region,
-		:benefits,
 		:office_functions,
-		:company_expectations,
 		:headhunter,
 		:headhunter_id , presence: true
 

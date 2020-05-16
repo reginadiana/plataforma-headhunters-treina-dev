@@ -19499,3 +19499,101 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 73ms (Views: 66.6ms | ActiveRecord: 0.0ms | Allocations: 8985)
 
 
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-16 00:37:37 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.1ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 114.8ms | ActiveRecord: 0.0ms | Allocations: 9113)
+
+
+Started GET "/headhunters/sign_up" for 127.0.0.1 at 2020-05-16 00:37:39 -0300
+Processing by Headhunters::RegistrationsController#new as HTML
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 6.1ms | Allocations: 219)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.3ms | Allocations: 118)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 25.8ms | Allocations: 1793)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 86.6ms | ActiveRecord: 0.0ms | Allocations: 10897)
+
+
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-16 00:37:43 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"YV0c04aQcO3RAjvbaoq/5eeISoDxFR46b2wAPrvMpibCyztQ/Vg+sIAjdJ1etWPofHomDdCQwEkzkSvWqJ0N7g==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeadhunter Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  Rendering headhunters/registrations/new.html.erb within layouts/application
+  Rendered headhunters/shared/_error_messages.html.erb (Duration: 5.2ms | Allocations: 202)
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.2ms | Allocations: 81)
+  Rendered headhunters/registrations/new.html.erb within layouts/application (Duration: 24.2ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1057ms (Views: 104.1ms | ActiveRecord: 2.2ms | Allocations: 16646)
+
+
+Started POST "/headhunters" for 127.0.0.1 at 2020-05-16 00:38:10 -0300
+Processing by Headhunters::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"iZb8OC8mEwr5Y+PONpF6kQUXvWDYtSuafTu3o1e+zuAn2Jtwo8AkAAcmR8ICXwd0Mnni8oAEyJi+UgQ7Q/ws4w==", "headhunter"=>{"email"=>"camila@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeadhunter Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "camila@gmail.com"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (5.8ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "camila@gmail.com"], ["encrypted_password", "$2a$11$ilTLfwg1dOKnhG/3672ziO5i.0iOIsnI2pASetaBV6bSYbPgoPboq"], ["created_at", "2020-05-16 03:38:11.215045"], ["updated_at", "2020-05-16 03:38:11.215045"]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1147ms (ActiveRecord: 21.6ms | Allocations: 8247)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-16 00:38:11 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (1.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 22ms (ActiveRecord: 1.5ms | Allocations: 1257)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-16 00:38:11 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 3], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 3]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 28.9ms | Allocations: 1699)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 112.5ms | ActiveRecord: 3.7ms | Allocations: 11292)
+
+
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandidates (20200516132216)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar, "social_name" varchar, "date_of_birth" date, "profile_description" varchar, "experience" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_01dfdc3a16"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200516132216"]]
+  [1m[35m (20.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20200516132552)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200516132552"]]
+  [1m[35m (21.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
