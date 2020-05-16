@@ -1,0 +1,18 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      candidate: Candidato 
+    attributes:
+      candidate:
+        full_name: Nome Completo
+        social_name: Nome Social
+        date_of_birth: Data de Aniversário
+        profile_description: Descrição do Perfil
+        experience: Experiência
+        level: Nível
+        level_id: Nível
+        formation: Formação
+        courses: Cursos
+        user: Usuário
+        user_id: Usuário
