@@ -23,7 +23,7 @@ feature 'User create a profile' do
 
 			fill_in 'Nome Completo', with: 'Larissa Fernandes'
 			fill_in 'Nome Social', with: 'Larissa'
-			fill_in 'Data de Aniversário', with: '03/04/1998'
+			fill_in 'Data de Nascimento', with: '03/04/1998'
 			fill_in 'Profissão', with: 'Gerente Administrativo'
 			fill_in 'Descrição do Perfil', with: 'Enquanto fiz parte da equipe da empresa ABC, contribui para a melhoria dos processos administrativos sob a supervisão do Controller.'
 			fill_in 'Experiência', with: 'Atuo a 10 anos com desenvolvimento de sistemas para a Microsoft'
@@ -42,7 +42,7 @@ feature 'User create a profile' do
 
 			fill_in 'Nome Completo', with: ''
 			fill_in 'Nome Social', with: ''
-			fill_in 'Data de Aniversário', with: ''
+			fill_in 'Data de Nascimento', with: ''
 			fill_in 'Profissão', with: ''
 			fill_in 'Descrição do Perfil', with: ''
 			fill_in 'Experiência', with: ''
@@ -53,7 +53,7 @@ feature 'User create a profile' do
 
 			expect(page).to have_content('Nome Completo não pode ficar em branco')
 			expect(page).to have_content('Nome Social não pode ficar em branco')
-			expect(page).to have_content('Data de Aniversário não pode ficar em branco')
+			expect(page).to have_content('Data de Nascimento não pode ficar em branco')
 			expect(page).to have_content('Profissão não pode ficar em branco')
 			expect(page).to have_content('Descrição do Perfil não pode ficar em branco')
 			expect(page).to have_content('Formação não pode ficar em branco')
@@ -64,9 +64,9 @@ feature 'User create a profile' do
 		end
 		scenario 'and date of birth can not in future' do
 
-			fill_in 'Data de Aniversário', with: '04/06/2025'
+			fill_in 'Data de Nascimento', with: '04/06/2025'
 			click_on 'Enviar Perfil'
-			expect(page).to have_content('Data de Aniversário não pode estar no futuro')
+			expect(page).to have_content('Data de Nascimento não pode estar no futuro')
 		end
 
 end 

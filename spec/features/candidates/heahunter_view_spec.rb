@@ -40,6 +40,7 @@ feature 'Headhunter view candidate profile' do
 		candidate = create(:candidate, full_name: 'Thiago Ventura')
 
 		visit root_path
+		click_on "Lista de Candidatos"
 		click_on "Thiago Ventura"
 
 		expect(current_path).to eq candidate_path(candidate)
@@ -65,6 +66,7 @@ feature 'Headhunter view candidate profile' do
 		candidate = create(:candidate, full_name: 'Thiago Ventura')
 
 		visit root_path
+		click_on "Lista de Candidatos"
 		click_on "Thiago Ventura"
 		click_on "Voltar"
 

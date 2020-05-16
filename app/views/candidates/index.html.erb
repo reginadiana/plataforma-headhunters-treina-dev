@@ -1,0 +1,26 @@
+<div class="job-div">
+  <h1>Encontre o Melhor Perfil</h1>
+
+  <% if @candidates.empty? %>
+    <p><%= 'Nenhum perfil cadastrado' %></p>
+  <% end %>
+
+  <div class="job-cards">
+    <% @candidates.each do |candidate| %>
+     <div>
+	<div>
+	  <% if candidate.avatar.present? %>
+		<%= image_tag(candidate.avatar, size: "320x200", alt: "Foto de perfil do candidato") %>
+	  <% else %>
+		<%= image_tag("sem-imagem-avatar.png", size: "320x200", alt: "Sem foto de perfil") %>
+	  <% end %>
+	  </div>
+	        <div class="description-candidate">
+		  <p><%= link_to candidate.full_name, candidate %></p>
+		  <p><%= candidate.profession %></p>
+		  <p><%= candidate.level.name %></p>
+		</div>
+	  </div>
+   <% end %>
+  </div>
+</div>

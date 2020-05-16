@@ -6,7 +6,13 @@ class CandidatesController < ApplicationController
 		@candidates = Candidate.all
 	end
 	def show
-	    	@candidate = Candidate.find_by(user: current_user)
+		if user_signed_in?
+	    		@candidate = Candidate.find_by(user: current_user)
+		end
+
+		if headhunter_signed_in?
+			@candidate = Candidate.find_by(id)
+		end
 	end
 	def new
 		@profile = Candidate.find_by(user: current_user)

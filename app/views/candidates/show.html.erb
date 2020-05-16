@@ -1,4 +1,10 @@
-<h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
+<% if user_signed_in? %>
+	<h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
+<% end %>
+
+<% if headhunter_signed_in? %>
+	<h3 class="link-to-back"><%= link_to 'Voltar', candidates_path %></h3>
+<% end %>
 
 <div>
 	<div>
@@ -20,6 +26,7 @@
 <div>
 	<h2>Olá! Me chamo <%= @candidate.social_name %></h2>
 	<h4><%= Candidate.human_attribute_name(:profile_description) %></h4>
+	<p><%= @candidate.profile_description %></p>
 </div>
 <div>
 	<h4><%= Candidate.human_attribute_name(:experience) %></h4>
