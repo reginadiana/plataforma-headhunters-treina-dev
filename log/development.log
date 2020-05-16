@@ -22740,3 +22740,67 @@ Processing by CandidatesController#new as HTML
 Completed 200 OK in 303ms (Views: 120.1ms | ActiveRecord: 13.8ms | Allocations: 33491)
 
 
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-16 16:04:25 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:85:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:12:in `new'
+  Rendering candidates/new.html.erb within layouts/application
+  [1m[36mLevel Load (1.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels"[0m
+  ↳ app/views/candidates/_form.html.erb:35
+  Rendered candidates/_form.html.erb (Duration: 3802.1ms | Allocations: 190790)
+  Rendered candidates/new.html.erb within layouts/application (Duration: 3811.6ms | Allocations: 191116)
+Completed 500 Internal Server Error in 4237ms (ActiveRecord: 5.0ms | Allocations: 208696)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x0250edb0>:0x0250c0f8>
+Did you mean?  for
+               fork):
+    40: 			<%= f.text_area :courses %>
+    41: 		</div>
+    42: 		<div class="field">
+    43: 			<%= form.label :avatar %>
+    44: 			<%= form.file_field :avatar %>
+    45: 		</div>
+    46: 
+  
+app/views/candidates/_form.html.erb:43
+app/views/candidates/_form.html.erb:6
+app/views/candidates/new.html.erb:5
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-16 16:04:57 -0300
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:85:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:12:in `new'
+  Rendering candidates/new.html.erb within layouts/application
+  [1m[36mLevel Load (1.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels"[0m
+  ↳ app/views/candidates/_form.html.erb:35
+  Rendered candidates/_form.html.erb (Duration: 172.2ms | Allocations: 5866)
+  Rendered candidates/new.html.erb within layouts/application (Duration: 178.3ms | Allocations: 6182)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 432ms (Views: 387.0ms | ActiveRecord: 3.8ms | Allocations: 17802)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-16 16:20:33 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QQm6isDHtEo3lIYLai6k8N3dRHd4FFurXs2U9WCxcW3OnP3rYEQCWRXCo1NqwNZYBqIT1sRQddBJmwmuRi1+cw=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.9ms | Allocations: 2424)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-16 16:20:33 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 132ms (Views: 125.9ms | ActiveRecord: 0.0ms | Allocations: 9845)
+
+

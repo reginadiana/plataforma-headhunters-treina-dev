@@ -53,7 +53,7 @@ feature 'Headhunter register valid job' do
 		expect(page).to have_content('Titulo já está em uso')
 	end
 
-	scenario 'and nothing can be blank' do
+	scenario 'and can not be blank' do
 
 		fill_in 'Titulo', with: ''
 		fill_in 'Empresa', with: ''

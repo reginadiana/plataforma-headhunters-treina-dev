@@ -25,7 +25,7 @@ class CandidatesController < ApplicationController
 
 		if @candidate.save
 			flash[:notice] = 'Perfil criado com sucesso'	
-		    	redirect_to @candidate
+		    	redirect_to job_opportunities_path
 		else 
 			@levels = Level.all
 			render :new
@@ -65,7 +65,8 @@ class CandidatesController < ApplicationController
 			:formation,
 			:level_id,
 			:courses,
-			:user_id )
+			:user_id,
+			:avatar)
 	end
 
 	def id

@@ -28,25 +28,6 @@ feature 'Candidate authentication' do
 			expect(page).to have_link('Sair')
 			expect(current_path).to eq(job_opportunities_path)
 		end
-		scenario "but don't have a profile" do
-
-			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
-			
-			expect(page).to have_content('Acessar conta como candidato')
-
-			fill_in 'Email', with: user.email
-			fill_in 'Senha', with: user.password
-
-			within 'form' do
-				click_on 'Entrar'
-			end
-
-			expect(page).to have_content('Login efetuado com sucesso!')
-			expect(page).to have_link('Sair')
-
-			expect(page).not_to have_content('Recursos para Candidato')
-			expect(current_path).to eq(new_candidate_path)
-		end
 
 		scenario 'and must fill in all fields' do
 
