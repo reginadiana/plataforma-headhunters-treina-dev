@@ -27,8 +27,9 @@ class CandidatesController < ApplicationController
 			flash[:notice] = 'Perfil criado com sucesso'	
 		    	redirect_to @candidate
 		else 
+			@levels = Level.all
 			render :new
-		 	end
+		end
 	end
 	def edit
 		@candidate = Candidate.find(id)
@@ -55,7 +56,7 @@ class CandidatesController < ApplicationController
 	private
 	
 	def require_params
-		params.require(:cadidate).permit(
+		params.require(:candidate).permit(
 			:full_name, 
 			:social_name,
 			:date_of_birth,
