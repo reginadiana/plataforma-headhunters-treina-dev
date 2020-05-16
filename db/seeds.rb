@@ -9,8 +9,35 @@ especialista = Level.create!(name: 'Especialista')
 Level.create!(name: 'Diretor')
 
 # Candidatos
-User.create!(email: 'dianaregina22@outlook.com.br', password: '123456')
-User.create!(email: 'dianaregina22@yahoo.com.br', password: '123456')
+user_a = User.create!(email: 'camila@outlook.com.br', password: '123456')
+user_b = User.create!(email: 'bianca@yahoo.com.br', password: '123456')
+
+# Perfils
+Candidate.create!(
+	full_name: "Camila de Lucas",
+	social_name: "Camila",
+	date_of_birth: "01/04/1990",
+	profession: "Desenvolvimento Frontend",
+	profile_description: "Excelentes capacidades de análise, escrita, raciocínio e de tecnologia da informação",
+	level: pleno,
+	experience: "Experiencia em desenvolvimento de interfaces na empresa Red Ventures",
+	formation: "UNESP - Ciencias da Computação",
+	courses: "",
+	user: user_a
+)
+
+Candidate.create!(
+	full_name: "Bianca Rosa",
+	social_name: "Bianca",
+	date_of_birth: "01/04/1985",
+	profession: "Operador de CNC",
+	profile_description: "Estudante de sistemas de informação hoje estou em busca de colocar em prática os aprendizados obtidos durante a formação",
+	level: pleno,
+	experience: "Experiencia como programador de CNC na empresa Flej",
+	formation: "Unifesp - Automação",
+	courses: "AutoCAD",
+	user: user_a
+)
 
 # Recrutadores
 headhunter_a = Headhunter.create!(email: 'lucas22@outlook.com.br', password: '111111')

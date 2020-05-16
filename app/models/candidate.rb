@@ -6,6 +6,7 @@ class Candidate < ApplicationRecord
 	validates :full_name, 
 		  :social_name,
 		  :date_of_birth,
+		  :profession,
 		  :profile_description,
 		  :formation, presence: true
 

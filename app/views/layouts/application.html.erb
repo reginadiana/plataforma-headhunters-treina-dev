@@ -21,16 +21,17 @@
 		<div class="logo"><%= image_tag("logo.png", size: "125x35", alt: "Logo")%></div>
 
 		<% if user_signed_in? %>
-
-			<% if Candidate.find_by(user: current_user)%>
+			<% candidate = Candidate.find_by(user: current_user)%>
+			<% if candidate %>
 				<li><%= link_to 'Home', root_path%></li>
 				<div class="dropdown">
 					<button>Recursos para Candidato</button>
 					<div class="dropdown-content">
-						<li><%= link_to 'Lista de Vagas', root_path%></li>
+						<li><%= link_to 'Lista de Vagas', job_opportunities_path %></li>
 						<li><%= link_to 'Minhas Vagas', root_path%></li>
 						<li><%= link_to 'Minhas Propostas', root_path%></li>
 						<li><%= link_to 'Meus Feedbacks', root_path%></li>
+						<li><%= link_to 'Meu Perfil', candidate_path(candidate) %></li>
 					</div>
 				</div>
 			<% end %> 
