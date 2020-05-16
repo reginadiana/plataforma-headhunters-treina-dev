@@ -6,7 +6,7 @@ class CandidatesController < ApplicationController
 		@candidates = Candidate.all
 	end
 	def show
-	    	@candidate = Candidate.where(user: current_user)
+	    	@candidate = Candidate.find_by(user: current_user)
 	end
 	def new
 		@profile = Candidate.find_by(user: current_user)

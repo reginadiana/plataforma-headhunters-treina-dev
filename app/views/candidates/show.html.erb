@@ -1,1 +1,42 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
+
+<div>
+	<div>
+		<% if @candidate.avatar.present? %>
+			<%= image_tag(@candidate.avatar, size: "320x200", alt: "Foto de perfil do candidato") %>
+		<% else %>
+			<%= image_tag("sem-imagem-avatar.png", size: "320x200", alt: "Sem foto de perfil") %>
+		<% end %>
+	</div>
+	<div class="description-candidate">
+		<p><%= @candidate.full_name %></p>
+		<p><%= @candidate.profession %></p>
+		<p><%= @candidate.user.email %></p>
+		<p><%= @candidate.level.name %></p>
+		<p><%= @candidate.date_of_birth && localize(@candidate.date_of_birth, format: :long) %></p>
+	</div>
+</div>
+
+<div>
+	<h2>Olá! Me chamo <%= @candidate.social_name %></h2>
+	<h4><%= Candidate.human_attribute_name(:profile_description) %></h4>
+</div>
+<div>
+	<h4><%= Candidate.human_attribute_name(:experience) %></h4>
+	<p><%= @candidate.experience %></p>
+</div>
+<div>
+	<h4><%= Candidate.human_attribute_name(:formation) %></h4>
+	<p><%= @candidate.formation %></p>
+</div>
+<div>
+	<h4><%= Candidate.human_attribute_name(:courses) %></h4>
+	<p><%= @candidate.courses %></p>
+</div>
+
+<% if user_signed_in? %>
+	<p><%= link_to 'Editar Perfil', edit_candidate_path(@candidate), id: "edit-#{@candidate.id}"%></p>
+	<p><%= link_to 'Deletar Perfil', candidate_path(@candidate) , method: :delete, id: "delete-#{@candidate.id}"%></p>
+<% else %>
+	<p><%= link_to 'Enviar Proposta', root_path %></p>
+<% end %>

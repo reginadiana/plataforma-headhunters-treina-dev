@@ -36,7 +36,7 @@ Candidate.create!(
 	experience: "Experiencia como programador de CNC na empresa Flej",
 	formation: "Unifesp - Automação",
 	courses: "AutoCAD",
-	user: user_a
+	user: user_b
 )
 
 # Recrutadores
