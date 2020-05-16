@@ -11,6 +11,7 @@
 	padding: 3%;
 	background-color: rgb(232, 44, 79); /*Rosa*/
 	color: white;
+
 }
 
 .div-home-candidato {
@@ -54,7 +55,6 @@
 	}
 
 	.div-home-candidato, .div-home-recrutador {
-		margin: auto;
 		margin-bottom: 5%;
 	}
 }

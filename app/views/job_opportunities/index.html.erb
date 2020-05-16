@@ -2,7 +2,7 @@
 	<h1>Vagas Cadastradas</h1>
 
 	<% if headhunter_signed_in? %>
-		<h3><%= link_to 'Cadastrar nova Vaga', new_job_opportunity_path %></h3>
+		<h3 class="link-new-job"><%= link_to 'Cadastrar nova Vaga', new_job_opportunity_path %></h3>
 	<% end %>
 
 	<% if @jobs.empty? %>

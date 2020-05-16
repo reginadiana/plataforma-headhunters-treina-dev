@@ -39,7 +39,7 @@
 	background-color: rgb(232, 44, 79);
 	border-color: transparent;
 	height: 50px;
-	border-radius: 5px;
+	border-radius: 25px;
 	padding: 3%;
 	font-size: 15px;
 	color: white;
@@ -98,6 +98,12 @@
 	/*Recursos*/
 	.dropdown button {
 		height: 60px;
+	}
+	/*Recursos*/
+	.dropdown button {
+		width: 40%;
+		height: 40px;
+		padding: 0%;
 	}
 }
 
