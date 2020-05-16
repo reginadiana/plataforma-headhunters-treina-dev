@@ -8,12 +8,8 @@ class JobOpportunity < ApplicationRecord
 		:skills,
 		:salary_range,
 		:deadline,
-		:level,
-		:level_id,
 		:region,
-		:office_functions,
-		:headhunter,
-		:headhunter_id , presence: true
+		:office_functions, presence: true
 
 	validates :title, uniqueness: true
 	validates :salary_range , :numericality => { greater_than: 1045 }

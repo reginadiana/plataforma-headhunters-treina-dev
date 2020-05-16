@@ -60,13 +60,11 @@ class JobOpportunitiesController < ApplicationController
 			:skills,
 			:salary_range,
 			:deadline,
-			:level,
 			:level_id,
 			:region,
 			:benefits,
 			:office_functions,
 			:company_expectations,
-			:headhunter,
 			:headhunter_id )
 	end
 
@@ -74,12 +72,13 @@ class JobOpportunitiesController < ApplicationController
 		params[:id]
 	end
 
+	# Bloqueia gerenciamento de vagas pelo candidato
 	def authenticate_candidate
-	    
 	    if user_signed_in?
-	      redirect_to job_opportunities_path
+		redirect_to job_opportunities_path
 	    end
 	end
+
 	def authenticate_visitor
 		if not user_signed_in? 
 			if not headhunter_signed_in?

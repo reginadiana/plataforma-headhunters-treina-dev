@@ -5,6 +5,7 @@ feature 'Candidate can not' do
 		@job_opportunity = create(:job_opportunity, title: 'Cientista de Dados')
 		user = create(:user)
 		login_as user, scope: :user
+		candidate = create(:candidate, user: user)
 	end
 	
 	scenario 'to create some job by route' do

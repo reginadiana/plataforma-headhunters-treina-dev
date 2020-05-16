@@ -1,0 +1,45 @@
+<% @candidate.errors.full_messages.each do |message| %>
+	<p class="msg-error"><%= message %></p>
+<% end %>
+
+<div class="form">
+	<%= form_with model: @candidate, local: true do |f| %>
+		<div class="field">
+			<%= f.label :full_name %>
+			<%= f.text_field :full_name %>
+		</div>
+		<div class="field">
+			<%= f.label :social_name%>
+			<%= f.text_field :social_name %>
+		</div>
+		<div class="field">
+			<%= f.label :date_of_birth%>
+			<%= f.date_field :date_of_birth %>
+		</div>
+		<div class="field">
+			<%= f.label :profile_description %>
+			<%= f.text_area :profile_description %>
+		</div>
+		<div class="field">
+			<%= f.label :experience%>
+			<%= f.text_area :experience %>
+		</div>
+		<div class="field">
+			<%= f.label :formation %>
+			<%= f.text_area :formation %>
+		</div>
+		
+		<div class="selectors">
+			<div class="field">
+				<%= f.label :level_id %>
+				<%= f.collection_select :level_id, @levels, :id, :name %>
+			</div>
+		</div>
+		<div class="field">
+			<%= f.label :courses %>
+			<%= f.text_area :courses %>
+		</div>
+
+		<button class="button-enviar-form" type="submit">Enviar Perfil</button>
+	<% end %>
+</div>

@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
 	def index
-	    if user_signed_in? or headhunter_signed_in?
-		redirect_to job_opportunities_path
-	    end
+		if headhunter_signed_in?
+			redirect_to job_opportunities_path
+
+		elsif user_signed_in?
+			redirect_to new_candidate_path
+		end
 	end
 end

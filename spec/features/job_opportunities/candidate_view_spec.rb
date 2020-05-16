@@ -3,8 +3,10 @@ require 'rails_helper'
 feature 'Candidate view jobs' do
 
 	scenario 'successfully' do    
-		candidate = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as candidate, scope: :user
+		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as user, scope: :user
+
+		candidate = create(:candidate, user: user)
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
 		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
@@ -24,8 +26,10 @@ feature 'Candidate view jobs' do
 	end
 
 	scenario 'and any job was register' do    
-		candidate = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as candidate, scope: :user
+		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as user, scope: :user
+
+		candidate = create(:candidate, user: user)
 	
 		visit root_path
 
@@ -35,8 +39,10 @@ feature 'Candidate view jobs' do
 	end
 
 	scenario 'and view details' do
-		candidate = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as candidate, scope: :user
+		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as user, scope: :user
+
+		candidate = create(:candidate, user: user)
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', salary_range: 5000)
 
@@ -61,8 +67,10 @@ feature 'Candidate view jobs' do
 	end
 
 	scenario 'and return to home page' do
-		candidate = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as candidate, scope: :user
+		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as user, scope: :user
+
+		candidate = create(:candidate, user: user)
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
 	
