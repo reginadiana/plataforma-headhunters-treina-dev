@@ -67,6 +67,7 @@
 | benefits | string | Beneficios | |
 | office_functions | string | Funções do Cargo | Obrigatório |
 | company_expectations | string | Expectavidas da Empresa | |
+| headhunter | object | Recrutador | |
 | job_opportunity_id | integer |  | |
 
 | level | type | PT-BR-i18n | Validações |
@@ -83,6 +84,7 @@
 | profile_description | string | Descrição | Obrigatório |
 | experience | string | Experiencia | |
 | photograph | image | Avatar | Aceita tipos .png e .jpg |
+| user | object | Candidato | |
 | candidate_id | integer | | |
 
 > Quando uma candidatura é criada 
