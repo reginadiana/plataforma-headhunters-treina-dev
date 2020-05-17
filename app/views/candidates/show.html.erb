@@ -9,7 +9,7 @@
 <%= render 'profile' %>
 
 <% if headhunter_signed_in? %>
-	<%= link_to 'Deixar Comentario', new_candidate_comment_path(@candidate) %>
+	<%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %>
 <% end %>
 
 <% if @comments.any? %>
@@ -23,7 +23,7 @@
 			<p><%= link_to 'Deletar', 
 				[@candidate, comment], 
 				method: :delete, 
-				id: "edit-#{comment.id}"%></p>
+				id: "delete-#{comment.id}"%></p>
 		<% end %>
 	  <% end %>
 	<% end %>

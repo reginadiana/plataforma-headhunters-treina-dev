@@ -10,7 +10,7 @@ feature 'Headhunter register valid comment' do
 
 		visit candidate_path(candidate)
 
-		click_on 'Deixar Comentario'
+		click_on 'Deixar Comentário'
 	end
 
 	scenario 'successfully' do
@@ -26,7 +26,7 @@ feature 'Headhunter register valid comment' do
 
 	scenario 'and can not be blank' do
 
-		fill_in 'Conteúdo do Comentário', with: 'Podemos marcar uma entrevista?'
+		fill_in 'Conteúdo do Comentário', with: ''
 
 		click_on 'Publicar'
 

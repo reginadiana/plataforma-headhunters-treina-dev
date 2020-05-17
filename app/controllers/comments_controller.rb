@@ -20,21 +20,6 @@ class CommentsController < ApplicationController
 		
 	end
 
-	def edit
-		@comment = Comment.find(id)
-	end
-
-	def update
-		@comment = Comment.find(id)
-
-		if @comment.update(require_params)
-			flash[:notice] = 'Comentário atualizado'
-			redirect_to @candidate
-		else
-			render :edit
-		end
-	end
-
 	def destroy
 		@comment = Comment.find(id)
 		@comment.destroy

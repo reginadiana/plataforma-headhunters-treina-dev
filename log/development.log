@@ -25752,3 +25752,19 @@ FOREIGN KEY ("level_id")
   [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mComment Create (1.7ms)[0m  [1m[32mINSERT INTO "comments" ("candidate_id", "headhunter_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["candidate_id", 1], ["headhunter_id", 2], ["content", "Ola, gostei do seu perfil"], ["created_at", "2020-05-17 16:55:55.877212"], ["updated_at", "2020-05-17 16:55:55.877212"]]
   [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/candidates/1/comments/new" for 127.0.0.1 at 2020-05-17 18:56:55 -0300
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#new as HTML
+  Parameters: {"candidate_id"=>"1"}
+  [1m[36mCandidate Load (1.4ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:42:in `find_candidate'
+  Rendering comments/new.html.erb within layouts/application
+  Rendered comments/_form.html.erb (Duration: 50.4ms | Allocations: 3684)
+  Rendered comments/new.html.erb within layouts/application (Duration: 58.7ms | Allocations: 4218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:41
+Completed 200 OK in 733ms (Views: 425.2ms | ActiveRecord: 18.7ms | Allocations: 42124)
+
+
