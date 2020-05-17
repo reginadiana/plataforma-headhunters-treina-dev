@@ -11,6 +11,7 @@ class JobOpportunitiesController < ApplicationController
 	end
 	def show
 	    	@job = JobOpportunity.find(id)
+		@applyjob = ApplyJob.where(job_opportunity: @job)
 	end
 	def new
 		@job = JobOpportunity.new

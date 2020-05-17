@@ -26,6 +26,17 @@
 <% if headhunter_signed_in? %>
 	<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
 	<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
+
+	<p>Candidatos:</p>
+
+	<% if @applyjob.empty? %>
+		<p class="msg-error">Nenhuma candidatura foi realizada</p>
+	<% else %>
+		<% @applyjob.each do |apply| %>
+			<%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %>
+			<%= apply.candidate.profession %>				
+		<% end %>
+	<% end %>
 <% else %>
 	<p><%= link_to 'Quero me candidatar', root_path %></p>
 <% end %>

@@ -2,6 +2,8 @@ class Candidate < ApplicationRecord
 	belongs_to :level
 	belongs_to :user
 	has_one_attached :avatar
+	
+	enum feedback: { featured: 0, not_highlighted: 1 } 
 
 	validates :full_name, 
 		  :social_name,

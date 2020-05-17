@@ -17,7 +17,7 @@ candidate_a = Candidate.create!(
 	full_name: "Camila de Lucas",
 	social_name: "Camila",
 	date_of_birth: "01/04/1990",
-	profession: "Desenvolvimento Frontend",
+	profession: "Desenvolvedora Frontend",
 	profile_description: "Excelentes capacidades de análise, escrita, raciocínio e de tecnologia da informação",
 	level: pleno,
 	experience: "Experiencia em desenvolvimento de interfaces na empresa Red Ventures",
