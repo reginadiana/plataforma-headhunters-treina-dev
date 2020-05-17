@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController 
 	before_action :find_candidate
+	before_action :authenticate_user, only: [:new, :create, :destroy] 
 
 	def new
 		@comment = Comment.new
@@ -40,5 +41,13 @@ class CommentsController < ApplicationController
 
 	def find_candidate
 		@candidate = Candidate.find(params[:candidate_id])
+	end
+
+	# Bloqueia gerenciamento de comentarios pelo candidato
+
+	def authenticate_user
+	    if user_signed_in?
+		redirect_to @candidate
+	    end
 	end
 end  

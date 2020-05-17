@@ -14,7 +14,7 @@ feature 'Headhunter deletes comment' do
 	
 		visit candidate_path(candidate)
 	
-		click_on "delete-#{comment.id}"
+		click_on "delete-comment#{comment.id}"
 
 		expect(page).to have_content('Comentário excluido')
 		expect(page).not_to have_content("#{comment.content}")
@@ -36,9 +36,9 @@ feature 'Headhunter deletes comment' do
 
 		visit candidate_path(candidate)
 	
-		click_on "delete-#{comment_a.id}"
+		click_on "delete-comment#{comment_a.id}"
 
-		expect(current_path).to eq job_opportunities_path
+		expect(current_path).to eq candidate_path(candidate)
 
 		expect(page).to have_content('Comentário excluido')
 		expect(page).to have_content("#{comment_b.content}")

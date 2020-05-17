@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 	resources :job_opportunities
 
 	resources :candidates do
-		resources :comments
+		resources :comments, only: [:new, :create, :destroy]
 	end
 end
