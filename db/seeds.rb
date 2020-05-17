@@ -44,7 +44,7 @@ headhunter_a = Headhunter.create!(email: 'lucas22@outlook.com.br', password: '11
 headhunter_b = Headhunter.create!(email: 'lucas22@yahoo.com.br', password: '111111')
 
 # Vagas
-JobOpportunity.create!(
+job_opportunity = JobOpportunity.create!(
 	title: "Desenvolvedor Rails",
 	company: "Rebase",
 	description_job: "Desenvolvimento de Plataformas com TDD",
@@ -74,4 +74,8 @@ JobOpportunity.create!(
 	headhunter: headhunter_b
 )
 
+# Comentarios
 Comment.create!(candidate: candidate_a, headhunter: headhunter_b, content: 'Ola, gostei do seu perfil')
+
+# Candidaturas
+ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity, message: 'Eu, Bianca Rosa, brasileira, Operadora de CNC venho por meio desta me candidatar à vaga de Programador de CNC nesta empresa.').hope!

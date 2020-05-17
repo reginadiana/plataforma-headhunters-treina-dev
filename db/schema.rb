@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_165106) do
+ActiveRecord::Schema.define(version: 2020_05_17_222605) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 2020_05_17_165106) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "apply_jobs", force: :cascade do |t|
+    t.integer "candidate_id", null: false
+    t.integer "job_opportunity_id", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "feedback"
+    t.index ["candidate_id"], name: "index_apply_jobs_on_candidate_id"
+    t.index ["job_opportunity_id"], name: "index_apply_jobs_on_job_opportunity_id"
   end
 
   create_table "candidates", force: :cascade do |t|
@@ -110,6 +121,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_165106) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "apply_jobs", "candidates"
+  add_foreign_key "apply_jobs", "job_opportunities"
   add_foreign_key "candidates", "levels"
   add_foreign_key "candidates", "users"
   add_foreign_key "comments", "candidates"
