@@ -25211,3 +25211,544 @@ Processing by CandidatesController#show as HTML
 Completed 200 OK in 191ms (Views: 162.1ms | ActiveRecord: 6.8ms | Allocations: 15265)
 
 
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20200517165106)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4672fb8509"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+, CONSTRAINT "fk_rails_58e67bf209"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200517165106"]]
+  [1m[35m (20.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (57.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (27.3ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (86.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "candidates"[0m
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar, "social_name" varchar, "date_of_birth" date, "profile_description" varchar, "experience" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar, "courses" varchar, "level_id" integer, "profession" varchar)[0m
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_level_id" ON "candidates" ("level_id")[0m
+  [1m[35m (31.8ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "headhunters"[0m
+  [1m[35m (37.9ms)[0m  [1m[35mCREATE TABLE "headhunters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (39.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_headhunters_on_email" ON "headhunters" ("email")[0m
+  [1m[35m (27.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_headhunters_on_reset_password_token" ON "headhunters" ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "job_opportunities"[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE TABLE "job_opportunities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "company" varchar, "description_job" varchar, "skills" varchar, "salary_range" decimal, "level_id" integer NOT NULL, "deadline" date, "region" varchar, "benefits" varchar, "office_functions" varchar, "company_expectations" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer)[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_headhunter_id" ON "job_opportunities" ("headhunter_id")[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_level_id" ON "job_opportunities" ("level_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "levels"[0m
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE TABLE "levels" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (38.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (30.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (27.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acandidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_user_id" ON "acandidates" ("user_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_level_id" ON "acandidates" ("level_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "acandidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "candidates"[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "candidates"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fdae3a9154"
+FOREIGN KEY ("level_id")
+  REFERENCES "levels" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_level_id" ON "candidates" ("level_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "candidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "acandidates"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "acandidates"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acandidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_user_id" ON "acandidates" ("user_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_level_id" ON "acandidates" ("level_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "acandidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "candidates"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "candidates"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fdae3a9154"
+FOREIGN KEY ("level_id")
+  REFERENCES "levels" ("id")
+, CONSTRAINT "fk_rails_01dfdc3a16"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_level_id" ON "candidates" ("level_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "candidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "acandidates"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "acandidates"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_headhunter_id" ON "acomments" ("headhunter_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_candidate_id" ON "acomments" ("candidate_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "acomments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4672fb8509"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_headhunter_id" ON "acomments" ("headhunter_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_candidate_id" ON "acomments" ("candidate_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "acomments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4672fb8509"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+, CONSTRAINT "fk_rails_58e67bf209"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (18.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_level_id" ON "ajob_opportunities" ("level_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_headhunter_id" ON "ajob_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "ajob_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "job_opportunities"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "job_opportunities"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "job_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_80c3d8977b"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_headhunter_id" ON "job_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_level_id" ON "job_opportunities" ("level_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "ajob_opportunities"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "ajob_opportunities"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (19.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_level_id" ON "ajob_opportunities" ("level_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_headhunter_id" ON "ajob_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "ajob_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "job_opportunities"[0m
+  [1m[35m (3.6ms)[0m  [1m[35mDROP TABLE "job_opportunities"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "job_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_80c3d8977b"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+, CONSTRAINT "fk_rails_e401357332"
+FOREIGN KEY ("level_id")
+  REFERENCES "levels" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_headhunter_id" ON "job_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_level_id" ON "job_opportunities" ("level_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "ajob_opportunities"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "ajob_opportunities"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (17.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200517165106)[0m
+  [1m[35m (18.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200512211220),
+(20200514151340),
+(20200514183622),
+(20200515014507),
+(20200515015814),
+(20200516132216),
+(20200516132552),
+(20200516141959),
+(20200516143001),
+(20200516150348),
+(20200516194904);
+
+[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-17 16:55:50.220790"], ["updated_at", "2020-05-17 16:55:50.220790"]]
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1b7764ff4522f6972973e3a6fd13299a1461ccb3"], ["created_at", "2020-05-17 16:55:50.300432"], ["updated_at", "2020-05-17 16:55:50.300432"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "candidates"[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "full_name" varchar, "social_name" varchar, "date_of_birth" date, "profile_description" varchar, "experience" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar, "courses" varchar, "level_id" integer, "profession" varchar)[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_level_id" ON "candidates" ("level_id")[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "headhunters"[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "headhunters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_headhunters_on_email" ON "headhunters" ("email")[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_headhunters_on_reset_password_token" ON "headhunters" ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "job_opportunities"[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "job_opportunities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "company" varchar, "description_job" varchar, "skills" varchar, "salary_range" decimal, "level_id" integer NOT NULL, "deadline" date, "region" varchar, "benefits" varchar, "office_functions" varchar, "company_expectations" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer)[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_headhunter_id" ON "job_opportunities" ("headhunter_id")[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_level_id" ON "job_opportunities" ("level_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "levels"[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "levels" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (21.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acandidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_user_id" ON "acandidates" ("user_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_level_id" ON "acandidates" ("level_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "acandidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "candidates"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "candidates"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fdae3a9154"
+FOREIGN KEY ("level_id")
+  REFERENCES "levels" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_level_id" ON "candidates" ("level_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "candidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "acandidates"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "acandidates"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acandidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_user_id" ON "acandidates" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_acandidates_on_level_id" ON "acandidates" ("level_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "acandidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "candidates"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "candidates"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "candidates" ("id" integer NOT NULL PRIMARY KEY, "full_name" varchar DEFAULT NULL, "social_name" varchar DEFAULT NULL, "date_of_birth" date DEFAULT NULL, "profile_description" varchar DEFAULT NULL, "experience" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "formation" varchar DEFAULT NULL, "courses" varchar DEFAULT NULL, "level_id" integer DEFAULT NULL, "profession" varchar DEFAULT NULL, CONSTRAINT "fk_rails_fdae3a9154"
+FOREIGN KEY ("level_id")
+  REFERENCES "levels" ("id")
+, CONSTRAINT "fk_rails_01dfdc3a16"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_level_id" ON "candidates" ("level_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_candidates_on_user_id" ON "candidates" ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "candidates" ("id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession")
+                     SELECT "id","full_name","social_name","date_of_birth","profile_description","experience","user_id","created_at","updated_at","formation","courses","level_id","profession" FROM "acandidates"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "acandidates"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_headhunter_id" ON "acomments" ("headhunter_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_candidate_id" ON "acomments" ("candidate_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "acomments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4672fb8509"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_headhunter_id" ON "acomments" ("headhunter_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_candidate_id" ON "acomments" ("candidate_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "acomments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "candidate_id" integer NOT NULL, "headhunter_id" integer NOT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4672fb8509"
+FOREIGN KEY ("candidate_id")
+  REFERENCES "candidates" ("id")
+, CONSTRAINT "fk_rails_58e67bf209"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_candidate_id" ON "comments" ("candidate_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_headhunter_id" ON "comments" ("headhunter_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("id","candidate_id","headhunter_id","content","created_at","updated_at")
+                     SELECT "id","candidate_id","headhunter_id","content","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.8ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_level_id" ON "ajob_opportunities" ("level_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_headhunter_id" ON "ajob_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "ajob_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "job_opportunities"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE "job_opportunities"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "job_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_80c3d8977b"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_headhunter_id" ON "job_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_level_id" ON "job_opportunities" ("level_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "ajob_opportunities"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "ajob_opportunities"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (21.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_level_id" ON "ajob_opportunities" ("level_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "tindex_ajob_opportunities_on_headhunter_id" ON "ajob_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "ajob_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "job_opportunities"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "job_opportunities"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "job_opportunities" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "company" varchar DEFAULT NULL, "description_job" varchar DEFAULT NULL, "skills" varchar DEFAULT NULL, "salary_range" decimal DEFAULT NULL, "level_id" integer NOT NULL, "deadline" date DEFAULT NULL, "region" varchar DEFAULT NULL, "benefits" varchar DEFAULT NULL, "office_functions" varchar DEFAULT NULL, "company_expectations" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "headhunter_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_80c3d8977b"
+FOREIGN KEY ("headhunter_id")
+  REFERENCES "headhunters" ("id")
+, CONSTRAINT "fk_rails_e401357332"
+FOREIGN KEY ("level_id")
+  REFERENCES "levels" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_headhunter_id" ON "job_opportunities" ("headhunter_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_job_opportunities_on_level_id" ON "job_opportunities" ("level_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id")
+                     SELECT "id","title","company","description_job","skills","salary_range","level_id","deadline","region","benefits","office_functions","company_expectations","created_at","updated_at","headhunter_id" FROM "ajob_opportunities"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "ajob_opportunities"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (15.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200517165106)[0m
+  [1m[35m (13.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200512211220),
+(20200514151340),
+(20200514183622),
+(20200515014507),
+(20200515015814),
+(20200516132216),
+(20200516132552),
+(20200516141959),
+(20200516143001),
+(20200516150348),
+(20200516194904);
+
+[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-17 16:55:52.689205"], ["updated_at", "2020-05-17 16:55:52.689205"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2020-05-17 16:55:52.743769"], ["key", "environment"]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "1b7764ff4522f6972973e3a6fd13299a1461ccb3"], ["created_at", "2020-05-17 16:55:52.800888"], ["updated_at", "2020-05-17 16:55:52.800888"]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (1.6ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Estagiário"], ["created_at", "2020-05-17 16:55:52.935904"], ["updated_at", "2020-05-17 16:55:52.935904"]]
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (3.1ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Auxiliar"], ["created_at", "2020-05-17 16:55:52.981326"], ["updated_at", "2020-05-17 16:55:52.981326"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (1.2ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Júnior"], ["created_at", "2020-05-17 16:55:53.024316"], ["updated_at", "2020-05-17 16:55:53.024316"]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (1.3ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pleno"], ["created_at", "2020-05-17 16:55:53.068925"], ["updated_at", "2020-05-17 16:55:53.068925"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (1.2ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sênior"], ["created_at", "2020-05-17 16:55:53.110136"], ["updated_at", "2020-05-17 16:55:53.110136"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (2.0ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Especialista"], ["created_at", "2020-05-17 16:55:53.146205"], ["updated_at", "2020-05-17 16:55:53.146205"]]
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLevel Create (1.9ms)[0m  [1m[32mINSERT INTO "levels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diretor"], ["created_at", "2020-05-17 16:55:53.190788"], ["updated_at", "2020-05-17 16:55:53.190788"]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "camila@outlook.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "camila@outlook.com.br"], ["encrypted_password", "$2a$11$DQX88mZpp9lieqpRRe1cBePQKvMFeh4G5wamc3oV/4eQTO5aEFOwW"], ["created_at", "2020-05-17 16:55:53.774230"], ["updated_at", "2020-05-17 16:55:53.774230"]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bianca@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "bianca@yahoo.com.br"], ["encrypted_password", "$2a$11$g4/nv93dVgE20vVNofwZje227ZPAJeuZmn3wWKQ5g7u7XR7DlXgMC"], ["created_at", "2020-05-17 16:55:54.241911"], ["updated_at", "2020-05-17 16:55:54.241911"]]
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandidate Create (2.0ms)[0m  [1m[32mINSERT INTO "candidates" ("full_name", "social_name", "date_of_birth", "profile_description", "experience", "user_id", "created_at", "updated_at", "formation", "courses", "level_id", "profession") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Camila de Lucas"], ["social_name", "Camila"], ["date_of_birth", "1990-04-01"], ["profile_description", "Excelentes capacidades de análise, escrita, raciocínio e de tecnologia da informação"], ["experience", "Experiencia em desenvolvimento de interfaces na empresa Red Ventures"], ["user_id", 1], ["created_at", "2020-05-17 16:55:54.405893"], ["updated_at", "2020-05-17 16:55:54.405893"], ["formation", "UNESP - Ciencias da Computação"], ["courses", ""], ["level_id", 4], ["profession", "Desenvolvimento Frontend"]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandidate Create (3.0ms)[0m  [1m[32mINSERT INTO "candidates" ("full_name", "social_name", "date_of_birth", "profile_description", "experience", "user_id", "created_at", "updated_at", "formation", "courses", "level_id", "profession") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["full_name", "Bianca Rosa"], ["social_name", "Bianca"], ["date_of_birth", "1985-04-01"], ["profile_description", "Estudante de sistemas de informação hoje estou em busca de colocar em prática os aprendizados obtidos durante a formação"], ["experience", "Experiencia como programador de CNC na empresa Flej"], ["user_id", 2], ["created_at", "2020-05-17 16:55:54.456916"], ["updated_at", "2020-05-17 16:55:54.456916"], ["formation", "Unifesp - Automação"], ["courses", "AutoCAD"], ["level_id", 4], ["profession", "Operador de CNC"]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeadhunter Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "lucas22@outlook.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.3ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "lucas22@outlook.com.br"], ["encrypted_password", "$2a$11$tn4UvMu.ymYf2FPrXHycfOon3hGNqwTfz5MilZz.AK1g/9dHP.rYi"], ["created_at", "2020-05-17 16:55:55.002115"], ["updated_at", "2020-05-17 16:55:55.002115"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHeadhunter Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "headhunters" WHERE "headhunters"."email" = ? LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+  [1m[36mHeadhunter Create (1.9ms)[0m  [1m[32mINSERT INTO "headhunters" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "lucas22@yahoo.com.br"], ["encrypted_password", "$2a$11$UwwFg01zqBUNPHiVIcVMdOyJtvObtQCZGg5FCrTIPIKtyBWlc9yFi"], ["created_at", "2020-05-17 16:55:55.508813"], ["updated_at", "2020-05-17 16:55:55.508813"]]
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor Rails"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.9ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor Rails"], ["company", "Rebase"], ["description_job", "Desenvolvimento de Plataformas com TDD"], ["skills", "Domínio da linguagem Ruby e do framework Ruby on Rails"], ["salary_range", 4000.0], ["level_id", 4], ["deadline", "2021-05-14"], ["region", "Mocca - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-17 16:55:55.656189"], ["updated_at", "2020-05-17 16:55:55.656189"], ["headhunter_id", 1]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."title" = ? LIMIT ?[0m  [["title", "Desenvolvedor React"], ["LIMIT", 1]]
+  [1m[36mJobOpportunity Create (1.5ms)[0m  [1m[32mINSERT INTO "job_opportunities" ("title", "company", "description_job", "skills", "salary_range", "level_id", "deadline", "region", "benefits", "office_functions", "company_expectations", "created_at", "updated_at", "headhunter_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Desenvolvedor React"], ["company", "Vindi"], ["description_job", "Desenvolvimento de Interfaces Dinamicas"], ["skills", "Domínio da linguagem JavaScript e do framework React"], ["salary_range", 5000.0], ["level_id", 6], ["deadline", "2022-05-14"], ["region", "Mogi das Cruzes - SP"], ["benefits", "Vale refeição, Academia"], ["office_functions", "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para \t\t\t\tatendimento do negócio."], ["company_expectations", "Profissional ativo e comunicativo"], ["created_at", "2020-05-17 16:55:55.711385"], ["updated_at", "2020-05-17 16:55:55.711385"], ["headhunter_id", 2]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (1.7ms)[0m  [1m[32mINSERT INTO "comments" ("candidate_id", "headhunter_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["candidate_id", 1], ["headhunter_id", 2], ["content", "Ola, gostei do seu perfil"], ["created_at", "2020-05-17 16:55:55.877212"], ["updated_at", "2020-05-17 16:55:55.877212"]]
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m

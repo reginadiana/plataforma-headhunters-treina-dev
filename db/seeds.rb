@@ -13,7 +13,7 @@ user_a = User.create!(email: 'camila@outlook.com.br', password: '123456')
 user_b = User.create!(email: 'bianca@yahoo.com.br', password: '123456')
 
 # Perfils
-Candidate.create!(
+candidate_a = Candidate.create!(
 	full_name: "Camila de Lucas",
 	social_name: "Camila",
 	date_of_birth: "01/04/1990",
@@ -26,7 +26,7 @@ Candidate.create!(
 	user: user_a
 )
 
-Candidate.create!(
+candidate_b = Candidate.create!(
 	full_name: "Bianca Rosa",
 	social_name: "Bianca",
 	date_of_birth: "01/04/1985",
@@ -73,3 +73,5 @@ JobOpportunity.create!(
 	company_expectations: "Profissional ativo e comunicativo",
 	headhunter: headhunter_b
 )
+
+Comment.create!(candidate: candidate_a, headhunter: headhunter_b, content: 'Ola, gostei do seu perfil')
