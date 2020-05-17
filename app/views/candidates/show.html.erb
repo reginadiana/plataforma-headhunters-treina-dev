@@ -41,6 +41,16 @@
 	<p><%= @candidate.courses %></p>
 </div>
 
+<% if @comments.any? %>
+	<% @comments.each do |comment| %>
+		<% if comment.candidate.full_name == @candidate.full_name %>
+			<p><%= comment.headhunter.email %></p>
+			<p><%= comment.content %></p>
+			<p><%= comment.created_at %></p>
+		<% end %>
+	<% end %>
+<% end %>
+
 <% if user_signed_in? %>
 	<p><%= link_to 'Editar Perfil', edit_candidate_path(@candidate), id: "edit-#{@candidate.id}"%></p>
 	<p><%= link_to 'Deletar Perfil', candidate_path(@candidate) , method: :delete, id: "delete-#{@candidate.id}"%></p>

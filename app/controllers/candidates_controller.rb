@@ -8,10 +8,12 @@ class CandidatesController < ApplicationController
 	def show
 		if user_signed_in?
 	    		@candidate = Candidate.find_by(user: current_user)
+			@comments = Comment.all
 		end
 
 		if headhunter_signed_in?
-			@candidate = Candidate.find_by(id)
+			@candidate = Candidate.find(id)
+			@comments = Comment.where(headhunter: current_headhunter)
 		end
 	end
 	def new
