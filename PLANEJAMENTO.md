@@ -105,6 +105,7 @@
 | user | **object** | Recrutador | Obrigatório | 
 | text | string | Texto | Obrigatório | 
 | date | data | Data de Publicação | Gerado automaticamente |
+| hora | data | Hora de Publicação | Gerado automaticamente |
 | comment_id | integer | | |
 
 | feedback | type | PT-BR-i18n | Validações |
