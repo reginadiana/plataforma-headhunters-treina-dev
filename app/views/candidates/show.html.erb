@@ -6,48 +6,26 @@
 	<h3 class="link-to-back"><%= link_to 'Voltar', candidates_path %></h3>
 <% end %>
 
-<div>
-	<div>
-		<% if @candidate.avatar.present? %>
-			<%= image_tag(@candidate.avatar, size: "320x200", alt: "Foto de perfil do candidato") %>
-		<% else %>
-			<%= image_tag("sem-imagem-avatar.png", size: "320x200", alt: "Sem foto de perfil") %>
-		<% end %>
-	</div>
-	<div class="description-candidate">
-		<p><%= @candidate.full_name %></p>
-		<p><%= @candidate.profession %></p>
-		<p><%= @candidate.user.email %></p>
-		<p><%= @candidate.level.name %></p>
-		<p><%= @candidate.date_of_birth && localize(@candidate.date_of_birth, format: :long) %></p>
-	</div>
-</div>
+<%= render 'profile' %>
 
-<div>
-	<h2>Olá! Me chamo <%= @candidate.social_name %></h2>
-	<h4><%= Candidate.human_attribute_name(:profile_description) %></h4>
-	<p><%= @candidate.profile_description %></p>
-</div>
-<div>
-	<h4><%= Candidate.human_attribute_name(:experience) %></h4>
-	<p><%= @candidate.experience %></p>
-</div>
-<div>
-	<h4><%= Candidate.human_attribute_name(:formation) %></h4>
-	<p><%= @candidate.formation %></p>
-</div>
-<div>
-	<h4><%= Candidate.human_attribute_name(:courses) %></h4>
-	<p><%= @candidate.courses %></p>
-</div>
+<% if headhunter_signed_in? %>
+	<%= link_to 'Deixar Comentario', new_candidate_comment_path(@candidate) %>
+<% end %>
 
 <% if @comments.any? %>
 	<% @comments.each do |comment| %>
-		<% if comment.candidate.full_name == @candidate.full_name %>
-			<p><%= comment.headhunter.email %></p>
-			<p><%= comment.content %></p>
-			<p><%= comment.created_at %></p>
+	   <% if comment.candidate.full_name == @candidate.full_name %>
+		<p><%= comment.headhunter.email %></p>
+		<p><%= comment.content %></p>
+		<p><%= comment.created_at %></p>
+
+		<% if headhunter_signed_in? %>
+			<p><%= link_to 'Deletar', 
+				[@candidate, comment], 
+				method: :delete, 
+				id: "edit-#{comment.id}"%></p>
 		<% end %>
+	  <% end %>
 	<% end %>
 <% end %>
 

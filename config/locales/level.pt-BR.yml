@@ -2,7 +2,7 @@
 pt-BR:
   activerecord:
     models:
-      level: Nível do Cargo
+      comment: Comentário
     attributes:
-      level:
-       name: Nível do Cargo
+      comment:
+       content: Conteúdo do Comentário

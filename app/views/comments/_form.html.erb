@@ -1,0 +1,11 @@
+<% @comment.errors.full_messages.each do |message| %>
+	<p class="msg-error"><%= message %></p>
+<% end %>
+
+<%= form_with model: [@candidate, @comment], local: true do |f| %>
+	<div class="field">
+		<%= f.label :content %>
+		<%= f.text_area :content %>
+	</div>
+	<button class="button-enviar-form" type="submit">Publicar</button>
+<% end %>

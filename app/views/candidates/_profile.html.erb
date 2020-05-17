@@ -1,0 +1,34 @@
+<div>
+	<div>
+		<% if @candidate.avatar.present? %>
+			<%= image_tag(@candidate.avatar, size: "320x200", alt: "Foto de perfil do candidato") %>
+		<% else %>
+			<%= image_tag("sem-imagem-avatar.png", size: "320x200", alt: "Sem foto de perfil") %>
+		<% end %>
+	</div>
+	<div class="description-candidate">
+		<p><%= @candidate.full_name %></p>
+		<p><%= @candidate.profession %></p>
+		<p><%= @candidate.user.email %></p>
+		<p><%= @candidate.level.name %></p>
+		<p><%= @candidate.date_of_birth && localize(@candidate.date_of_birth, format: :long) %></p>
+	</div>
+</div>
+
+<div>
+	<h2>Olá! Me chamo <%= @candidate.social_name %></h2>
+	<h4><%= Candidate.human_attribute_name(:profile_description) %></h4>
+	<p><%= @candidate.profile_description %></p>
+</div>
+<div>
+	<h4><%= Candidate.human_attribute_name(:experience) %></h4>
+	<p><%= @candidate.experience %></p>
+</div>
+<div>
+	<h4><%= Candidate.human_attribute_name(:formation) %></h4>
+	<p><%= @candidate.formation %></p>
+</div>
+<div>
+	<h4><%= Candidate.human_attribute_name(:courses) %></h4>
+	<p><%= @candidate.courses %></p>
+</div>

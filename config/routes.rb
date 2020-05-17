@@ -12,5 +12,8 @@ Rails.application.routes.draw do
 
   	root to: 'home#index'
 	resources :job_opportunities
-	resources :candidates
+
+	resources :candidates do
+		resources :comments
+	end
 end
