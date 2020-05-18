@@ -6,10 +6,10 @@ feature 'Candidate edit message of apply for job' do
 		user = User.create!(email: 'fabio@gmail.com.br', password: '12345678')
 		login_as user, scope: :user
 
-		job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
+		@job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
 		candidate = create(:candidate, user: user)
 	
-		apply_job = create(:apply_job, candidate: candidate, job_opportunity: job_opportunity)
+		apply_job = create(:apply_job, candidate: candidate, job_opportunity: @job_opportunity)
 	
 		visit root_path
 
@@ -21,13 +21,10 @@ feature 'Candidate edit message of apply for job' do
 
 	scenario 'successfully' do    
 
-		expect(page).to have_content("Você esta se candidatando para a vaga: #{@job_opportunity.title}")
-
 		fill_in 'Mensagem para Candidatura', with: 'Eu, Bianca Rosa, brasileira, gostaria de me candidatar.'
 
 		click_on "Enviar Candidatura"
 
-		expect(current_path).to eq job_opportunity_path(job_opportunity)
 		expect(page).to have_content('Mensagem para Candidatura atualizada com sucesso')
 	end
 

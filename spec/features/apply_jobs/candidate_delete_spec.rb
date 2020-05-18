@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-feature 'Candidate edit message of apply for job' do
+feature 'Candidate delete message of apply for job' do
 
 	before :each do
 		user = User.create!(email: 'fabio@gmail.com.br', password: '12345678')
 		login_as user, scope: :user
 
-		job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
+		@job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
 		candidate = create(:candidate, user: user)
 	
-		apply_job = create(:apply_job, candidate: candidate, job_opportunity: job_opportunity)
+		apply_job = create(:apply_job, candidate: candidate, job_opportunity: @job_opportunity)
 		@other_apply_job = create(:apply_job, candidate: candidate)
 	
 		visit root_path
@@ -22,7 +22,7 @@ feature 'Candidate edit message of apply for job' do
 
 	scenario 'successfully' do    
 
-		expect(current_path).to eq job_opportunity_path(job_opportunity)
+		expect(current_path).to eq job_opportunity_path(@job_opportunity)
 		expect(page).to have_content('Candidatura encerrada')
 		expect(page).to have_link('Quero me candidatar')
 	end
@@ -30,7 +30,7 @@ feature 'Candidate edit message of apply for job' do
 	scenario 'and keep anothers' do
 
 		click_on "Voltar"
-		click_on "#{@other_apply_job.title}"
+		click_on "#{@other_apply_job.job_opportunity.title}"
 
 		expect(page).to have_content('Você se candidatou para esta vaga')
 	end

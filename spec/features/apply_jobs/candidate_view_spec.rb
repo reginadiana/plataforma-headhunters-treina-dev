@@ -57,8 +57,8 @@ feature 'Candidate sees the vacancies he applied for' do
 
 		click_on "Ver minha candidatura"
 		expect(page).to have_content("#{@job_opportunity.title}")
-		expect(page).to have_content("#{@apply_job.message}")
-		expect(page).to have_content("#{@apply_job.created_at}")
+		expect(page).to have_content("#{apply_job.message}")
+		expect(page).to have_content("#{apply_job.created_at}")
 
 		expect(page).to have_link("Editar Informações")
 		expect(page).to have_link("Retirar minha candidatura")

@@ -1,13 +1,16 @@
 class ApplyJobsController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_head, only: [:index, :new, :create, :edit, :update, :destroy] 
+	before_action :find_job_opportunity, only: [:show, :new, :edit, :update, :destroy]
 
 	def index
 		@candidate = Candidate.find_by(user: current_user)
 		@apply_jobs = ApplyJob.where(candidate: @candidate)
 	end
+	def show
+		@apply_job = ApplyJob.find(id)
+	end
 	def new
-		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
 		@apply_job = ApplyJob.new		
 	end
 	def create
@@ -26,6 +29,30 @@ class ApplyJobsController < ApplicationController
 		end
 	end
 
+	def edit
+		@apply_job = ApplyJob.find(id)
+	end
+
+	def update
+		@apply_job = ApplyJob.find(id)
+	
+		if @apply_job.update(require_params)
+			redirect_to job_opportunity_apply_job_path(@job_opportunity)
+			flash[:notice] = 'Mensagem para Candidatura atualizada com sucesso'
+		else
+			@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
+			render :edit
+		end
+	end
+
+	def destroy
+		@apply_job = ApplyJob.find(id)
+		@apply_job.destroy
+
+		flash[:alert] = 'Candidatura encerrada'
+		redirect_to job_opportunity_path(@job_opportunity)
+	end
+
 	private
 	
 	def require_params
@@ -34,6 +61,12 @@ class ApplyJobsController < ApplicationController
 
 	def id
 		params[:id]
+	end
+
+	# Busca a vaga selecionada
+
+	def find_job_opportunity
+		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
 	end
 
 	# Bloqueia acesso ao heahunter as vagas cadastradas pelo candidato
