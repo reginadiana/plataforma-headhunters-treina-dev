@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 	resources :apply_jobs, only: [:index]
 
 	resources :candidates do
-		resources :comments, only: [:new, :create, :destroy]
+		resources :comments, only: [:new, :create, :edit, :update, :destroy]
 	end
 end

@@ -20,6 +20,11 @@
 		<p><%= comment.created_at %></p>
 
 		<% if headhunter_signed_in? %>
+
+			<p><%= link_to 'Editar', 
+				edit_candidate_comment_path(@candidate), 
+				id: "edit-comment#{@candidate.id}"%></p>
+
 			<p><%= link_to 'Deletar', 
 				[@candidate, comment], 
 				method: :delete, 

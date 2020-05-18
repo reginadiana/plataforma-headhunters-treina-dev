@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController 
 	before_action :find_candidate
-	before_action :authenticate_user, only: [:new, :create, :destroy] 
+	before_action :authenticate_user, only: [:new, :create, :edit, :update, :destroy] 
 
 	def new
 		@comment = Comment.new
@@ -19,6 +19,22 @@ class CommentsController < ApplicationController
 			render :new
 		end 
 		
+	end
+
+	def edit
+		@comment = Comment.find(id)
+	end
+
+	def update
+		@comment = Comment.find(id)
+	
+		if @comment.update(require_params)
+			redirect_to candidate_path(@candidate)
+			flash[:notice] = 'Comentário atualizada com sucesso'
+		else
+			@candidate = Candidate.find(params[:candidate_id])
+			render :edit
+		end
 	end
 
 	def destroy
