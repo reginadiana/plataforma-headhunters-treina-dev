@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
 	resources :candidates do
 		resources :comments, only: [:new, :create, :edit, :update, :destroy]
-		resources :proposals
+		resources :proposals do
+			resources :awnser_proposals
+		end
 	end	
 end

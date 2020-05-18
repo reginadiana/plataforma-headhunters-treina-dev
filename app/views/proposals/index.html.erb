@@ -12,6 +12,12 @@
 	<div class="description-candidate">
 	  <p>Vaga: <%= link_to proposal.job_opportunity.title, proposal.job_opportunity %></p>
 	  <p>Data de Envio: <%= l proposal.created_at, format: :short %></p>
+	  <p>Status do Processo: 
+		<%= Proposal.human_attribute_name("status.#{proposal.status}") %>
+	  </p>
+
+	  <%= link_to "Enviar Feedback", 
+				new_candidate_proposal_awnser_proposal_path(@candidate, proposal) %>
 	</div>
    <% end %>
   </div>

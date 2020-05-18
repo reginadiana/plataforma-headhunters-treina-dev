@@ -13,13 +13,11 @@ class FeedbacksController < ApplicationController
 		if @feedback.save
 	
 			if @feedback.choice.option === "Aceitar"
-				puts 'Aceitar'
 				@apply_job.accepted!
 			end
 
 			if @feedback.choice.option === "Recusar"
 				@apply_job.rejected!
-				puts 'Recusar'
 			end
 			
 			flash[:notice] = 'Feedback enviado com sucesso'	
