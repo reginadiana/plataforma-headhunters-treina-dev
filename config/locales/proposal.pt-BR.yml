@@ -1,0 +1,16 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      proposal: Feedback
+    attributes:
+      proposal/feedback:
+        accepted: Aceito
+        rejected: Rejeitado
+        hope: Em espera
+      proposal:
+       job_opportunity: Vaga
+       job_opportunity_id: Vaga
+       candidate: Candidato
+       candidate_id: Candidato
+       message: Conteúdo da Proposta

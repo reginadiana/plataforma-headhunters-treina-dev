@@ -1,21 +1,32 @@
 class ProposalsController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_candidate, only: [:new, :create, :edit, :update] 
+	before_action :find_candidate
+
+	def index
+		@proposals = Proposal.where(candidate: @candidate)
+	end
 
 	def new
-		@proposal = Proposal.new
-		@jobs = JobOpportunity.where(headhunter: current_headhunter)
-		@candidate = Candidate.find(params[:candidate_id])		
+		@proposals = Proposal.find_by(candidate: @candidate)
+
+		if @proposals
+			flash[:alert] = 'Uma proposta para esta vaga já foi enviada'
+			redirect_to candidate_path(@candidate)	
+		else
+			@proposal = Proposal.new
+			@jobs = JobOpportunity.where(headhunter: current_headhunter)
+		end		
 	end
 	def create
-
-		@proposal = Proposal.new
+		@proposal = Proposal.new(require_params)
+		@proposal.candidate = @candidate
 
 		if @proposal.save
 			@proposal.hope!
 			flash[:notice] = 'Proposta enviada com sucesso'	
 		    	redirect_to job_opportunities_path
-		end
+		end	
 	end
 
 	private
@@ -34,6 +45,10 @@ class ProposalsController < ApplicationController
 	    if user_signed_in?
 		redirect_to job_opportunities_path
 	    end
+	end
+
+	def find_candidate
+		@candidate = Candidate.find(params[:candidate_id])
 	end
 
 	def authenticate_visitor

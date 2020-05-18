@@ -1,3 +1,8 @@
+<% @proposal.errors.full_messages.each do |message| %>
+	<p class="msg-error"><%= message %></p>
+<% end %>
+
+
 <%= form_with model: [@candidate, @proposal], local: true do |f| %>
 
 	<h4>Selecione uma de suas vagas</h4>

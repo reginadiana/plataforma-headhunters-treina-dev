@@ -1,0 +1,18 @@
+<h3 class="link-to-back"><%= link_to 'Voltar', root_path %>
+
+<div class="job-div">
+  <h1>Propostas</h1>
+
+  <% if @proposals.empty? %>
+    <p><%= 'Nenhuma proposta foi enviada pra você' %></p>
+  <% end %>
+
+  <div class="job-cards">
+    <% @proposals.each do |proposal| %>
+	<div class="description-candidate">
+	  <p>Vaga: <%= link_to proposal.job_opportunity.title, proposal.job_opportunity %></p>
+	  <p>Data de Envio: <%= l proposal.created_at, format: :short %></p>
+	</div>
+   <% end %>
+  </div>
+</div>

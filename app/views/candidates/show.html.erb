@@ -17,7 +17,7 @@
 	   <% if comment.candidate.full_name == @candidate.full_name %>
 		<p><%= comment.headhunter.email %></p>
 		<p><%= comment.content %></p>
-		<p><%= comment.created_at %></p>
+		<p><%= l comment.created_at, format: :short %></p>
 
 		<% if headhunter_signed_in? %>
 
