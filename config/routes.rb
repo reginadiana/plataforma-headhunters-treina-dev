@@ -11,11 +11,13 @@ Rails.application.routes.draw do
         }
 
   	root to: 'home#index'
-	resources :job_opportunities
+	resources :job_opportunities do
+		resources :apply_jobs, only: [:show, :new, :create, :edit, :update, :destroy]
+	end
+
+	resources :apply_jobs, only: [:index]
 
 	resources :candidates do
 		resources :comments, only: [:new, :create, :destroy]
 	end
-
-	resources :apply_jobs
 end
