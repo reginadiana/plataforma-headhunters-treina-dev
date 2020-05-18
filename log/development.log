@@ -26959,3 +26959,858 @@ Processing by JobOpportunitiesController#show as HTML
 Completed 200 OK in 135ms (Views: 104.8ms | ActiveRecord: 6.0ms | Allocations: 13702)
 
 
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 20:39:10 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:85:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.3ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:32
+  [1m[36mApplyJob Load (1.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:35
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.4ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:36
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 329.9ms | Allocations: 21783)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 619ms (Views: 401.4ms | ActiveRecord: 6.8ms | Allocations: 49643)
+
+
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-17 20:39:13 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pN8YZQp7DGAbvknfbOYdtQxhfGQKmSSKe3ITtWF8DI5ZOxxlxeFlGXvuA3KlVa2yeaALeNkZyUoaUXu5B2U+kA=="}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 0.6ms | Allocations: 2403)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-17 20:39:13 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 0.0ms | Allocations: 9805)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-17 20:39:15 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.8ms | Allocations: 627)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 2089)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 76.2ms | ActiveRecord: 0.0ms | Allocations: 16779)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-17 20:46:06 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"IkVbdZ3v1t4oFUqEsh7+9SPPKdNGCJW5c247NCECSKc1j7BK+o4UCWkK5pn/JvrLFivOcoGu4KbX591AEsuMRg==", "user"=>{"email"=>"camila@outlook.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "camila@outlook.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 464ms (ActiveRecord: 1.2ms | Allocations: 4279)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-17 20:46:06 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+Redirected to http://localhost:3000/candidates/new
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms | Allocations: 1247)
+
+
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-17 20:46:06 -0300
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:95:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:20:in `new'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 22ms (ActiveRecord: 1.6ms | Allocations: 2440)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-17 20:46:06 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 36.9ms | Allocations: 3660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 106ms (Views: 87.0ms | ActiveRecord: 5.1ms | Allocations: 13446)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:46:11 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:95:in `authenticate_visitor'
+  [1m[36mApplyJob Load (3.4ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."user" = ? LIMIT ?[0m  [["user", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 4.1ms | Allocations: 2653)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: apply_jobs.user):
+  
+app/controllers/apply_jobs_controller.rb:6:in `index'
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:47:10 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:7:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 42.8ms | Allocations: 7360)
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 13.3ms | Allocations: 32864)
+
+
+  
+ActionView::Template::Error (undefined method `empty?' for #<ApplyJob:0x0339c978>):
+    1: <div class="job-div">
+    2: 
+    3: 	<% if @apply_jobs.empty? %>
+    4: 		<p><%= 'Nenhuma candidatura foi realizada' %></p>
+    5: 	<% end %>
+    6: 
+  
+app/views/apply_jobs/index.html.erb:3
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:47:31 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (1.0ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 11]]
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 108.1ms | Allocations: 13355)
+Completed 500 Internal Server Error in 292ms (ActiveRecord: 14.5ms | Allocations: 33441)
+
+
+  
+ActionView::Template::Error (undefined method `job_opportunity' for #<ApplyJob::ActiveRecord_Relation:0x032a1548>):
+     5: 	<% end %>
+     6: 
+     7: 	<div class="job-cards">
+     8: 		<% @apply_jobs.job_opportunity.each do |job| %>
+     9: 			<div class="each-job">
+    10: 				<p class="job-title-home"><%= link_to job.title, job %></p>
+    11: 
+  
+app/views/apply_jobs/index.html.erb:8
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:48:28 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (2.0ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (1.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 318.7ms | Allocations: 21344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 412ms (Views: 371.7ms | ActiveRecord: 17.3ms | Allocations: 33072)
+
+
+Started GET "/apply_jobs/1" for 127.0.0.1 at 2020-05-17 20:48:32 -0300
+Processing by ApplyJobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:11:in `show'
+Completed 406 Not Acceptable in 63ms (ActiveRecord: 1.7ms | Allocations: 4749)
+
+
+  
+ActionController::MissingExactTemplate (ApplyJobsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:48:37 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (1.8ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 35.6ms | Allocations: 3019)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 130ms (Views: 88.2ms | ActiveRecord: 6.9ms | Allocations: 13285)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:49:16 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 3389)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 144ms (Views: 113.5ms | ActiveRecord: 4.0ms | Allocations: 15215)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 20:49:22 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 20.8ms | Allocations: 2006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 99ms (Views: 76.8ms | ActiveRecord: 2.2ms | Allocations: 12946)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-17 20:49:30 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:84:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (2.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 53.4ms | Allocations: 3646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 125ms (Views: 101.1ms | ActiveRecord: 5.7ms | Allocations: 13422)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:49:40 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.3ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (1.3ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (1.2ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 60.5ms | Allocations: 3025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 223ms (Views: 179.5ms | ActiveRecord: 7.6ms | Allocations: 13301)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:51:44 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.7ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 109.6ms | Allocations: 14206)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 3.8ms | Allocations: 17135)
+
+
+  
+ActionView::Template::Error (undefined method `feedback' for #<JobOpportunity:0x02f5abc8>):
+    11: 
+    12: 				<p><%= job.job_opportunity.company %> - <%= job.job_opportunity.region %> </p>
+    13: 				<p><%= number_to_currency job.job_opportunity.salary_range %> - <%= job.job_opportunity.level.name %></p>
+    14: 				<p><%= job.job_opportunity.feedback %></p>
+    15: 				<p class="details-job-home"><%= link_to 'Detalhes da Vaga', job.job_opportunity , id: "details-#{job.id}"%></p>
+    16: 			</div>
+    17: 		<% end %>
+  
+app/views/apply_jobs/index.html.erb:14
+app/views/apply_jobs/index.html.erb:8
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:51:57 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 3328)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 131ms (Views: 102.9ms | ActiveRecord: 4.2ms | Allocations: 15155)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:56:09 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (1.0ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 212.1ms | Allocations: 24868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 450ms (Views: 255.0ms | ActiveRecord: 21.4ms | Allocations: 53040)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:57:24 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 37.9ms | Allocations: 3413)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 280ms (Views: 251.6ms | ActiveRecord: 4.5ms | Allocations: 15277)
+
+
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 20:59:02 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (0.6ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 3088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 102ms (Views: 80.4ms | ActiveRecord: 3.7ms | Allocations: 13358)
+
+
+Started GET "/apply_jobs/1" for 127.0.0.1 at 2020-05-17 20:59:57 -0300
+Processing by ApplyJobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:11:in `show'
+Completed 406 Not Acceptable in 85ms (ActiveRecord: 1.2ms | Allocations: 6905)
+
+
+  
+ActionController::MissingExactTemplate (ApplyJobsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/apply_jobs/1" for 127.0.0.1 at 2020-05-17 21:05:53 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplyJobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:11:in `show'
+Completed 406 Not Acceptable in 187ms (ActiveRecord: 2.1ms | Allocations: 19909)
+
+
+  
+ActionController::MissingExactTemplate (ApplyJobsController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/apply_jobs" for 127.0.0.1 at 2020-05-17 21:06:02 -0300
+Processing by ApplyJobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:96:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/apply_jobs_controller.rb:6:in `index'
+  Rendering apply_jobs/index.html.erb within layouts/application
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:3
+  [1m[36mApplyJob Load (1.3ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ?[0m  [["candidate_id", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:10
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/apply_jobs/index.html.erb:13
+  Rendered apply_jobs/index.html.erb within layouts/application (Duration: 202.3ms | Allocations: 21742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 307ms (Views: 264.6ms | ActiveRecord: 5.4ms | Allocations: 34973)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 21:06:04 -0300
+  
+SyntaxError (/home/diana/vagas/app/controllers/job_opportunities_controller.rb:18: syntax error, unexpected tLABEL
+...@candidate)and(job_opportunity: @job)
+...               ^~~~~~~~~~~~~~~~):
+  
+app/controllers/job_opportunities_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/job_opportunities_controller.rb:18: syntax error, unexpected tLABEL
+app/controllers/job_opportunities_controller.rb:18: syntax error, unexpected tLABEL
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 21:07:50 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:17:in `show'
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 345ms (ActiveRecord: 17.3ms | Allocations: 41006)
+
+
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `and' for #<ApplyJob::ActiveRecord_Relation:0x703dddb0>
+Did you mean?  end):
+  
+app/controllers/job_opportunities_controller.rb:18:in `show'
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 21:08:01 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:17:in `show'
+  [1m[36mApplyJob Load (1.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 15.5ms | Allocations: 41582)
+
+
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `end' for #<ApplyJob::ActiveRecord_Relation:0x6ea54858>
+Did you mean?  send):
+  
+app/controllers/job_opportunities_controller.rb:18:in `show'
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 21:10:11 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.3ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:17:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? AND "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["job_opportunity_id", 1], ["LIMIT", 11]]
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 134.2ms | Allocations: 15863)
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 22.0ms | Allocations: 48235)
+
+
+  
+ActionView::Template::Error (undefined method `any' for #<ApplyJob::ActiveRecord_Relation:0x032e42c8>
+Did you mean?  any?):
+    38: 		<% end %>
+    39: 	<% end %>
+    40: <% else %>
+    41: 	<% if @apply_jobs.any %>
+    42: 		<p>Você se candidatou para esta vaga</p>
+    43: 	<% else %>
+    44: 		<p><%= link_to 'Quero me candidatar', root_path %></p>
+  
+app/views/job_opportunities/show.html.erb:41
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-17 21:10:33 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:17:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? AND "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:41
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 28.4ms | Allocations: 2733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.3ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 130ms (Views: 96.2ms | ActiveRecord: 3.8ms | Allocations: 15219)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-17 21:10:41 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.4ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.9ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 47.6ms | Allocations: 3646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 134ms (Views: 105.8ms | ActiveRecord: 5.1ms | Allocations: 13420)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-17 21:10:43 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:17:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."candidate_id" = ? AND "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:41
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 28.5ms | Allocations: 2091)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Candidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 111ms (Views: 78.5ms | ActiveRecord: 4.1ms | Allocations: 13015)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-17 21:10:46 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (6.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 68.9ms | Allocations: 3235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 166ms (Views: 130.6ms | ActiveRecord: 11.0ms | Allocations: 12863)
+
+

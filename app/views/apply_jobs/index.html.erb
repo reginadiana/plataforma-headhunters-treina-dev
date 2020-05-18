@@ -1,0 +1,19 @@
+<div class="job-div">
+
+	<% if @apply_jobs.empty? %>
+		<p><%= 'Nenhuma candidatura foi realizada' %></p>
+	<% end %>
+
+	<div class="job-cards">
+		<% @apply_jobs.each do |job| %>
+			<div class="each-job">
+				<p class="job-title-home"><%= link_to job.job_opportunity.title, job.job_opportunity %></p>
+
+				<p><%= job.job_opportunity.company %> - <%= job.job_opportunity.region %> </p>
+				<p><%= number_to_currency job.job_opportunity.salary_range %> - <%= job.job_opportunity.level.name %></p>
+				<%= ApplyJob.human_attribute_name("feedback.#{job.feedback}") %>
+				<p class="details-job-home"><%= link_to 'Detalhes da Vaga', job.job_opportunity , id: "details-#{job.id}"%></p>
+			</div>
+		<% end %>
+	</div>
+</div>

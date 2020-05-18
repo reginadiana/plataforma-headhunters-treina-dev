@@ -38,5 +38,9 @@
 		<% end %>
 	<% end %>
 <% else %>
-	<p><%= link_to 'Quero me candidatar', root_path %></p>
+	<% if @apply_jobs.any? %>
+		<p>Você se candidatou para esta vaga</p>
+	<% else %>
+		<p><%= link_to 'Quero me candidatar', root_path %></p>
+	<% end %>
 <% end %>

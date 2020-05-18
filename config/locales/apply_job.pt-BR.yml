@@ -1,0 +1,16 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      apply_job: Candidatura
+    attributes:
+      apply_job/feedback:
+        accepted: Aceito
+        rejected: Rejeitado
+        hope: Em espera
+      apply_job:
+       candidate: Candidato
+       candidate_id: Candidato
+       job_opportunity: Vaga
+       job_opportunity_id: Vaga
+       message: Mensagem para Candidatura

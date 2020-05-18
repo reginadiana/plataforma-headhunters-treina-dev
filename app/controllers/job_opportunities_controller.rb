@@ -12,6 +12,11 @@ class JobOpportunitiesController < ApplicationController
 	def show
 	    	@job = JobOpportunity.find(id)
 		@applyjob = ApplyJob.where(job_opportunity: @job)
+
+		if user_signed_in?
+			@candidate = Candidate.find_by(user: current_user)
+			@apply_jobs = ApplyJob.where(candidate: @candidate, job_opportunity: @job)
+		end
 	end
 	def new
 		@job = JobOpportunity.new
