@@ -38,5 +38,5 @@
 	<p><%= link_to 'Editar Perfil', edit_candidate_path(@candidate), id: "edit-#{@candidate.id}"%></p>
 	<p><%= link_to 'Deletar Perfil', candidate_path(@candidate) , method: :delete, id: "delete-#{@candidate.id}"%></p>
 <% else %>
-	<p><%= link_to 'Enviar Proposta', root_path %></p>
+	<p><%= link_to 'Enviar Proposta', new_candidate_proposal_path(@candidate)%></p>
 <% end %>

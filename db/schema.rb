@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_18_200907) do
+ActiveRecord::Schema.define(version: 2020_05_18_214240) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 2020_05_18_200907) do
     t.string "feedback"
     t.index ["candidate_id"], name: "index_apply_jobs_on_candidate_id"
     t.index ["job_opportunity_id"], name: "index_apply_jobs_on_job_opportunity_id"
+  end
+
+  create_table "awnser_proposals", force: :cascade do |t|
+    t.integer "choice_id", null: false
+    t.string "awnser_message"
+    t.integer "proposal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["choice_id"], name: "index_awnser_proposals_on_choice_id"
+    t.index ["proposal_id"], name: "index_awnser_proposals_on_proposal_id"
   end
 
   create_table "candidates", force: :cascade do |t|
@@ -125,6 +135,17 @@ ActiveRecord::Schema.define(version: 2020_05_18_200907) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "proposals", force: :cascade do |t|
+    t.string "message"
+    t.integer "job_opportunity_id", null: false
+    t.integer "candidate_id", null: false
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["candidate_id"], name: "index_proposals_on_candidate_id"
+    t.index ["job_opportunity_id"], name: "index_proposals_on_job_opportunity_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -140,6 +161,8 @@ ActiveRecord::Schema.define(version: 2020_05_18_200907) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "apply_jobs", "candidates"
   add_foreign_key "apply_jobs", "job_opportunities"
+  add_foreign_key "awnser_proposals", "choices"
+  add_foreign_key "awnser_proposals", "proposals"
   add_foreign_key "candidates", "levels"
   add_foreign_key "candidates", "users"
   add_foreign_key "comments", "candidates"
@@ -148,4 +171,6 @@ ActiveRecord::Schema.define(version: 2020_05_18_200907) do
   add_foreign_key "feedbacks", "choices"
   add_foreign_key "job_opportunities", "headhunters"
   add_foreign_key "job_opportunities", "levels"
+  add_foreign_key "proposals", "candidates"
+  add_foreign_key "proposals", "job_opportunities"
 end
