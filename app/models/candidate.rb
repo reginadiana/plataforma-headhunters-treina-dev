@@ -12,6 +12,8 @@ class Candidate < ApplicationRecord
 		  :profile_description,
 		  :formation, presence: true
 
+	validates :profile_description, length: { maximum: 2000 }
+
 	validate :date_of_birth_cannot_be_in_future
 
 	def date_of_birth_cannot_be_in_future

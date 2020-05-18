@@ -13,6 +13,7 @@ class JobOpportunity < ApplicationRecord
 
 	validates :title, uniqueness: true
 	validates :salary_range , :numericality => { greater_than: 1045 }
+	validates :description_job, :office_functions, :benefits, :company_expectations, length: { maximum: 4000 }
 
 	validate :deadline_cannot_be_in_the_past
 

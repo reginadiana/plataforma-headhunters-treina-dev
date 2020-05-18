@@ -1,0 +1,11 @@
+<% @apply_job.errors.full_messages.each do |message| %>
+	<p class="msg-error"><%= message %></p>
+<% end %>
+
+<%= form_with model: @apply_job, local: true do |f| %>
+	<div class="field">
+		<%= f.label :message %>
+		<%= f.text_area :message %>
+	</div>
+	<button class="button-enviar-form" type="submit">Enviar Candidatura</button>
+<% end %>

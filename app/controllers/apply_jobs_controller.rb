@@ -18,25 +18,19 @@ class ApplyJobsController < ApplicationController
 		end
 	end
 	def new
-		@profile = Candidate.find_by(user: current_user)
-
-		if @profile
-			redirect_to job_opportunities_path
-		else
-			@candidate = Candidate.new
-			@levels = Level.all
-		end		
+		@apply_job = ApplyJob.new		
 	end
 	def create
 
-		@candidate = Candidate.new(require_params)
-		@candidate.user = current_user
+		@apply_job = ApplyJob.new(require_params)
+		@apply_job.candidate = Candidate.find_by(user: current_user)
+		@apply_job.job_opportunity = JobOpportunity.where(headhunter: current_headhunter)
+		@apply_job.hope!
 
-		if @candidate.save
-			flash[:notice] = 'Perfil criado com sucesso'	
+		if @apply_job.save
+			flash[:notice] = 'Candidatura realizada com sucesso'	
 		    	redirect_to job_opportunities_path
 		else 
-			@levels = Level.all
 			render :new
 		end
 	end
@@ -66,18 +60,7 @@ class ApplyJobsController < ApplicationController
 	private
 	
 	def require_params
-		params.require(:candidate).permit(
-			:full_name, 
-			:social_name,
-			:date_of_birth,
-			:profession,
-			:profile_description,
-			:experience,
-			:formation,
-			:level_id,
-			:courses,
-			:user_id,
-			:avatar)
+		params.require(:apply_job).permit(:message, :candidate_id, :job_opportunity_id)
 	end
 
 	def id
