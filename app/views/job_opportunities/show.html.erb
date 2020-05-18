@@ -34,7 +34,18 @@
 	<% else %>
 		<% @applyjob.each do |apply| %>
 			<%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %>
-			<%= apply.candidate.profession %>				
+			<%= apply.candidate.profession %>
+			<%= apply.message %>
+			<p>Status do Processo: 
+				<%= ApplyJob.human_attribute_name("feedback.#{apply.feedback}") %>
+			</p>
+
+			<% if apply.hope? %>
+				<%= link_to "Enviar Feedback", 
+				new_job_opportunity_apply_job_feedback_path(@job, apply) %>
+			<% else %>
+				<p>Feedback enviado!</p>
+			<% end %>				
 		<% end %>
 	<% end %>
 <% else %>

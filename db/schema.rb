@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_222605) do
+ActiveRecord::Schema.define(version: 2020_05_18_183326) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 2020_05_17_222605) do
     t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 
+  create_table "choices", force: :cascade do |t|
+    t.string "option"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer "candidate_id", null: false
     t.integer "headhunter_id", null: false
@@ -69,6 +75,16 @@ ActiveRecord::Schema.define(version: 2020_05_17_222605) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["candidate_id"], name: "index_comments_on_candidate_id"
     t.index ["headhunter_id"], name: "index_comments_on_headhunter_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "message"
+    t.integer "apply_job_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "choice_id", null: false
+    t.index ["apply_job_id"], name: "index_feedbacks_on_apply_job_id"
+    t.index ["choice_id"], name: "index_feedbacks_on_choice_id"
   end
 
   create_table "headhunters", force: :cascade do |t|
@@ -127,6 +143,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_222605) do
   add_foreign_key "candidates", "users"
   add_foreign_key "comments", "candidates"
   add_foreign_key "comments", "headhunters"
+  add_foreign_key "feedbacks", "apply_jobs"
+  add_foreign_key "feedbacks", "choices"
   add_foreign_key "job_opportunities", "headhunters"
   add_foreign_key "job_opportunities", "levels"
 end

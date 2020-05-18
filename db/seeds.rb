@@ -8,6 +8,10 @@ Level.create!(name: 'Sênior')
 especialista = Level.create!(name: 'Especialista')
 Level.create!(name: 'Diretor')
 
+# Definindo escolhas que headhunter e candidato podem tomar para aos feedbacks e propostas
+Choice.create!(option: "Aceitar")
+Choice.create!(option: "Recusar")
+
 # Candidatos
 user_a = User.create!(email: 'camila@outlook.com.br', password: '123456')
 user_b = User.create!(email: 'bianca@yahoo.com.br', password: '123456')

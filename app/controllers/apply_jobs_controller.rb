@@ -9,6 +9,7 @@ class ApplyJobsController < ApplicationController
 	end
 	def show
 		@apply_job = ApplyJob.find(id)
+		@feedback = Feedback.find_by(apply_job: @apply_job)
 	end
 	def new
 		@apply_job = ApplyJob.new		

@@ -6,6 +6,7 @@ class CandidatesController < ApplicationController
 		@candidates = Candidate.all
 	end
 	def show
+
 		if user_signed_in?
 	    		@candidate = Candidate.find_by(user: current_user)
 			@comments = Comment.all

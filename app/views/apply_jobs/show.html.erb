@@ -7,5 +7,13 @@
 <p><%= @apply_job.created_at %></p>
 <p>Status do Processo: <%= ApplyJob.human_attribute_name("feedback.#{@apply_job.feedback}") %></p>
 
-<p><%= link_to 'Editar Informações', edit_job_opportunity_apply_job_path(@job_opportunity), id: "edit-#{@job_opportunity.id}"%></p>
+<% if @feedback %>
+	<p>Feedback do Recrutador: <%= @feedback.message %></p>
+	<p>Data de Envio: <%= @feedback.created_at %></p>
+<% else %>
+	<p><%= link_to 'Editar Informações', 
+		edit_job_opportunity_apply_job_path(@job_opportunity), 
+		id: "edit-#{@job_opportunity.id}"%></p>
+<% end %>
+
 <p><%= link_to 'Retirar minha candidatura', [@job_opportunity, @apply_job] , method: :delete, id: "delete-#{@job_opportunity.id}"%></p>
