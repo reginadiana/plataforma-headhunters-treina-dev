@@ -43,6 +43,9 @@ candidate_b = Candidate.create!(
 	user: user_b
 )
 
+candidate_a.not_highlighted!
+candidate_b.not_highlighted!
+
 # Recrutadores
 headhunter_a = Headhunter.create!(email: 'lucas22@outlook.com.br', password: '111111')
 headhunter_b = Headhunter.create!(email: 'lucas22@yahoo.com.br', password: '111111')

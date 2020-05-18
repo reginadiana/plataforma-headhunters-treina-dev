@@ -1,0 +1,12 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      feedback: Feedback
+    attributes:
+      feedback:
+       apply_job: Candidatura
+       apply_job_id: Candidatura
+       choice: Escolha
+       choice_id: Escolha
+       message: Mensagem de Feedback

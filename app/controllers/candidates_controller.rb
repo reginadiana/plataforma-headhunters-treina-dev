@@ -2,6 +2,20 @@ class CandidatesController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_head, only: [:new, :create, :edit, :update, :destroy] 
 
+	def profile_as 
+		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
+		@apply_job = ApplyJob.find(params[:apply_job_id])		
+
+		if @apply_job.candidate.featured?
+			@apply_job.candidate.not_highlighted!
+		else
+			@apply_job.candidate.featured!
+			flash[:notice] = 'Perfil marcado como destaque'
+		end
+
+		redirect_to @job_opportunity 
+	end
+
 	def index
 		@candidates = Candidate.all
 	end

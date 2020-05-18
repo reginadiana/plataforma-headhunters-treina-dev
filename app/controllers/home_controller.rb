@@ -7,4 +7,5 @@ class HomeController < ApplicationController
 			redirect_to new_candidate_path
 		end
 	end
+
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 	resources :job_opportunities do
 		resources :apply_jobs, only: [:show, :new, :create, :edit, :update, :destroy] do
 			resources :feedbacks, only: [:new, :create]
+			get "profile_as", to: "candidates#profile_as"
 		end
 	end
 
@@ -22,5 +23,5 @@ Rails.application.routes.draw do
 
 	resources :candidates do
 		resources :comments, only: [:new, :create, :edit, :update, :destroy]
-	end
+	end	
 end

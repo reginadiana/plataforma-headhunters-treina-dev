@@ -4,6 +4,9 @@ pt-BR:
     models:
       candidate: Candidato 
     attributes:
+      candidate/feedback:
+        featured: Destaque
+        not_highlighted: Sem Destaque
       candidate:
         full_name: Nome Completo
         social_name: Nome Social

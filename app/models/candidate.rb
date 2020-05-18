@@ -3,7 +3,7 @@ class Candidate < ApplicationRecord
 	belongs_to :user
 	has_one_attached :avatar
 	
-	enum feedback: { featured: 0, not_highlighted: 1 } 
+	enum feedback: { featured: "Destaque", not_highlighted: "Sem Destaque" } 
 
 	validates :full_name, 
 		  :social_name,
