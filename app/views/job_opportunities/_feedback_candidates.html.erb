@@ -4,5 +4,5 @@
 	<%= @job.title %>
 	<%= Proposal.human_attribute_name("status.#{awnser.proposal.status}") %>
 	<%= awnser.awnser_message %>
-	<%= awnser.proposal.candidate.full_name %>
+	<%= link_to awnser.proposal.candidate.full_name, awnser.proposal.candidate %>
 <% end %>

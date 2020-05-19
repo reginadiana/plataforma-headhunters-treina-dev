@@ -9,7 +9,7 @@
 
 <% if @feedback %>
 	<p>Feedback do Recrutador: <%= @feedback.message %></p>
-	<p>Data de Envio: <%= @feedback.created_at %></p>
+	<p>Data de Envio: <%= l @feedback.created_at, format: :short %></p>
 <% else %>
 	<p><%= link_to 'Editar Informações', 
 		edit_job_opportunity_apply_job_path(@job_opportunity), 

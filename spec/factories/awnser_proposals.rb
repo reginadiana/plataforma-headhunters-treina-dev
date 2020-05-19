@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :awnser_proposal do
-    choice { nil }
+    choice 
     awnser_message { "MyString" }
-    proposal { nil }
+    proposal 
   end
 end
