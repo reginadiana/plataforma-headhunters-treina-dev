@@ -48,12 +48,8 @@
 				<%= ApplyJob.human_attribute_name("feedback.#{apply.feedback}") %>
 			</p>
 
-			<% if apply.hope? %>
-				<%= link_to "Enviar Feedback", 
-				new_job_opportunity_apply_job_feedback_path(@job, apply) %>
-			<% else %>
-				<p>Feedback enviado!</p>
-			<% end %>				
+			<%= link_to "Enviar Feedback", 
+				new_job_opportunity_apply_job_feedback_path(@job, apply) %>				
 		<% end %>
 	<% end %>
 <% else %>

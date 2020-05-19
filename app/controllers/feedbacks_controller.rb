@@ -25,6 +25,28 @@ class FeedbacksController < ApplicationController
 		end 
 	end
 
+	def edit
+		@feedback = Feedback.find(id)
+		@choices = Choice.all
+	end
+
+	def update
+		@feedback = Feedback.find(id)
+		if @feedback.update(require_params)
+
+			if @feedback.choice.option === "Aceitar"
+				@apply_job.accepted!
+			end
+
+			if @feedback.choice.option === "Recusar"
+				@apply_job.rejected!
+			end
+
+			flash[:notice] = 'Feedback atualizada com sucesso'	
+			redirect_to job_opportunity_path(@job_opportunuty)
+		end
+	end
+
 	private
 	
 	def require_params

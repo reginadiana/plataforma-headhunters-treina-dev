@@ -47357,3 +47357,455 @@ Processing by AwnserProposalsController#new as HTML
 Completed 200 OK in 367ms (Views: 302.1ms | ActiveRecord: 6.9ms | Allocations: 14932)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-18 21:07:11 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Joa1z8OzzBDpTS8NssTUBoZAuTsYbOZQr2sW9XFr1lKe/JOsv0acVTznCGGIsf/tjXA2DgM05laHT4S7yR2XdQ=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 70ms (ActiveRecord: 1.2ms | Allocations: 7578)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:07:12 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 24.7ms | Allocations: 1302)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 75.7ms | ActiveRecord: 0.0ms | Allocations: 9818)
+
+
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:07:14 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 9.0ms | Allocations: 558)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 33.0ms | Allocations: 1917)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 252ms (Views: 134.6ms | ActiveRecord: 6.4ms | Allocations: 16630)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:08:35 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7QF0L/Vmpfgb7LANqTdPUrGkPi8QGORIwBLeBwrcLp4qSxZq5zKebchfloFczHss+HLOyYF8abuzErNv8VjuUA==", "headhunter"=>{"email"=>"bianca@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "bianca@yahoo.com.br"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 23ms (ActiveRecord: 1.3ms | Allocations: 1923)
+
+
+Processing by Headhunters::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"7QF0L/Vmpfgb7LANqTdPUrGkPi8QGORIwBLeBwrcLp4qSxZq5zKebchfloFczHss+HLOyYF8abuzErNv8VjuUA==", "headhunter"=>{"email"=>"bianca@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.3ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 484ms (Views: 67.0ms | ActiveRecord: 0.0ms | Allocations: 9088)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:08:41 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ky4mS+dkMhUMcA5jPqU8lJVyRruz3HV9wYaDrdnccdC0fjIDxti15ZWXeGT8Dv5nO3S/XJ/VYi0G3Qi4WIM65Q==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 475ms (ActiveRecord: 1.2ms | Allocations: 4135)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:08:42 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms | Allocations: 1165)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:08:42 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (1.4ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 2]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 136.2ms | Allocations: 14997)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 241ms (Views: 201.1ms | ActiveRecord: 4.1ms | Allocations: 26116)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:08:45 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (2.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 57.3ms | Allocations: 3003)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 378ms (Views: 288.2ms | ActiveRecord: 7.9ms | Allocations: 14570)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:08:55 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 2]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (1.2ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 35.0ms | Allocations: 2296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 100.9ms | ActiveRecord: 4.1ms | Allocations: 11175)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:08:57 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.2ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (2.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 54.4ms | Allocations: 2152)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 152ms (Views: 103.0ms | ActiveRecord: 5.7ms | Allocations: 11631)
+
+
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-18 21:09:00 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FT24UFtRRT+zkMfQDj4dwSp5U/O+zooo9AUGOhgNANNrppzriA93PC9QdTBre+8QUIZEAKBf/uPA/vFpubm1Lw=="}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 1.1ms | Allocations: 2252)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:09:00 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 0.0ms | Allocations: 9018)
+
+
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:09:14 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 1.7ms | Allocations: 138)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 76.6ms | ActiveRecord: 0.0ms | Allocations: 9133)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:10:00 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"cKwrkdyK0zjzHS/zqoZE1nVItTUJSnZCneUVnt4Fp5dUwNvrz8M4DBHIbB14bjCvW+vWqWPby2kY0UZAfOrxtw==", "headhunter"=>{"email"=>"lucas22@outlook.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@outlook.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 435ms (ActiveRecord: 0.5ms | Allocations: 2729)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:10:00 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 13ms (ActiveRecord: 0.5ms | Allocations: 1140)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:10:00 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 24.7ms | Allocations: 2290)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 65.7ms | ActiveRecord: 2.6ms | Allocations: 11184)
+
+
+Started GET "/candidates" for 127.0.0.1 at 2020-05-18 21:10:04 -0300
+Processing by CandidatesController#index as HTML
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:111:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "candidates" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:4
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:9
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Candidate"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:12
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:21
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Candidate"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:12
+  [1m[36mCACHE Level Load (0.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:21
+  Rendered candidates/index.html.erb within layouts/application (Duration: 177.5ms | Allocations: 17126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 270ms (Views: 222.3ms | ActiveRecord: 6.7ms | Allocations: 28123)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:10:05 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 1146)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:10:05 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 2298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 70.3ms | ActiveRecord: 2.6ms | Allocations: 11191)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:10:06 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:37
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:38
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 90.5ms | Allocations: 8831)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 166ms (Views: 130.2ms | ActiveRecord: 6.7ms | Allocations: 18211)
+
+
+Started GET "/job_opportunities/1/apply_jobs/1/feedbacks/new" for 127.0.0.1 at 2020-05-18 21:10:09 -0300
+Processing by FeedbacksController#new as HTML
+  Parameters: {"job_opportunity_id"=>"1", "apply_job_id"=>"1"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:67:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:61:in `find_apply_and_job'
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:62:in `find_apply_and_job'
+  Rendering feedbacks/new.html.erb within layouts/application
+  [1m[36mChoice Load (0.9ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/feedbacks/_form.html.erb:11
+  Rendered feedbacks/_form.html.erb (Duration: 42.2ms | Allocations: 3957)
+  Rendered feedbacks/new.html.erb within layouts/application (Duration: 47.5ms | Allocations: 4326)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 285ms (Views: 98.4ms | ActiveRecord: 7.1ms | Allocations: 19863)
+
+
+Started POST "/job_opportunities/1/apply_jobs/1/feedbacks" for 127.0.0.1 at 2020-05-18 21:10:11 -0300
+Processing by FeedbacksController#create as HTML
+  Parameters: {"authenticity_token"=>"ZUBTEIwKfTDXWcnziKvVmNtqHXsDgef2v+2GsCrGJqMcoTLka7cfXr6ravYq7awCwTorPBbYPNZQ3Dv8WoMZ0w==", "feedback"=>{"message"=>"", "choice_id"=>"1"}, "job_opportunity_id"=>"1", "apply_job_id"=>"1"}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:67:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:61:in `find_apply_and_job'
+  [1m[36mApplyJob Load (0.8ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:62:in `find_apply_and_job'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[36mChoice Load (0.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[36mFeedback Create (1.5ms)[0m  [1m[32mINSERT INTO "feedbacks" ("message", "apply_job_id", "created_at", "updated_at", "choice_id") VALUES (?, ?, ?, ?, ?)[0m  [["message", ""], ["apply_job_id", 1], ["created_at", "2020-05-19 00:10:11.352084"], ["updated_at", "2020-05-19 00:10:11.352084"], ["choice_id", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[35m (28.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:16:in `create'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:16:in `create'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:16:in `create'
+  [1m[36mApplyJob Update (1.1ms)[0m  [1m[33mUPDATE "apply_jobs" SET "feedback" = ?, "updated_at" = ? WHERE "apply_jobs"."id" = ?[0m  [["feedback", "Aceito"], ["updated_at", "2020-05-19 00:10:11.429699"], ["id", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:16:in `create'
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:16:in `create'
+Redirected to http://localhost:3000/job_opportunities/1
+Completed 302 Found in 175ms (ActiveRecord: 57.6ms | Allocations: 14442)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:10:11 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:37
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:38
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 39.4ms | Allocations: 3708)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 82.6ms | ActiveRecord: 3.8ms | Allocations: 13239)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:11:38 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  [1m[36mApplyJob Load (0.7ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:37
+  [1m[36mCandidate Load (0.7ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:38
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 65.2ms | Allocations: 4447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 142.3ms | ActiveRecord: 4.7ms | Allocations: 15481)
+
+
+Started GET "/job_opportunities/1/apply_jobs/1/feedbacks/new" for 127.0.0.1 at 2020-05-18 21:11:40 -0300
+Processing by FeedbacksController#new as HTML
+  Parameters: {"job_opportunity_id"=>"1", "apply_job_id"=>"1"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:67:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:61:in `find_apply_and_job'
+  [1m[36mApplyJob Load (0.7ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:62:in `find_apply_and_job'
+  Rendering feedbacks/new.html.erb within layouts/application
+  [1m[36mChoice Load (0.9ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/feedbacks/_form.html.erb:11
+  Rendered feedbacks/_form.html.erb (Duration: 28.0ms | Allocations: 1492)
+  Rendered feedbacks/new.html.erb within layouts/application (Duration: 36.4ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 88.7ms | ActiveRecord: 3.0ms | Allocations: 12481)
+
+
+Started POST "/job_opportunities/1/apply_jobs/1/feedbacks" for 127.0.0.1 at 2020-05-18 21:11:43 -0300
+Processing by FeedbacksController#create as HTML
+  Parameters: {"authenticity_token"=>"cDhPIpYfUesTKavMsiYcragHI2XkLLeG3XYpP81u3RsJ2S7WcaIzhXrbCMkQYGU3slcVIvF1bKYyR5RzvSviaw==", "feedback"=>{"message"=>"", "choice_id"=>"2"}, "job_opportunity_id"=>"1", "apply_job_id"=>"1"}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:67:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:61:in `find_apply_and_job'
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:62:in `find_apply_and_job'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[36mFeedback Create (1.5ms)[0m  [1m[32mINSERT INTO "feedbacks" ("message", "apply_job_id", "created_at", "updated_at", "choice_id") VALUES (?, ?, ?, ?, ?)[0m  [["message", ""], ["apply_job_id", 1], ["created_at", "2020-05-19 00:11:43.100485"], ["updated_at", "2020-05-19 00:11:43.100485"], ["choice_id", 2]]
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:20:in `create'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:20:in `create'
+  [1m[36mJobOpportunity Load (0.4ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:20:in `create'
+  [1m[36mApplyJob Update (1.2ms)[0m  [1m[33mUPDATE "apply_jobs" SET "feedback" = ?, "updated_at" = ? WHERE "apply_jobs"."id" = ?[0m  [["feedback", "Rejeitado"], ["updated_at", "2020-05-19 00:11:43.165831"], ["id", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:20:in `create'
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedbacks_controller.rb:20:in `create'
+Redirected to http://localhost:3000/job_opportunities/1
+Completed 302 Found in 154ms (ActiveRecord: 40.2ms | Allocations: 12723)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:11:43 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:37
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:38
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 40.5ms | Allocations: 3714)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 83.1ms | ActiveRecord: 3.5ms | Allocations: 13219)
+
+
+Started GET "/job_opportunities/1/apply_jobs/1/feedbacks/new" for 127.0.0.1 at 2020-05-18 21:12:28 -0300
+Processing by FeedbacksController#new as HTML
+  Parameters: {"job_opportunity_id"=>"1", "apply_job_id"=>"1"}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:67:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:61:in `find_apply_and_job'
+  [1m[36mApplyJob Load (0.6ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedbacks_controller.rb:62:in `find_apply_and_job'
+  Rendering feedbacks/new.html.erb within layouts/application
+  [1m[36mChoice Load (0.7ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/feedbacks/_form.html.erb:11
+  Rendered feedbacks/_form.html.erb (Duration: 12.4ms | Allocations: 1279)
+  Rendered feedbacks/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 57.8ms | ActiveRecord: 2.3ms | Allocations: 11343)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:12:32 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 1149)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:12:32 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 2636)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 66.3ms | ActiveRecord: 2.4ms | Allocations: 11667)
+
+
