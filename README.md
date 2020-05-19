@@ -2,6 +2,8 @@
   <img src="https://user-images.githubusercontent.com/46378210/81453266-7ccdbc80-915f-11ea-9b07-fdfb166e60bd.png" alt="Titulo do Projeto"/>
 </p>
 
+![APM](https://img.shields.io/apm/l/vim-mode?color=green&label=license&logo=license&logoColor=green&style=for-the-badge)
+
 > Status do Projeto: em desenvolvimento :warning: 
 
 :memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
