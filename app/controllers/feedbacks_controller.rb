@@ -3,8 +3,14 @@ class FeedbacksController < ApplicationController
 	before_action :find_apply_and_job
 
 	def new
-		@feedback = Feedback.new
-		@choices = Choice.all		
+		@feedback = Feedback.find_by(apply_job: @apply_job)
+		@choices = Choice.all
+
+		if @feedback
+			render :edit	
+		else
+			@feedback = Feedback.new
+		end	
 	end
 	def create
 		@feedback = Feedback.new(require_params)
@@ -42,7 +48,7 @@ class FeedbacksController < ApplicationController
 				@apply_job.rejected!
 			end
 
-			flash[:notice] = 'Feedback atualizada com sucesso'	
+			flash[:notice] = 'Feedback atualizado com sucesso'	
 			redirect_to job_opportunity_path(@job_opportunuty)
 		end
 	end

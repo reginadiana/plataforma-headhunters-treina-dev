@@ -11,7 +11,8 @@ feature 'Headhunter register a feedback' do
 		candidate = create(:candidate, full_name: "Lais Lima")
 		@apply_job = create(:apply_job, candidate: candidate, job_opportunity: job_opportunity)
 
-		@acepted = create(:choice, option: "Aceitar")
+		acepted = create(:choice, option: "Aceitar")
+		reject = create(:choice, option: "Recusar") 
 
 		visit job_opportunities_path
 		click_on "Desenvolvedor React"
@@ -23,13 +24,30 @@ feature 'Headhunter register a feedback' do
 	end
 
 	scenario 'successfully' do  
+		
 
 		fill_in 'Mensagem de Feedback', with: 'Ola, podemos marcar uma entrevista?'
 		select 'Aceitar', from: 'Escolha'
 
 		click_on "Enviar Feedback"
 
+		expect(page).to have_content("Feedback enviado com sucesso")
 		expect(page).to have_content("Lais Lima")
 		expect(page).to have_content("Aceito")
+	end
+
+	scenario 'but feedback already is done. He can edit' do 
+
+		feedback = create(:feedback, 
+			apply_job: @apply_job)
+
+		fill_in 'Mensagem de Feedback', with: 'Ola, por enquanto nao estamos procurando este perfil'
+		select "Recusar", from: 'Escolha'
+
+		click_on "Enviar Feedback"
+
+		expect(page).to have_content("Feedback atualizado com sucesso")
+		expect(page).to have_content("Lais Lima")
+		expect(page).to have_content("Rejeitado")
 	end
 end

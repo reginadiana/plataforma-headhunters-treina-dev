@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   	root to: 'home#index'
 	resources :job_opportunities do
 		resources :apply_jobs, only: [:show, :new, :create, :edit, :update, :destroy] do
-			resources :feedbacks, only: [:new, :create]
+			resources :feedbacks, only: [:new, :create, :edit, :update]
 			get "profile_as", to: "candidates#profile_as"
 		end
 	end
