@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
 	before_action :authenticate_visitor
-	before_action :authenticate_candidate, only: [:new, :create, :edit, :update] 
+	before_action :authenticate_candidate, only: [:new, :create] 
 	before_action :find_candidate
 
 	def index

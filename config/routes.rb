@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 	end
 
 	resources :apply_jobs, only: [:index]
-	resources :feedbacks, only: [:index]
 
 	resources :candidates do
 		resources :comments, only: [:new, :create, :edit, :update, :destroy]
