@@ -41,6 +41,15 @@ class AwnserProposalsController < ApplicationController
 	def update
 		@awnser_proposal = AwnserProposal.find(id)
 		if @awnser_proposal.update(require_params)
+
+			if @awnser_proposal.choice.option === "Aceitar"
+				@proposal.accepted!
+			end
+
+			if @awnser_proposal.choice.option === "Recusar"
+				@proposal.rejected!
+			end
+
 			flash[:notice] = 'Resposta atualizada com sucesso'	
 			redirect_to candidate_proposals_path(@candidate)
 		end

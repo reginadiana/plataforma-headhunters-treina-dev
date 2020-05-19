@@ -1,0 +1,12 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      awnser_proposal: Resposta da Proposta
+    attributes:
+      awnser_proposal:
+       proposal: Proposta
+       proposal_id: Proposta
+       choice: Escolha
+       choice_id: Escolha
+       awnser_message: Conteúdo da Resposta

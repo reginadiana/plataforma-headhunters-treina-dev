@@ -46572,3 +46572,788 @@ Processing by ProposalsController#index as HTML
 Completed 200 OK in 119ms (Views: 93.8ms | ActiveRecord: 4.2ms | Allocations: 14350)
 
 
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:55:19 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.8ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 198.2ms | Allocations: 20265)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 525ms (Views: 251.9ms | ActiveRecord: 5.7ms | Allocations: 48001)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:55:22 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:73:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:68:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (1.6ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:69:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (1.1ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (0.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 38.2ms | Allocations: 4020)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 42.8ms | Allocations: 4391)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 193ms (Views: 100.1ms | ActiveRecord: 5.6ms | Allocations: 21403)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:55:43 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:73:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:68:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.8ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:69:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.9ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (1.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 59.7ms | Allocations: 6800)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 61.8ms | Allocations: 6908)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 571ms (Views: 118.4ms | ActiveRecord: 24.0ms | Allocations: 46267)
+
+
+Started PATCH "/candidates/2/proposals/1/awnser_proposals/1" for 127.0.0.1 at 2020-05-18 20:55:49 -0300
+Processing by AwnserProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"X5Lb2utdWkNEyli7smoKSbtvaJEcUmY5PkGlpffmMwXn6P25l6gKBpFgf9eIHyGisF/npAcKZj8WZTfrT5ByIg==", "awnser_proposal"=>{"awnser_message"=>"", "choice_id"=>"1"}, "candidate_id"=>"2", "proposal_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:73:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:68:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:69:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.8ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:42:in `update'
+[31mUnpermitted parameter: :awnser_message[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mChoice Load (1.0ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mProposal Load (0.4ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+Redirected to http://localhost:3000/candidates/2/proposals
+Completed 302 Found in 76ms (ActiveRecord: 4.5ms | Allocations: 8122)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:55:49 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (1.3ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 132.8ms | Allocations: 13858)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 208ms (Views: 180.6ms | ActiveRecord: 8.8ms | Allocations: 24540)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:55:54 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:73:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:68:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.7ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:69:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.6ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (1.0ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 19.8ms | Allocations: 1329)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 22.2ms | Allocations: 1431)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 117ms (Views: 81.0ms | ActiveRecord: 4.0ms | Allocations: 12855)
+
+
+Started PATCH "/candidates/2/proposals/1/awnser_proposals/1" for 127.0.0.1 at 2020-05-18 20:55:57 -0300
+Processing by AwnserProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"I66uIj3WqHTm4kf12bczuYiaylic2KlYE/BhxDAtm9UIQivrXaF6qes6z+CkonoCFTGFDFSYlmUDyL/++RAt7g==", "awnser_proposal"=>{"awnser_message"=>"", "choice_id"=>"1"}, "candidate_id"=>"2", "proposal_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:73:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:68:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:69:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.6ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:42:in `update'
+[31mUnpermitted parameter: :awnser_message[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mChoice Load (0.6ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mProposal Load (0.4ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+Redirected to http://localhost:3000/candidates/2/proposals
+Completed 302 Found in 64ms (ActiveRecord: 3.9ms | Allocations: 7015)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:55:57 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 2283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 94ms (Views: 74.0ms | ActiveRecord: 4.0ms | Allocations: 12462)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:56:45 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (1.6ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 300.4ms | Allocations: 18131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 728ms (Views: 365.4ms | ActiveRecord: 32.6ms | Allocations: 47108)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:56:50 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (2.0ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (1.6ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (1.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 75.0ms | Allocations: 4108)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 77.7ms | Allocations: 4216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 345ms (Views: 176.1ms | ActiveRecord: 18.6ms | Allocations: 21068)
+
+
+Started PATCH "/candidates/2/proposals/1/awnser_proposals/1" for 127.0.0.1 at 2020-05-18 20:56:51 -0300
+Processing by AwnserProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"0/3SnrL4/pFORSua1HQJsVrVfUKFB23D/2Y5gCCRnXf4EVdX0o8sTEOdo4+pYUAKx34yFk1HUv7vXue66awrTA==", "awnser_proposal"=>{"awnser_message"=>"", "choice_id"=>"1"}, "candidate_id"=>"2", "proposal_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (1.1ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:42:in `update'
+[31mUnpermitted parameter: :awnser_message[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mChoice Load (0.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[36mProposal Update (1.3ms)[0m  [1m[33mUPDATE "proposals" SET "status" = ?, "updated_at" = ? WHERE "proposals"."id" = ?[0m  [["status", "Aceito"], ["updated_at", "2020-05-18 23:56:51.850569"], ["id", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+Redirected to http://localhost:3000/candidates/2/proposals
+Completed 302 Found in 141ms (ActiveRecord: 22.9ms | Allocations: 14154)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:56:51 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.7ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 23.5ms | Allocations: 2302)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 114ms (Views: 93.5ms | ActiveRecord: 3.7ms | Allocations: 12635)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:56:56 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.7ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.7ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 13.9ms | Allocations: 1330)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1432)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 198ms (Views: 71.8ms | ActiveRecord: 3.8ms | Allocations: 12866)
+
+
+Started PATCH "/candidates/2/proposals/1/awnser_proposals/1" for 127.0.0.1 at 2020-05-18 20:56:57 -0300
+Processing by AwnserProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"+7F9ExneBFwo6to5PBHS0S/02CXE6mUrUnWE00cq+RPQXfjaeanWgSUyUixBBJtqsl+XcQyqWhZCTVrpjhdPKA==", "awnser_proposal"=>{"awnser_message"=>"", "choice_id"=>"1"}, "candidate_id"=>"2", "proposal_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.4ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.8ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.9ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:42:in `update'
+[31mUnpermitted parameter: :awnser_message[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mProposal Load (0.4ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:46:in `update'
+Redirected to http://localhost:3000/candidates/2/proposals
+Completed 302 Found in 121ms (ActiveRecord: 7.7ms | Allocations: 11028)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:56:58 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 2289)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 93ms (Views: 73.1ms | ActiveRecord: 3.5ms | Allocations: 12464)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:56:59 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.7ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.7ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.7ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (1.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 22.0ms | Allocations: 1330)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 24.4ms | Allocations: 1432)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 116ms (Views: 77.6ms | ActiveRecord: 5.0ms | Allocations: 12866)
+
+
+Started PATCH "/candidates/2/proposals/1/awnser_proposals/1" for 127.0.0.1 at 2020-05-18 20:57:01 -0300
+Processing by AwnserProposalsController#update as HTML
+  Parameters: {"authenticity_token"=>"ouznt8woQz3W2ZJ4RG9f3qwGf3bFNw66guJZ3b0N1HCJAGJ+rF+R4NsBGm05ehZlMa0wIg13MYeS2ofndDBiSw==", "awnser_proposal"=>{"awnser_message"=>"", "choice_id"=>"2"}, "candidate_id"=>"2", "proposal_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.5ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:42:in `update'
+[31mUnpermitted parameter: :awnser_message[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mProposal Load (0.4ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[36mAwnserProposal Update (1.2ms)[0m  [1m[33mUPDATE "awnser_proposals" SET "choice_id" = ?, "updated_at" = ? WHERE "awnser_proposals"."id" = ?[0m  [["choice_id", 2], ["updated_at", "2020-05-18 23:57:01.366394"], ["id", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:43:in `update'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:50:in `update'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:50:in `update'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:50:in `update'
+  [1m[36mProposal Update (1.0ms)[0m  [1m[33mUPDATE "proposals" SET "status" = ?, "updated_at" = ? WHERE "proposals"."id" = ?[0m  [["status", "Rejeitado"], ["updated_at", "2020-05-18 23:57:01.430322"], ["id", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:50:in `update'
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/awnser_proposals_controller.rb:50:in `update'
+Redirected to http://localhost:3000/candidates/2/proposals
+Completed 302 Found in 158ms (ActiveRecord: 34.8ms | Allocations: 14538)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:57:01 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 2282)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 104ms (Views: 82.2ms | ActiveRecord: 4.0ms | Allocations: 12456)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 20:57:08 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+Redirected to http://localhost:3000/candidates/new
+Completed 302 Found in 16ms (ActiveRecord: 0.7ms | Allocations: 1228)
+
+
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-18 20:57:08 -0300
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:110:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:35:in `new'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 20ms (ActiveRecord: 1.1ms | Allocations: 2047)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 20:57:08 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 72.4ms | Allocations: 7281)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 142ms (Views: 118.6ms | ActiveRecord: 9.4ms | Allocations: 17526)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:57:11 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.9ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 39.6ms | Allocations: 2292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 166ms (Views: 133.1ms | ActiveRecord: 5.7ms | Allocations: 12462)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:57:52 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.8ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 29.6ms | Allocations: 2586)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 120ms (Views: 94.8ms | ActiveRecord: 4.1ms | Allocations: 14289)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:58:00 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.7ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 30.3ms | Allocations: 2291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 110ms (Views: 85.0ms | ActiveRecord: 5.0ms | Allocations: 12449)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:58:03 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 42.1ms | Allocations: 2288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 175ms (Views: 140.3ms | ActiveRecord: 5.9ms | Allocations: 12447)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:58:04 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.3ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (1.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 47.2ms | Allocations: 2288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 194ms (Views: 148.3ms | ActiveRecord: 7.2ms | Allocations: 12446)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:58:06 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (1.0ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 40.8ms | Allocations: 2288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 185ms (Views: 134.5ms | ActiveRecord: 6.6ms | Allocations: 12439)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:58:20 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 2575)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 120ms (Views: 91.5ms | ActiveRecord: 4.3ms | Allocations: 14267)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:58:22 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.9ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (1.1ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (1.0ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 139.3ms | Allocations: 1544)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 147.8ms | Allocations: 1909)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 329ms (Views: 268.4ms | ActiveRecord: 6.1ms | Allocations: 14014)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 20:58:23 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:6:in `index'
+Redirected to http://localhost:3000/candidates/new
+Completed 302 Found in 26ms (ActiveRecord: 1.0ms | Allocations: 1229)
+
+
+Started GET "/candidates/new" for 127.0.0.1 at 2020-05-18 20:58:23 -0300
+Processing by CandidatesController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:110:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:35:in `new'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 35ms (ActiveRecord: 2.0ms | Allocations: 1973)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 20:58:23 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 61.7ms | Allocations: 3586)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 187ms (Views: 159.1ms | ActiveRecord: 5.8ms | Allocations: 13877)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 20:59:06 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:89:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities"[0m
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 37.3ms | Allocations: 3579)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 120ms (Views: 101.2ms | ActiveRecord: 4.1ms | Allocations: 14730)
+
+
+Started GET "/candidates/2/proposals" for 127.0.0.1 at 2020-05-18 20:59:08 -0300
+Processing by ProposalsController#index as HTML
+  Parameters: {"candidate_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:55:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/proposals_controller.rb:51:in `find_candidate'
+  Rendering proposals/index.html.erb within layouts/application
+  [1m[36mProposal Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "proposals" WHERE "proposals"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:6
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."candidate_id" = ?[0m  [["candidate_id", 2]]
+  ↳ app/views/proposals/index.html.erb:11
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/proposals/index.html.erb:13
+  Rendered proposals/index.html.erb within layouts/application (Duration: 28.3ms | Allocations: 2575)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 116ms (Views: 94.3ms | ActiveRecord: 4.1ms | Allocations: 13389)
+
+
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:59:09 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.7ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (1.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  [1m[36mCACHE Choice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/awnser_proposals_controller.rb:11:in `new'
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 3082.5ms | Allocations: 199886)
+Completed 500 Internal Server Error in 3130ms (ActiveRecord: 4.6ms | Allocations: 203771)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `candidate' for #<#<Class:0x6f518e80>:0x6f523968>
+Did you mean?  @candidate):
+    1: <h3 class="link-to-back"><%= link_to 'Voltar', candidate_proposals_path(candidate) %></h3>
+    2: 
+    3: <div class="form-session">
+    4: 	<h1>Envie uma resposta ao recrutador sobre a vaga</h1>
+  
+app/views/awnser_proposals/edit.html.erb:1
+app/controllers/awnser_proposals_controller.rb:11:in `new'
+Started GET "/candidates/2/proposals/1/awnser_proposals/new" for 127.0.0.1 at 2020-05-18 20:59:28 -0300
+Processing by AwnserProposalsController#new as HTML
+  Parameters: {"candidate_id"=>"2", "proposal_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:82:in `authenticate_visitor'
+  [1m[36mCandidate Load (1.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:77:in `find_candidate_and_proposal'
+  [1m[36mProposal Load (0.9ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:78:in `find_candidate_and_proposal'
+  [1m[36mAwnserProposal Load (0.8ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" = ? LIMIT ?[0m  [["proposal_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/awnser_proposals_controller.rb:7:in `new'
+  Rendering awnser_proposals/edit.html.erb within layouts/application
+  [1m[36mChoice Load (0.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices"[0m
+  ↳ app/views/awnser_proposals/_form.html.erb:11
+  Rendered awnser_proposals/_form.html.erb (Duration: 42.3ms | Allocations: 1541)
+  Rendered awnser_proposals/edit.html.erb within layouts/application (Duration: 49.7ms | Allocations: 1913)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCandidate Load (1.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+Completed 200 OK in 367ms (Views: 302.1ms | ActiveRecord: 6.9ms | Allocations: 14932)
+
+
