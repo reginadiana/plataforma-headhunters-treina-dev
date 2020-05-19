@@ -9,7 +9,17 @@
   <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
 </p>
 
-> Status do Projeto: em desenvolvimento :warning: 
+<p align="center">
+  <img src="https://img.shields.io/github/issues/Diana-ops/plataforma-headhunters-treina-dev?style=for-the-badge"/>
+  
+  <img src="https://img.shields.io/github/forks/Diana-ops/plataforma-headhunters-treina-dev?style=for-the-badge"/>
+  
+   <img src="https://img.shields.io/github/stars/Diana-ops/plataforma-headhunters-treina-dev?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+</p>
 
 :memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
 
