@@ -47809,3 +47809,522 @@ Processing by JobOpportunitiesController#index as HTML
 Completed 200 OK in 82ms (Views: 66.3ms | ActiveRecord: 2.4ms | Allocations: 11667)
 
 
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:15:35 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:8
+  [1m[36mApplyJob Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:34
+  [1m[36mApplyJob Load (0.5ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:37
+  [1m[36mCandidate Load (0.8ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:38
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 39.8ms | Allocations: 3693)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 84.3ms | ActiveRecord: 3.9ms | Allocations: 13173)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:16:58 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mApplyJob Load (1.0ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 11]]
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 1307.8ms | Allocations: 106869)
+Completed 500 Internal Server Error in 1338ms (ActiveRecord: 2.7ms | Allocations: 109742)
+
+
+  
+ActionView::Template::Error (undefined method `renter' for #<#<Class:0x0247e7b0>:0x02545a58>
+Did you mean?  render):
+    1: <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
+    2: 
+    3: <%= renter "info_job" %>
+    4: 
+    5: <% if headhunter_signed_in? %>
+    6: 	<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
+  
+app/views/job_opportunities/show.html.erb:3
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:17:11 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (1.3ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:90:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 42.2ms | Allocations: 1750)
+  [1m[36mApplyJob Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:11
+  [1m[36mApplyJob Load (0.9ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:14
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/show.html.erb:15
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 99.9ms | Allocations: 4805)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 250ms (Views: 205.6ms | ActiveRecord: 6.5ms | Allocations: 15860)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:26:41 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.1ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 48.0ms | Allocations: 5178)
+  [1m[36mAwnserProposal Load (1.0ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 8.3ms | Allocations: 853)
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:3
+  [1m[36mApplyJob Load (0.8ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:6
+An enum element in Candidate uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+  [1m[36mCandidate Load (1.3ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:7
+  Rendered job_opportunities/_candidates.html.erb (Duration: 152.0ms | Allocations: 17753)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 218.7ms | Allocations: 24852)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 521ms (Views: 267.8ms | ActiveRecord: 7.1ms | Allocations: 55565)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:26:52 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (1.3ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 34.7ms | Allocations: 2703)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 82.5ms | ActiveRecord: 3.6ms | Allocations: 12067)
+
+
+Started GET "/job_opportunities/1" for 127.0.0.1 at 2020-05-18 21:26:54 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.9ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 27.2ms | Allocations: 1385)
+  [1m[36mAwnserProposal Load (2.2ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 12.1ms | Allocations: 675)
+  [1m[36mApplyJob Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:3
+  [1m[36mApplyJob Load (0.7ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ?[0m  [["job_opportunity_id", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:6
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:7
+  Rendered job_opportunities/_candidates.html.erb (Duration: 22.8ms | Allocations: 2269)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 70.6ms | Allocations: 4656)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 110.6ms | ActiveRecord: 7.4ms | Allocations: 14295)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:26:57 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.8ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (1.4ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 46.0ms | Allocations: 2291)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 137.6ms | ActiveRecord: 4.2ms | Allocations: 11173)
+
+
+Started DELETE "/headhunters/sign_out" for 127.0.0.1 at 2020-05-18 21:27:01 -0300
+Processing by Headhunters::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4KV4VgBx6DGXKboJZwRVeB/bhjgRVtnBprfc3geBTcv1nO9waTad76yOwV353PeAwo8COcAwFBp7prpluvgQSQ=="}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 0.5ms | Allocations: 2403)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:27:01 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 58.1ms | ActiveRecord: 0.0ms | Allocations: 9804)
+
+
+Started GET "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:27:03 -0300
+Processing by Headhunters::SessionsController#new as HTML
+  Rendering headhunters/sessions/new.html.erb within layouts/application
+  Rendered headhunters/shared/_links.html.erb (Duration: 6.0ms | Allocations: 563)
+  Rendered headhunters/sessions/new.html.erb within layouts/application (Duration: 137.2ms | Allocations: 1916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 213ms (Views: 205.5ms | ActiveRecord: 0.0ms | Allocations: 11448)
+
+
+Started POST "/headhunters/sign_in" for 127.0.0.1 at 2020-05-18 21:27:05 -0300
+Processing by Headhunters::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"K5ANtcY5r83GpyQ1bFN9U2a3S94OHCIbvCnuL45v+Fu8vZ8ZzHH4l/J6tLdwrWIMiTxeGlJtNrfkXaBi7+XMxA==", "headhunter"=>{"email"=>"lucas22@yahoo.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mHeadhunter Load (1.0ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."email" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["email", "lucas22@yahoo.com.br"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 446ms (ActiveRecord: 1.0ms | Allocations: 4153)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-18 21:27:06 -0300
+Processing by HomeController#index as HTML
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+Redirected to http://localhost:3000/job_opportunities
+Completed 302 Found in 12ms (ActiveRecord: 0.6ms | Allocations: 1144)
+
+
+Started GET "/job_opportunities" for 127.0.0.1 at 2020-05-18 21:27:06 -0300
+Processing by JobOpportunitiesController#index as HTML
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  Rendering job_opportunities/index.html.erb within layouts/application
+  [1m[36mJobOpportunity Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ? LIMIT ?[0m  [["headhunter_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:8
+  [1m[36mJobOpportunity Load (0.8ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."headhunter_id" = ?[0m  [["headhunter_id", 2]]
+  ↳ app/views/job_opportunities/index.html.erb:13
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/index.html.erb:18
+  Rendered job_opportunities/index.html.erb within layouts/application (Duration: 37.1ms | Allocations: 2301)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 99.6ms | ActiveRecord: 2.8ms | Allocations: 11204)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:27:08 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.6ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.9ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 26.7ms | Allocations: 1405)
+  [1m[36mAwnserProposal Load (3.3ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  [1m[36mChoice Load (1.0ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 122.3ms | Allocations: 15992)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 154.1ms | Allocations: 17661)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 6.6ms | Allocations: 19873)
+
+
+  
+ActionView::Template::Error (undefined method `message' for #<AwnserProposal:0x71bccbf0>):
+    1: <% @awnser_proposals.each do |awnser| %>
+    2: 	<%= @job.title %>
+    3: 	<%= awnser.choice.option %>
+    4: 	<%= awnser.message %>
+    5: 	<%= @proposals.candidate.name %>
+    6: <% end %>
+  
+app/views/job_opportunities/_feedback_candidates.html.erb:4
+app/views/job_opportunities/_feedback_candidates.html.erb:1
+app/views/job_opportunities/show.html.erb:9
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:27:37 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 19.9ms | Allocations: 1749)
+  [1m[36mAwnserProposal Load (1.8ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mProposal Load (1.2ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 181.0ms | Allocations: 13898)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 210.4ms | Allocations: 16509)
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 5.4ms | Allocations: 19556)
+
+
+  
+ActionView::Template::Error (undefined method `candidate' for #<Proposal::ActiveRecord_Relation:0x6ec9aff0>):
+    2: 	<%= @job.title %>
+    3: 	<%= awnser.choice.option %>
+    4: 	<%= awnser.awnser_message %>
+    5: 	<%= @proposals.candidate.name %>
+    6: <% end %>
+  
+app/views/job_opportunities/_feedback_candidates.html.erb:5
+app/views/job_opportunities/_feedback_candidates.html.erb:1
+app/views/job_opportunities/show.html.erb:9
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:28:28 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.9ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (1.0ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 37.0ms | Allocations: 1749)
+  [1m[36mAwnserProposal Load (1.8ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  [1m[36mChoice Load (1.0ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mProposal Load (1.0ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 122.8ms | Allocations: 9731)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 177.3ms | Allocations: 12346)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 6.7ms | Allocations: 15390)
+
+
+  
+ActionView::Template::Error (undefined method `candidate' for #<Proposal::ActiveRecord_Relation:0x6f56fe80>):
+    2: 	<%= @job.title %>
+    3: 	<%= awnser.choice.option %>
+    4: 	<%= awnser.awnser_message %>
+    5: 	<%= @proposals.candidate.full_name %>
+    6: <% end %>
+  
+app/views/job_opportunities/_feedback_candidates.html.erb:5
+app/views/job_opportunities/_feedback_candidates.html.erb:1
+app/views/job_opportunities/show.html.erb:9
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:29:15 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 21.1ms | Allocations: 1749)
+  [1m[36mAwnserProposal Load (1.1ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  [1m[36mChoice Load (0.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 77.5ms | Allocations: 10233)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 108.6ms | Allocations: 12833)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 3.7ms | Allocations: 15874)
+
+
+  
+ActionView::Template::Error (undefined method `proposals' for #<AwnserProposal:0x70d65b00>
+Did you mean?  proposal
+               proposal=
+               proposal_id):
+    2: 	<%= @job.title %>
+    3: 	<%= awnser.choice.option %>
+    4: 	<%= awnser.awnser_message %>
+    5: 	<%= awnser.proposals.candidate.full_name %>
+    6: <% end %>
+  
+app/views/job_opportunities/_feedback_candidates.html.erb:5
+app/views/job_opportunities/_feedback_candidates.html.erb:1
+app/views/job_opportunities/show.html.erb:9
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:29:27 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (1.2ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.0ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.5ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 19.3ms | Allocations: 1749)
+  [1m[36mAwnserProposal Load (1.3ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:1
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mProposal Load (1.0ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:5
+  [1m[36mCandidate Load (0.7ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:5
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 47.8ms | Allocations: 4188)
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:3
+  Rendered job_opportunities/_candidates.html.erb (Duration: 10.2ms | Allocations: 976)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 89.5ms | Allocations: 7966)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 201ms (Views: 163.8ms | ActiveRecord: 7.0ms | Allocations: 19058)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:30:31 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.6ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 19.8ms | Allocations: 1731)
+  [1m[36mAwnserProposal Load (1.1ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:5
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:7
+  [1m[36mCandidate Load (0.6ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:7
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 33.0ms | Allocations: 3170)
+  [1m[36mApplyJob Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:3
+  Rendered job_opportunities/_candidates.html.erb (Duration: 9.1ms | Allocations: 976)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 73.6ms | Allocations: 6927)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 154ms (Views: 127.8ms | ActiveRecord: 5.6ms | Allocations: 18101)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:30:46 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (1.1ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (1.1ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.8ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 33.8ms | Allocations: 1731)
+  [1m[36mAwnserProposal Load (1.9ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mChoice Load (0.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:5
+  [1m[36mProposal Load (0.9ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:7
+  [1m[36mCandidate Load (0.9ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:7
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 56.3ms | Allocations: 3170)
+  [1m[36mApplyJob Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:3
+  Rendered job_opportunities/_candidates.html.erb (Duration: 16.8ms | Allocations: 976)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 128.0ms | Allocations: 6927)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 282ms (Views: 231.5ms | ActiveRecord: 8.6ms | Allocations: 18142)
+
+
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:31:39 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.7ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.5ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.7ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 19.7ms | Allocations: 1731)
+  [1m[36mAwnserProposal Load (1.1ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mProposal Load (0.6ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mApplyJob Load (1.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.2ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE Proposal Load (0.1ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  [1m[36mCACHE ApplyJob Load (0.1ms)[0m  [1m[34mSELECT "apply_jobs".* FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 11]]
+  ↳ app/views/job_opportunities/show.html.erb:9
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 2689.9ms | Allocations: 204644)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 2718.8ms | Allocations: 207224)
+Completed 500 Internal Server Error in 2749ms (ActiveRecord: 6.2ms | Allocations: 210253)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `proposal' for #<#<Class:0x6f3acba8>:0x6f3becb0>
+Did you mean?  @proposals):
+    2: 
+    3: <% @awnser_proposals.each do |awnser| %>
+    4: 	<%= @job.title %>
+    5: 	<%= Proposal.human_attribute_name("status.#{proposal.status}") %>
+    6: 	<%= awnser.awnser_message %>
+    7: 	<%= awnser.proposal.candidate.full_name %>
+    8: <% end %>
+  
+app/views/job_opportunities/_feedback_candidates.html.erb:5
+app/views/job_opportunities/_feedback_candidates.html.erb:3
+app/views/job_opportunities/show.html.erb:9
+Started GET "/job_opportunities/2" for 127.0.0.1 at 2020-05-18 21:31:55 -0300
+Processing by JobOpportunitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHeadhunter Load (0.5ms)[0m  [1m[34mSELECT "headhunters".* FROM "headhunters" WHERE "headhunters"."id" = ? ORDER BY "headhunters"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:92:in `authenticate_visitor'
+  [1m[36mJobOpportunity Load (0.7ms)[0m  [1m[34mSELECT "job_opportunities".* FROM "job_opportunities" WHERE "job_opportunities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/job_opportunities_controller.rb:13:in `show'
+  Rendering job_opportunities/show.html.erb within layouts/application
+  [1m[36mLevel Load (0.6ms)[0m  [1m[34mSELECT "levels".* FROM "levels" WHERE "levels"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_info_job.html.erb:6
+  Rendered job_opportunities/_info_job.html.erb (Duration: 20.2ms | Allocations: 1755)
+  [1m[36mAwnserProposal Load (1.3ms)[0m  [1m[34mSELECT "awnser_proposals".* FROM "awnser_proposals" WHERE "awnser_proposals"."proposal_id" IN (SELECT "proposals"."id" FROM "proposals" WHERE "proposals"."job_opportunity_id" = ?)[0m  [["job_opportunity_id", 2]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:3
+  [1m[36mProposal Load (0.5ms)[0m  [1m[34mSELECT "proposals".* FROM "proposals" WHERE "proposals"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:5
+  [1m[36mCandidate Load (1.0ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_feedback_candidates.html.erb:7
+  Rendered job_opportunities/_feedback_candidates.html.erb (Duration: 29.3ms | Allocations: 2515)
+  [1m[36mApplyJob Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "apply_jobs" WHERE "apply_jobs"."job_opportunity_id" = ? LIMIT ?[0m  [["job_opportunity_id", 2], ["LIMIT", 1]]
+  ↳ app/views/job_opportunities/_candidates.html.erb:3
+  Rendered job_opportunities/_candidates.html.erb (Duration: 10.4ms | Allocations: 976)
+  Rendered job_opportunities/show.html.erb within layouts/application (Duration: 72.3ms | Allocations: 6299)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 128.7ms | ActiveRecord: 5.3ms | Allocations: 17483)
+
+

@@ -11,6 +11,8 @@ class JobOpportunitiesController < ApplicationController
 	end
 	def show
 	    	@job = JobOpportunity.find(id)
+		@proposals = Proposal.where(job_opportunity: @job)
+		@awnser_proposals = AwnserProposal.where(proposal: @proposals)
 		@applyjob = ApplyJob.where(job_opportunity: @job)
 
 		if user_signed_in?

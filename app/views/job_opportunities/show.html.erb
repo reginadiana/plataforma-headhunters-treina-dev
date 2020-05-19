@@ -1,57 +1,14 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
 
-<div class="each-manufacturer">
-	<p><%= @job.title %></p>
-	<p><%= @job.company %></p>
-	<p><%= @job.region %></p>
-	<p><%= number_to_currency @job.salary_range %></p>
-	<p><%= @job.level.name %></p>
-</div>
-
-<div>
-	<h4><%= JobOpportunity.human_attribute_name(:deadline) %></h4>
-	<p><%= @job.deadline && localize(@job.deadline)%></p>
-	<h4>Data de Publição</h4>
-	<p><%= l @job.created_at, format: :short %></p>
-	<h4><%= JobOpportunity.human_attribute_name(:description_job) %></h4>
-	<p><%= @job.description_job %></p>
-	<h4><%= JobOpportunity.human_attribute_name(:skills) %></h4>
-	<p><%= @job.skills %></p>
-	<h4><%= JobOpportunity.human_attribute_name(:benefits) %></h4>
-	<p><%= @job.benefits %></p>
-	<h4><%= JobOpportunity.human_attribute_name(:office_functions) %></h4>
-	<p><%= @job.office_functions %></p>
-	<h4><%= JobOpportunity.human_attribute_name(:company_expectations) %></h4>
-	<p><%= @job.company_expectations %></p>
-</div>
+<%= render "info_job" %>
 
 <% if headhunter_signed_in? %>
 	<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
 	<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
 
-	<p>Candidatos:</p>
+	<%= render "feedback_candidates" %>
+	<%= render "candidates" %>
 
-	<% if @applyjob.empty? %>
-		<p class="msg-error">Nenhuma candidatura foi realizada</p>
-	<% else %>
-		<% @applyjob.each do |apply| %>
-			<%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %>
-			<%= apply.candidate.profession %>
-			<%= apply.message %>
-
-			<%= link_to 'Marcar como Destaque', job_opportunity_apply_job_profile_as_path(@job, apply) %>
-
-			<% if apply.candidate.featured? %>
-				<p>Perfil Destaque</p>
-			<% end %>
-			<p>Status do Processo: 
-				<%= ApplyJob.human_attribute_name("feedback.#{apply.feedback}") %>
-			</p>
-
-			<%= link_to "Enviar Feedback", 
-				new_job_opportunity_apply_job_feedback_path(@job, apply) %>				
-		<% end %>
-	<% end %>
 <% else %>
 	<% if @apply_jobs.any? %>
 		<p>Você se candidatou para esta vaga</p>

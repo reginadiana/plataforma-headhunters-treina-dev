@@ -1,0 +1,8 @@
+<h4>Feedbacks dos candidatos para esta vaga</h4>
+
+<% @awnser_proposals.each do |awnser| %>
+	<%= @job.title %>
+	<%= Proposal.human_attribute_name("status.#{awnser.proposal.status}") %>
+	<%= awnser.awnser_message %>
+	<%= awnser.proposal.candidate.full_name %>
+<% end %>

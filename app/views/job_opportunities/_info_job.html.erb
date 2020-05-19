@@ -1,0 +1,24 @@
+<div class="each-manufacturer">
+	<p><%= @job.title %></p>
+	<p><%= @job.company %></p>
+	<p><%= @job.region %></p>
+	<p><%= number_to_currency @job.salary_range %></p>
+	<p><%= @job.level.name %></p>
+</div>
+
+<div>
+	<h4><%= JobOpportunity.human_attribute_name(:deadline) %></h4>
+	<p><%= @job.deadline && localize(@job.deadline)%></p>
+	<h4>Data de Publição</h4>
+	<p><%= l @job.created_at, format: :short %></p>
+	<h4><%= JobOpportunity.human_attribute_name(:description_job) %></h4>
+	<p><%= @job.description_job %></p>
+	<h4><%= JobOpportunity.human_attribute_name(:skills) %></h4>
+	<p><%= @job.skills %></p>
+	<h4><%= JobOpportunity.human_attribute_name(:benefits) %></h4>
+	<p><%= @job.benefits %></p>
+	<h4><%= JobOpportunity.human_attribute_name(:office_functions) %></h4>
+	<p><%= @job.office_functions %></p>
+	<h4><%= JobOpportunity.human_attribute_name(:company_expectations) %></h4>
+	<p><%= @job.company_expectations %></p>
+</div>
