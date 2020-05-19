@@ -3,21 +3,23 @@
 <% if @applyjob.empty? %>
 	<p class="msg-error">Nenhuma candidatura foi realizada</p>
 <% else %>
-	<% @applyjob.each do |apply| %>
-		<%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %>
-		<%= apply.candidate.profession %>
-		<%= apply.message %>
+	<div id="candidatos">
+		<% @applyjob.each do |apply| %>
+			<%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %>
+			<%= apply.candidate.profession %>
+			<%= apply.message %>
 
-		<%= link_to 'Marcar como Destaque', job_opportunity_apply_job_profile_as_path(@job, apply) %>
+			<%= link_to 'Marcar como Destaque', job_opportunity_apply_job_profile_as_path(@job, apply) %>
 
-		<% if apply.candidate.featured? %>
-			<p>Perfil Destaque</p>
+			<% if apply.candidate.featured? %>
+				<p>Perfil Destaque</p>
+			<% end %>
+			<p>Status do Processo: 
+				<%= ApplyJob.human_attribute_name("feedback.#{apply.feedback}") %>
+			</p>
+
+			<%= link_to "Enviar Feedback", 
+				new_job_opportunity_apply_job_feedback_path(@job, apply) %>				
 		<% end %>
-		<p>Status do Processo: 
-			<%= ApplyJob.human_attribute_name("feedback.#{apply.feedback}") %>
-		</p>
-
-		<%= link_to "Enviar Feedback", 
-			new_job_opportunity_apply_job_feedback_path(@job, apply) %>				
-	<% end %>
+	</div>
 <% end %>

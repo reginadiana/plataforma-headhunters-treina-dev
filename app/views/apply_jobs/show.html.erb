@@ -4,7 +4,7 @@
 
 <p><%= @job_opportunity.title %></p>
 <p><%= @apply_job.message %></p>
-<p><%= @apply_job.created_at %></p>
+<p><%= l @apply_job.created_at, format: :short %></p>
 <p>Status do Processo: <%= ApplyJob.human_attribute_name("feedback.#{@apply_job.feedback}") %></p>
 
 <% if @feedback %>
