@@ -31,6 +31,12 @@ class CandidatesController < ApplicationController
 			@comments = Comment.where(headhunter: current_headhunter)
 		end
 	end
+
+	def search
+		@q = params[:q]
+		@candidate = Candidate.find_by(profession: @q.upcase)
+	end
+
 	def new
 		@profile = Candidate.find_by(user: current_user)
 

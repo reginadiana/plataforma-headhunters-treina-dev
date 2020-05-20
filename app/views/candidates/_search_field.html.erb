@@ -1,0 +1,10 @@
+<div class="field-seach">
+
+	<p class="inst-seach">Pesquise por candidato a partir de suas competencias</p>
+
+	<%= form_with url: search_candidates_path, method: :get, local: true do |f| %>
+		<%= f.label :q, 'Tecnologia' %> 
+		<%= f.text_field :q%>
+		<button class="button-busca" type="submit">Buscar</button>
+	<% end %>
+</div>
