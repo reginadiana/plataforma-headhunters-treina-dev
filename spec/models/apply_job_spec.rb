@@ -14,7 +14,7 @@ RSpec.describe ApplyJob, type: :model do
 			end
 		end
 	
-		context "can not be black" do 
+		context "can not be blank" do 
 			let(:apply_job) { build(:apply_job, message: "")}
 
 			it 'and can not be valid' do
