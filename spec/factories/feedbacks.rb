@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :feedback do
-    message { "MyString" }
+    message { "Ola, gostamos do seu perfil" }
     apply_job
     choice
   end

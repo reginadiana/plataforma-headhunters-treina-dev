@@ -15,6 +15,14 @@ RSpec.describe Candidate, type: :model do
 		)}
 
 		it 'must be valid' do
+			expect(candidate.full_name).to eq "Camila Vegas"
+			expect(candidate.social_name).to eq "Camila"
+			expect(candidate.profession).to eq "Desenvolvedor Backend"
+			expect(candidate.profile_description).to eq "Excelentes capacidades de análise, escrita, raciocínio e de tecnologia da informação"
+			expect(candidate.experience).to eq "Experiencia em analise da dados na empresa Partyou"
+			expect(candidate.formation).to eq "UFABC - Engenharia da Computacao"
+			expect(candidate.courses).to eq "Udemy - Analise de dados"
+
 			expect(candidate).to be_valid 	
 		end
 	end
