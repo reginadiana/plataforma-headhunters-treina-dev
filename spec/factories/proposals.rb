@@ -3,6 +3,6 @@ FactoryBot.define do
     message { "MyString" }
     job_opportunity 
     candidate 
-    status { "MyString" }
+    status { "Em espera" }
   end
 end
