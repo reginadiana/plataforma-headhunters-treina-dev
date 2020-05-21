@@ -1,55 +1,3 @@
-## Planejamento de Layout
-
-### Rascunho das telas
-
-#### Aplicação visivel aos Headhunters (Recrutadores)
-
-![Headhunters](https://user-images.githubusercontent.com/46378210/81507879-abba6e80-92d6-11ea-9b4e-45453604a235.png)
-
-#### Aplicação visivel aos candidatos
-
-![Candidatos](https://user-images.githubusercontent.com/46378210/81507874-a5c48d80-92d6-11ea-8d6c-4c8bce5aa730.png)
-
-## Planejemento de funcoes das views e permissoes
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Vagas| Index | Lista de todas as vagas | Headhunter e Candidato |
-| Vagas | Show | Informações da vaga | Headhunter e Candidato |
-| Vagas | New | Criar vaga | Headhunter |
-| Vagas| Edit | Editar informações da vaga | Headhunter |
-| Vagas | Delete | Encerrar vaga | Headhunter |
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Candidatos | Index | Lista de Candidatos | Headhunter |
-| Candidatos | Show | Perfil do Candidato | Headhunter e Candidato |
-| Candidatos | New | Criar Perfil | Candidato |
-| Candidatos | Edit | Editar informações do perfil | Canidato |
-| Candidatos | Delete | Encerrar conta | Candidato |
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Comentarios | Index | Lista de Comentarios | Headhunter e Candidato |
-| Comentarios | New | Form para criar comentario | Headhunter e Candidato|
-| Comentarios | Edit | Form para editar comentario | Headhunter |
-| Comentarios | Delete | Excluir comentario | Headhunter |
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Feedbacks | Index | Lista de Feedbacks | Headhunter e Candidato |
-| Feedbacks | New | Criar feedback | Headhunter e Candidato |
-| Feedbacks | Edit | Editar mensagem do feedback | Headhunter e Candidato |
-| Feedbacks | Delete | Deletar feedback | Headhunter e Candidato |
-
-| Controller | Action | Descrição | Permitido à | 
-| -------- | -------- | -------- |  -------- | 
-| Propostas | Index | Lista de Propostas | Candidato |
-| Propostas | New | Criar proposta | Headhunter |
-| Propostas | Edit | Editar informações da proposta | Headhunter |
-| Propostas | Edit | Aceitar/Recusar | Candidato |
-| Propostas | Delete | Deletar proposta | Headhunter |
-
 ## Planejamento do database
 
 > Uma vaga de emprego possui muitos candidatos
@@ -127,3 +75,10 @@ Status: Aceito, Recusado, Em espera
 | feedback_id | integer | | |
 
 Status: Aceito, Recusado, Em espera
+
+| interview | type | PT-BR-i18n | Validações |
+| -------- | -------- | -------- | -------- |
+| date | date | Data | Obrigatório | 
+| hour | time | Hora | Obrigatório | 
+| address | string | Texto | Obrigatório | 
+| interview_id | integer | | |
