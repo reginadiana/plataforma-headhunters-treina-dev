@@ -27,7 +27,7 @@ RSpec.describe Candidate, type: :model do
 		end
 	end
 
-	context "#date_of_birth cannot be in future" do
+	context "#date of birth cannot be in future" do
 		let(:candidate) { build(:candidate, date_of_birth: Date.today + 1)}
 
 		it 'and can not be valid' do
@@ -35,7 +35,7 @@ RSpec.describe Candidate, type: :model do
 		end
 	end
 
-	context "#profile_description can not be bigger than 2000 caracters" do
+	context "#profile description can not be bigger than 2000 caracters" do
 		let(:candidate) { build(:candidate, profile_description: SecureRandom.base64(3000))}
 
 		it 'and can not be valid' do
@@ -45,7 +45,7 @@ RSpec.describe Candidate, type: :model do
 
 	context "#can not be blank" do
 	
-		context "#full_name" do 
+		context "#full name" do 
 			let(:candidate) { build(:candidate, full_name: "")}
 
 			it 'and can not be valid' do
@@ -53,7 +53,7 @@ RSpec.describe Candidate, type: :model do
 			end
 		end
 
-		context "#social_name" do 
+		context "#social name" do 
 			let(:candidate) { build(:candidate, social_name: "")}
 
 			it 'and can not be valid' do
@@ -61,7 +61,7 @@ RSpec.describe Candidate, type: :model do
 			end
 		end
 
-		context "#date_of_birth" do 
+		context "#date of birth" do 
 			let(:candidate) { build(:candidate, date_of_birth: "")}
 
 			it 'and can not be valid' do
@@ -77,7 +77,7 @@ RSpec.describe Candidate, type: :model do
 			end
 		end
 
-		context "#profile_description" do 
+		context "#profile description" do 
 			let(:candidate) { build(:candidate, profile_description: "")}
 
 			it 'and can not be valid' do
