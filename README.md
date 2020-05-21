@@ -15,7 +15,11 @@
 
 :memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
 
-:memo: Planejamento da [construcao do projeto](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/PLANEJAMENTO.md)
+:memo: Planejamento das [views](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/views.md)
+
+:memo: Planejamento do [database](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/database.md)
+
+:memo: Planejamento do [layout](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/layout.md)
 
 ## Lista de Conteúdos
 
