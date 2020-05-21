@@ -18,6 +18,8 @@
 				<%= ApplyJob.human_attribute_name("feedback.#{apply.feedback}") %>
 			</p>
 
+			<%= link_to "Agendar Entrevista", root_path %>
+
 			<%= link_to "Enviar Feedback", 
 				new_job_opportunity_apply_job_feedback_path(@job, apply) %>				
 		<% end %>

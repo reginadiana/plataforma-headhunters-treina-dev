@@ -35,10 +35,6 @@ class ProposalsController < ApplicationController
 		params.require(:proposal).permit(:message, :job_opportunity_id, :candidate_id)
 	end
 
-	def id
-		params[:id]
-	end
-
 	# Bloqueia gerenciamento de propostas pelo candidato
 
 	def authenticate_candidate

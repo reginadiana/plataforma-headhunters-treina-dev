@@ -3,6 +3,9 @@
 <% @awnser_proposals.each do |awnser| %>
 	<%= @job.title %>
 	<%= Proposal.human_attribute_name("status.#{awnser.proposal.status}") %>
+	<% if awnser.proposal.accepted? %>
+		<%= link_to "Agendar Entrevista", root_path %>
+	<% end %>
 	<%= awnser.awnser_message %>
 	<%= link_to awnser.proposal.candidate.full_name, awnser.proposal.candidate %>
 <% end %>
