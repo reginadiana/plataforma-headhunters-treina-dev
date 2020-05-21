@@ -2,6 +2,9 @@ class Candidate < ApplicationRecord
 	belongs_to :level
 	belongs_to :user
 	has_one_attached :avatar
+
+	scope :search, ->(query) { where('full_name LIKE ?', "%#{query}%")
+                              .or( where('profession LIKE ?', "%#{query}%") ) }
 	
 	enum feedback: { featured: "Destaque", not_highlighted: "Sem Destaque" } 
 

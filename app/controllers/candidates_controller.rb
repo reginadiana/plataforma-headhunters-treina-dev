@@ -34,7 +34,7 @@ class CandidatesController < ApplicationController
 
 	def search
 		@q = params[:q]
-		@candidate = Candidate.find_by(profession: @q.upcase)
+		@candidates = Candidate.search(@q).or(Candidate.search(@q))
 	end
 
 	def new
