@@ -21,6 +21,12 @@ Rails.application.routes.draw do
 
 	resources :apply_jobs, only: [:index]
 
+	resources :job_opportunities do
+		resources :candidates do
+			resources :interviews
+		end
+	end
+
 	resources :candidates do
 		get 'search', on: :collection	
 		resources :comments, only: [:new, :create, :edit, :update, :destroy]

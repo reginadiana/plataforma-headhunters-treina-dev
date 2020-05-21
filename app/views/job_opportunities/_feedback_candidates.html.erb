@@ -4,7 +4,8 @@
 	<%= @job.title %>
 	<%= Proposal.human_attribute_name("status.#{awnser.proposal.status}") %>
 	<% if awnser.proposal.accepted? %>
-		<%= link_to "Agendar Entrevista", root_path %>
+		<%= link_to "Agendar Entrevista", 
+			new_job_opportunity_candidate_interview_path(@job, awnser.proposal.candidate) %>
 	<% end %>
 	<%= awnser.awnser_message %>
 	<%= link_to awnser.proposal.candidate.full_name, awnser.proposal.candidate %>

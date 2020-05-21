@@ -12,7 +12,7 @@
 <% else %>
 	<% if @apply_jobs.any? %>
 		<p>Você se candidatou para esta vaga</p>
-		<p><%= link_to 'Ver minha candidatura', job_opportunity_apply_job_path(@job) %></p>
+		<p><%= link_to 'Ver minha candidatura', job_opportunity_apply_job_path(@job) %></p> 
 	<% else %>
 		<p><%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %></p>
 	<% end %>

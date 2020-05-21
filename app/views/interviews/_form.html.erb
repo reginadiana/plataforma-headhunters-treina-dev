@@ -1,0 +1,19 @@
+<% @interview.errors.full_messages.each do |message| %>
+	<p class="msg-error"><%= message %></p>
+<% end %>
+
+<%= form_with model: [@job_opportunity, @candidate, @interview], local: true do |f| %>
+	<div class="field">
+		<%= f.label :interview_date %>
+		<%= f.date_field :interview_date %>
+	</div>
+	<div class="field">
+		<%= f.label :hour %>
+		<%= f.time_field :hour %>
+	</div>
+	<div class="field">
+		<%= f.label :address %>
+		<%= f.text_area :address %>
+	</div>
+	<button class="button-enviar-form" type="submit">Convidar</button>
+<% end %>

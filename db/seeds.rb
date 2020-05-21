@@ -81,6 +81,21 @@ JobOpportunity.create!(
 	headhunter: headhunter_b
 )
 
+JobOpportunity.create!(
+	title: "Desenvolvedor PHP",
+	company: "Vindi",
+	description_job: "Desenvolvimento de Interfaces Dinamicas",
+	skills: "Domínio da linguagem JavaScript e do framework React",
+	salary_range: "5000.00",
+	level: especialista,
+	deadline: "14/05/2022",
+	region: "Mogi das Cruzes - SP",
+	benefits: "Vale refeição, Academia",
+	office_functions: "Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para 				atendimento do negócio.",
+	company_expectations: "Profissional ativo e comunicativo",
+	headhunter: headhunter_b
+)
+
 # Comentarios
 Comment.create!(candidate: candidate_a, headhunter: headhunter_b, content: 'Ola, gostei do seu perfil')
 
