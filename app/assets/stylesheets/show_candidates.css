@@ -1,0 +1,93 @@
+.div-profile {
+	text-align: center
+}
+
+.div-info-profile {
+	padding-top: 3%;
+	padding-bottom: 3%;
+	background-color: rgb(232, 44, 79);
+}
+
+/*Avatar*/
+.avatar {
+	border-radius: 50%;
+}
+
+.full_name {
+	font-size: 30px;
+	padding: 5%;
+	color: white;
+	font-weight: bold;
+}
+
+/*Infos do candidato*/
+.description-candidate {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.description-candidate p {
+	padding: 3%;
+	color: #f9f9f9;
+}
+
+.div-profile_description, .div-formation {
+	padding: 3%;
+	background-color: #efefef;
+}
+
+.div-profile_description h2 {
+	padding-bottom: 3%;
+}
+
+.div-experience, .div-courses {
+	padding: 3%;
+	background-color: #f9f9f9;
+}
+
+/*Editar/Deletar*/
+.button-edit-delete {
+	display: flex;
+	width: 100%;
+}
+
+.button-edit-delete p {
+	align-elements: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+}
+
+.edit a {
+	color: #ff7b00; /*Laranja*/
+}
+
+.delete a {
+	border-color: red;
+	color: red;
+}
+
+/*Responsividade*/
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 700px){
+
+}
+
+/*Desktop*/
+@media screen and (min-width: 700px){
+	.full_name {
+		font-size: 40px;
+		padding: 1%;
+	}
+	.description-candidate {
+		display: grid;
+		grid-template-columns: repeat(2, 200px);
+		margin-left: 35%;
+		margin-right: 50%;
+	}
+
+	.div-profile_description, .div-formation, .div-experience, .div-courses  {
+		text-align: left;
+	}
+}

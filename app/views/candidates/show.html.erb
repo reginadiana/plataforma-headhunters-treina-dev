@@ -6,37 +6,45 @@
 	<h3 class="link-to-back"><%= link_to 'Voltar', candidates_path %></h3>
 <% end %>
 
-<%= render 'profile' %>
+<div class="div-profile">
 
-<% if headhunter_signed_in? %>
-	<%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %>
-<% end %>
+	<%= render 'profile' %>
 
-<% if @comments.any? %>
-	<% @comments.each do |comment| %>
-	   <% if comment.candidate.full_name == @candidate.full_name %>
-		<p><%= comment.headhunter.email %></p>
-		<p><%= comment.content %></p>
-		<p><%= l comment.created_at, format: :short %></p>
-
-		<% if headhunter_signed_in? %>
-
-			<p><%= link_to 'Editar', 
-				edit_candidate_comment_path(@candidate), 
-				id: "edit-comment#{@candidate.id}"%></p>
-
-			<p><%= link_to 'Deletar', 
-				[@candidate, comment], 
-				method: :delete, 
-				id: "delete-comment#{comment.id}"%></p>
-		<% end %>
-	  <% end %>
+	<% if headhunter_signed_in? %>
+		<%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %>
 	<% end %>
-<% end %>
 
-<% if user_signed_in? %>
-	<p><%= link_to 'Editar Perfil', edit_candidate_path(@candidate), id: "edit-#{@candidate.id}"%></p>
-	<p><%= link_to 'Deletar Perfil', candidate_path(@candidate) , method: :delete, id: "delete-#{@candidate.id}"%></p>
-<% else %>
-	<p><%= link_to 'Enviar Proposta', new_candidate_proposal_path(@candidate)%></p>
-<% end %>
+	<% if @comments.any? %>
+		<% @comments.each do |comment| %>
+		   <% if comment.candidate.full_name == @candidate.full_name %>
+			<p><%= comment.headhunter.email %></p>
+			<p><%= comment.content %></p>
+			<p><%= l comment.created_at, format: :short %></p>
+
+			<% if headhunter_signed_in? %>
+
+				<p><%= link_to 'Editar', 
+					edit_candidate_comment_path(@candidate), 
+					id: "edit-comment#{@candidate.id}"%></p>
+
+				<p><%= link_to 'Deletar', 
+					[@candidate, comment], 
+					method: :delete, 
+					id: "delete-comment#{comment.id}"%></p>
+			<% end %>
+		  <% end %>
+		<% end %>
+	<% end %>
+
+	<% if user_signed_in? %>
+		<div class="button-edit-delete">
+			<p class="edit">
+				<%= link_to 'Editar Perfil', edit_candidate_path(@candidate), 
+					id: "edit-#{@candidate.id}"%></p>
+			<p class="delete"><%= link_to 'Deletar Perfil', 
+				candidate_path(@candidate) , method: :delete, id: "delete-#{@candidate.id}"%></p>
+		</div>
+	<% else %>
+		<p><%= link_to 'Enviar Proposta', new_candidate_proposal_path(@candidate)%></p>
+	<% end %>
+</div>

@@ -4,7 +4,7 @@ class CandidatesController < ApplicationController
 
 	def profile_as 
 		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
-		@apply_job = ApplyJob.find(params[:apply_job_id])		
+		@apply_job = ApplyJob.find(params[:apply_job_id])	
 
 		if @apply_job.candidate.featured?
 			@apply_job.candidate.not_highlighted!

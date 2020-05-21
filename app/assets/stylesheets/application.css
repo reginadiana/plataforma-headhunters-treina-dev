@@ -91,6 +91,25 @@
 	font-weight: bold;
 }
 
+/*Link para voltar*/
+.link-to-back {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;;
+	background-color: #efefef;
+	text-align: center;
+	width: 20%;
+	padding: 2%;
+}
+
+.link-to-back:hover {
+	background-color: #d9d9d9;
+}
+
+.link-to-back a {
+	color: gray;
+} 
+
 /*Responsividade*/
 
 /*Tablet*/
@@ -105,10 +124,26 @@
 		height: 40px;
 		padding: 0%;
 	}
+
+	.link-to-back {
+		margin-left: 10%;
+		margin-right: auto;
+		margin-bottom: 3%;
+	}
 }
 
 /*Desktop*/
 @media screen and (min-width: 700px){
+
+	.link-to-back {
+		margin-top: 5%;
+		margin-left: 5%;
+		margin-right: auto;
+		margin-bottom: 3%;
+		width: 5%;
+		padding: 0.5%;
+	}
+
 	/*Mensagens de erro*/
 	.msg-error, .msg-alert  {
 		width: 20%;

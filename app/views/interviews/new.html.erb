@@ -2,6 +2,8 @@
 
 <div class="form-session">
 	<h1>Nova entrevista</h1>
+	<h4>Vaga: <%= @job_opportunity.title %></h4>
+	<h4>Candidato: <%= @candidate.full_name %> - <%= @candidate.profession %></h4>
 
 	<%= render "form" %>
 </div>

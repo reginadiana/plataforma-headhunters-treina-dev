@@ -1,11 +1,23 @@
 class InterviewsController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy] 
+	before_action :find_candidate_job
 
 	def new
 		@interview = Interview.new
-		@candidate = Candidate.find(params[:candidate_id])
-		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
+	end
+
+	def create
+		@interview = Interview.new(require_params)
+		@interview.candidate = @candidate
+		@interview.job_opportunity = @job_opportunity
+
+		if @interview.save
+			redirect_to job_opportunity_path(@job_opportunity)
+			flash[:notice] = 'Entrevista marcada com sucesso'
+		else
+			render :new
+		end
 	end
 
 	def id
@@ -19,6 +31,11 @@ class InterviewsController < ApplicationController
 			:address,
 			:job_opportunity_id,
 			:candidate_id)
+	end
+
+	def find_candidate_job
+		@candidate = Candidate.find(params[:candidate_id])
+		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
 	end
 
 	# Bloqueia gerenciamento de entrevistas pelo candidato

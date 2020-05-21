@@ -2,13 +2,20 @@
 pt-BR:
   activerecord:
     models:
-      interview: Entrevista
+      job_opportunity: Vaga
     attributes:
-      interview:
-        interview_date: Data
-        hour: Hora
-        address: Endereço
-        job_opportunity: Vaga
-        job_opportunity_id: Vaga
-        candidate: Candidato
-        candidate_id: Candidato
+      job_opportunity:
+        title: Titulo
+        company: Empresa
+        description_job: Descrição da Vaga
+        skills: Habilidades
+        salary_range: Faixa Salárial
+        deadline: Data de Contratação
+        level: Nível
+        level_id: Nível
+        region: Região
+        benefits: Beneficios
+        office_functions: Funções do Cargo
+        company_expectations: Expectivas da Empresa
+        headhunter: Recrutador
+        headhunter_id: Recrutador

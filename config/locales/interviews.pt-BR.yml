@@ -1,0 +1,14 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      interview: Entrevista
+    attributes:
+      interview:
+        interview_date: Data
+        hour: Hora
+        address: Endereço
+        job_opportunity: Vaga
+        job_opportunity_id: Vaga
+        candidate: Candidato
+        candidate_id: Candidato
