@@ -78,6 +78,8 @@ Status: Aceito, Recusado, Em espera
 
 | interview | type | PT-BR-i18n | Validações |
 | -------- | -------- | -------- | -------- |
+| job_opportunity | **object** | Vaga | Obrigatório | 
+| candidate | **object** | Texto | Obrigatório | 
 | date | date | Data | Obrigatório | 
 | hour | time | Hora | Obrigatório | 
 | address | string | Texto | Obrigatório | 
