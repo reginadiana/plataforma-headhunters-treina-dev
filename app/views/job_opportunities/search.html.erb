@@ -1,0 +1,17 @@
+<h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
+
+<%= render "search_field" %>
+
+<% @jobs.each do |job| %>
+	<div class="each-job">
+		<p class="job-title-home"><%= link_to job.title, job %></p>
+		<p><%= job.company %> - <%= job.region %> </p>
+		<p><%= number_to_currency job.salary_range %> - <%= job.level.name %></p>
+		<p class="details-job-home"><%= link_to 'Detalhes da Vaga', job , id: "details-#{job.id}"%></p>
+	</div>
+<% end %>
+
+<% if @jobs.empty? %>
+	<p class="msg-error"><%= "Nenhum resultado encontrado para: #{@q}" %></p>
+<% end %>
+

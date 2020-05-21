@@ -20,6 +20,10 @@ class JobOpportunitiesController < ApplicationController
 			@apply_jobs = ApplyJob.where(candidate: @candidate, job_opportunity: @job)
 		end
 	end
+	def search
+		@q = params[:q]
+		@jobs = JobOpportunity.search(@q).or(JobOpportunity.search(@q))
+	end
 	def new
 		@job = JobOpportunity.new
 		@levels = Level.all		

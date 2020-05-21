@@ -1,0 +1,10 @@
+<div class="field-seach">
+
+	<p class="inst-seach">Pesquise por vagas</p>
+
+	<%= form_with url: search_job_opportunities_path, method: :get, local: true do |f| %>
+		<%= f.label :q, 'Busca' %> 
+		<%= f.text_field :q%>
+		<button class="button-busca" type="submit">Pesquisar</button>
+	<% end %>
+</div>

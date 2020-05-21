@@ -2,6 +2,9 @@ class JobOpportunity < ApplicationRecord
 	belongs_to :level
 	belongs_to :headhunter
 
+	scope :search, ->(query) { where('title LIKE ?', "%#{query}%")
+                              .or( where('skills LIKE ?', "%#{query}%") ) }
+
 	validates :title, 
 		:company,
 		:description_job,
