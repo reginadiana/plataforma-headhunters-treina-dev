@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
     t.string "company_expectations"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "headhunter_id"
+    t.integer "headhunter_id", null: false
     t.index ["headhunter_id"], name: "index_job_opportunities_on_headhunter_id"
     t.index ["level_id"], name: "index_job_opportunities_on_level_id"
   end

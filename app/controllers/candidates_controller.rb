@@ -1,7 +1,8 @@
 class CandidatesController < ApplicationController
 	before_action :authenticate_visitor
-	before_action :authenticate_head, except: [:index, :show, :search, :profile_as]
+	before_action :authenticate_headhunter, except: [:index, :show, :search, :profile_as]
 	before_action :authenticate_candidate, only: [:show, :edit, :update]
+	before_action :authenticate_candidate_without_profile, except: [:new, :create]
 
 	def profile_as 
 		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
@@ -119,7 +120,7 @@ class CandidatesController < ApplicationController
 
 	# Bloqueia gerenciamento de perfils pelo headhunter
 
-	def authenticate_head
+	def authenticate_headhunter
 	    if headhunter_signed_in?
 		redirect_to job_opportunities_path
 	    end
@@ -127,7 +128,7 @@ class CandidatesController < ApplicationController
 
 	# Bloqueia acesso dos perfils aos outros candidatos
 	def authenticate_candidate
-		if user_signed_in?
+		if user_signed_in? and find_candidate
 			if not find_candidate_by_route.user === current_user
 				redirect_to candidate_path(find_candidate)
 			end
@@ -140,5 +141,13 @@ class CandidatesController < ApplicationController
 				redirect_to root_path
 			end
 		end
+	end
+
+	def authenticate_candidate_without_profile
+		if user_signed_in?
+			if not find_candidate
+				redirect_to new_candidate_path
+			end
+		end 
 	end
 end  

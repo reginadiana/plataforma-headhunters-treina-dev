@@ -28,7 +28,7 @@ feature 'Visitor and user tries to acess profile candidates and' do
 	context "user" do
 
 		before :each do
-			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
+			user = User.create!(email: 'giovana@teste.com.br', password: '12345678')
 			login_as user, scope: :user
 		end
 
