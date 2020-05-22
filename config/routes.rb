@@ -35,5 +35,5 @@ Rails.application.routes.draw do
 	end	
 
 	resources :apply_jobs, only: [:index]
-	
+	resources :interviews, only: [:index]
 end

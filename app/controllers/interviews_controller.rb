@@ -1,8 +1,12 @@
 class InterviewsController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_candidate, only: [:show, :new, :create, :edit, :update, :destroy] 
-	before_action :find_candidate_job, except: [:show] 
+	before_action :find_candidate_job, except: [:show, :index] 
 
+	def index	
+		@candidate = Candidate.where(user: current_user)
+		@interviews = Interview.where(candidate: @candidate)
+	end
 	def show
 		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
 		@interviews = Interview.where(job_opportunity: @job_opportunity)

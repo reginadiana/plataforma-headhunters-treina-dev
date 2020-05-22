@@ -1,0 +1,13 @@
+<h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
+
+<div>
+	<% @interviews.each do |interview| %>
+		<div>
+			<p>Vaga:<%= link_to interview.job_opportunity.title, interview.job_opportunity %></p>
+			<p>Data:<%= l interview.interview_date, format: :short %></p>
+			<p>Horário:<%= l interview.hour, format: :short %></p>
+			<p>Endereço:<%= interview.address %></p>
+			<p>Email do Recrutador: <%= interview.job_opportunity.headhunter.email %></p>
+		</div>
+	<% end %>
+</div>
