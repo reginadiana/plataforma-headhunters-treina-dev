@@ -4,6 +4,7 @@
 	<%= render "info_job" %>
 
 	<% if headhunter_signed_in? %>
+		<p><%= link_to 'Minhas Entrevistas', job_opportunity_interview_path(@job) %></p>
 		<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
 		<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
 
@@ -15,7 +16,7 @@
 			<p class="msg-sucess">Você se candidatou para esta vaga</p>
 			<p class="ver-candidatura">
 				<%= link_to 'Ver minha candidatura', job_opportunity_apply_job_path(@job) %></p> 
-		<% else %>
+		<% else %>	
 			<p><%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %></p>
 		<% end %>
 	<% end %>

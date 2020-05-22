@@ -9,8 +9,8 @@ especialista = Level.create!(name: 'Especialista')
 Level.create!(name: 'Diretor')
 
 # Definindo escolhas que headhunter e candidato podem tomar para aos feedbacks e propostas
-Choice.create!(option: "Aceitar")
-Choice.create!(option: "Recusar")
+acepted = Choice.create!(option: "Aceitar")
+rejected = Choice.create!(option: "Recusar")
 
 # Candidatos
 user_a = User.create!(email: 'camila@outlook.com.br', password: '123456')
@@ -66,7 +66,7 @@ job_opportunity = JobOpportunity.create!(
 	headhunter: headhunter_a
 )
 
-JobOpportunity.create!(
+job_opportunity_b = JobOpportunity.create!(
 	title: "Desenvolvedor React",
 	company: "Vindi",
 	description_job: "Desenvolvimento de Interfaces Dinamicas",
@@ -81,7 +81,7 @@ JobOpportunity.create!(
 	headhunter: headhunter_b
 )
 
-JobOpportunity.create!(
+job_opportunity_c = JobOpportunity.create!(
 	title: "Desenvolvedor PHP",
 	company: "Vindi",
 	description_job: "Desenvolvimento de Interfaces Dinamicas",
@@ -102,6 +102,28 @@ Comment.create!(candidate: candidate_a, headhunter: headhunter_b, content: 'Ola,
 # Candidaturas
 ApplyJob.create!(candidate: candidate_b, job_opportunity: job_opportunity, message: 'Eu, Bianca Rosa, brasileira, Operadora de CNC venho por meio desta me candidatar à vaga de Programador de CNC nesta empresa.').hope!
 
+ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_b, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga').hope!
+
+# Propostas
+proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
+				job_opportunity: job_opportunity_c, candidate: candidate_a, status: "Em espera")
+
+proposal_b = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa, o seu curriculo é excelente", 
+				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Em espera")
+
+# Resposta a proposta
+AwnserProposal.create!(choice: acepted,
+    awnser_message: "Ola, me interessei pela vaga sim, pode me passar mais informações?",
+    proposal: proposal)
+
+AwnserProposal.create!(choice: rejected,
+    awnser_message: "Ola, por enquanto nao procuro uma vaga como esta",
+    proposal: proposal_b)
+
 # Entrevistas
-Interview.create!(interview_date: "21/05/2021", hour: "15:31", address: "Rua Vergueiro, 11", candidate: candidate_a, job_opportunity: job_opportunity)
+Interview.create!(interview_date: "21/05/2021", hour: "15:30", address: "Rua Vergueiro, 11", candidate: candidate_a, job_opportunity: job_opportunity_b)
+
+Interview.create!(interview_date: "21/05/2023", hour: "20:30", address: "Rua Map, 11", candidate: candidate_b, job_opportunity: job_opportunity_b)
+
+Interview.create!(interview_date: "21/05/2022", hour: "18:30", address: "Rua Ita, 11", candidate: candidate_a, job_opportunity: job_opportunity_c)
 

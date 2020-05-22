@@ -24,4 +24,17 @@
 			id: "delete-#{@job_opportunity.id}"%>
 		</p>
 	</div>
+
+	<div>
+		<% @interviews.each do |interview| %>
+			<div>
+				<p>Vaga:<%= link_to @job_opportunity.title, @job_opportunity %></p>
+				<p>Data:<%= l interview.interview_date, format: :short %></p>
+				<p>Horário:<%= l interview.hour, format: :short %></p>
+				<p>Endereço:<%= interview.address %></p>
+				<p>Email do Recrutador: <%= interview.job_opportunity.headhunter.email %>
+				</p>
+			</div>
+		<% end %>
+	</div>
 </div>
