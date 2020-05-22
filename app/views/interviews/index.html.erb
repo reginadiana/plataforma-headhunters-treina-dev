@@ -1,5 +1,10 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
 
+<h3>Entrevistas Marcadas</h3>
+
+<% if @interviews.empty? %>
+	<p><%= 'Nenhuma entrevista marcada' %></p>
+<% end %>
 <div>
 	<% @interviews.each do |interview| %>
 		<div>

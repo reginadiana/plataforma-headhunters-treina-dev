@@ -1,6 +1,7 @@
 class JobOpportunitiesController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy] 
+	before_action :authenticate_headhunter, only: [:show, :edit, :update]
 
 	def index
 		if headhunter_signed_in?
@@ -10,7 +11,9 @@ class JobOpportunitiesController < ApplicationController
 		end
 	end
 	def show
-	    	@job = JobOpportunity.find(id)
+
+	    	@job = find_job
+
 		@proposals = Proposal.where(job_opportunity: @job)
 		@awnser_proposals = AwnserProposal.where(proposal: @proposals)
 		@applyjob = ApplyJob.where(job_opportunity: @job)
@@ -41,12 +44,12 @@ class JobOpportunitiesController < ApplicationController
 	    	end
 	end
 	def edit
-		@job = JobOpportunity.find(id)
+		@job = find_job
 		@levels = Level.all
 	end
 
 	def update
-		@job = JobOpportunity.find(id)
+		@job = find_job
 		if @job.update(require_params)
 			redirect_to @job
 		else
@@ -56,7 +59,7 @@ class JobOpportunitiesController < ApplicationController
 	end
 
 	def destroy
-		@job = JobOpportunity.find(id)
+		@job = find_job
 		@job.destroy
 
 		redirect_to job_opportunities_path
@@ -84,11 +87,24 @@ class JobOpportunitiesController < ApplicationController
 		params[:id]
 	end
 
+	def find_job
+		JobOpportunity.find(id)
+	end
+
 	# Bloqueia gerenciamento de vagas pelo candidato
 	def authenticate_candidate
 	    if user_signed_in?
 		redirect_to job_opportunities_path
 	    end
+	end
+
+	# Bloqueia acesso das vagas que foram criadas por outros headhunters
+	def authenticate_headhunter
+		if headhunter_signed_in?
+			if not find_job.headhunter === current_headhunter
+				redirect_to job_opportunities_path
+			end
+		end
 	end
 
 	def authenticate_visitor

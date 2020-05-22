@@ -31,4 +31,15 @@ feature 'Headhunter view your interviews' do
 		expect(page).to have_link("Lucas Ribeiro")
 		expect(page).to have_content("Desenvolvedor Backend")
 	end
+
+	scenario 'any interview register' do
+		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+		login_as headhunter, scope: :headhunter
+
+		job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
+
+		visit job_opportunity_path(job_opportunity)
+		click_on "Minhas Entrevistas" 
+		expect(page).to have_content("Nenhuma entrevista marcada")
+	end
 end
