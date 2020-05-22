@@ -1,0 +1,23 @@
+<h3 class="link-to-back"><%= link_to 'Voltar', job_opportunity_path(@job_opportunity) %></h3>
+
+<h3>Entrevistas para esta vaga</h3>
+
+<% if @interviews.empty? %>
+	<p><%= 'Nenhuma entrevista marcada' %></p>
+<% end %>
+
+<div>
+	<% @interviews.each do |interview| %>
+		<div>
+			<p>Vaga:<%= link_to @job_opportunity.title, @job_opportunity %></p>
+
+			<p>Data:<%= l interview.interview_date, format: :short %></p>
+			<p>Horário:<%= l interview.hour, format: :short %></p>
+			<p>Endereço:<%= interview.address %></p>
+			<p>Candidato: 
+				<%= link_to interview.candidate.full_name, interview.candidate %> - 
+				<%= interview.candidate.profession %>
+			</p>
+		</div>
+	<% end %>
+</div>

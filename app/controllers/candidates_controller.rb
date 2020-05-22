@@ -1,6 +1,6 @@
 class CandidatesController < ApplicationController
 	before_action :authenticate_visitor
-	before_action :authenticate_head, only: [:new, :create, :edit, :update, :destroy] 
+	before_action :authenticate_head, except: [:index, :show, :search, :profile_as]
 
 	def profile_as 
 		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])

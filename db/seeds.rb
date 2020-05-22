@@ -101,3 +101,7 @@ Comment.create!(candidate: candidate_a, headhunter: headhunter_b, content: 'Ola,
 
 # Candidaturas
 ApplyJob.create!(candidate: candidate_b, job_opportunity: job_opportunity, message: 'Eu, Bianca Rosa, brasileira, Operadora de CNC venho por meio desta me candidatar à vaga de Programador de CNC nesta empresa.').hope!
+
+# Entrevistas
+Interview.create!(interview_date: "21/05/2021", hour: "15:31", address: "Rua Vergueiro, 11", candidate: candidate_a, job_opportunity: job_opportunity)
+

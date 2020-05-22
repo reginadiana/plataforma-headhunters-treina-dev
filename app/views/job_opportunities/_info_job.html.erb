@@ -12,6 +12,9 @@
 		</div>
 	</div>
 </div>
+
+<p><%= link_to 'Minhas Entrevistas', job_opportunity_interview_path(@job) %></p>
+
 <div class="even">
 	<h4><%= JobOpportunity.human_attribute_name(:deadline) %></h4>
 	<p><%= @job.deadline && localize(@job.deadline)%></p>

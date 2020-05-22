@@ -66,7 +66,16 @@ feature 'Headhunter register a interview' do
 				job_opportunity: @job_opportunity)
 
 			proposal.accepted!
-			visit job_opportunity_path(@job_opportunity)
+
+			accepted = create(:choice, option: "Aceitar")
+			awnser_proposal = create(:awnser_proposal, proposal: proposal, choice: accepted)
+
+			visit root_path
+			click_on "Minhas Vagas"
+			click_on "Desenvolvedor PHP"
+			
+			expect(page).to have_content('Camila de Melo')
+			expect(page).to have_content('Aceito')
 
 			click_on "Agendar Entrevista" 
 
@@ -83,8 +92,12 @@ feature 'Headhunter register a interview' do
 
 			proposal = create(:proposal, 
 				candidate: @candidate, 
-				job_opportunity: @job_opportunity,
-				status: "Rejeitado")
+				job_opportunity: @job_opportunity)
+
+			proposal.rejected!
+
+			reject = create(:choice, option: "Recusar")
+			awnser_proposal = create(:awnser_proposal, proposal: proposal, choice: reject)
 
 			visit job_opportunity_path(@job_opportunity)
 
@@ -95,8 +108,9 @@ feature 'Headhunter register a interview' do
 
 			proposal = create(:proposal, 
 				candidate: @candidate, 
-				job_opportunity: @job_opportunity,
-				status: "Em espera")
+				job_opportunity: @job_opportunity)
+
+			proposal.hope!
 
 			visit job_opportunity_path(@job_opportunity)
 			expect(page).not_to have_link("Agendar Entrevista")

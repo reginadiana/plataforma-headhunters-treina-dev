@@ -1,6 +1,6 @@
 class ApplyJobsController < ApplicationController
 	before_action :authenticate_visitor
-	before_action :authenticate_head, only: [:index, :new, :create, :edit, :update, :destroy] 
+	before_action :authenticate_head, except: [:show]
 	before_action :find_job_opportunity, only: [:show, :new, :edit, :update, :destroy]
 
 	def index
