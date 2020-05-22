@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-	before_action :authenticate_visitor
+	before_action :authenticate_visitor_candidate_without_profile
 	before_action :find_apply_and_job
 
 	def new
@@ -68,11 +68,18 @@ class FeedbacksController < ApplicationController
 		@apply_job = ApplyJob.find(params[:apply_job_id])
 	end
 
-	def authenticate_visitor
+	def authenticate_visitor_candidate_without_profile
 		if not user_signed_in? 
 			if not headhunter_signed_in?
 				redirect_to root_path
 			end
 		end
+		if user_signed_in?
+			candidate = Candidate.find_by(user: current_user)
+
+			if not candidate
+				redirect_to new_candidate_path
+			end
+		end 
 	end
 end  

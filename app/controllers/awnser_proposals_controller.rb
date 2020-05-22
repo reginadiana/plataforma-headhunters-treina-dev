@@ -1,5 +1,5 @@
 class AwnserProposalsController < ApplicationController
-	before_action :authenticate_visitor
+	before_action :authenticate_visitor_candidate_without_profile
 	before_action :authenticate_headhunter, only: [:new, :create, :edit, :update] 
 	before_action :find_candidate_and_proposal
 
@@ -78,10 +78,17 @@ class AwnserProposalsController < ApplicationController
 		@proposal = Proposal.find(params[:proposal_id])
 	end
 
-	def authenticate_visitor
+	def authenticate_visitor_candidate_without_profile
 		if not user_signed_in? 
 			if not headhunter_signed_in?
 				redirect_to root_path
+			end
+		end
+		if user_signed_in?
+			candidate = Candidate.find_by(user: current_user)
+
+			if not candidate
+				redirect_to new_candidate_path
 			end
 		end
 	end
