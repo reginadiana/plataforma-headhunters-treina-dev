@@ -10,9 +10,20 @@
 				<p class="job-title-home"><%= link_to job.job_opportunity.title, job.job_opportunity %></p>
 
 				<p><%= job.job_opportunity.company %> - <%= job.job_opportunity.region %> </p>
-				<p><%= number_to_currency job.job_opportunity.salary_range %> - <%= job.job_opportunity.level.name %></p>
-				<%= ApplyJob.human_attribute_name("feedback.#{job.feedback}") %>
-				<p class="details-job-home"><%= link_to 'Detalhes da Vaga', job.job_opportunity , id: "details-#{job.id}"%></p>
+
+				<p><%= number_to_currency job.job_opportunity.salary_range %> - 
+					<%= job.job_opportunity.level.name %>
+				</p>
+
+				<div class="inline">
+					<p class="details-job-home">
+						<%= link_to 'Detalhes da Vaga', job.job_opportunity , 
+						id: "details-#{job.id}"%>
+					</p>
+					<p class="status-job-home">
+						<%= ApplyJob.human_attribute_name("feedback.#{job.feedback}") %>
+					</p>
+				</div>
 			</div>
 		<% end %>
 	</div>

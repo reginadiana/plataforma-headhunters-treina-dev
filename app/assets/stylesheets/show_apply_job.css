@@ -1,0 +1,26 @@
+.info-candidature {
+	text-align: center;
+}
+
+/*Titulos*/
+.info-candidature p {
+	font-weight: bold;
+	padding: 3%;
+}
+
+/*Index - cards*/
+.inline {
+	display: flex;
+}
+
+/*Status do processo*/
+.status-job-home {
+	background-color: #4ec44e; /*Verde*/
+	text-align: center;
+	border-radius: 25px;
+	padding-top: 2%;
+	margin-left: 3%;
+	color: white;
+	width: 30%;
+	font-size: 15px;
+} 
