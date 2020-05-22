@@ -91,6 +91,13 @@
 	font-weight: bold;
 }
 
+/*Alerta de sucesso*/
+.msg-sucess {
+	padding: 1%;
+	color: #29b229;
+	font-weight: bold;
+}
+
 /*Link para voltar*/
 .link-to-back {
 	margin-left: auto;
@@ -109,6 +116,7 @@
 .link-to-back a {
 	color: gray;
 } 
+
 
 /*Responsividade*/
 
@@ -159,5 +167,13 @@
 		height: 40px;
 		margin-top: 20%;
 		margin-left: -25%;
+	}
+
+	/*Alerta de sucesso*/
+	.msg-sucess {
+		padding: 1%;
+		color: #29b229;
+		font-weight: bold;
+		width: 20%;
 	}
 }

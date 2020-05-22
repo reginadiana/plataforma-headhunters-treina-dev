@@ -1,19 +1,22 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
 
-<%= render "info_job" %>
+<div class="div-job">
+	<%= render "info_job" %>
 
-<% if headhunter_signed_in? %>
-	<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
-	<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
+	<% if headhunter_signed_in? %>
+		<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
+		<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
 
-	<%= render "feedback_candidates" %>
-	<%= render "candidates" %>
+		<%= render "feedback_candidates" %>
+		<%= render "candidates" %>
 
-<% else %>
-	<% if @apply_jobs.any? %>
-		<p>Você se candidatou para esta vaga</p>
-		<p><%= link_to 'Ver minha candidatura', job_opportunity_apply_job_path(@job) %></p> 
 	<% else %>
-		<p><%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %></p>
+		<% if @apply_jobs.any? %>
+			<p class="msg-sucess">Você se candidatou para esta vaga</p>
+			<p class="ver-candidatura">
+				<%= link_to 'Ver minha candidatura', job_opportunity_apply_job_path(@job) %></p> 
+		<% else %>
+			<p><%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %></p>
+		<% end %>
 	<% end %>
-<% end %>
+</div>
