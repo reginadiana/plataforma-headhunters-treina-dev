@@ -21,7 +21,7 @@
 </div>
 <div class="old">
 	<h4>Data de Publição</h4>
-	<p><%= l @job.created_at, format: :short %></p>
+	<p><%= l @job.created_at, format: :long %></p>
 </div>
 <div class="even">
 	<h4><%= JobOpportunity.human_attribute_name(:description_job) %></h4>

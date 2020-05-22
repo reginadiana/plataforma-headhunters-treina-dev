@@ -8,10 +8,10 @@ feature 'Headhunter view your interviews' do
 
 		job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
 		candidate = create(:candidate, full_name: "Lucas Ribeiro", profession: "Desenvolvedor Backend")
-		apply_job = create(:apply_job, job_opportunity: job_opportunity)
+		apply_job = create(:apply_job, job_opportunity: job_opportunity, candidate: candidate)
 		interview = create(:interview, job_opportunity: job_opportunity, 
 						interview_date: "21/05/2021", hour: "15:30",
-						address: "Rua Vergueiro, 11")
+						address: "Rua Vergueiro, 11", candidate: candidate)
 
 		visit job_opportunity_path(job_opportunity)
 
