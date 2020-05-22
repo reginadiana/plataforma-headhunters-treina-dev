@@ -24,4 +24,14 @@ feature 'User authorization' do
 			expect(current_path).to eq(new_candidate_path)
 		end
 	end
+
+	context "don't have a profile and try to acess by route" do
+		before :each do
+			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
+			login_as user, scope: :user
+		end
+		after :each do
+			expect(current_path).to eq(new_candidate_path)
+		end
+	end
 end
