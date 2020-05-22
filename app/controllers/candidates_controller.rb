@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
 	before_action :authenticate_visitor
 	before_action :authenticate_head, except: [:index, :show, :search, :profile_as]
+	before_action :authenticate_candidate, only: [:show, :edit, :update]
 
 	def profile_as 
 		@job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
@@ -17,17 +18,21 @@ class CandidatesController < ApplicationController
 	end
 
 	def index
-		@candidates = Candidate.all
+		if user_signed_in?
+			redirect_to candidate_path(find_candidate)
+		else
+			@candidates = Candidate.all
+		end
 	end
 	def show
 
 		if user_signed_in?
-	    		@candidate = Candidate.find_by(user: current_user)
+	    		@candidate = find_candidate
 			@comments = Comment.all
 		end
 
 		if headhunter_signed_in?
-			@candidate = Candidate.find(id)
+			@candidate = find_candidate_by_route
 			@comments = Comment.where(headhunter: current_headhunter)
 		end
 	end
@@ -38,7 +43,7 @@ class CandidatesController < ApplicationController
 	end
 
 	def new
-		@profile = Candidate.find_by(user: current_user)
+		@profile = find_candidate
 
 		if @profile
 			redirect_to job_opportunities_path
@@ -61,12 +66,12 @@ class CandidatesController < ApplicationController
 		end
 	end
 	def edit
-		@candidate = Candidate.find(id)
+		@candidate = find_candidate_by_route
 		@levels = Level.all
 	end
 
 	def update
-		@candidate = Candidate.find(id)
+		@candidate = find_candidate_by_route
 		if @candidate.update(require_params)
 			redirect_to @candidate
 		else
@@ -76,7 +81,7 @@ class CandidatesController < ApplicationController
 	end
 
 	def destroy
-		@candidate = Candidate.find(id)
+		@candidate = find_candidate
 		@candidate.destroy
 
 		flash[:alert] = 'Perfil excluido. Para acessar a plataforma, crie outro perfil.'
@@ -104,12 +109,29 @@ class CandidatesController < ApplicationController
 		params[:id]
 	end
 
+	def find_candidate_by_route
+		Candidate.find(id)
+	end
+	
+	def find_candidate
+		Candidate.find_by(user: current_user)
+	end
+
 	# Bloqueia gerenciamento de perfils pelo headhunter
 
 	def authenticate_head
 	    if headhunter_signed_in?
 		redirect_to job_opportunities_path
 	    end
+	end
+
+	# Bloqueia acesso dos perfils aos outros candidatos
+	def authenticate_candidate
+		if user_signed_in?
+			if not find_candidate_by_route.user === current_user
+				redirect_to candidate_path(find_candidate)
+			end
+		end
 	end
 
 	def authenticate_visitor
