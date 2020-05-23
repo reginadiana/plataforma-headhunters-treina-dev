@@ -129,6 +129,7 @@
 	background-color: #f9f9f9;
 }
 
+
 /*Titulo dos formularios*/
 .form-title-submit {
 	color: gray;
@@ -138,10 +139,14 @@
 
 .field-submit { 
 	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto; 
+	width: 70%;
+	text-align: left;
 }
 
 .field-submit p { 
-	margin-bottom: 2%;
+	margin-bottom: 3%;
 }
 
 .field-submit label { 
@@ -154,6 +159,7 @@
 	border-bottom-color: gray;
 	border-bottom-style: solid; 
 	border-bottom-width: 0.5px; 
+	width: 100%;
 }
 
 /*Text Area*/
@@ -204,6 +210,10 @@
 		margin-right: auto;
 		margin-bottom: 3%;
 	}
+
+	.app_input { 
+		width: 100%;
+	}
 }
 
 /*Desktop*/
@@ -248,12 +258,23 @@
 	}
 
 	.field-submit p { 
-		margin-bottom: 0%;
+		margin-bottom: 2%;
 	}
 	.field-submit { 
-		margin-bottom: 1%;
+		margin-bottom: 5%;
 	}
 	.submit-form  {
 		margin-top: 2%;
+		width: 60%; 
+	}
+
+	.app_input { 
+		width: 100%;
+	}
+
+	.form {
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
 	}
 }
