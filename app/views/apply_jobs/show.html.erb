@@ -1,42 +1,41 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunity_path(@job_opportunity) %></h3>
 
-<div class="info-candidature">
-	<h1>Informações da Candidatura</h1>
+<div class="apply-div-show">
+     <h1>Informações da Candidatura</h1>
 
-	<p>Vaga: </p><%= @job_opportunity.title %>
-	<p>Mensagem Enviada: </p><%= @apply_job.message %>
-	<p>Data de Candidatura: </p><%= l @apply_job.created_at, format: :short %>
-	<p>Status do Processo: </p><%= ApplyJob.human_attribute_name("feedback.#{@apply_job.feedback}") %>
-
-	<% if @feedback %>
-		<p>Feedback do Recrutador: <%= @feedback.message %></p>
-		<p>Data de Envio: <%= l @feedback.created_at, format: :short %></p>
-	<% else %>
-		<p class="edit"><%= link_to 'Editar Informações', 
-			edit_job_opportunity_apply_job_path(@job_opportunity), 
-			id: "edit-#{@job_opportunity.id}"%></p>
-	<% end %>
-
-	<div class="button-edit-delete">
-		<p class="delete">
-			<%= link_to 'Retirar minha candidatura', 
-			[@job_opportunity, @apply_job] , method: :delete, 
-			id: "delete-#{@job_opportunity.id}"%>
-		</p>
-	</div>
-
-	<div>
-		<h3>Entrevista Marcada</h3>
-
-		<% @interviews.each do |interview| %>
-			<div>
-				<p>Vaga:<%= link_to @job_opportunity.title, @job_opportunity %></p>
-				<p>Data:<%= l interview.interview_date, format: :short %></p>
-				<p>Horário:<%= l interview.hour, format: :short %></p>
-				<p>Endereço:<%= interview.address %></p>
-				<p>Email do Recrutador: <%= interview.job_opportunity.headhunter.email %>
-				</p>
-			</div>
+     <div class="all-cards-apply">
+	<div class="each-card-apply-info">
+		<p>Vaga:</p><%= link_to @job_opportunity.title, @job_opportunity %>
+		<p>Mensagem Enviada:</p><%= @apply_job.message %>
+		<p>Data de Candidatura:</p><%= l @apply_job.created_at, format: :long %>
+		<p>Status do Processo:</p><%= ApplyJob.human_attribute_name("feedback.#{@apply_job.feedback}") %>
+	
+		<% if @feedback %>
+			<p>Feedback do Recrutador: </p><%= @feedback.message %>
+			<p>Data de Envio: </p><%= l @feedback.created_at, format: :long %>
+		<% else %>
+			<p class="edit"><%= link_to 'Editar Informações', 
+				edit_job_opportunity_apply_job_path(@job_opportunity), 
+				id: "edit-#{@job_opportunity.id}"%></p>
 		<% end %>
+
+		<div>
+			<p class="delete-apply">
+				<%= link_to 'Retirar minha candidatura', 
+				[@job_opportunity, @apply_job] , method: :delete, 
+				id: "delete-#{@job_opportunity.id}"%>
+			</p>
+		</div>
+	</div>
+	<% @interviews.each do |interview| %>
+		<div class="each-card-apply-interview">
+			<p>Entrevista Marcada</p>
+			<p>Vaga:</p><%= link_to @job_opportunity.title, @job_opportunity %>
+			<p>Data:</p><%= l interview.interview_date, format: :short %>
+			<p>Horário:</p><%= l interview.hour, format: :short %>
+			<p>Endereço:</p><%= interview.address %>
+			<p>Email do Recrutador:</p><%= interview.job_opportunity.headhunter.email %>
+		</div>
+	<% end %>
 	</div>
 </div>

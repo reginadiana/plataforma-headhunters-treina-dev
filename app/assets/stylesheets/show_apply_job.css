@@ -13,6 +13,86 @@
 	display: flex;
 }
 
+.apply-div-show {
+	
+}
+
+.apply-div-show h1 {
+	font-weight: 300;
+	color: gray;
+	text-align: center;
+	padding: 3%;
+}
+
+.all-cards-apply {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	margin-bottom: 3%;
+}
+
+/*Detalhes da candidatura*/
+/*Cada card de candidatura*/
+.each-card-apply-info {
+	text-align: center;
+	background-color: #ebecea; /*Roxo Claro*/
+	width: 70%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+	border-radius: 5px;
+	color: black;
+}
+
+.each-card-apply-info:hover {
+	background-color: #e4e4e2;
+}
+
+.each-card-apply-info p {
+	padding: 2%;
+	color: #3c1650;
+	font-weight: 700;
+}
+
+.each-card-apply-info a {
+	color: #4682b4;
+	font-weight: 700;
+}
+
+/*Retirar candidatura*/
+.delete-apply a {
+	font-weight: 400;
+	color: red;
+}
+
+/*Entrevista marcada*/
+/*Cada card da entrevista*/
+.each-card-apply-interview {
+	background-color: #4682b4; 
+	width: 60%; 
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+	border-radius: 5px;
+	text-align: center;
+	color: white;
+}
+
+.each-card-apply-interview:hover {
+	background-color: #3d729e;
+}
+
+.each-card-apply-interview p {
+	padding: 3%;
+	color: white;
+	font-weight: 700;
+}
+
+.each-card-apply-interview a {
+	color: pink;
+}
+
 /*Status do processo*/
 .status-job-home {
 	background-color: #4ec44e; /*Verde*/
@@ -24,3 +104,18 @@
 	width: 30%;
 	font-size: 15px;
 } 
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1000px){
+	.all-cards-apply {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+
+/*Desktop*/
+@media screen and (min-width: 1000px){
+	.all-cards-apply {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

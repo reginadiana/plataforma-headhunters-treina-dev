@@ -104,11 +104,18 @@ Comment.create!(candidate: candidate_a, headhunter: headhunter_a, content: 'Otim
 # Candidaturas
 ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor Rails').hope!
 
-ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_b, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga').hope!
+apply_job = ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_c, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor PHP')
 
-ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_c, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor PHP').accepted!
+apply_job_b = ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_b, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga')
 
 ApplyJob.create!(candidate: candidate_b, job_opportunity: job_opportunity_c, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor PHP').rejected!
+
+apply_job.accepted!
+apply_job_b.hope!
+
+# Feedbacks dos recrutadores
+Feedback.create!(message: "Ola, gostamos do seu perfil", apply_job: apply_job, choice: accepted)
+Feedback.create!(message: "Ola, infelizmente nao estamos procurando este perfil", apply_job: apply_job_b, choice: rejected)
 
 # Propostas
 proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
