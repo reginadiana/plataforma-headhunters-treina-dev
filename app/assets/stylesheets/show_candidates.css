@@ -13,6 +13,23 @@
 	border-radius: 50%;
 }
 
+.each-card-candidate {
+	text-align: center;
+	background-color: #f9f9f9;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+	border-radius: 5px;
+	margin-bottom: 5%;
+}
+
+.each-card-candidate:hover {
+	transition: 1s;
+	background-color: #d9d9d9;
+}
+
 .full_name {
 	font-size: 30px;
 	padding: 5%;
@@ -20,15 +37,35 @@
 	font-weight: bold;
 }
 
-/*Infos do candidato*/
+/*Infos do candidato no index*/
 .description-candidate {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.description-candidate-profile {
+	display: grid;
+	grid-template-columns: repeat(2, 350px);
+	margin-left: 25%;
+}
+
+.description-candidate-profile p {
+	padding: 2%;
+	color: white;
 }
 
 .description-candidate p {
-	padding: 3%;
-	color: #f9f9f9;
+	padding: 1%;
+	color: black;
+}
+
+.description-candidate p a{
+	font-size: 20px;
+	color: rgb(232, 44, 79); /*Rosa*/
+}
+
+.description-candidate-profile p a{
+	color: white;
 }
 
 .div-profile_description, .div-formation {
@@ -142,11 +179,13 @@
 		font-size: 40px;
 		padding: 1%;
 	}
+
+	.each-card-candidate {
+		width: 70%;
+	}
 	.description-candidate {
 		display: grid;
-		grid-template-columns: repeat(2, 200px);
-		margin-left: 35%;
-		margin-right: 50%;
+		grid-template-columns: repeat(1, 1fr);
 	}
 
 	.div-profile_description, .div-formation, .div-experience, .div-courses  {
@@ -167,5 +206,14 @@
 	.div-comments h3 {
 		padding-bottom: 1%;
 		padding-top: 1%;
+	}
+
+	.link-new-comment, .link-new-proposal {
+		align-elements: left;
+		margin-left: 3%;
+		text-align: center;
+		padding: 1%;
+		margin-bottom: 1%;
+		width: 20%; 
 	}
 }

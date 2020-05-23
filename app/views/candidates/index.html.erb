@@ -1,4 +1,4 @@
-<div class="job-div">
+<div class="apply-div">
   <h1>Encontre o Melhor Perfil</h1>
 
   <%= render "search_field" %>
@@ -7,14 +7,14 @@
     <p><%= 'Nenhum perfil cadastrado' %></p>
   <% end %>
 
-  <div class="job-cards">
+  <div class="all-cards-interview">
     <% @candidates.each do |candidate| %>
-         <div>
+         <div class="each-card-candidate">
 	        <div>
 		  <% if candidate.avatar.present? %>
-			<%= image_tag(candidate.avatar, size: "320x200", alt: "Foto de perfil do candidato") %>
+			<%= image_tag(candidate.avatar, size: "210x200", alt: "Foto de perfil do candidato", class: "avatar") %>
 		  <% else %>
-			<%= image_tag("sem-imagem-avatar.png", size: "320x200", alt: "Sem foto de perfil") %>
+			<%= image_tag("sem-imagem-avatar.png", size: "210x200", alt: "Sem foto de perfil", class: "avatar") %>
 		  <% end %>
 		</div>
 	        <div class="description-candidate">

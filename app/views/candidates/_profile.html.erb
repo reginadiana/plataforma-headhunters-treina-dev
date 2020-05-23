@@ -11,16 +11,16 @@
 
 	<p class="full_name"><%= @candidate.full_name %></p>
 
-	<div class="description-candidate">
+	<div class="description-candidate-profile">
 
 		<div>
-			<p><%= @candidate.profession %></p>
-			<p><%= @candidate.user.email %></p>
+			<p>Profissão:&nbsp;<%= @candidate.profession %></p>
+			<p>Email do Candidato:&nbsp;<%= @candidate.user.email %></p>
 		</div>
 
 		<div>
-			<p><%= @candidate.level.name %></p>
-			<p><%= @candidate.date_of_birth && localize(@candidate.date_of_birth, format: :long) %></p>
+			<p>Nivel:&nbsp;<%= @candidate.level.name %></p>
+			<p>Nascimento:&nbsp;<%= @candidate.date_of_birth && localize(@candidate.date_of_birth, format: :long) %></p>
 		</div>	
 	</div>
 </div>
