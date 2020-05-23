@@ -13,13 +13,7 @@ class InterviewsController < ApplicationController
 	end
 
 	def new
-		@interview = Interview.find_by(job_opportunity: @job_opportunity, candidate: @candidate)
-
-		if @interview
-			render :edit	
-		else
-			@interview = Interview.new
-		end
+		@interview = Interview.new
 	end
 
 	def create

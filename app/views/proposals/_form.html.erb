@@ -2,22 +2,23 @@
 	<p class="msg-error"><%= message %></p>
 <% end %>
 
+<div class="form">
+	<%= form_with model: [@candidate, @proposal], local: true do |f| %>
 
-<%= form_with model: [@candidate, @proposal], local: true do |f| %>
 
-	<h4>Selecione uma de suas vagas</h4>
-
-	<div class="selectors">
-		<div class="field">
-			<%= f.label :job_opportunity_id %>
-			<%= f.collection_select :job_opportunity_id, @jobs, :id, :title %>
+		<div class="selectors">
+			<div class="field-submit">
+				<h4>Selecione uma de suas vagas</h4>
+				<%= f.label :job_opportunity_id %>
+				<%= f.collection_select :job_opportunity_id, @jobs, :id, :title %>
+			</div>
 		</div>
-	</div>
 
-	<h4>Escreva uma proposta ao canditato</h4>
-	<div class="field">
-		<%= f.label :message %>
-		<%= f.text_area :message %>
-	</div>
-	<button class="button-enviar-form" type="submit">Publicar</button>
-<% end %>
+
+		<div class="field-submit">
+			<p><%= f.label :message %></p>
+			<%= f.text_area(:message, cols: 40, rows: 5, class: 'app_input') %>
+		</div>
+		<button class="submit-form" type="submit">Publicar</button>
+	<% end %>
+</div>

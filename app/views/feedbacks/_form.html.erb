@@ -1,17 +1,17 @@
 <div class="form">
 	<%= form_with model: [@job_opportunuty, @apply_job, @feedback], local: true do |f| %>
-		<div class="field">
-			<%= f.label :message %>
-			<%= f.text_field :message %>
+		<div class="field-submit">
+			<p><%= f.label :message %></p>
+			<%= f.text_area(:message, cols: 40, rows: 5, class: 'app_input') %>
 		</div>
 		
 		<div class="selectors">
-			<div class="field">
+			<div class="field-submit">
 				<%= f.label :choice_id %>
 				<%= f.collection_select :choice_id, @choices, :id, :option %>
 			</div>
 		</div>
 
-		<button class="button-enviar-form" type="submit">Enviar Feedback</button>
+		<button class="submit-form" type="submit">Enviar Feedback</button>
 	<% end %>
 </div>

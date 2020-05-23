@@ -2,10 +2,12 @@
 	<p class="msg-error"><%= message %></p>
 <% end %>
 
-<%= form_with model: [@candidate, @comment], local: true do |f| %>
-	<div class="field">
-		<%= f.label :content %>
-		<%= f.text_area :content %>
-	</div>
-	<button class="button-enviar-form" type="submit">Publicar</button>
-<% end %>
+<div class="form">
+	<%= form_with model: [@candidate, @comment], local: true do |f| %>
+		<div class="field-submit">
+			<p><%= f.label :content %></p>
+			<%= f.text_area(:content, cols: 40, rows: 5, class: 'app_input') %>
+		</div>
+		<button class="submit-form" type="submit">Publicar</button>
+	<% end %>
+</div>

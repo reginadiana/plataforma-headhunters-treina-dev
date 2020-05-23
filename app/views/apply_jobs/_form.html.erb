@@ -2,10 +2,12 @@
 	<p class="msg-error"><%= message %></p>
 <% end %>
 
-<%= form_with model: [@job_opportunity, @apply_job], local: true do |f| %>
-	<div class="field">
-		<%= f.label :message %>
-		<%= f.text_area :message %>
-	</div>
-	<button class="button-enviar-form" type="submit">Enviar Candidatura</button>
-<% end %>
+<div class="form">
+	<%= form_with model: [@job_opportunity, @apply_job], local: true do |f| %>
+		<div class="field-submit">
+			<p><%= f.label :message %></p>	
+			<%= f.text_area(:message, cols: 40, rows: 5, class: 'app_input') %>
+		</div>
+		<button class="submit-form" type="submit">Enviar Candidatura</button>
+	<% end %>
+</div>

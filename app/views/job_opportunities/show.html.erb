@@ -15,7 +15,9 @@
 			<p class="ver-candidatura">
 				<%= link_to 'Ver minha candidatura', job_opportunity_apply_job_path(@job) %></p> 
 		<% else %>	
-			<p><%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %></p>
+			<p class="link-new-job">
+				<%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %>
+			</p>
 		<% end %>
 	<% end %>
 
