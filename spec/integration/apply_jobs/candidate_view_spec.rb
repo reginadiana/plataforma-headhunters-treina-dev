@@ -77,4 +77,12 @@ feature 'Candidate sees the vacancies he applied for' do
 		expect(page).not_to have_link("#{@candidate.full_name}")
 		expect(page).not_to have_link("#{other_candidate.full_name}")
 	end
+	scenario 'and return to index' do    
+	
+		visit root_path
+		click_on 'Minhas Vagas'
+		click_on "Voltar"
+
+		expect(current_path).to eq job_opportunities_path
+	end
 end

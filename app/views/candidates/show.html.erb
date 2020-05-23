@@ -10,31 +10,7 @@
 
 	<%= render 'profile' %>
 
-	<% if headhunter_signed_in? %>
-		<%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %>
-	<% end %>
-
-	<% if @comments.any? %>
-		<% @comments.each do |comment| %>
-		   <% if comment.candidate.full_name == @candidate.full_name %>
-			<p><%= comment.headhunter.email %></p>
-			<p><%= comment.content %></p>
-			<p><%= l comment.created_at, format: :short %></p>
-
-			<% if headhunter_signed_in? %>
-
-				<p><%= link_to 'Editar', 
-					edit_candidate_comment_path(@candidate), 
-					id: "edit-comment#{@candidate.id}"%></p>
-
-				<p><%= link_to 'Deletar', 
-					[@candidate, comment], 
-					method: :delete, 
-					id: "delete-comment#{comment.id}"%></p>
-			<% end %>
-		  <% end %>
-		<% end %>
-	<% end %>
+	<%= render 'comments' %>
 
 	<% if user_signed_in? %>
 		<div class="button-edit-delete">

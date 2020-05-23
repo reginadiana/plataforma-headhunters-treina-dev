@@ -1,0 +1,36 @@
+<% if headhunter_signed_in? %>
+	<%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %>
+<% end %>
+
+<div class="div-comments">
+	<% if @comments.any? %>
+
+	   <h3>Comentários</h3>
+
+	   <div class="all-comments">
+		<% @comments.each do |comment| %>
+		   <% if comment.candidate.full_name == @candidate.full_name %>
+			<div class="each-comment">
+				<h4>Comentario:&nbsp;<%= comment.content %></h4>
+				<p>Email do Recrutador:&nbsp;<%= comment.headhunter.email %></p>
+				<p>Data de Publicação:&nbsp;<%= l comment.created_at, format: :long %></p>
+
+				<% if headhunter_signed_in? %>
+
+					<div class="button-edit-delete-comment">
+						<p class="edit"><%= link_to 'Editar', 
+							edit_candidate_comment_path(@candidate), 
+							id: "edit-comment#{@candidate.id}"%></p>
+
+						<p class="delete"><%= link_to 'Deletar', 
+							[@candidate, comment], 
+							method: :delete, 
+							id: "delete-comment#{comment.id}"%></p>
+					</div>
+			</div>
+		    <% end %>
+		  <% end %>
+           </div>
+		<% end %>
+	<% end %>
+</div>

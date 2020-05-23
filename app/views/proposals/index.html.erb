@@ -1,23 +1,23 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', root_path %></h3>
 
-<div class="job-div">
+<div class="interviews-div">
   <h1>Propostas</h1>
 
   <% if @proposals.empty? %>
     <p class="msg-error"><%= 'Nenhuma proposta foi enviada pra você' %></p>
   <% end %>
 
-  <div class="job-cards">
+  <div class="all-cards-interview">
     <% @proposals.each do |proposal| %>
-	<div class="description-candidate">
+	<div class="each-card">
 	  <p>Vaga: <%= link_to proposal.job_opportunity.title, proposal.job_opportunity %></p>
 	  <p>Data de Envio: <%= l proposal.created_at, format: :short %></p>
 	  <p>Status do Processo: 
 		<%= Proposal.human_attribute_name("status.#{proposal.status}") %>
 	  </p>
 
-	  <%= link_to "Enviar Feedback", 
-				new_candidate_proposal_awnser_proposal_path(@candidate, proposal) %>
+	  <p><%= link_to "Enviar Feedback", 
+				new_candidate_proposal_awnser_proposal_path(@candidate, proposal) %></p>
 	</div>
    <% end %>
   </div>

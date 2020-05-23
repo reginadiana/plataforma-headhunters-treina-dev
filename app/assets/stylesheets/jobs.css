@@ -104,23 +104,31 @@
 
 
 /*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 700px){
+@media screen and (min-width: 700px) and (max-width: 1000px){
 	/*Link para cadastrar novas vagas*/
 	.link-new-job {
 		margin-left: 2%;
 		padding: 2%;
 		width: 30%; 
 	}
+	.job-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.details-job-home {
+		width: 40%;
+	}
 }
 
 /*Desktop*/
 @media screen and (min-width: 1000px){
 	.job-cards {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	/*Detalhes da vaga*/
 	.details-job-home {
+		width: 40%;
 		padding: 2%;
 	}
 
