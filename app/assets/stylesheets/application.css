@@ -117,6 +117,72 @@
 	color: gray;
 } 
 
+.form-div-submit {
+	display: block;
+	align-elements: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto; 
+	padding-top: 3%;
+	padding-bottom: 3%;
+	width: 100%;
+	background-color: #f9f9f9;
+}
+
+/*Titulo dos formularios*/
+.form-title-submit {
+	color: gray;
+	font-weight: 400;
+	margin-bottom: 3%;
+}
+
+.field-submit { 
+	margin-bottom: 5%;
+}
+
+.field-submit p { 
+	margin-bottom: 2%;
+}
+
+.field-submit label { 
+	color: black;
+}
+
+.field-submit input { 
+	background-color: transparent;
+	border-color: transparent;
+	border-bottom-color: gray;
+	border-bottom-style: solid; 
+	border-bottom-width: 0.5px; 
+}
+
+/*Text Area*/
+.app_input {
+	border-radius: 5px;
+	padding: 1%;
+	background-color: transparent;
+}
+
+/*Button de submit*/
+.submit-form  {
+	background-color: #4ec44e; /*Verde*/
+	border-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	text-align: center;
+	padding: 1%;
+	width: 50%; 
+	color: white;
+	font-size: 15px;
+}
+
+.submit-form:hover {
+	background-color: #37a437;
+}
+
+
 
 /*Responsividade*/
 
@@ -175,5 +241,19 @@
 		color: #29b229;
 		font-weight: bold;
 		width: 20%;
+	}
+
+	.submit-form  {
+		width: 20%; 
+	}
+
+	.field-submit p { 
+		margin-bottom: 0%;
+	}
+	.field-submit { 
+		margin-bottom: 1%;
+	}
+	.submit-form  {
+		margin-top: 2%;
 	}
 }
