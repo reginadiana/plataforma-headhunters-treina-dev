@@ -4,54 +4,54 @@
 
 <div class="form">
 	<%= form_with model: @job, local: true do |f| %>
-		<div class="field">
+		<div class="field-submit">
 			<%= f.label :title %>
 			<%= f.text_field :title %>
 		</div>
-		<div class="field">
+		<div class="field-submit">
 			<%= f.label :company%>
 			<%= f.text_field :company %>
 		</div>
-		<div class="field">
-			<%= f.label :description_job%>
-			<%= f.text_area :description_job %>
+		<div class="field-submit">
+			<p><%= f.label :description_job%></p>
+			<%= f.text_area(:description_job, cols: 40, rows: 5, class: 'app_input') %>
 		</div>
-		<div class="field">
+		<div class="field-submit">
 			<%= f.label :skills%>
 			<%= f.text_field :skills %>
 		</div>
-		<div class="field">
+		<div class="field-submit">
 			<%= f.label :salary_range%>
 			<%= f.number_field :salary_range %>
 		</div>
-		<div class="field">
+		<div class="field-submit">
 			<%= f.label :deadline %>
 			<%= f.date_field :deadline %>
 		</div>
 		
 		<div class="selectors">
-			<div class="field">
+			<div class="field-submit">
 				<%= f.label :level_id %>
 				<%= f.collection_select :level_id, @levels, :id, :name %>
 			</div>
 		</div>
-		<div class="field">
+		<div class="field-submit">
 			<%= f.label :region %>
 			<%= f.text_field :region %>
 		</div>
-		<div class="field">
-			<%= f.label :benefits %>
-			<%= f.text_area :benefits  %>
+		<div class="field-submit">
+			<p><%= f.label :benefits %></p>
+			<%= f.text_area(:benefits, cols: 40, rows: 5, class: 'app_input') %>
 		</div>
-		<div class="field">
-			<%= f.label :office_functions %>
-			<%= f.text_area :office_functions %>
+		<div class="field-submit">
+			<p><%= f.label :office_functions %></p>
+			<%= f.text_area(:office_functions, cols: 40, rows: 5, class: 'app_input') %>
 		</div>
-		<div class="field">
-			<%= f.label :company_expectations %>
-			<%= f.text_area :company_expectations %>
+		<div class="field-submit">
+			<p><%= f.label :company_expectations %></p>
+			<%= f.text_area(:company_expectations, cols: 40, rows: 5, class: 'app_input') %>
 		</div>
 
-		<button class="button-enviar-form" type="submit">Enviar Vaga</button>
+		<button class="submit-form" type="submit">Enviar Vaga</button>
 	<% end %>
 </div>

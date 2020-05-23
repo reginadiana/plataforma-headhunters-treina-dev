@@ -145,6 +145,15 @@
 	text-align: left;
 }
 
+.form-div-submit p {
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3%;
+	width: 70%;
+	color: rgb(232, 44, 79);
+}
+
 .field-submit p { 
 	margin-bottom: 3%;
 }
@@ -276,5 +285,9 @@
 		margin-left: auto;
 		margin-right: auto;
 		width: 50%;
+	}
+
+	.form-div-submit p {
+		width: 35%;
 	}
 }

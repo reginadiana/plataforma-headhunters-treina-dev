@@ -13,7 +13,13 @@ class InterviewsController < ApplicationController
 	end
 
 	def new
-		@interview = Interview.new
+		@interview = Interview.find_by(job_opportunity: @job_opportunity, candidate: @candidate)
+
+		if @interview
+			render :edit	
+		else
+			@interview = Interview.new
+		end
 	end
 
 	def create
@@ -26,6 +32,20 @@ class InterviewsController < ApplicationController
 			flash[:notice] = 'Entrevista marcada com sucesso'
 		else
 			render :new
+		end
+	end
+
+	def edit
+		@interview = Interview.find(id)
+	end
+
+	def update
+		@interview = Interview.find(id)
+		if @interview.update(require_params)
+			flash[:notice] = 'Entrevista atualizada com sucesso'	
+			redirect_to job_opportunity_path(@job_opportunity)
+		else
+			render :edit
 		end
 	end
 
