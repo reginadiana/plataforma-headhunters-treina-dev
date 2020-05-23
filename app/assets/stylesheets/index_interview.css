@@ -1,0 +1,60 @@
+.interviews-div {
+
+}
+
+.all-cards-interview {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*Entrevistas marcadas*/
+.interviews-div h1 {
+	font-weight: 300;
+	color: gray;
+	text-align: center;
+	padding: 3%;
+}
+
+/*Cada card da entrevista*/
+.each-card {
+	background-color: #4682b4;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3%;
+	border-radius: 5px;
+}
+
+.each-card:hover {
+	background-color: #71a0c8 ;
+}
+
+.each-card p {
+	padding: 3%;
+	color: white;
+}
+
+.each-card a {
+	color: pink;
+}
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1000px){
+	.all-cards-interview {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+
+/*Desktop*/
+@media screen and (min-width: 1000px){
+	.all-cards-interview {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.each-card p {
+		padding: 1%;
+	}
+}

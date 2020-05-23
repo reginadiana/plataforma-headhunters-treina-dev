@@ -1,18 +1,20 @@
 <h3 class="link-to-back"><%= link_to 'Voltar', job_opportunities_path %></h3>
 
-<h3>Entrevistas Marcadas</h3>
+<div class="interviews-div">
+	<h1>Entrevistas Marcadas</h1>
 
-<% if @interviews.empty? %>
-	<p><%= 'Nenhuma entrevista marcada' %></p>
-<% end %>
-<div>
-	<% @interviews.each do |interview| %>
-		<div>
-			<p>Vaga:<%= link_to interview.job_opportunity.title, interview.job_opportunity %></p>
-			<p>Data:<%= l interview.interview_date, format: :short %></p>
-			<p>Horário:<%= l interview.hour, format: :short %></p>
-			<p>Endereço:<%= interview.address %></p>
-			<p>Email do Recrutador: <%= interview.job_opportunity.headhunter.email %></p>
-		</div>
+	<% if @interviews.empty? %>
+		<p><%= 'Nenhuma entrevista marcada' %></p>
 	<% end %>
+	<div class="all-cards-interview">
+		<% @interviews.each do |interview| %>
+			<div class="each-card">
+				<p>Vaga:&nbsp;<%= link_to interview.job_opportunity.title, interview.job_opportunity %></p>
+				<p>Data:&nbsp;<%= l interview.interview_date, format: :short %></p>
+				<p>Horário:&nbsp;<%= l interview.hour, format: :short %></p>
+				<p>Endereço:&nbsp;<%= interview.address %></p>
+				<p>Email do Recrutador:&nbsp;<%= interview.job_opportunity.headhunter.email %></p>
+			</div>
+		<% end %>
+	</div>
 </div>
