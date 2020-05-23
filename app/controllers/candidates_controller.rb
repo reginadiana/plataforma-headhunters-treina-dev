@@ -39,14 +39,17 @@ class CandidatesController < ApplicationController
 	end
 
 	def search
-		@q = params[:q]
-		@candidates = Candidate.search(@q).or(Candidate.search(@q))
+
+		if user_signed_in?
+			redirect_to candidate_path(find_candidate)
+		else
+			@q = params[:q]
+			@candidates = Candidate.search(@q).or(Candidate.search(@q))
+		end
 	end
 
 	def new
-		@profile = find_candidate
-
-		if @profile
+		if find_candidate
 			redirect_to job_opportunities_path
 		else
 			@candidate = Candidate.new
@@ -134,6 +137,7 @@ class CandidatesController < ApplicationController
 			end
 		end
 	end
+
 
 	def authenticate_visitor
 		if not user_signed_in? 

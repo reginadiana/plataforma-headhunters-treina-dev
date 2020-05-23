@@ -41,7 +41,7 @@ feature 'Candidate visit list of jobs' do
 		before :each do
 			user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
 			login_as user, scope: :user
-			candidate = create(:candidate, user: user)
+			@candidate = create(:candidate, user: user)
 
 			visit job_opportunities_path
 		end
@@ -62,6 +62,10 @@ feature 'Candidate visit list of jobs' do
 		
 			expect(page).to have_link 'Voltar'
 			expect(page).to have_content('Nenhum resultado encontrado para: Github')
+		end
+		scenario 'other candidates' do
+			visit search_candidates_path("Camila") 
+			expect(current_path).to eq(candidate_path(@candidate))
 		end
 	end
 end

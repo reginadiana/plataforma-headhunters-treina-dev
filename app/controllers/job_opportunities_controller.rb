@@ -11,9 +11,7 @@ class JobOpportunitiesController < ApplicationController
 		end
 	end
 	def show
-
 	    	@job = find_job
-
 		@proposals = Proposal.where(job_opportunity: @job)
 		@awnser_proposals = AwnserProposal.where(proposal: @proposals)
 		@applyjob = ApplyJob.where(job_opportunity: @job)
@@ -25,7 +23,7 @@ class JobOpportunitiesController < ApplicationController
 	end
 	def search
 		@q = params[:q]
-		@jobs = JobOpportunity.search(@q).or(JobOpportunity.search(@q))
+		@jobs = JobOpportunity.search(@q).or(JobOpportunity.search(@q))		
 	end
 	def new
 		@job = JobOpportunity.new

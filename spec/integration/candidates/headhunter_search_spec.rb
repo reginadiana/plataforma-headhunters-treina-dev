@@ -48,8 +48,8 @@ feature 'Headhunter visit list of candidates' do
 	
 	context 'can not found' do
 		before :each do
-			headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
-			login_as headhunter, scope: :headhunter
+			@headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+			login_as @headhunter, scope: :headhunter
 
 			visit candidates_path
 			expect(page).to have_content('Encontre o Melhor Perfil')
