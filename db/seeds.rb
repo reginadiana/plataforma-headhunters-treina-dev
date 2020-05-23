@@ -98,9 +98,11 @@ job_opportunity_c = JobOpportunity.create!(
 
 # Comentarios
 Comment.create!(candidate: candidate_a, headhunter: headhunter_b, content: 'Ola, gostei do seu perfil')
+Comment.create!(candidate: candidate_a, headhunter: headhunter_a, content: 'Boas qualificações')
+Comment.create!(candidate: candidate_a, headhunter: headhunter_a, content: 'Otimos cursos!')
 
 # Candidaturas
-ApplyJob.create!(candidate: candidate_b, job_opportunity: job_opportunity, message: 'Eu, Bianca Rosa, brasileira, Operadora de CNC venho por meio desta me candidatar à vaga de Programador de CNC nesta empresa.').hope!
+ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor Rails').hope!
 
 ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_b, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga').hope!
 
@@ -111,6 +113,12 @@ proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha e
 proposal_b = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa, o seu curriculo é excelente", 
 				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Em espera")
 
+proposal_c = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
+				job_opportunity: job_opportunity, candidate: candidate_b, status: "Em espera")
+
+proposal_d = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
+				job_opportunity: job_opportunity, candidate: candidate_a, status: "Em espera")
+
 # Resposta a proposta
 AwnserProposal.create!(choice: acepted,
     awnser_message: "Ola, me interessei pela vaga sim, pode me passar mais informações?",
@@ -120,10 +128,10 @@ AwnserProposal.create!(choice: rejected,
     awnser_message: "Ola, por enquanto nao procuro uma vaga como esta",
     proposal: proposal_b)
 
+
 # Entrevistas
 Interview.create!(interview_date: "21/05/2021", hour: "15:30", address: "Rua Vergueiro, 11", candidate: candidate_a, job_opportunity: job_opportunity_b)
 
 Interview.create!(interview_date: "21/05/2023", hour: "20:30", address: "Rua Map, 11", candidate: candidate_b, job_opportunity: job_opportunity_b)
 
 Interview.create!(interview_date: "21/05/2022", hour: "18:30", address: "Rua Ita, 11", candidate: candidate_a, job_opportunity: job_opportunity_c)
-
