@@ -78,7 +78,32 @@
 	padding: 3%;
 }
 
-.all-comments {
+/*Link para cadastrar novas vagas*/
+.link-new-comment, .link-new-proposal {
+	background-color: orange;
+	align-elements: center;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 3%;
+	margin-bottom: 2%;
+	width: 50%; 
+}
+
+.link-new-proposal {
+	background-color: #308f5a;
+}
+
+.link-new-proposal:hover {
+	background-color: #267248;
+}
+
+.link-new-comment:hover {
+	background-color: #ff7b00;
+}
+
+.link-new-comment a, .link-new-proposal a {
+	color: white;
 }
 
 .each-comment {

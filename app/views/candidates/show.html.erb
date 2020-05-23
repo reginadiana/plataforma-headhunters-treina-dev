@@ -21,6 +21,6 @@
 				candidate_path(@candidate) , method: :delete, id: "delete-#{@candidate.id}"%></p>
 		</div>
 	<% else %>
-		<p><%= link_to 'Enviar Proposta', new_candidate_proposal_path(@candidate)%></p>
+		<p class="link-new-proposal"><%= link_to 'Enviar Proposta', new_candidate_proposal_path(@candidate)%></p>
 	<% end %>
 </div>

@@ -9,7 +9,7 @@ especialista = Level.create!(name: 'Especialista')
 Level.create!(name: 'Diretor')
 
 # Definindo escolhas que headhunter e candidato podem tomar para aos feedbacks e propostas
-acepted = Choice.create!(option: "Aceitar")
+accepted = Choice.create!(option: "Aceitar")
 rejected = Choice.create!(option: "Recusar")
 
 # Candidatos
@@ -106,12 +106,16 @@ ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity, messa
 
 ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_b, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga').hope!
 
+ApplyJob.create!(candidate: candidate_a, job_opportunity: job_opportunity_c, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor PHP').accepted!
+
+ApplyJob.create!(candidate: candidate_b, job_opportunity: job_opportunity_c, message: 'Eu, Camila, brasileira, venho por meio desta me candidatar à vaga como desenvolvedor PHP').rejected!
+
 # Propostas
 proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
-				job_opportunity: job_opportunity_c, candidate: candidate_a, status: "Em espera")
+				job_opportunity: job_opportunity_c, candidate: candidate_a, status: "Aceito")
 
 proposal_b = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa, o seu curriculo é excelente", 
-				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Em espera")
+				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Rejeitado")
 
 proposal_c = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
 				job_opportunity: job_opportunity, candidate: candidate_b, status: "Em espera")
@@ -120,7 +124,7 @@ proposal_d = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha
 				job_opportunity: job_opportunity, candidate: candidate_a, status: "Em espera")
 
 # Resposta a proposta
-AwnserProposal.create!(choice: acepted,
+AwnserProposal.create!(choice: accepted,
     awnser_message: "Ola, me interessei pela vaga sim, pode me passar mais informações?",
     proposal: proposal)
 

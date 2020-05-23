@@ -1,13 +1,13 @@
-<% if headhunter_signed_in? %>
-	<%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %>
-<% end %>
-
 <div class="div-comments">
+	<h3>Comentários</h3>
+
+	<% if headhunter_signed_in? %>
+		<p class="link-new-comment"><%= link_to 'Deixar Comentário', new_candidate_comment_path(@candidate) %></p>
+	<% end %>
+
 	<% if @comments.any? %>
 
-	   <h3>Comentários</h3>
-
-	   <div class="all-comments">
+	   <div>
 		<% @comments.each do |comment| %>
 		   <% if comment.candidate.full_name == @candidate.full_name %>
 			<div class="each-comment">

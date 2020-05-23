@@ -4,9 +4,7 @@
 	<%= render "info_job" %>
 
 	<% if headhunter_signed_in? %>
-		<p><%= link_to 'Minhas Entrevistas', job_opportunity_interview_path(@job) %></p>
-		<p><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
-		<p><%= link_to 'Encerrar Vaga', job_opportunity_path(@job) , method: :delete, id: "delete-#{@job.id}"%></p>
+		<p class="link-list-interview"><%= link_to 'Minhas Entrevistas', job_opportunity_interview_path(@job) %></p>
 
 		<%= render "feedback_candidates" %>
 		<%= render "candidates" %>
@@ -19,5 +17,14 @@
 		<% else %>	
 			<p><%= link_to 'Quero me candidatar', new_job_opportunity_apply_job_path(@job) %></p>
 		<% end %>
+	<% end %>
+
+	<% if headhunter_signed_in? %>
+		<div class="button-edit-delete">
+			<p class="edit" ><%= link_to 'Editar', edit_job_opportunity_path(@job), id: "edit-#{@job.id}"%></p>
+			<p class="delete"><%= link_to 'Encerrar Vaga', job_opportunity_path(@job),
+				 method: :delete, id: "delete-#{@job.id}"%>
+			</p>
+		</div>
 	<% end %>
 </div>

@@ -1,12 +1,18 @@
-<h4>Feedbacks dos candidatos para esta vaga</h4>
+<div class="apply-div">
+  <h1>Feedbacks dos candidatos para esta vaga</h1>
+    <div class="all-cards-interview">
+      <% @awnser_proposals.each do |awnser| %>
 
-<% @awnser_proposals.each do |awnser| %>
-	<%= @job.title %>
-	<%= Proposal.human_attribute_name("status.#{awnser.proposal.status}") %>
-	<% if awnser.proposal.accepted? %>
-		<%= link_to "Agendar Entrevista", 
-			new_job_opportunity_candidate_interview_path(@job, awnser.proposal.candidate) %>
-	<% end %>
-	<%= awnser.awnser_message %>
-	<%= link_to awnser.proposal.candidate.full_name, awnser.proposal.candidate %>
-<% end %>
+        <div class="each-card">
+         <p><%= @job.title %> - <%= link_to awnser.proposal.candidate.full_name, awnser.proposal.candidate %></p>
+         <p>Status do Processo: <%= Proposal.human_attribute_name("status.#{awnser.proposal.status}") %></p>
+         <% if awnser.proposal.accepted? %>
+		 <p><%= link_to "Agendar Entrevista", 
+		    new_job_opportunity_candidate_interview_path(@job, awnser.proposal.candidate) %>
+		 </p>
+	 <% end %>		
+         <p><%= awnser.awnser_message %></p>
+        </div>
+      <% end %>
+    </div>
+</div>

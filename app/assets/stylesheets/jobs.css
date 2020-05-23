@@ -25,20 +25,29 @@
 }
 
 /*Link para cadastrar novas vagas*/
-.link-new-job {
+.link-new-job, .link-list-interview {
 	background-color: rgb(50, 86, 161);
-	margin-left: 5%;
-	text-align: center;
+	margin-left: auto;
+	margin-right: auto; 
 	padding: 3%;
-	width: 50%; 
+	width: 50%;
+	text-align:center;
 }
 
-.link-new-job:hover {
+.link-new-job:hover, .link-list-interview:hover {
 	background-color: #284581;
 }
 
-.link-new-job a {
+.link-new-job a, .link-list-interview a {
 	color: white;
+}
+
+/*Entrevistas do recrutador para cada vaga*/
+.link-list-interview {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3%;
+	margin-bottom: 3%;
 }
 
 /*Vagas Cadastradas*/
@@ -133,7 +142,7 @@
 	}
 
 	/*Link para cadastrar novas vagas*/
-	.link-new-job {
+	.link-new-job, .link-list-interview {
 		margin-left: 1%;
 		padding: 1%;
 		width: 20%; 
