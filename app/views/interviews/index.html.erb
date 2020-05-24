@@ -14,6 +14,16 @@
 				<p>Horário:&nbsp;<%= l interview.hour, format: :short %></p>
 				<p>Endereço:&nbsp;<%= interview.address %></p>
 				<p>Email do Recrutador:&nbsp;<%= interview.job_opportunity.headhunter.email %></p>
+				<p class="edit" ><%= link_to 'Editar',  
+					edit_job_opportunity_candidate_interview_path(interview.job_opportunity, 
+						interview.candidate, interview), 
+						id: "edit-interview-#{interview.id}"%>
+				</p>
+				<p class="delete"><%= link_to 'Cancelar Entrevista', 
+					 job_opportunity_candidate_interview_path(interview.job_opportunity, 
+					 	interview.candidate, interview),
+					 	method: :delete, id: "delete-interview-#{interview.id}"%>
+				</p>
 			</div>
 		<% end %>
 	</div>

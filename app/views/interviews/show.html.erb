@@ -4,7 +4,7 @@
 	<h1>Entrevistas para esta vaga</h1>
 
 	<% if @interviews.empty? %>
-		<p><%= 'Nenhuma entrevista marcada' %></p>
+		<p class="msg-error"><%= 'Nenhuma entrevista marcada' %></p>
 	<% end %>
 
 	<div class="all-cards-interview">
@@ -17,6 +17,11 @@
 				<p>Candidato: 
 					<%= link_to interview.candidate.full_name, interview.candidate %> - 
 					<%= interview.candidate.profession %>
+				</p>
+				<p class="edit" ><%= link_to 'Editar',  
+					edit_job_opportunity_candidate_interview_path(@job_opportunity, 
+						interview.candidate, interview), 
+						id: "edit-interview-#{interview.id}"%>
 				</p>
 			</div>
 		<% end %>

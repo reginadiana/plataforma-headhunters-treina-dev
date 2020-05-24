@@ -21,7 +21,7 @@ candidate_a = Candidate.create!(
 	full_name: "Camila de Lucas",
 	social_name: "Camila",
 	date_of_birth: "01/04/1990",
-	profession: "Desenvolvedora Frontend",
+	profession: "Desenvolvedor Frontend",
 	profile_description: "Excelentes capacidades de análise, escrita, raciocínio e de tecnologia da informação",
 	level: pleno,
 	experience: "Experiencia em desenvolvimento de interfaces na empresa Red Ventures",
@@ -119,10 +119,11 @@ Feedback.create!(message: "Ola, infelizmente nao estamos procurando este perfil"
 
 # Propostas
 proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
-				job_opportunity: job_opportunity_c, candidate: candidate_a, status: "Aceito")
+				job_opportunity: job_opportunity_c, candidate: candidate_a, status: "Em espera")
 
 proposal_b = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa, o seu curriculo é excelente", 
-				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Rejeitado")
+				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Em espera")
+
 
 proposal_c = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
 				job_opportunity: job_opportunity, candidate: candidate_b, status: "Em espera")
@@ -139,10 +140,12 @@ AwnserProposal.create!(choice: rejected,
     awnser_message: "Ola, por enquanto nao procuro uma vaga como esta",
     proposal: proposal_b)
 
-
 # Entrevistas
 Interview.create!(interview_date: "21/05/2021", hour: "15:30", address: "Rua Vergueiro, 11", candidate: candidate_a, job_opportunity: job_opportunity_b)
 
 Interview.create!(interview_date: "21/05/2023", hour: "20:30", address: "Rua Map, 11", candidate: candidate_b, job_opportunity: job_opportunity_b)
 
 Interview.create!(interview_date: "21/05/2022", hour: "18:30", address: "Rua Ita, 11", candidate: candidate_a, job_opportunity: job_opportunity_c)
+
+
+

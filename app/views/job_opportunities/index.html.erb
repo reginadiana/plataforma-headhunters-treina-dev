@@ -8,7 +8,7 @@
         <%= render "search_field" %>
 
 	<% if @jobs.empty? %>
-		<p><%= 'Nenhuma vaga cadastrada' %></p>
+		<p class="msg-error"><%= 'Nenhuma vaga cadastrada' %></p>
 	<% end %>
 
 	<div class="job-cards">
