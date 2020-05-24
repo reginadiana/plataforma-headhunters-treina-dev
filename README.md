@@ -194,3 +194,4 @@ Em [issues](https://github.com/Diana-ops/rental-cars-treina-dev-1/issues) foram 
 The [MIT License](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/LICENSE) (MIT)
 
 Copyright :copyright: 2020 HandHunters
+ <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102"/>
