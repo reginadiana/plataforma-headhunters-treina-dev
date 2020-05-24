@@ -71,6 +71,8 @@ Os **headhunters** (recrutadores) podem:
 
 :heavy_check_mark: Receber proposta do candidato 
 
+:heavy_check_mark: Buscar por candidatos a partir do nome ou profissão
+
 :heavy_check_mark: Encerrar as inscrições para uma vaga
 
 Os **candidatos** podem: 
@@ -78,6 +80,8 @@ Os **candidatos** podem:
 :heavy_check_mark: Criar uma conta 
 
 :heavy_check_mark: Completar o seu perfil
+
+:heavy_check_mark: Buscar por vagas a partir do titulo ou skills requeridas 
 
 :heavy_check_mark: Se inscrever em uma vaga
 
@@ -111,11 +115,9 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 
 :warning: [Ruby](https://www.ruby-lang.org/pt/documentation/installation/) versão >=2.6.3
 
-:warning: [Node](https://nodejs.org/en/download/) versão >=10.13.0
-
 :warning: [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html) versão >=6.0.2.2
 
-:warning: [Node](https://nodejs.org/en/download/) versão >=12.16.2
+:warning: [Node](https://nodejs.org/en/download/) versão >=10.13.0
 
 :warning: [Gem](https://rubygems.org/pages/download?locale=pt-BR) versão >=3.1.2
 
