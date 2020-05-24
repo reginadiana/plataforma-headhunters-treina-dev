@@ -27,8 +27,6 @@
 
 :small_orange_diamond: [Funcionalidades](#funcionalidades)
 
-:small_orange_diamond: [Layout da Aplicação](#layout-da-aplicação-dash)
-
 :small_orange_diamond: [Gems instaladas](#gems-instaladas)
 
 :small_orange_diamond: [Pré-requisitos](#pré-requisitos-package)
@@ -38,6 +36,8 @@
 :small_orange_diamond: [Rodando a aplicação](#rodando-a-aplicação-arrow_forward)
 
 :small_orange_diamond: [Rodando os testes](#rodando-os-testes-memo)
+
+:small_orange_diamond: [Casos de Uso](#casos-de-uso-busts_in_silhouette)
 
 :small_orange_diamond: [Database](#database-floppy_disk)
 
@@ -111,6 +111,8 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 
 :warning: [Ruby](https://www.ruby-lang.org/pt/documentation/installation/) versão >=2.6.3
 
+:warning: [Node](https://nodejs.org/en/download/) versão >=10.13.0
+
 :warning: [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html) versão >=6.0.2.2
 
 :warning: [Node](https://nodejs.org/en/download/) versão >=12.16.2
@@ -128,9 +130,16 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 No terminal, clone o projeto: 
 
 ```
-git clone 
+git clone https://github.com/Diana-ops/plataforma-headhunters-treina-dev
 ```
-...
+Entre na pasta
+```
+cd plataforma-headhunters-treina-dev
+```
+Instale as dependencias e prepare o database
+```
+bin/setup
+```
 
 ## Rodando a aplicação :arrow_forward:
 
@@ -139,6 +148,21 @@ $ rails server or rails s
 ```
 
 > Depois, acesse http://localhost:3000 para ver a aplicação
+
+## Casos de Uso :busts_in_silhouette:
+
+Alguns candidatos, recrutadores e outros objetos já estão configurados na aplicação e foram criados no arquivo [bin/seeds.rb](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/db/seeds.rb).
+
+### Acessando a plataforma como candidato 
+
+```ruby 
+user_a = User.create!(email: 'camila@outlook.com.br', password: '123456')
+```
+
+### Acessando a plataforma como recrutador
+```ruby 
+headhunter_a = Headhunter.create!(email: 'lucas22@outlook.com.br', password: '111111')
+```
 
 ## Rodando os testes :memo:
 
@@ -149,7 +173,7 @@ $ rspec or bundle exec rspec
 
 ## Database :floppy_disk:
 
-O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
+O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html). O banco foipreparado com o comando ``` bin/setup ```
 
 ## Rotas
 
