@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/apm/l/vim-mode?color=green&label=license&logo=license&logoColor=green&style=for-the-badge"/>
   <img src="http://img.shields.io/static/v1?label=Ruby&message=2.6.3&color=red&style=for-the-badge&logo=ruby"/>
   <img src="http://img.shields.io/static/v1?label=Ruby%20On%20Rails%20&message=6.0.2.2&color=red&style=for-the-badge&logo=ruby"/>
-  <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E100&color=GREEN&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=TESTES&message=%3E200&color=GREEN&style=for-the-badge"/>
 </p>
 
 <p align="center">
@@ -27,8 +27,6 @@
 
 :small_orange_diamond: [Funcionalidades](#funcionalidades)
 
-:small_orange_diamond: [Layout da Aplicação](#layout-da-aplicação-dash)
-
 :small_orange_diamond: [Gems instaladas](#gems-instaladas)
 
 :small_orange_diamond: [Pré-requisitos](#pré-requisitos-package)
@@ -38,6 +36,8 @@
 :small_orange_diamond: [Rodando a aplicação](#rodando-a-aplicação-arrow_forward)
 
 :small_orange_diamond: [Rodando os testes](#rodando-os-testes-memo)
+
+:small_orange_diamond: [Casos de Uso](#casos-de-uso-busts_in_silhouette)
 
 :small_orange_diamond: [Database](#database-floppy_disk)
 
@@ -71,6 +71,8 @@ Os **headhunters** (recrutadores) podem:
 
 :heavy_check_mark: Receber proposta do candidato 
 
+:heavy_check_mark: Buscar por candidatos a partir do nome ou profissão
+
 :heavy_check_mark: Encerrar as inscrições para uma vaga
 
 Os **candidatos** podem: 
@@ -78,6 +80,8 @@ Os **candidatos** podem:
 :heavy_check_mark: Criar uma conta 
 
 :heavy_check_mark: Completar o seu perfil
+
+:heavy_check_mark: Buscar por vagas a partir do titulo ou skills requeridas 
 
 :heavy_check_mark: Se inscrever em uma vaga
 
@@ -113,7 +117,7 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 
 :warning: [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html) versão >=6.0.2.2
 
-:warning: [Node](https://nodejs.org/en/download/) versão >=12.16.2
+:warning: [Node](https://nodejs.org/en/download/) versão >=10.13.0
 
 :warning: [Gem](https://rubygems.org/pages/download?locale=pt-BR) versão >=3.1.2
 
@@ -128,9 +132,16 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 No terminal, clone o projeto: 
 
 ```
-git clone 
+git clone https://github.com/Diana-ops/plataforma-headhunters-treina-dev
 ```
-...
+Entre na pasta
+```
+cd plataforma-headhunters-treina-dev
+```
+Instale as dependencias e prepare o database
+```
+bin/setup
+```
 
 ## Rodando a aplicação :arrow_forward:
 
@@ -139,6 +150,21 @@ $ rails server or rails s
 ```
 
 > Depois, acesse http://localhost:3000 para ver a aplicação
+
+## Casos de Uso :busts_in_silhouette:
+
+Alguns candidatos, recrutadores e outros objetos já estão configurados na aplicação e foram criados no arquivo [bin/seeds.rb](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/db/seeds.rb).
+
+### Acessando a plataforma como candidato 
+
+```ruby 
+user_a = User.create!(email: 'camila@outlook.com.br', password: '123456')
+```
+
+### Acessando a plataforma como recrutador
+```ruby 
+headhunter_a = Headhunter.create!(email: 'lucas22@outlook.com.br', password: '111111')
+```
 
 ## Rodando os testes :memo:
 
@@ -149,7 +175,7 @@ $ rspec or bundle exec rspec
 
 ## Database :floppy_disk:
 
-O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html)
+O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html). O banco foipreparado com o comando ``` bin/setup ```
 
 ## Rotas
 
@@ -168,3 +194,5 @@ Em [issues](https://github.com/Diana-ops/rental-cars-treina-dev-1/issues) foram 
 The [MIT License](https://github.com/Diana-ops/plataforma-headhunters-treina-dev/blob/master/LICENSE) (MIT)
 
 Copyright :copyright: 2020 HandHunters
+<br/>
+<img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102"/>
