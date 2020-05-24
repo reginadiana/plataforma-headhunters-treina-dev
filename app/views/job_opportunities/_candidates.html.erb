@@ -1,6 +1,11 @@
 <div class="apply-div">
   <h1>Candidatos</h1>
 
+  <% if @applyjob.size > 0 %>
+    <p class="size-of-object">Número de Candidatos: <%= @applyjob.size %><p>
+  <% end %>
+
+
   <% if @applyjob.empty? %>
     <p class="msg-error">Nenhuma candidatura foi realizada</p>
   <% else %>
@@ -13,7 +18,8 @@
 	      <p class="destaque">Perfil Destaque</p>	
 	    <% end %>
 
-            <p><%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %> - <%= apply.candidate.profession %></p>
+            <p><%= link_to apply.candidate.full_name, candidate_path(apply.candidate) %> - 
+		<%= apply.candidate.profession %></p>
 
 	    <p><%= apply.message %></p>
 	    <div class="bottom-card">
@@ -22,7 +28,8 @@
 		  <p><%= link_to 'Marcar como Destaque',job_opportunity_apply_job_profile_as_path(@job, apply) %></p>
               </div>
 	      <div>
-		  <p><%= link_to "Agendar Entrevista", new_job_opportunity_candidate_interview_path(@job, apply.candidate)%></p>
+		  <p><%= link_to "Agendar Entrevista", 
+			new_job_opportunity_candidate_interview_path(@job, apply.candidate)%></p>
 		  <p><%= link_to "Enviar Feedback", new_job_opportunity_apply_job_feedback_path(@job, apply) %></p>
               </div>
 	     </div>

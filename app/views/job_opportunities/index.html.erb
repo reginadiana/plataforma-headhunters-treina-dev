@@ -11,6 +11,9 @@
 		<p class="msg-error"><%= 'Nenhuma vaga cadastrada' %></p>
 	<% end %>
 
+	<% if @jobs.size > 0 %>
+		<p class="size-of-object">Quantidade de vagas cadastradas: <%= @jobs.size %><p>
+	<% end %>
 	<div class="job-cards">
 		<% @jobs.each do |job| %>
 			<div class="each-job">

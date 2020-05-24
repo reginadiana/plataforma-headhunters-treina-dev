@@ -7,6 +7,10 @@
     <p><%= 'Nenhum perfil cadastrado' %></p>
   <% end %>
 
+  <% if @candidates.size > 0 %>
+	<p class="size-of-object">Candidatos na plataforma: <%= @candidates.size %><p>
+  <% end %>
+
   <div class="all-cards-interview">
     <% @candidates.each do |candidate| %>
          <div class="each-card-candidate">

@@ -199,6 +199,13 @@
 }
 
 
+/*Quantidade de vagas, candidatos, etc*/
+.size-of-object {
+	text-align: center;
+	padding: 3%;
+	background-color: #f9f9f9;
+}
+
 
 /*Responsividade*/
 
@@ -291,5 +298,11 @@
 
 	.form-div-submit p {
 		width: 35%;
+	}
+
+	/*Quantidade de vagas, candidatos, etc*/
+	.size-of-object {
+		font-size: 18px;
+		padding: 2%;
 	}
 }
