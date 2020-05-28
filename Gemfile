@@ -38,7 +38,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'listen'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.4'
   gem 'factory_bot_rails'
 end
 
