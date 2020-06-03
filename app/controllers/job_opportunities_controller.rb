@@ -1,5 +1,5 @@
 class JobOpportunitiesController < ApplicationController
-	before_action :authenticate_visitor_candidate_without_profile
+  	before_action :authenticate_visitor_candidate_without_profile
 	before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy] 
 	before_action :authenticate_headhunter, only: [:show, :edit, :update]
 
