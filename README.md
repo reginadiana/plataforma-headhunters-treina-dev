@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=Aplicando Melhorias&color=Yellow&style=for-the-badge"/>
 </p>
 
 :memo: Planejamento das atividades no [Trello](https://trello.com/b/sdJc3alw/tarefas-headhunters-treina-dev) 
@@ -90,6 +90,10 @@ Os **candidatos** podem:
 :heavy_check_mark: Receber propostas de handhunterss
 
 :heavy_check_mark: Aceitar e rejeitar propostas
+
+## Deploy com Heroku 
+
+> https://headhuntersjobs.herokuapp.com/
 
 ## Techs
 
@@ -175,7 +179,7 @@ $ rspec or bundle exec rspec
 
 ## Database :floppy_disk:
 
-O banco de dados utilizado nesta aplicação foi o [Sqlite3](https://www.sqlite.org/index.html). O banco foipreparado com o comando ``` bin/setup ```
+O banco de dados utilizado nesta aplicação foi o [PostgreSQL](https://guides.rubyonrails.org/active_record_postgresql.html). O banco foipreparado com o comando ``` bin/setup ```
 
 ## Rotas
 
