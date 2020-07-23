@@ -9,7 +9,7 @@ gem 'devise'
 gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails' 
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-gem 'sqlite3', '~> 1.4'
+gem 'pg'
 gem 'sass-rails', '>= 6'
 gem 'puma', '~> 4.1'
 gem 'turbolinks', '~> 5'
@@ -21,7 +21,7 @@ group :development, :test do
   gem 'listen'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
-  gem 'sqlite3', '~> 1.4'
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
