@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :level do
-    name { "Pleno" }
+    name { 'Pleno' }
   end
 end
