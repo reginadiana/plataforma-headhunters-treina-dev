@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter tries to acess apply jobs and must be authenticated' do
@@ -17,7 +19,7 @@ feature 'Headhunter tries to acess apply jobs and must be authenticated' do
   	scenario 'to create a apply job' do
 
     		visit new_job_opportunity_apply_job_path(rand(1..100))
-   	end 
+   	end
         scenario 'to edit some apply job' do
 		visit edit_job_opportunity_apply_job_path(rand(1..100), rand(1..100))
    	end

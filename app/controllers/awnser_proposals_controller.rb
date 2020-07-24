@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AwnserProposalsController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
-  before_action :authenticate_headhunter, only: [:new, :create, :edit, :update] 
+  before_action :authenticate_headhunter, only: [:new, :create, :edit, :update]
   before_action :find_candidate_and_proposal
 
   def new
@@ -8,11 +10,11 @@ class AwnserProposalsController < ApplicationController
 
     if @awnser_proposal
       @choices = Choice.all
-      render :edit	
+      render :edit
     else
       @awnser_proposal = AwnserProposal.new
       @choices = Choice.all
-    end		
+    end
    end
 
   def create
@@ -26,9 +28,9 @@ class AwnserProposalsController < ApplicationController
       if @awnser_proposal.choice.option === "Recusar"
        @proposal.rejected!
       end
-     flash[:notice] = 'Resposta enviada com sucesso'	
+     flash[:notice] = 'Resposta enviada com sucesso'
      redirect_to candidate_proposals_path(@candidate)
-    end	
+    end
   end
 
   def edit
@@ -45,13 +47,13 @@ class AwnserProposalsController < ApplicationController
       if @awnser_proposal.choice.option === "Recusar"
         @proposal.rejected!
       end
-      flash[:notice] = 'Resposta atualizada com sucesso'	
+      flash[:notice] = 'Resposta atualizada com sucesso'
       redirect_to candidate_proposals_path(@candidate)
     end
   end
 
   private
-	
+
   def require_params
     params.require(:awnser_proposal).permit(:message, :choice_id, :proposal_id)
   end
@@ -59,7 +61,7 @@ class AwnserProposalsController < ApplicationController
   def id
     params[:id]
   end
-    
+
   def authenticate_headhunter
     if headhunter_signed_in?
       redirect_to job_opportunities_path
@@ -84,4 +86,4 @@ class AwnserProposalsController < ApplicationController
       end
     end
   end
-end  
+end

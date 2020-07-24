@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate sees the proposals by him' do
@@ -24,7 +26,7 @@ feature 'Candidate sees the proposals by him' do
     visit root_path
     click_on 'Minhas Propostas'
     click_on "#{proposal.job_opportunity.title}"
-    
+
     expect(current_path).to eq job_opportunity_path(@job_opportunity)
     expect(page).to have_content("#{proposal.job_opportunity.title}")
     expect(page).to have_content("#{proposal.job_opportunity.company}")

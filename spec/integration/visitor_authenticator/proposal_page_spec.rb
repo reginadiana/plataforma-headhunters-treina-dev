@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Visitor tries to acess proposals and must be authenticated to' do
   context 'visitor' do
     scenario 'cannot view index unless logged in' do
-      visit candidate_proposals_path(rand(1..100)) 
+      visit candidate_proposals_path(rand(1..100))
     end
     scenario 'create a proposal' do
       visit new_candidate_proposal_path(rand(1..100))
@@ -21,7 +23,7 @@ feature 'Visitor tries to acess proposals and must be authenticated to' do
       login_as user, scope: :user
     end
     scenario 'cannot view index unless logged in' do
-      visit candidate_proposals_path(rand(1..100)) 
+      visit candidate_proposals_path(rand(1..100))
     end
     scenario 'create a proposal' do
       visit new_candidate_proposal_path(rand(1..100))

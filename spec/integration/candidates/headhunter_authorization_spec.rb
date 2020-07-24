@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter can not' do
@@ -7,7 +9,7 @@ feature 'Headhunter can not' do
 		login_as headhunter, scope: :headhunter
 		@candidate = create(:candidate, full_name: "Joice Silva")
 	end
-	
+
 	scenario 'to create some candidate by route' do
 		visit new_candidate_path
 		expect(current_path).to eq(job_opportunities_path)

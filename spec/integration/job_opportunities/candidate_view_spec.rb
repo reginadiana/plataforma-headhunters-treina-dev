@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate view jobs' do
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as user, scope: :user
 
@@ -10,7 +12,7 @@ feature 'Candidate view jobs' do
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
 		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
-	
+
 		visit root_path
 
 		expect(page).to have_content("Vagas Cadastradas")
@@ -25,17 +27,17 @@ feature 'Candidate view jobs' do
 
 	end
 
-	scenario 'and any job was register' do    
+	scenario 'and any job was register' do
 		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as user, scope: :user
 
 		candidate = create(:candidate, user: user)
-	
+
 		visit root_path
 
 		expect(page).to have_content("Vagas Cadastradas")
 		expect(page).to have_content("Nenhuma vaga cadastrada")
-	
+
 	end
 
 	scenario 'and view details' do
@@ -73,7 +75,7 @@ feature 'Candidate view jobs' do
 		candidate = create(:candidate, user: user)
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
-	
+
 		visit root_path
 		find("a#details-#{job_1.id}").click()
 		click_on "Voltar"

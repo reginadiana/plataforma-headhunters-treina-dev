@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter authentication' do
@@ -6,12 +8,12 @@ feature 'Headhunter authentication' do
 		before :each do
 			visit root_path
 			click_on 'Sou recrutador'
-		end 
+		end
 
 		scenario 'successfully' do
 
 			headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
-			
+
 			expect(page).to have_content('Acessar conta como recrutador')
 
 			fill_in 'Email', with: headhunter.email
@@ -47,7 +49,7 @@ feature 'Headhunter authentication' do
 	context 'cannot acess candidate' do
 		scenario 'as headhunter' do
 			headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
-		
+
 			visit root_path
 			click_on 'Sou candidato'
 
@@ -71,7 +73,7 @@ feature 'Headhunter authentication' do
 
 			visit root_path
 			click_on 'Sou recrutador'
-			
+
 			expect(page).to have_content('Acessar conta como recrutador')
 
 			fill_in 'Email', with: headhunter.email
@@ -80,7 +82,7 @@ feature 'Headhunter authentication' do
 			within 'form' do
 				click_on 'Entrar'
 			end
-		      		
+
 			click_on 'Sair'
 
 			expect(page).to have_content('Saiu com sucesso')

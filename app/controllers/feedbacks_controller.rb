@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FeedbacksController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
   before_action :find_apply_and_job
@@ -7,10 +9,10 @@ class FeedbacksController < ApplicationController
     @choices = Choice.all
 
     if @feedback
-      render :edit	
+      render :edit
     else
       @feedback = Feedback.new
-    end	
+    end
   end
 
   def create
@@ -25,9 +27,9 @@ class FeedbacksController < ApplicationController
       if @feedback.choice.option === "Recusar"
         @apply_job.rejected!
       end
-      flash[:notice] = 'Feedback enviado com sucesso'	
+      flash[:notice] = 'Feedback enviado com sucesso'
       redirect_to job_opportunity_path(@job_opportunuty)
-    end 
+    end
   end
 
   def edit
@@ -45,13 +47,13 @@ class FeedbacksController < ApplicationController
       if @feedback.choice.option === "Recusar"
         @apply_job.rejected!
       end
-      flash[:notice] = 'Feedback atualizado com sucesso'	
+      flash[:notice] = 'Feedback atualizado com sucesso'
       redirect_to job_opportunity_path(@job_opportunuty)
     end
   end
 
   private
-	
+
   def require_params
     params.require(:feedback).permit(:message, :apply_job_id, :choice_id)
   end
@@ -66,7 +68,7 @@ class FeedbacksController < ApplicationController
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in? 
+    if not user_signed_in?
       if not headhunter_signed_in?
         redirect_to root_path
       end
@@ -77,6 +79,6 @@ class FeedbacksController < ApplicationController
       if not candidate
         redirect_to new_candidate_path
       end
-    end 
+    end
   end
-end  
+end

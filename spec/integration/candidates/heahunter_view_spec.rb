@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter view candidate profile' do
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
-		
+
 		candidate_a = create(:candidate, full_name: 'Thiago Ventura')
 		candidate_b = create(:candidate, full_name: 'Fabio Akita')
-	
+
 		visit root_path
 		click_on "Lista de Candidatos"
-		
+
 		expect(current_path).to eq candidates_path
 
 		expect(page).to have_content("Thiago Ventura")
@@ -23,11 +25,11 @@ feature 'Headhunter view candidate profile' do
 		expect(page).to have_content("#{candidate_b.level.name}")
 	end
 
-	scenario 'and any profile was register' do    
+	scenario 'and any profile was register' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
-	
-		visit root_path	
+
+		visit root_path
 		click_on "Lista de Candidatos"
 
 		expect(page).to have_content("Nenhum perfil cadastrado")

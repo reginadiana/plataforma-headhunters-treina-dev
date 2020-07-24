@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -5,9 +7,9 @@ ruby '2.6.3'
 
 gem 'bcrypt', '3.1.12'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'devise' 
+gem 'devise'
 gem 'jbuilder', '~> 2.7'
-gem 'jquery-rails' 
+gem 'jquery-rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pg'
 gem 'sass-rails', '>= 6'
@@ -29,7 +31,7 @@ group :development do
 end
 
 group :test do
-  
+
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'webdrivers'

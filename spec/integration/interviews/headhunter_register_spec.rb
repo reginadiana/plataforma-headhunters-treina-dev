@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter register a interview' do
@@ -13,7 +15,7 @@ feature 'Headhunter register a interview' do
 			apply_job = create(:apply_job, candidate: candidate, job_opportunity: job_opportunity)
 
 			visit job_opportunity_path(job_opportunity)
-			click_on "Agendar Entrevista"		
+			click_on "Agendar Entrevista"
 		end
 
 		scenario 'successfully' do
@@ -56,13 +58,13 @@ feature 'Headhunter register a interview' do
 
 			@job_opportunity = create(:job_opportunity, title: "Desenvolvedor PHP", headhunter: headhunter)
 			@candidate = create(:candidate, full_name: "Camila de Melo")
-					
+
 		end
 
 		scenario 'successfully' do
 
-			proposal = create(:proposal, 
-				candidate: @candidate, 
+			proposal = create(:proposal,
+				candidate: @candidate,
 				job_opportunity: @job_opportunity)
 
 			proposal.accepted!
@@ -73,11 +75,11 @@ feature 'Headhunter register a interview' do
 			visit root_path
 			click_on "Minhas Vagas"
 			click_on "Desenvolvedor PHP"
-			
+
 			expect(page).to have_content('Camila de Melo')
 			expect(page).to have_content('Aceito')
 
-			click_on "Agendar Entrevista" 
+			click_on "Agendar Entrevista"
 
 			fill_in 'Data', with: '12/11/2021'
 			fill_in 'Hora', with: '18:20'
@@ -90,8 +92,8 @@ feature 'Headhunter register a interview' do
 
 		scenario 'can not interview candidates who not accept proposal' do
 
-			proposal = create(:proposal, 
-				candidate: @candidate, 
+			proposal = create(:proposal,
+				candidate: @candidate,
 				job_opportunity: @job_opportunity)
 
 			proposal.rejected!
@@ -106,8 +108,8 @@ feature 'Headhunter register a interview' do
 
 		scenario 'can not interview candidates who still not accept proposal' do
 
-			proposal = create(:proposal, 
-				candidate: @candidate, 
+			proposal = create(:proposal,
+				candidate: @candidate,
 				job_opportunity: @job_opportunity)
 
 			proposal.hope!

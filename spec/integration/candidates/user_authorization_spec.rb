@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'User authorization' do
@@ -7,7 +9,7 @@ feature 'User authorization' do
 			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
 			visit root_path
 			click_on 'Sou candidato'
-			
+
 			expect(page).to have_content('Acessar conta como candidato')
 
 			fill_in 'Email', with: user.email

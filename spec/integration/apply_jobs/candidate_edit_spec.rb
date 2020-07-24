@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate edit message of apply for job' do
@@ -8,9 +10,9 @@ feature 'Candidate edit message of apply for job' do
 
 		@job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
 		candidate = create(:candidate, user: user)
-	
+
 		apply_job = create(:apply_job, candidate: candidate, job_opportunity: @job_opportunity)
-	
+
 		visit root_path
 
 		expect(current_path).to eq job_opportunities_path
@@ -19,7 +21,7 @@ feature 'Candidate edit message of apply for job' do
 		click_on "Editar Informações"
 	end
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 
 		fill_in 'Mensagem para Candidatura', with: 'Eu, Bianca Rosa, brasileira, gostaria de me candidatar.'
 

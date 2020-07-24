@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate view your interviews' do
 
-	context "successfully" do 
+	context "successfully" do
 
 		before :each do
 			user = User.create!(email: 'lucas@gmail.com.br', password: '12345678')
@@ -27,7 +29,7 @@ feature 'Candidate view your interviews' do
 							address: "Rua Map, 11")
 		end
 
-		scenario 'see a interview by details of job' do   
+		scenario 'see a interview by details of job' do
 
 			visit root_path
 
@@ -77,8 +79,8 @@ feature 'Candidate view your interviews' do
 
 			click_on "Minhas Vagas"
 			click_on "Desenvolvedor PHP"
-			click_on "Ver minha candidatura" 
-	
+			click_on "Ver minha candidatura"
+
 			expect(page).not_to have_link("Entrevista Marcada")
 			expect(page).not_to have_link("Desenvolvedor Java")
 		end
@@ -90,7 +92,7 @@ feature 'Candidate view your interviews' do
 		candidate = create(:candidate, user: user)
 
 		visit root_path
-		click_on "Minhas Entrevistas" 
+		click_on "Minhas Entrevistas"
 		expect(page).to have_content("Nenhuma entrevista marcada")
 	end
 end

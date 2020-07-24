@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAwnserProposals < ActiveRecord::Migration[6.0]
   def change
     create_table :awnser_proposals do |t|

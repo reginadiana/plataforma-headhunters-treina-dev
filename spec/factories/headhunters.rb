@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :headhunter do
     sequence(:email) { |n| "email#{n}@test.com.br" }

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class InterviewsController < ApplicationController
   before_action :authenticate_visitor
-  before_action :authenticate_candidate, only: [:show, :new, :create] 
-  before_action :find_candidate_job, except: [:show, :index] 
+  before_action :authenticate_candidate, only: [:show, :new, :create]
+  before_action :find_candidate_job, except: [:show, :index]
 
-  def index	
+  def index
     @candidate = Candidate.where(user: current_user)
     @interviews = Interview.where(candidate: @candidate)
   end
@@ -37,7 +39,7 @@ class InterviewsController < ApplicationController
   def update
     @interview = Interview.find(id)
     if @interview.update(require_params)
-      flash[:notice] = 'Entrevista atualizada com sucesso'	
+      flash[:notice] = 'Entrevista atualizada com sucesso'
       redirect_to interviews_path
     else
       render :edit
@@ -47,7 +49,7 @@ class InterviewsController < ApplicationController
   def destroy
     @interview = Interview.find(id)
     @interview.destroy
-    flash[:notice] = 'Entrevista desmarcada'	
+    flash[:notice] = 'Entrevista desmarcada'
     redirect_to interviews_path
   end
 

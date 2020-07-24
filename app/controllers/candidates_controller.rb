@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class CandidatesController < ApplicationController
   before_action :authenticate_visitor
   before_action :authenticate_headhunter, except: [:index, :show, :search, :profile_as]
   before_action :authenticate_candidate, only: [:show, :edit, :update]
   before_action :authenticate_candidate_without_profile, except: [:new, :create]
 
-  def profile_as 
+  def profile_as
     @job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
-    @apply_job = ApplyJob.find(params[:apply_job_id])	
+    @apply_job = ApplyJob.find(params[:apply_job_id])
 
     if @apply_job.candidate.featured?
       @apply_job.candidate.not_highlighted!
@@ -14,7 +16,7 @@ class CandidatesController < ApplicationController
       @apply_job.candidate.featured!
       flash[:notice] = 'Perfil marcado como destaque'
     end
-    redirect_to @job_opportunity 
+    redirect_to @job_opportunity
   end
 
   def index
@@ -52,13 +54,13 @@ class CandidatesController < ApplicationController
     else
       @candidate = Candidate.new
       @levels = Level.all
-    end		
+    end
   end
 
   def create
     @candidate = Candidate.new(require_params)
     @candidate.user = current_user
-    
+
     if @candidate.save
       flash[:notice] = 'Perfil criado com sucesso'
       redirect_to job_opportunities_path
@@ -67,7 +69,7 @@ class CandidatesController < ApplicationController
       render :new
     end
   end
- 
+
   def edit
     @candidate = find_candidate_by_route
     @levels = Level.all
@@ -91,9 +93,9 @@ class CandidatesController < ApplicationController
   end
 
   private
-	
+
   def require_params
-    params.require(:candidate).permit(:full_name, :social_name, :date_of_birth, 
+    params.require(:candidate).permit(:full_name, :social_name, :date_of_birth,
                                       :profession, :profile_description, :experience,
 			              :formation, :level_id, :courses, :user_id, :avatar)
   end
@@ -105,7 +107,7 @@ class CandidatesController < ApplicationController
   def find_candidate_by_route
     Candidate.find(id)
   end
-	
+
   def find_candidate
     Candidate.find_by(user: current_user)
   end
@@ -139,4 +141,4 @@ class CandidatesController < ApplicationController
       end
     end
   end
-end  
+end

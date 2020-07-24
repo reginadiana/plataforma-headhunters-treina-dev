@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter mark profile as featured' do
@@ -15,7 +17,7 @@ feature 'Headhunter mark profile as featured' do
 		click_on "Desenvolvedor React"
 
 		expect(page).to have_content("Lais Lima")
-		click_on "Marcar como Destaque"		
+		click_on "Marcar como Destaque"
 	end
 
 	scenario 'successfully' do
@@ -23,8 +25,8 @@ feature 'Headhunter mark profile as featured' do
 	end
 
 	scenario 'and remove before' do
-		
-		click_on "Marcar como Destaque"	
+
+		click_on "Marcar como Destaque"
 		expect(page).not_to have_content("Perfil Destaque")
-	end	
+	end
 end

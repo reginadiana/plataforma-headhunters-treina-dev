@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter edit comment' do
@@ -13,7 +15,7 @@ feature 'Headhunter edit comment' do
 		click_on "edit-comment#{comment.id}"
 	end
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 
 		fill_in 'Conteúdo do Comentário', with: 'Ola, Bianca Rosa'
 

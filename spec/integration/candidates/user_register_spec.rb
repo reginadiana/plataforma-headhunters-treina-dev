@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'User create a profile' do
 		before :each do
 			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
 			nivel = Level.create!(name: 'Pleno')
-		
+
 			visit root_path
 			click_on 'Sou candidato'
-			
+
 			expect(page).to have_content('Acessar conta como candidato')
 
 			fill_in 'Email', with: user.email
@@ -16,7 +18,7 @@ feature 'User create a profile' do
 			within 'form' do
 				click_on 'Entrar'
 			end
-	
+
 			expect(current_path).to eq(new_candidate_path)
 		end
 		scenario "successfully" do
@@ -69,4 +71,4 @@ feature 'User create a profile' do
 			expect(page).to have_content('Data de Nascimento não pode estar no futuro')
 		end
 
-end 
+end

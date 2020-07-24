@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Visitor tries to acess feedbacks and must be authenticated to' do

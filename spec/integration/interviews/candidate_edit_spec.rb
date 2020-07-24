@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter edit an interview' do
@@ -9,14 +11,14 @@ feature 'Headhunter edit an interview' do
 
 			job_opportunity = create(:job_opportunity, title: "Desenvolvedor PHP")
 			other_job_opportunity = create(:job_opportunity, title: "Desenvolvedor Java")
-			interview = create(:interview, job_opportunity: job_opportunity, candidate: candidate, 
+			interview = create(:interview, job_opportunity: job_opportunity, candidate: candidate,
 						address: "Rua Vergueiro, 11")
 			other_interview = create(:interview, job_opportunity: other_job_opportunity, candidate: candidate,
 						address: "Rua Ita, 11")
 
 			visit root_path
-			click_on "Minhas Entrevistas"	
-			click_on "edit-interview-#{interview.id}"		
+			click_on "Minhas Entrevistas"
+			click_on "edit-interview-#{interview.id}"
 		end
 
 		scenario 'successfully' do

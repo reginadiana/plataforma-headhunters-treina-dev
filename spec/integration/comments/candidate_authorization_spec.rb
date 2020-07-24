@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate can not' do
@@ -6,7 +8,7 @@ feature 'Candidate can not' do
 		login_as user, scope: :user
 		@candidate = create(:candidate, user: user)
 	end
-	
+
 	scenario 'to create some comment by route' do
 		visit new_candidate_comment_path(@candidate)
 		expect(current_path).to eq(candidate_path(@candidate))
@@ -23,8 +25,8 @@ feature 'Candidate can not' do
 
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 
-		comment = create(:comment, 
-				content: 'Ola, podemos marcar uma entrevista?', 
+		comment = create(:comment,
+				content: 'Ola, podemos marcar uma entrevista?',
 				headhunter: headhunter, candidate: @candidate)
 
 		visit candidate_path(@candidate)

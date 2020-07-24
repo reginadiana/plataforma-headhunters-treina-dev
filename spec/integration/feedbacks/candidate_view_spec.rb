@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate view feedback' do
@@ -8,15 +10,15 @@ feature 'Candidate view feedback' do
 
 		candidate = create(:candidate, user: user)
 		@apply_job = create(:apply_job, candidate: candidate)
-		@feedback = create(:feedback, 
-			apply_job: @apply_job, 
+		@feedback = create(:feedback,
+			apply_job: @apply_job,
 			message: "Ola, gostaria de marcar uma entrevista!")
-  
+
 		visit apply_jobs_path
 
 	end
 
-	scenario 'successfully' do  
+	scenario 'successfully' do
 
 		expect(page).to have_content("#{@apply_job.job_opportunity.title}")
 		expect(page).to have_content("#{@apply_job.feedback}")

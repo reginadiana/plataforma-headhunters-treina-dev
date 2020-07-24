@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Definindo niveis de especializacao
 
 Level.create!(name: 'Estagiário')
@@ -118,17 +120,17 @@ Feedback.create!(message: "Ola, gostamos do seu perfil", apply_job: apply_job, c
 Feedback.create!(message: "Ola, infelizmente nao estamos procurando este perfil", apply_job: apply_job_b, choice: rejected)
 
 # Propostas
-proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
+proposal = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa",
 				job_opportunity: job_opportunity_c, candidate: candidate_a, status: "Em espera")
 
-proposal_b = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa, o seu curriculo é excelente", 
+proposal_b = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa, o seu curriculo é excelente",
 				job_opportunity: job_opportunity_c, candidate: candidate_b, status: "Em espera")
 
 
-proposal_c = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
+proposal_c = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa",
 				job_opportunity: job_opportunity, candidate: candidate_b, status: "Em espera")
 
-proposal_d = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa", 
+proposal_d = Proposal.create!(message: "Ola, gostaria que fizesse parte da minha empresa",
 				job_opportunity: job_opportunity, candidate: candidate_a, status: "Em espera")
 
 # Resposta a proposta

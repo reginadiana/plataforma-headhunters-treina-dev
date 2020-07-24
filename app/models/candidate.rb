@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Candidate < ApplicationRecord
   belongs_to :level
   belongs_to :user
@@ -5,8 +7,8 @@ class Candidate < ApplicationRecord
 
   scope :search, ->(query) { where('full_name LIKE ?', "%#{query}%")
                               .or( where('profession LIKE ?', "%#{query}%") ) }
-	
-  enum feedback: { featured: "Destaque", not_highlighted: "Sem Destaque" } 
+
+  enum feedback: { featured: "Destaque", not_highlighted: "Sem Destaque" }
 
   validates :full_name, :social_name, :date_of_birth, :profession,
             :profile_description, :formation, presence: true

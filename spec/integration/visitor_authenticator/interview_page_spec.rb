@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Visitor tries to acess interviews and must be authenticated to' do
@@ -23,7 +25,7 @@ feature 'Visitor tries to acess interviews and must be authenticated to' do
       user = User.create!(email: 'teste@teste.com.br', password: '12345678')
       login_as user, scope: :user
     end
-    scenario 'view all interviews to same job' do 
+    scenario 'view all interviews to same job' do
       visit job_opportunity_interview_path(rand(1..100), rand(1..100))
     end
     scenario 'create a new interviews' do

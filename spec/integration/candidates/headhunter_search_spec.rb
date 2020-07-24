@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter visit list of candidates' do
@@ -15,7 +17,7 @@ feature 'Headhunter visit list of candidates' do
 			expect(page).to have_content('Encontre o Melhor Perfil')
 		end
 
-		scenario 'and search for candidate by profession' do 
+		scenario 'and search for candidate by profession' do
 
 			fill_in 'Busca', with: 'Analista de Sistemas'
 			click_on 'Pesquisar'
@@ -30,7 +32,7 @@ feature 'Headhunter visit list of candidates' do
 			expect(page).not_to have_content('Desenvolvedor Frontend')
 		end
 
-		scenario 'and search for candidate by partial name' do 
+		scenario 'and search for candidate by partial name' do
 
 			fill_in 'Busca', with: 'Iara'
 			click_on 'Pesquisar'
@@ -45,7 +47,7 @@ feature 'Headhunter visit list of candidates' do
 			expect(page).not_to have_content('Desenvolvedor Frontend')
 		end
 	end
-	
+
 	context 'can not found' do
 		before :each do
 			@headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
@@ -59,7 +61,7 @@ feature 'Headhunter visit list of candidates' do
 
 			fill_in 'Busca', with: ''
 			click_on 'Pesquisar'
-		
+
 			expect(page).to have_link 'Voltar'
 			expect(page).to have_content('Nenhum resultado encontrado para:')
 		end
@@ -68,7 +70,7 @@ feature 'Headhunter visit list of candidates' do
 
 			fill_in 'Busca', with: 'Ana'
 			click_on 'Pesquisar'
-		
+
 			expect(page).to have_link 'Voltar'
 			expect(page).to have_content('Nenhum resultado encontrado para: Ana')
 		end

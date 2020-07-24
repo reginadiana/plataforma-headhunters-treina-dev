@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate authentication' do
@@ -6,13 +8,13 @@ feature 'Candidate authentication' do
 		before :each do
 			visit root_path
 			click_on 'Sou candidato'
-		end 
+		end
 
 		scenario 'successfully' do
 
 			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
 			candidate = create(:candidate, user: user)
-			
+
 			expect(page).to have_content('Acessar conta como candidato')
 
 			fill_in 'Email', with: user.email
@@ -44,11 +46,11 @@ feature 'Candidate authentication' do
 			expect(page).not_to have_link('Sair')
 		end
   	end
-	
+
 	context 'cannot try acess headhunter' do
 		scenario 'as a candidate' do
 			user = User.create!(email: 'teste@teste.com.br', password: '12345678')
-		
+
 			visit root_path
 			click_on 'Sou recrutador'
 
@@ -136,7 +138,7 @@ feature 'Candidate authentication' do
 
 			visit root_path
 			click_on 'Sou candidato'
-			
+
 			expect(current_path).to eq(new_user_session_path)
 
 			fill_in 'Email', with: user.email
@@ -145,7 +147,7 @@ feature 'Candidate authentication' do
 			within 'form' do
 				click_on 'Entrar'
 			end
-		      		
+
 			click_on 'Sair'
 
 			expect(page).to have_content('Saiu com sucesso')
@@ -159,7 +161,7 @@ feature 'Candidate authentication' do
 			visit root_path
 			click_on 'Sou candidato'
 			click_on 'Esqueceu sua senha?'
-			expect(current_path).to eq(new_user_password_path)	
+			expect(current_path).to eq(new_user_password_path)
 		end
 
 		scenario 'and reset a new password successfully' do

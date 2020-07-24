@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate apply for job' do
@@ -8,7 +10,7 @@ feature 'Candidate apply for job' do
 
 		@job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
 		candidate = create(:candidate, user: user)
-	
+
 		visit root_path
 
 		expect(current_path).to eq job_opportunities_path
@@ -18,7 +20,7 @@ feature 'Candidate apply for job' do
 		expect(page).to have_content("Você esta se candidatando para a vaga: #{@job_opportunity.title}")
 	end
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 
 		fill_in 'Mensagem para Candidatura', with: 'Eu, Bianca Rosa, brasileira, Operadora de CNC venho por meio desta me candidatar à vaga de Programador de CNC nesta empresa.'
 

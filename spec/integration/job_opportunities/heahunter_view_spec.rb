@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter view jobs' do
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
 		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
-	
+
 		visit root_path
 
 		expect(page).to have_content("Vagas Cadastradas")
@@ -23,13 +25,13 @@ feature 'Headhunter view jobs' do
 
 	end
 
-	scenario 'and headhunter can not see other jobs' do    
+	scenario 'and headhunter can not see other jobs' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP')
 		job_2 = create(:job_opportunity, title: 'Desenvolvedor Java')
-	
+
 		visit root_path
 
 		expect(page).to have_content("Vagas Cadastradas")
@@ -40,10 +42,10 @@ feature 'Headhunter view jobs' do
 
 	end
 
-	scenario 'and any job was register' do    
+	scenario 'and any job was register' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
-	
+
 		visit root_path
 
 		expect(page).to have_content("Nenhuma vaga cadastrada")
@@ -80,7 +82,7 @@ feature 'Headhunter view jobs' do
 		login_as headhunter, scope: :headhunter
 
 		job_1 = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
-	
+
 		visit root_path
 		find("a#details-#{job_1.id}").click()
 		click_on "Voltar"

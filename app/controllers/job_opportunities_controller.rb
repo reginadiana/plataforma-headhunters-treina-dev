@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class JobOpportunitiesController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
-  before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy] 
+  before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy]
   before_action :authenticate_headhunter, only: [:show, :edit, :update]
 
   def index
@@ -25,12 +27,12 @@ class JobOpportunitiesController < ApplicationController
 
   def search
     @q = params[:q]
-    @jobs = JobOpportunity.search(@q).or(JobOpportunity.search(@q))		
+    @jobs = JobOpportunity.search(@q).or(JobOpportunity.search(@q))
   end
 
   def new
     @job = JobOpportunity.new
-    @levels = Level.all		
+    @levels = Level.all
   end
 
   def create
@@ -45,7 +47,7 @@ class JobOpportunitiesController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @job = find_job
     @levels = Level.all
@@ -69,7 +71,7 @@ class JobOpportunitiesController < ApplicationController
   end
 
   private
-	
+
   def require_params
     params.require(:job_opportunity).permit(:title, :company, :description_job, :skills,
                                             :salary_range, :deadline, :level_id, :region,
@@ -110,6 +112,6 @@ class JobOpportunitiesController < ApplicationController
       if not candidate
         redirect_to new_candidate_path
       end
-    end 
+    end
   end
-end  
+end

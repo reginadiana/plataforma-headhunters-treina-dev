@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate delete message of apply for job' do
@@ -8,10 +10,10 @@ feature 'Candidate delete message of apply for job' do
 
 		@job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack")
 		candidate = create(:candidate, user: user)
-	
+
 		apply_job = create(:apply_job, candidate: candidate, job_opportunity: @job_opportunity)
 		@other_apply_job = create(:apply_job, candidate: candidate)
-	
+
 		visit root_path
 
 		expect(current_path).to eq job_opportunities_path
@@ -20,7 +22,7 @@ feature 'Candidate delete message of apply for job' do
 		click_on "Retirar minha candidatura"
 	end
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 
 		expect(current_path).to eq job_opportunity_path(@job_opportunity)
 		expect(page).to have_content('Candidatura encerrada')

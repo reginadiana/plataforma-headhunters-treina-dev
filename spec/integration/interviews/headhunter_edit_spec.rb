@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter edit an interview' do
@@ -13,8 +15,8 @@ feature 'Headhunter edit an interview' do
 			interview = create(:interview, job_opportunity: job_opportunity, candidate: candidate)
 
 			visit job_opportunity_path(job_opportunity)
-			click_on "Minhas Entrevistas"	
-			click_on "Editar"	
+			click_on "Minhas Entrevistas"
+			click_on "Editar"
 		end
 
 		scenario 'successfully' do
@@ -60,7 +62,7 @@ feature 'Headhunter edit an interview' do
 			interview = create(:interview, job_opportunity: job_opportunity, candidate: candidate)
 
 			visit job_opportunity_path(job_opportunity)
-			click_on "Minhas Entrevistas"	
+			click_on "Minhas Entrevistas"
 
 			expect(page).to have_content('Camila de Melo')
 

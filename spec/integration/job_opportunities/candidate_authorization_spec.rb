@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate can not' do
@@ -7,7 +9,7 @@ feature 'Candidate can not' do
 		login_as user, scope: :user
 		candidate = create(:candidate, user: user)
 	end
-	
+
 	scenario 'to create some job by route' do
 		visit new_job_opportunity_path
 		expect(current_path).to eq(job_opportunities_path)

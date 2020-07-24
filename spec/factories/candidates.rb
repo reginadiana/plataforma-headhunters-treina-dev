@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :candidate do
     full_name { 'Camila Vegas' }
@@ -9,6 +11,6 @@ FactoryBot.define do
     level
     formation { 'UFABC - Engenharia da Computacao' }
     courses { 'Udemy - Analise de dados' }
-    user 
+    user
   end
 end

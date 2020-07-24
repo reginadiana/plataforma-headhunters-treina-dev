@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate view your profile' do
 
-	scenario 'successfully' do  
+	scenario 'successfully' do
 		user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as user, scope: :user
 
 		candidate = create(:candidate, user: user)
-  
+
 		visit candidate_path(candidate)
 
 		expect(page).to have_content("#{candidate.full_name}")

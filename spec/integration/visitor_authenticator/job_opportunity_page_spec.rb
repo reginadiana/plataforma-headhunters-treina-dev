@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Visitor and user tries to acess jobs and' do
@@ -44,5 +46,5 @@ feature 'Visitor and user tries to acess jobs and' do
     after :each do
       expect(current_path).to eq(new_candidate_path)
     end
-  end 
+  end
 end

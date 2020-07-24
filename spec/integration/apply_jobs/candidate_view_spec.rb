@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Candidate sees the vacancies he applied for' do
@@ -10,12 +12,12 @@ feature 'Candidate sees the vacancies he applied for' do
 		@candidate = create(:candidate, full_name: 'Fabio Akita', user: user)
 	end
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 
 		other_job_opportunity = create(:job_opportunity, title: "Desenvolvedor UX/UI")
-		
+
 		apply_job = create(:apply_job, job_opportunity: @job_opportunity, candidate: @candidate)
-	
+
 		visit root_path
 		click_on 'Minhas Vagas'
 
@@ -23,10 +25,10 @@ feature 'Candidate sees the vacancies he applied for' do
 		expect(page).not_to have_link("Desenvolvedor UX/UI")
 	end
 
-	scenario "you haven't applied yet" do    
+	scenario "you haven't applied yet" do
 
 		other_job_opportunity = create(:job_opportunity, title: "Desenvolvedor UX/UI")
-	
+
 		visit root_path
 		click_on 'Minhas Vagas'
 
@@ -36,9 +38,9 @@ feature 'Candidate sees the vacancies he applied for' do
 	end
 
 	scenario 'and view detals of job' do
-		
+
 		apply_job = create(:apply_job, job_opportunity: @job_opportunity, candidate: @candidate)
-	
+
 		visit root_path
 		click_on 'Minhas Vagas'
 		click_on "Desenvolvedor FullStack"
@@ -48,9 +50,9 @@ feature 'Candidate sees the vacancies he applied for' do
 	end
 
 	scenario 'and view detals your apply job' do
-		
+
 		apply_job = create(:apply_job, job_opportunity: @job_opportunity, candidate: @candidate)
-	
+
 		visit root_path
 		click_on 'Minhas Vagas'
 		click_on "Desenvolvedor FullStack"
@@ -65,10 +67,10 @@ feature 'Candidate sees the vacancies he applied for' do
 	scenario 'not see other candidates' do
 
 		other_candidate = create(:candidate)
-		
+
 		apply_job = create(:apply_job, job_opportunity: @job_opportunity, candidate: @candidate)
 		other_apply_job = create(:apply_job, job_opportunity: @job_opportunity, candidate: other_candidate)
-	
+
 		visit root_path
 		click_on 'Minhas Vagas'
 		click_on "Desenvolvedor FullStack"
@@ -77,8 +79,8 @@ feature 'Candidate sees the vacancies he applied for' do
 		expect(page).not_to have_link("#{@candidate.full_name}")
 		expect(page).not_to have_link("#{other_candidate.full_name}")
 	end
-	scenario 'and return to index' do    
-	
+	scenario 'and return to index' do
+
 		visit root_path
 		click_on 'Minhas Vagas'
 		click_on "Voltar"

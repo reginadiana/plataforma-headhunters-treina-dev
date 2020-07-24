@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter view apply job of same job' do
 
-	scenario 'successfully' do    
+	scenario 'successfully' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
 		job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack", headhunter: headhunter)
 		candidate = create(:candidate, full_name: 'Fabio Akita')
-		
+
 		apply_job = create(:apply_job, job_opportunity: job_opportunity, candidate: candidate)
-	
+
 		visit root_path
 		click_on "Desenvolvedor FullStack"
 
@@ -18,13 +20,13 @@ feature 'Headhunter view apply job of same job' do
 		expect(page).to have_link("Fabio Akita")
 	end
 
-	scenario 'and nobody applied' do    
+	scenario 'and nobody applied' do
 		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
-		
+
 		job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack", headhunter: headhunter)
-	
-		visit root_path	
+
+		visit root_path
 		click_on "Desenvolvedor FullStack"
 
 		expect(page).to have_content("Candidatos")
@@ -37,9 +39,9 @@ feature 'Headhunter view apply job of same job' do
 
 		job_opportunity = create(:job_opportunity, title: "Desenvolvedor FullStack", headhunter: headhunter)
 		candidate = create(:candidate, full_name: 'Fabio Akita')
-		
+
 		apply_job = create(:apply_job, job_opportunity: job_opportunity, candidate: candidate)
-	
+
 		visit root_path
 		click_on "Desenvolvedor FullStack"
 		click_on "Fabio Akita"

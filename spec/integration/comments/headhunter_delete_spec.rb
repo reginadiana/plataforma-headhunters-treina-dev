@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'Headhunter deletes comment' do
@@ -8,12 +10,12 @@ feature 'Headhunter deletes comment' do
 		login_as headhunter, scope: :headhunter
 
 		candidate = create(:candidate, full_name: 'Thiago Ventura')
-		comment = create(:comment, 
-				content: 'Ola, podemos marcar uma entrevista?', 
+		comment = create(:comment,
+				content: 'Ola, podemos marcar uma entrevista?',
 				headhunter: headhunter, candidate: candidate)
-	
+
 		visit candidate_path(candidate)
-	
+
 		click_on "delete-comment#{comment.id}"
 
 		expect(page).to have_content('Comentário excluido')
@@ -26,16 +28,16 @@ feature 'Headhunter deletes comment' do
 		login_as headhunter, scope: :headhunter
 
 		candidate = create(:candidate, full_name: 'Thiago Ventura')
-		comment_a = create(:comment, 
-				content: 'Ola, podemos marcar uma entrevista?', 
+		comment_a = create(:comment,
+				content: 'Ola, podemos marcar uma entrevista?',
 				headhunter: headhunter, candidate: candidate)
 
-		comment_b = create(:comment, 
-				content: 'Ola, posso mandar um teste tecnico?', 
+		comment_b = create(:comment,
+				content: 'Ola, posso mandar um teste tecnico?',
 				headhunter: headhunter, candidate: candidate)
 
 		visit candidate_path(candidate)
-	
+
 		click_on "delete-comment#{comment_a.id}"
 
 		expect(current_path).to eq candidate_path(candidate)
