@@ -97,7 +97,7 @@ class CandidatesController < ApplicationController
   def require_params
     params.require(:candidate).permit(:full_name, :social_name, :date_of_birth,
                                       :profession, :profile_description, :experience,
-			              :formation, :level_id, :courses, :user_id, :avatar)
+                    :formation, :level_id, :courses, :user_id, :avatar)
   end
 
   def id

@@ -26,10 +26,10 @@ class AwnserProposalsController < ApplicationController
         @proposal.accepted!
       end
       if @awnser_proposal.choice.option === 'Recusar'
-       @proposal.rejected!
+        @proposal.rejected!
       end
-     flash[:notice] = 'Resposta enviada com sucesso'
-     redirect_to candidate_proposals_path(@candidate)
+      flash[:notice] = 'Resposta enviada com sucesso'
+      redirect_to candidate_proposals_path(@candidate)
     end
   end
 

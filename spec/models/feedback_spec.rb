@@ -14,7 +14,7 @@ RSpec.describe Feedback, type: :model do
     context 'can be blank' do
       let(:feedback) { build(:feedback, message: '') }
       it 'and can not be valid' do
-       expect(feedback).to be_valid
+        expect(feedback).to be_valid
       end
     end
     context 'can not be bigger than 500 caracters' do

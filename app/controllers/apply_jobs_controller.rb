@@ -35,7 +35,7 @@ class ApplyJobsController < ApplicationController
   end
 
   def edit
-     @apply_job = ApplyJob.find(id)
+    @apply_job = ApplyJob.find(id)
   end
 
   def update

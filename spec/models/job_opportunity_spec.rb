@@ -10,29 +10,29 @@ RSpec.describe JobOpportunity, type: :model do
                                                     skills: 'Domínio da linguagem Ruby e do framework Ruby on Rails',
                                                     deadline: '14/09/2020',
                                                     region: 'Mocca - SP',
-		    benefits: 'Vale refeição, Academia',
-		    office_functions: 'Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio.',
-		    company_expectations: 'Profissional ativo e comunicativo'
-		)}
+        benefits: 'Vale refeição, Academia',
+        office_functions: 'Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio.',
+        company_expectations: 'Profissional ativo e comunicativo'
+    )}
 
-		it 'must be valid' do
-			expect(job_opportunity.title).to eq 'Desenvolvedor Rails'
-			expect(job_opportunity.company).to eq 'Rebase'
-			expect(job_opportunity.description_job).to eq 'Desenvolvimento de Plataformas com TDD'
-			expect(job_opportunity.skills).to eq 'Domínio da linguagem Ruby e do framework Ruby on Rails'
-			expect(job_opportunity.region).to eq 'Mocca - SP'
-			expect(job_opportunity.benefits).to eq 'Vale refeição, Academia'
-			expect(job_opportunity.office_functions).to eq 'Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio.'
-			expect(job_opportunity.company_expectations).to eq 'Profissional ativo e comunicativo'
+      it 'must be valid' do
+         expect(job_opportunity.title).to eq 'Desenvolvedor Rails'
+         expect(job_opportunity.company).to eq 'Rebase'
+         expect(job_opportunity.description_job).to eq 'Desenvolvimento de Plataformas com TDD'
+         expect(job_opportunity.skills).to eq 'Domínio da linguagem Ruby e do framework Ruby on Rails'
+         expect(job_opportunity.region).to eq 'Mocca - SP'
+         expect(job_opportunity.benefits).to eq 'Vale refeição, Academia'
+         expect(job_opportunity.office_functions).to eq 'Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio.'
+         expect(job_opportunity.company_expectations).to eq 'Profissional ativo e comunicativo'
 
-			expect(job_opportunity).to be_valid
-		end
-	end
+         expect(job_opportunity).to be_valid
+      end
+  end
 
   context '#deadline cannot be in past' do
     let(:job_opportunity) { build(:job_opportunity, deadline: Date.today - 1) }
     it 'and can not be valid' do
-     expect(job_opportunity).to_not be_valid
+      expect(job_opportunity).to_not be_valid
     end
   end
   context '#salary range can not be less than 1045' do
@@ -68,11 +68,11 @@ RSpec.describe JobOpportunity, type: :model do
       it 'and can not be valid' do
         expect(job_opportunity).to_not be_valid
       end
-     end
-     context '#company expectations' do
-       let(:job_opportunity) { build(:job_opportunity, company_expectations: SecureRandom.base64(5000)) }
-       it 'and can not be valid' do
-         expect(job_opportunity).to_not be_valid
+    end
+    context '#company expectations' do
+      let(:job_opportunity) { build(:job_opportunity, company_expectations: SecureRandom.base64(5000)) }
+      it 'and can not be valid' do
+        expect(job_opportunity).to_not be_valid
       end
     end
   end
@@ -93,7 +93,7 @@ RSpec.describe JobOpportunity, type: :model do
       let(:job_opportunity) { build(:job_opportunity, description_job: '') }
       it 'and can not be valid' do
         expect(job_opportunity).to_not be_valid
-       end
+      end
     end
     context '#skills' do
       let(:job_opportunity) { build(:job_opportunity, skills: '') }

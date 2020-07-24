@@ -22,6 +22,6 @@ RSpec.describe Comment, type: :model do
       it 'and can not be valid' do
         expect(comment).to_not be_valid
       end
-     end
+    end
   end
 end
