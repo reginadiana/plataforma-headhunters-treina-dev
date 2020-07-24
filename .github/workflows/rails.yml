@@ -1,8 +1,8 @@
 name: Rails Pipeline
 
 env:
-  RUBY_VERSION: 2.6.6
-  NODE_VERSION: 12.18.1
+  RUBY_VERSION: 2.6.3
+  NODE_VERSION: 10.2.0
   BUNDLER_VERSION: 2.1.4
 
 # Controls when the action will run. Triggers the workflow on push or pull request
