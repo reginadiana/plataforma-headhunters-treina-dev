@@ -23,8 +23,8 @@ feature 'Candidate view your profile' do
 		expect(page).to have_content("#{candidate.courses}")
 		expect(page).to have_content("#{user.email}")
 
-		expect(page).to have_link "Editar Perfil"
-		expect(page).to have_link "Deletar Perfil"
+		expect(page).to have_link 'Editar Perfil'
+		expect(page).to have_link 'Deletar Perfil'
 	end
 
 	scenario 'and return to home page' do
@@ -35,7 +35,7 @@ feature 'Candidate view your profile' do
 
 		visit candidate_path(candidate)
 
-		click_on "Voltar"
+		click_on 'Voltar'
 		expect(current_path).to eq job_opportunities_path
 	end
 end

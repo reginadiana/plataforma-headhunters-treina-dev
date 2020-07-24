@@ -12,15 +12,15 @@ feature 'Headhunter view candidate profile' do
 		candidate_b = create(:candidate, full_name: 'Fabio Akita')
 
 		visit root_path
-		click_on "Lista de Candidatos"
+		click_on 'Lista de Candidatos'
 
 		expect(current_path).to eq candidates_path
 
-		expect(page).to have_content("Thiago Ventura")
+		expect(page).to have_content('Thiago Ventura')
 		expect(page).to have_content("#{candidate_a.profession}")
 		expect(page).to have_content("#{candidate_a.level.name}")
 
-		expect(page).to have_content("Fabio Akita")
+		expect(page).to have_content('Fabio Akita')
 		expect(page).to have_content("#{candidate_b.profession}")
 		expect(page).to have_content("#{candidate_b.level.name}")
 	end
@@ -30,9 +30,9 @@ feature 'Headhunter view candidate profile' do
 		login_as headhunter, scope: :headhunter
 
 		visit root_path
-		click_on "Lista de Candidatos"
+		click_on 'Lista de Candidatos'
 
-		expect(page).to have_content("Nenhum perfil cadastrado")
+		expect(page).to have_content('Nenhum perfil cadastrado')
 	end
 
 	scenario 'and view details' do
@@ -42,8 +42,8 @@ feature 'Headhunter view candidate profile' do
 		candidate = create(:candidate, full_name: 'Thiago Ventura')
 
 		visit root_path
-		click_on "Lista de Candidatos"
-		click_on "Thiago Ventura"
+		click_on 'Lista de Candidatos'
+		click_on 'Thiago Ventura'
 
 		expect(current_path).to eq candidate_path(candidate)
 
@@ -57,8 +57,8 @@ feature 'Headhunter view candidate profile' do
 		expect(page).to have_content("#{candidate.formation}")
 		expect(page).to have_content("#{candidate.courses}")
 
-		expect(page).not_to have_link "Editar Perfil"
-		expect(page).not_to have_link "Deletar Perfil"
+		expect(page).not_to have_link 'Editar Perfil'
+		expect(page).not_to have_link 'Deletar Perfil'
 	end
 
 	scenario 'and return to home page' do
@@ -68,9 +68,9 @@ feature 'Headhunter view candidate profile' do
 		candidate = create(:candidate, full_name: 'Thiago Ventura')
 
 		visit root_path
-		click_on "Lista de Candidatos"
-		click_on "Thiago Ventura"
-		click_on "Voltar"
+		click_on 'Lista de Candidatos'
+		click_on 'Thiago Ventura'
+		click_on 'Voltar'
 
 		expect(current_path).to eq candidates_path
 	end

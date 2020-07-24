@@ -9,9 +9,9 @@ feature 'Headhunter visit list of candidates' do
 			headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
 			login_as headhunter, scope: :headhunter
 
-			candidate = create(:candidate, full_name: "Iara", profession: "Analista de Sistemas")
-			candidate = create(:candidate, full_name: "Lucas", profession: "Analista de Sistemas JR")
-			candidate = create(:candidate, full_name: "Juca", profession: "Desenvolvedor Frontend")
+			candidate = create(:candidate, full_name: 'Iara', profession: 'Analista de Sistemas')
+			candidate = create(:candidate, full_name: 'Lucas', profession: 'Analista de Sistemas JR')
+			candidate = create(:candidate, full_name: 'Juca', profession: 'Desenvolvedor Frontend')
 
 			visit candidates_path
 			expect(page).to have_content('Encontre o Melhor Perfil')

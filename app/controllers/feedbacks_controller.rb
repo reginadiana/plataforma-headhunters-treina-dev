@@ -20,11 +20,11 @@ class FeedbacksController < ApplicationController
     @feedback.apply_job = @apply_job
 
     if @feedback.save
-      if @feedback.choice.option === "Aceitar"
+      if @feedback.choice.option === 'Aceitar'
         @apply_job.accepted!
       end
 
-      if @feedback.choice.option === "Recusar"
+      if @feedback.choice.option === 'Recusar'
         @apply_job.rejected!
       end
       flash[:notice] = 'Feedback enviado com sucesso'
@@ -40,11 +40,11 @@ class FeedbacksController < ApplicationController
   def update
     @feedback = Feedback.find(id)
     if @feedback.update(require_params)
-      if @feedback.choice.option === "Aceitar"
+      if @feedback.choice.option === 'Aceitar'
         @apply_job.accepted!
       end
 
-      if @feedback.choice.option === "Recusar"
+      if @feedback.choice.option === 'Recusar'
         @apply_job.rejected!
       end
       flash[:notice] = 'Feedback atualizado com sucesso'

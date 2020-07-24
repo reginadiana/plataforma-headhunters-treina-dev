@@ -8,7 +8,7 @@ class Candidate < ApplicationRecord
   scope :search, ->(query) { where('full_name LIKE ?', "%#{query}%")
                               .or( where('profession LIKE ?', "%#{query}%") ) }
 
-  enum feedback: { featured: "Destaque", not_highlighted: "Sem Destaque" }
+  enum feedback: { featured: 'Destaque', not_highlighted: 'Sem Destaque' }
 
   validates :full_name, :social_name, :date_of_birth, :profession,
             :profile_description, :formation, presence: true
@@ -19,7 +19,7 @@ class Candidate < ApplicationRecord
 
   def date_of_birth_cannot_be_in_future
     if date_of_birth.present? && date_of_birth > Date.today
-      errors.add(:date_of_birth, "não pode estar no futuro")
+      errors.add(:date_of_birth, 'não pode estar no futuro')
     end
   end
 end

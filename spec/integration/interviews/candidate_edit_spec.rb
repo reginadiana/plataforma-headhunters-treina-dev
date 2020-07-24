@@ -9,15 +9,15 @@ feature 'Headhunter edit an interview' do
 			login_as user, scope: :user
 			candidate = create(:candidate, user: user)
 
-			job_opportunity = create(:job_opportunity, title: "Desenvolvedor PHP")
-			other_job_opportunity = create(:job_opportunity, title: "Desenvolvedor Java")
+			job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP')
+			other_job_opportunity = create(:job_opportunity, title: 'Desenvolvedor Java')
 			interview = create(:interview, job_opportunity: job_opportunity, candidate: candidate,
-						address: "Rua Vergueiro, 11")
+						address: 'Rua Vergueiro, 11')
 			other_interview = create(:interview, job_opportunity: other_job_opportunity, candidate: candidate,
-						address: "Rua Ita, 11")
+						address: 'Rua Ita, 11')
 
 			visit root_path
-			click_on "Minhas Entrevistas"
+			click_on 'Minhas Entrevistas'
 			click_on "edit-interview-#{interview.id}"
 		end
 
@@ -26,9 +26,9 @@ feature 'Headhunter edit an interview' do
 			fill_in 'Data', with: '13/11/2021'
 			fill_in 'Hora', with: '17:20'
 
-			click_on "Convidar"
+			click_on 'Convidar'
 
-			expect(page).to have_content("Entrevista atualizada com sucesso")
+			expect(page).to have_content('Entrevista atualizada com sucesso')
 		end
 
 		scenario 'can not be blank' do
@@ -37,7 +37,7 @@ feature 'Headhunter edit an interview' do
 			fill_in 'Hora', with: ''
 			fill_in 'Endereço', with: ''
 
-			click_on "Convidar"
+			click_on 'Convidar'
 
 			expect(page).to have_content('Data não pode ficar em branco')
 			expect(page).to have_content('Hora não pode ficar em branco')

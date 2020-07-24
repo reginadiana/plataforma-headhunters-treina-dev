@@ -11,9 +11,9 @@ feature 'Candidate visit list of jobs' do
 			candidate = create(:candidate, user: user)
 
 			job_opportunity = create(:job_opportunity,
-				title: "Desenvolvedor Frontend", skills: "React, Java Script e Linux")
+				title: 'Desenvolvedor Frontend', skills: 'React, Java Script e Linux')
 			other_job_opportunity = create(:job_opportunity,
-				title: "Desenvolvedor Backend", skills: "Rails, Postgresql e Linux")
+				title: 'Desenvolvedor Backend', skills: 'Rails, Postgresql e Linux')
 
 			visit job_opportunities_path
 		end
@@ -66,7 +66,7 @@ feature 'Candidate visit list of jobs' do
 			expect(page).to have_content('Nenhum resultado encontrado para: Github')
 		end
 		scenario 'other candidates' do
-			visit search_candidates_path("Camila")
+			visit search_candidates_path('Camila')
 			expect(current_path).to eq(candidate_path(@candidate))
 		end
 	end

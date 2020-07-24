@@ -21,7 +21,7 @@ feature 'User create a profile' do
 
 			expect(current_path).to eq(new_candidate_path)
 		end
-		scenario "successfully" do
+		scenario 'successfully' do
 
 			fill_in 'Nome Completo', with: 'Larissa Fernandes'
 			fill_in 'Nome Social', with: 'Larissa'
@@ -40,7 +40,7 @@ feature 'User create a profile' do
 			expect(page).to have_content('Recursos para Candidato')
 			expect(current_path).to eq(job_opportunities_path)
 		end
-		scenario "and can not be blank" do
+		scenario 'and can not be blank' do
 
 			fill_in 'Nome Completo', with: ''
 			fill_in 'Nome Social', with: ''

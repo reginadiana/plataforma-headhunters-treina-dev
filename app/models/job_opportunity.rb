@@ -17,7 +17,7 @@ class JobOpportunity < ApplicationRecord
 
   def deadline_cannot_be_in_the_past
     if deadline.present? && deadline < Date.today
-      errors.add(:deadline, "não pode estar no passado")
+      errors.add(:deadline, 'não pode estar no passado')
     end
   end
 end

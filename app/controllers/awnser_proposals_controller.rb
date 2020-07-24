@@ -22,10 +22,10 @@ class AwnserProposalsController < ApplicationController
     @awnser_proposal.proposal = @proposal
 
     if @awnser_proposal.save
-      if @awnser_proposal.choice.option === "Aceitar"
+      if @awnser_proposal.choice.option === 'Aceitar'
         @proposal.accepted!
       end
-      if @awnser_proposal.choice.option === "Recusar"
+      if @awnser_proposal.choice.option === 'Recusar'
        @proposal.rejected!
       end
      flash[:notice] = 'Resposta enviada com sucesso'
@@ -41,10 +41,10 @@ class AwnserProposalsController < ApplicationController
   def update
     @awnser_proposal = AwnserProposal.find(id)
     if @awnser_proposal.update(require_params)
-      if @awnser_proposal.choice.option === "Aceitar"
+      if @awnser_proposal.choice.option === 'Aceitar'
         @proposal.accepted!
       end
-      if @awnser_proposal.choice.option === "Recusar"
+      if @awnser_proposal.choice.option === 'Recusar'
         @proposal.rejected!
       end
       flash[:notice] = 'Resposta atualizada com sucesso'

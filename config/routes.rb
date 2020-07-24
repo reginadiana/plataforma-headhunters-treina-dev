@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     get 'search', on: :collection
     resources :apply_jobs, except: [:index] do
       resources :feedbacks, only: [:new, :create, :edit, :update]
-      get "profile_as", to: "candidates#profile_as"
+      get 'profile_as', to: 'candidates#profile_as'
     end
   end
   resources :job_opportunities do

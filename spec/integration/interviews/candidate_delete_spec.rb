@@ -9,19 +9,19 @@ feature 'Candidate delete an interview' do
 		login_as user, scope: :user
 		candidate = create(:candidate, user: user)
 
-		job_opportunity = create(:job_opportunity, title: "Desenvolvedor Java")
-		other_job_opportunity = create(:job_opportunity, title: "Desenvolvedor PHP")
+		job_opportunity = create(:job_opportunity, title: 'Desenvolvedor Java')
+		other_job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP')
 
 		interview = create(:interview, job_opportunity: job_opportunity, candidate: candidate)
 		other_interview = create(:interview,
 		job_opportunity: other_job_opportunity, candidate: candidate)
 
 		visit root_path
-		click_on "Minhas Entrevistas"
+		click_on 'Minhas Entrevistas'
 		click_on "delete-interview-#{interview.id}"
 
 
-		expect(page).to have_content("Desenvolvedor PHP")
+		expect(page).to have_content('Desenvolvedor PHP')
 		expect(page).to have_content I18n.l(other_interview.interview_date, format: :short)
 		expect(page).to have_content I18n.l(other_interview.hour, format: :short)
 		expect(page).to have_content("#{other_interview.address}")

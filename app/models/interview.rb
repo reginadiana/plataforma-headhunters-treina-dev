@@ -10,7 +10,7 @@ class Interview < ApplicationRecord
 
   def interview_date_cannot_be_in_the_past
     if interview_date.present? && interview_date < Date.today
-      errors.add(:interview_date, "não pode estar no passado")
+      errors.add(:interview_date, 'não pode estar no passado')
     end
   end
 end

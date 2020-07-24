@@ -12,7 +12,7 @@ feature 'Candidate view feedback' do
 		@apply_job = create(:apply_job, candidate: candidate)
 		@feedback = create(:feedback,
 			apply_job: @apply_job,
-			message: "Ola, gostaria de marcar uma entrevista!")
+			message: 'Ola, gostaria de marcar uma entrevista!')
 
 		visit apply_jobs_path
 
@@ -26,12 +26,12 @@ feature 'Candidate view feedback' do
 
 	scenario 'in detals of candidature ' do
 		click_on "#{@apply_job.job_opportunity.title}"
-		click_on "Ver minha candidatura"
+		click_on 'Ver minha candidatura'
 
-		expect(page).to have_content("Status do Processo")
+		expect(page).to have_content('Status do Processo')
 		expect(page).to have_content("#{@apply_job.feedback}")
 
-		expect(page).to have_content("Feedback do Recrutador")
+		expect(page).to have_content('Feedback do Recrutador')
 		expect(page).to have_content("#{@feedback.message}")
 	end
 end

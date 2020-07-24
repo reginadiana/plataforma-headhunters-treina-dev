@@ -15,14 +15,14 @@ feature 'Candidate view jobs' do
 
 		visit root_path
 
-		expect(page).to have_content("Vagas Cadastradas")
-		expect(page).not_to have_link("Cadastrar nova Vaga")
-		expect(page).not_to have_link("Lista de Candidatos")
+		expect(page).to have_content('Vagas Cadastradas')
+		expect(page).not_to have_link('Cadastrar nova Vaga')
+		expect(page).not_to have_link('Lista de Candidatos')
 
-		expect(page).to have_content("Desenvolvedor PHP")
+		expect(page).to have_content('Desenvolvedor PHP')
 		expect(page).to have_link "details-#{job_1.id}"
 
-		expect(page).to have_content("Desenvolvedor Java")
+		expect(page).to have_content('Desenvolvedor Java')
 		expect(page).to have_link "details-#{job_2.id}"
 
 	end
@@ -35,8 +35,8 @@ feature 'Candidate view jobs' do
 
 		visit root_path
 
-		expect(page).to have_content("Vagas Cadastradas")
-		expect(page).to have_content("Nenhuma vaga cadastrada")
+		expect(page).to have_content('Vagas Cadastradas')
+		expect(page).to have_content('Nenhuma vaga cadastrada')
 
 	end
 
@@ -51,10 +51,10 @@ feature 'Candidate view jobs' do
 		visit root_path
 		find("a#details-#{job_1.id}").click()
 
-		expect(page).to have_content("Desenvolvedor PHP")
+		expect(page).to have_content('Desenvolvedor PHP')
 		expect(page).to have_content("#{job_1.company}")
 		expect(page).to have_content("#{job_1.region}")
-		expect(page).to have_content("R$ 5.000,00")
+		expect(page).to have_content('R$ 5.000,00')
 		expect(page).to have_content("#{job_1.level.name}")
 		expect(page).to have_content("#{job_1.description_job}")
 		expect(page).to have_content("#{job_1.skills}")
@@ -63,7 +63,7 @@ feature 'Candidate view jobs' do
 		expect(page).to have_content("#{job_1.office_functions}")
 		expect(page).to have_content("#{job_1.company_expectations}")
 
-		expect(page).to have_link "Quero me candidatar"
+		expect(page).to have_link 'Quero me candidatar'
 		expect(page).not_to have_link "edit-#{job_1.id}"
 		expect(page).not_to have_link "delete-#{job_1.id}"
 	end
@@ -78,7 +78,7 @@ feature 'Candidate view jobs' do
 
 		visit root_path
 		find("a#details-#{job_1.id}").click()
-		click_on "Voltar"
+		click_on 'Voltar'
 
 		expect(current_path).to eq job_opportunities_path
 	end

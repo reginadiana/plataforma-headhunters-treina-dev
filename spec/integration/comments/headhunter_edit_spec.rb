@@ -8,7 +8,7 @@ feature 'Headhunter edit comment' do
 		headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
 		login_as headhunter, scope: :headhunter
 
-		comment = create(:comment, headhunter: headhunter, content: "Ola, gostei do seu perfil")
+		comment = create(:comment, headhunter: headhunter, content: 'Ola, gostei do seu perfil')
 
 		visit candidate_path(comment.candidate)
 
@@ -19,7 +19,7 @@ feature 'Headhunter edit comment' do
 
 		fill_in 'Conteúdo do Comentário', with: 'Ola, Bianca Rosa'
 
-		click_on "Publicar"
+		click_on 'Publicar'
 
 		expect(page).to have_content('Comentário atualizada com sucesso')
 	end
@@ -28,7 +28,7 @@ feature 'Headhunter edit comment' do
 
 		fill_in 'Conteúdo do Comentário', with: ''
 
-		click_on "Publicar"
+		click_on 'Publicar'
 
 		expect(page).to have_content('Conteúdo do Comentário não pode ficar em branco')
 	end

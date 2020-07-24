@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 feature 'Candidate authorization' do
-	context "candidate can not" do
+	context 'candidate can not' do
 		before :each do
 			user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
 			@candidate = create(:candidate, user: user)
@@ -16,7 +16,7 @@ feature 'Candidate authorization' do
 		end
 	end
 
-	context "other candidate can not" do
+	context 'other candidate can not' do
 		before :each do
 			user = User.create!(email: 'giovana@gmail.com.br', password: '12345678')
 			@candidate = create(:candidate, user: user)

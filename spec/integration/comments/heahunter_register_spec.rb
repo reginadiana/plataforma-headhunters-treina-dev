@@ -23,7 +23,7 @@ feature 'Headhunter register valid comment' do
 
 		expect(page).to have_content('Comentário publicado com sucesso')
 
-		expect(page).to have_content("Podemos marcar uma entrevista?")
+		expect(page).to have_content('Podemos marcar uma entrevista?')
 	end
 
 	scenario 'and can not be blank' do
