@@ -3,7 +3,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
   before_action :find_candidate
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user, except: %i[index show]
 
   def new
     @comment = Comment.new
@@ -60,22 +60,16 @@ class CommentsController < ApplicationController
   end
 
   def authenticate_user
-    if user_signed_in?
-      redirect_to @candidate
-    end
+    redirect_to @candidate if user_signed_in?
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
 end

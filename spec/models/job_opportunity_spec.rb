@@ -4,29 +4,30 @@ require 'rails_helper'
 
 RSpec.describe JobOpportunity, type: :model do
   context '#successfully' do
-    let(:job_opportunity) { build(:job_opportunity, title: 'Desenvolvedor Rails',
-                                                    company:  'Rebase',
-                                                    description_job:  'Desenvolvimento de Plataformas com TDD',
-                                                    skills: 'Domínio da linguagem Ruby e do framework Ruby on Rails',
-                                                    deadline: '14/09/2020',
-                                                    region: 'Mocca - SP',
-        benefits: 'Vale refeição, Academia',
-        office_functions: 'Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio.',
-        company_expectations: 'Profissional ativo e comunicativo'
-    )}
+    let(:job_opportunity) do
+      @job = build(:job_opportunity, title: SecureRandom.base64(50),
+                              company: SecureRandom.base64(50),
+                              description_job: SecureRandom.base64(100),
+                              skills: SecureRandom.base64(100),
+                              deadline: '14/09/2020',
+                              region: 'Mocca - SP',
+                              benefits: SecureRandom.base64(80),
+                              office_functions: SecureRandom.base64(200),
+                              company_expectations: SecureRandom.base64(100))
+    end
 
-      it 'must be valid' do
-         expect(job_opportunity.title).to eq 'Desenvolvedor Rails'
-         expect(job_opportunity.company).to eq 'Rebase'
-         expect(job_opportunity.description_job).to eq 'Desenvolvimento de Plataformas com TDD'
-         expect(job_opportunity.skills).to eq 'Domínio da linguagem Ruby e do framework Ruby on Rails'
-         expect(job_opportunity.region).to eq 'Mocca - SP'
-         expect(job_opportunity.benefits).to eq 'Vale refeição, Academia'
-         expect(job_opportunity.office_functions).to eq 'Contribuir com a evolução arquitetural do software visando manutenibilidade e flexibilização para atendimento do negócio.'
-         expect(job_opportunity.company_expectations).to eq 'Profissional ativo e comunicativo'
+    it 'must be valid' do
+      expect(job_opportunity.title).to eq @job.title
+      expect(job_opportunity.company).to eq @job.company
+      expect(job_opportunity.description_job).to eq @job.description_job
+      expect(job_opportunity.skills).to eq @job.skills
+      expect(job_opportunity.region).to eq 'Mocca - SP'
+      expect(job_opportunity.benefits).to eq @job.benefits
+      expect(job_opportunity.office_functions).to eq @job.office_functions
+      expect(job_opportunity.company_expectations).to eq @job.company_expectations
 
-         expect(job_opportunity).to be_valid
-      end
+      expect(job_opportunity).to be_valid
+    end
   end
 
   context '#deadline cannot be in past' do
@@ -43,7 +44,7 @@ RSpec.describe JobOpportunity, type: :model do
   end
   context '#title must be unique' do
     before :each do
-      job_opportunity = create(:job_opportunity, title: 'Desenvolvedor Rails')
+      create(:job_opportunity, title: 'Desenvolvedor Rails')
     end
     let(:other_job_opportunity) { build(:job_opportunity, title: 'Desenvolvedor Rails') }
     it 'and can not be valid' do

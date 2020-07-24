@@ -2,8 +2,8 @@
 
 class InterviewsController < ApplicationController
   before_action :authenticate_visitor
-  before_action :authenticate_candidate, only: [:show, :new, :create]
-  before_action :find_candidate_job, except: [:show, :index]
+  before_action :authenticate_candidate, only: %i[show new create]
+  before_action :find_candidate_job, except: %i[show index]
 
   def index
     @candidate = Candidate.where(user: current_user)
@@ -69,22 +69,16 @@ class InterviewsController < ApplicationController
   end
 
   def authenticate_candidate
-    if user_signed_in?
-      redirect_to job_opportunities_path
-     end
+    redirect_to job_opportunities_path if user_signed_in?
   end
 
   def authenticate_visitor
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
 end

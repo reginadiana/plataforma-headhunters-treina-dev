@@ -13,7 +13,7 @@ feature 'Candidate sees the proposals by him' do
     proposal = create(:proposal, candidate: @candidate, job_opportunity: @job_opportunity)
     visit root_path
     click_on 'Minhas Propostas'
-    expect(page).to have_content("#{proposal.job_opportunity.title}")
+    expect(page).to have_content(proposal.job_opportunity.title.to_s)
     expect(page).to have_content('Em espera')
   end
   scenario 'you have nothing to see' do
@@ -25,11 +25,11 @@ feature 'Candidate sees the proposals by him' do
     proposal = create(:proposal, candidate: @candidate, job_opportunity: @job_opportunity)
     visit root_path
     click_on 'Minhas Propostas'
-    click_on "#{proposal.job_opportunity.title}"
+    click_on proposal.job_opportunity.title.to_s
 
     expect(current_path).to eq job_opportunity_path(@job_opportunity)
-    expect(page).to have_content("#{proposal.job_opportunity.title}")
-    expect(page).to have_content("#{proposal.job_opportunity.company}")
-    expect(page).to have_content("#{proposal.job_opportunity.description_job}")
+    expect(page).to have_content(proposal.job_opportunity.title.to_s)
+    expect(page).to have_content(proposal.job_opportunity.company.to_s)
+    expect(page).to have_content(proposal.job_opportunity.description_job.to_s)
   end
 end

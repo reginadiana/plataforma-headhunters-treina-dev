@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-#Locations
+# Locations
 Rails.application.config.time_zone = 'Brasilia'
 
 # Permitted locales available for the application

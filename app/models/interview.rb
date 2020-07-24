@@ -9,8 +9,6 @@ class Interview < ApplicationRecord
   validate :interview_date_cannot_be_in_the_past
 
   def interview_date_cannot_be_in_the_past
-    if interview_date.present? && interview_date < Date.today
-      errors.add(:interview_date, 'não pode estar no passado')
-    end
+    errors.add(:interview_date, 'não pode estar no passado') if interview_date.present? && interview_date < Date.today
   end
 end

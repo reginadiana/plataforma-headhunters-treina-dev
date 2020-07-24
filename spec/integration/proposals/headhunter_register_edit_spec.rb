@@ -20,7 +20,7 @@ feature 'Headhunter register a proposal' do
     expect(page).to have_content('Proposta enviada com sucesso')
   end
   scenario 'and cannot send again' do
-    proposal = create(:proposal, candidate: @candidate, job_opportunity: @job_opportunity)
+    create(:proposal, candidate: @candidate, job_opportunity: @job_opportunity)
     click_on 'Enviar Proposta'
     expect(page).to have_content('Uma proposta para esta vaga já foi enviada')
   end

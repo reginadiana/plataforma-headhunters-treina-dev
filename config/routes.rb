@@ -15,20 +15,20 @@ Rails.application.routes.draw do
   resources :job_opportunities do
     get 'search', on: :collection
     resources :apply_jobs, except: [:index] do
-      resources :feedbacks, only: [:new, :create, :edit, :update]
+      resources :feedbacks, only: %i[new create edit update]
       get 'profile_as', to: 'candidates#profile_as'
     end
   end
   resources :job_opportunities do
     resources :interviews, only: [:show]
     resources :candidates do
-      resources :interviews, except: [:index, :show]
+      resources :interviews, except: %i[index show]
     end
   end
 
   resources :candidates do
     get 'search', on: :collection
-    resources :comments, except: [:index, :show]
+    resources :comments, except: %i[index show]
     resources :proposals do
       resources :awnser_proposals
     end

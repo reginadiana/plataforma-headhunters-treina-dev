@@ -20,13 +20,9 @@ class FeedbacksController < ApplicationController
     @feedback.apply_job = @apply_job
 
     if @feedback.save
-      if @feedback.choice.option === 'Aceitar'
-        @apply_job.accepted!
-      end
+      @apply_job.accepted! if @feedback.choice.option === 'Aceitar'
 
-      if @feedback.choice.option === 'Recusar'
-        @apply_job.rejected!
-      end
+      @apply_job.rejected! if @feedback.choice.option === 'Recusar'
       flash[:notice] = 'Feedback enviado com sucesso'
       redirect_to job_opportunity_path(@job_opportunuty)
     end
@@ -40,13 +36,9 @@ class FeedbacksController < ApplicationController
   def update
     @feedback = Feedback.find(id)
     if @feedback.update(require_params)
-      if @feedback.choice.option === 'Aceitar'
-        @apply_job.accepted!
-      end
+      @apply_job.accepted! if @feedback.choice.option === 'Aceitar'
 
-      if @feedback.choice.option === 'Recusar'
-        @apply_job.rejected!
-      end
+      @apply_job.rejected! if @feedback.choice.option === 'Recusar'
       flash[:notice] = 'Feedback atualizado com sucesso'
       redirect_to job_opportunity_path(@job_opportunuty)
     end
@@ -68,17 +60,13 @@ class FeedbacksController < ApplicationController
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
 
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
 end

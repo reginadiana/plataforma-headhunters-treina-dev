@@ -3,7 +3,7 @@
 class ApplyJobsController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
   before_action :authenticate_head, except: [:show]
-  before_action :find_job_opportunity, only: [:show, :create, :new, :edit, :update, :destroy]
+  before_action :find_job_opportunity, only: %i[show create new edit update destroy]
   before_action :find_candidate
 
   def index
@@ -75,22 +75,16 @@ class ApplyJobsController < ApplicationController
   end
 
   def authenticate_head
-    if headhunter_signed_in?
-      redirect_to job_opportunities_path
-    end
+    redirect_to job_opportunities_path if headhunter_signed_in?
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
 end

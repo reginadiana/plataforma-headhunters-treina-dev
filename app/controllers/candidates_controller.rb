@@ -2,9 +2,9 @@
 
 class CandidatesController < ApplicationController
   before_action :authenticate_visitor
-  before_action :authenticate_headhunter, except: [:index, :show, :search, :profile_as]
-  before_action :authenticate_candidate, only: [:show, :edit, :update]
-  before_action :authenticate_candidate_without_profile, except: [:new, :create]
+  before_action :authenticate_headhunter, except: %i[index show search profile_as]
+  before_action :authenticate_candidate, only: %i[show edit update]
+  before_action :authenticate_candidate_without_profile, except: %i[new create]
 
   def profile_as
     @job_opportunity = JobOpportunity.find(params[:job_opportunity_id])
@@ -97,7 +97,7 @@ class CandidatesController < ApplicationController
   def require_params
     params.require(:candidate).permit(:full_name, :social_name, :date_of_birth,
                                       :profession, :profile_description, :experience,
-                    :formation, :level_id, :courses, :user_id, :avatar)
+                                      :formation, :level_id, :courses, :user_id, :avatar)
   end
 
   def id
@@ -113,32 +113,24 @@ class CandidatesController < ApplicationController
   end
 
   def authenticate_headhunter
-    if headhunter_signed_in?
-      redirect_to job_opportunities_path
-    end
+    redirect_to job_opportunities_path if headhunter_signed_in?
   end
 
   def authenticate_candidate
-    if user_signed_in? and find_candidate
-      if not find_candidate_by_route.user === current_user
-        redirect_to candidate_path(find_candidate)
-      end
+    if user_signed_in? && find_candidate
+      redirect_to candidate_path(find_candidate) unless find_candidate_by_route.user === current_user
     end
   end
 
   def authenticate_visitor
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
   end
 
   def authenticate_candidate_without_profile
     if user_signed_in?
-      if not find_candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless find_candidate
     end
   end
 end

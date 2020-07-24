@@ -2,15 +2,15 @@
 
 class JobOpportunitiesController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
-  before_action :authenticate_candidate, only: [:new, :create, :edit, :update, :destroy]
-  before_action :authenticate_headhunter, only: [:show, :edit, :update]
+  before_action :authenticate_candidate, only: %i[new create edit update destroy]
+  before_action :authenticate_headhunter, only: %i[show edit update]
 
   def index
-    if headhunter_signed_in?
-      @jobs = JobOpportunity.where(headhunter: current_headhunter)
-    else
-      @jobs = JobOpportunity.all
-    end
+    @jobs = if headhunter_signed_in?
+              JobOpportunity.where(headhunter: current_headhunter)
+            else
+              JobOpportunity.all
+            end
   end
 
   def show
@@ -75,7 +75,7 @@ class JobOpportunitiesController < ApplicationController
   def require_params
     params.require(:job_opportunity).permit(:title, :company, :description_job, :skills,
                                             :salary_range, :deadline, :level_id, :region,
-                                            :benefits, :office_functions, :company_expectations, :headhunter_id )
+                                            :benefits, :office_functions, :company_expectations, :headhunter_id)
   end
 
   def id
@@ -87,31 +87,23 @@ class JobOpportunitiesController < ApplicationController
   end
 
   def authenticate_candidate
-    if user_signed_in?
-      redirect_to job_opportunities_path
-    end
+    redirect_to job_opportunities_path if user_signed_in?
   end
 
   def authenticate_headhunter
     if headhunter_signed_in?
-      if not find_job.headhunter === current_headhunter
-        redirect_to job_opportunities_path
-      end
+      redirect_to job_opportunities_path unless find_job.headhunter === current_headhunter
     end
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
 
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
 end

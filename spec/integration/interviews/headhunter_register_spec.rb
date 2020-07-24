@@ -3,120 +3,109 @@
 require 'rails_helper'
 
 feature 'Headhunter register a interview' do
+  context 'for vacancy candidates ' do
+    before :each do
+      headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+      login_as headhunter, scope: :headhunter
 
-   context 'for vacancy candidates ' do
+      job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
+      candidate = create(:candidate, full_name: 'Camila de Melo')
+      create(:apply_job, candidate: candidate, job_opportunity: job_opportunity)
 
-      before :each do
-         headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
-         login_as headhunter, scope: :headhunter
+      visit job_opportunity_path(job_opportunity)
+      click_on 'Agendar Entrevista'
+    end
 
-         job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
-         candidate = create(:candidate, full_name: 'Camila de Melo')
-         apply_job = create(:apply_job, candidate: candidate, job_opportunity: job_opportunity)
+    scenario 'successfully' do
+      fill_in 'Data', with: '12/11/2021'
+      fill_in 'Hora', with: '18:20'
+      fill_in 'Endereço', with: ' Condominio Edifício Morungaba - Alameda Santos, 1293 - Cerqueira César, São Paulo - SP, 01419-001'
 
-         visit job_opportunity_path(job_opportunity)
-         click_on 'Agendar Entrevista'
-      end
+      click_on 'Convidar'
 
-      scenario 'successfully' do
+      expect(page).to have_content('Entrevista marcada com sucesso')
+    end
 
-         fill_in 'Data', with: '12/11/2021'
-         fill_in 'Hora', with: '18:20'
-         fill_in 'Endereço', with: ' Condominio Edifício Morungaba - Alameda Santos, 1293 - Cerqueira César, São Paulo - SP, 01419-001'
+    scenario 'can not be blank' do
+      fill_in 'Data', with: ''
+      fill_in 'Hora', with: ''
+      fill_in 'Endereço', with: ''
 
-         click_on 'Convidar'
+      click_on 'Convidar'
 
-         expect(page).to have_content('Entrevista marcada com sucesso')
-      end
+      expect(page).to have_content('Data não pode ficar em branco')
+      expect(page).to have_content('Hora não pode ficar em branco')
+      expect(page).to have_content('Endereço não pode ficar em branco')
+    end
 
-      scenario 'can not be blank' do
+    scenario 'and date can not in past' do
+      fill_in 'Data', with: '04/06/2019'
+      click_on 'Convidar'
+      expect(page).to have_content('Data não pode estar no passado')
+    end
+  end
 
-         fill_in 'Data', with: ''
-         fill_in 'Hora', with: ''
-         fill_in 'Endereço', with: ''
+  context 'for candidates who approved the proposal' do
+    before :each do
+      headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+      login_as headhunter, scope: :headhunter
 
-         click_on 'Convidar'
+      @job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
+      @candidate = create(:candidate, full_name: 'Camila de Melo')
+    end
 
-         expect(page).to have_content('Data não pode ficar em branco')
-         expect(page).to have_content('Hora não pode ficar em branco')
-         expect(page).to have_content('Endereço não pode ficar em branco')
-      end
+    scenario 'successfully' do
+      proposal = create(:proposal,
+                        candidate: @candidate,
+                        job_opportunity: @job_opportunity)
 
-      scenario 'and date can not in past' do
+      proposal.accepted!
 
-         fill_in 'Data', with: '04/06/2019'
-         click_on 'Convidar'
-         expect(page).to have_content('Data não pode estar no passado')
-      end
-   end
+      accepted = create(:choice, option: 'Aceitar')
+      create(:awnser_proposal, proposal: proposal, choice: accepted)
 
-   context 'for candidates who approved the proposal' do
+      visit root_path
+      click_on 'Minhas Vagas'
+      click_on 'Desenvolvedor PHP'
 
-      before :each do
-         headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
-         login_as headhunter, scope: :headhunter
+      expect(page).to have_content('Camila de Melo')
+      expect(page).to have_content('Aceito')
 
-         @job_opportunity = create(:job_opportunity, title: 'Desenvolvedor PHP', headhunter: headhunter)
-         @candidate = create(:candidate, full_name: 'Camila de Melo')
+      click_on 'Agendar Entrevista'
 
-      end
+      fill_in 'Data', with: '12/11/2021'
+      fill_in 'Hora', with: '18:20'
+      fill_in 'Endereço', with: ' Condominio Edifício Morungaba - Alameda Santos, 1293 - Cerqueira César, São Paulo - SP, 01419-001'
 
-      scenario 'successfully' do
+      click_on 'Convidar'
 
-         proposal = create(:proposal,
-           candidate: @candidate,
-           job_opportunity: @job_opportunity)
+      expect(page).to have_content('Entrevista marcada com sucesso')
+    end
 
-         proposal.accepted!
+    scenario 'can not interview candidates who not accept proposal' do
+      proposal = create(:proposal,
+                        candidate: @candidate,
+                        job_opportunity: @job_opportunity)
 
-         accepted = create(:choice, option: 'Aceitar')
-         awnser_proposal = create(:awnser_proposal, proposal: proposal, choice: accepted)
+      proposal.rejected!
 
-         visit root_path
-         click_on 'Minhas Vagas'
-         click_on 'Desenvolvedor PHP'
+      reject = create(:choice, option: 'Recusar')
+      create(:awnser_proposal, proposal: proposal, choice: reject)
 
-         expect(page).to have_content('Camila de Melo')
-         expect(page).to have_content('Aceito')
+      visit job_opportunity_path(@job_opportunity)
 
-         click_on 'Agendar Entrevista'
+      expect(page).not_to have_link('Agendar Entrevista')
+    end
 
-         fill_in 'Data', with: '12/11/2021'
-         fill_in 'Hora', with: '18:20'
-         fill_in 'Endereço', with: ' Condominio Edifício Morungaba - Alameda Santos, 1293 - Cerqueira César, São Paulo - SP, 01419-001'
+    scenario 'can not interview candidates who still not accept proposal' do
+      proposal = create(:proposal,
+                        candidate: @candidate,
+                        job_opportunity: @job_opportunity)
 
-         click_on 'Convidar'
+      proposal.hope!
 
-         expect(page).to have_content('Entrevista marcada com sucesso')
-      end
-
-      scenario 'can not interview candidates who not accept proposal' do
-
-         proposal = create(:proposal,
-           candidate: @candidate,
-           job_opportunity: @job_opportunity)
-
-         proposal.rejected!
-
-         reject = create(:choice, option: 'Recusar')
-         awnser_proposal = create(:awnser_proposal, proposal: proposal, choice: reject)
-
-         visit job_opportunity_path(@job_opportunity)
-
-         expect(page).not_to have_link('Agendar Entrevista')
-      end
-
-      scenario 'can not interview candidates who still not accept proposal' do
-
-         proposal = create(:proposal,
-           candidate: @candidate,
-           job_opportunity: @job_opportunity)
-
-         proposal.hope!
-
-         visit job_opportunity_path(@job_opportunity)
-         expect(page).not_to have_link('Agendar Entrevista')
-      end
-
-   end
+      visit job_opportunity_path(@job_opportunity)
+      expect(page).not_to have_link('Agendar Entrevista')
+    end
+  end
 end

@@ -6,7 +6,7 @@ feature 'Candidate can not' do
   before :each do
     user = create(:user)
     login_as user, scope: :user
-    candidate = create(:candidate, user: user)
+    create(:candidate, user: user)
   end
   scenario 'to create some proposal by route' do
     visit new_candidate_proposal_path(rand(1..100))
@@ -18,4 +18,3 @@ feature 'Candidate can not' do
     expect(page).not_to have_link 'Enviar proposta'
   end
 end
-
