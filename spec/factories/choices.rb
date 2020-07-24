@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :choice do
-    option { "Aceitar" }
+    option { 'Aceitar' }
   end
 end

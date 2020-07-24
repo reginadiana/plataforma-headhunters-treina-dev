@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :proposal do
-    message { "MyString" }
+    message { 'MyString' }
     job_opportunity 
     candidate 
-    status { "Em espera" }
+    status { 'Em espera' }
   end
 end
