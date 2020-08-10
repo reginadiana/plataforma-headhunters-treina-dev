@@ -9,6 +9,6 @@ FactoryBot.define do
     level
     formation { 'UFABC - Engenharia da Computacao' }
     courses { 'Udemy - Analise de dados' }
-    user 
+    user
   end
 end

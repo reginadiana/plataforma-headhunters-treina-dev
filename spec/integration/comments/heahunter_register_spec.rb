@@ -1,36 +1,32 @@
 require 'rails_helper'
 
 feature 'Headhunter register valid comment' do
+  before :each do
+    headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
+    login_as headhunter, scope: :headhunter
 
-	before :each do
-		headhunter = Headhunter.create!(email: 'teste@teste.com.br', password: '12345678')
-		login_as headhunter, scope: :headhunter
+    candidate = create(:candidate)
 
-		candidate = create(:candidate)
+    visit candidate_path(candidate)
 
-		visit candidate_path(candidate)
+    click_on 'Deixar Comentário'
+  end
 
-		click_on 'Deixar Comentário'
-	end
+  scenario 'successfully' do
+    fill_in 'Conteúdo do Comentário', with: 'Podemos marcar uma entrevista?'
 
-	scenario 'successfully' do
+    click_on 'Publicar'
 
-		fill_in 'Conteúdo do Comentário', with: 'Podemos marcar uma entrevista?'
+    expect(page).to have_content('Comentário publicado com sucesso')
 
-		click_on 'Publicar'
+    expect(page).to have_content('Podemos marcar uma entrevista?')
+  end
 
-		expect(page).to have_content('Comentário publicado com sucesso')
+  scenario 'and can not be blank' do
+    fill_in 'Conteúdo do Comentário', with: ''
 
-		expect(page).to have_content("Podemos marcar uma entrevista?")
-	end
+    click_on 'Publicar'
 
-	scenario 'and can not be blank' do
-
-		fill_in 'Conteúdo do Comentário', with: ''
-
-		click_on 'Publicar'
-
-		expect(page).to have_content('Conteúdo do Comentário não pode ficar em branco')
-	end
+    expect(page).to have_content('Conteúdo do Comentário não pode ficar em branco')
+  end
 end
-

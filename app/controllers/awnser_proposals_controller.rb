@@ -1,6 +1,6 @@
 class AwnserProposalsController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
-  before_action :authenticate_headhunter, only: [:new, :create, :edit, :update] 
+  before_action :authenticate_headhunter, only: %i[new create edit update]
   before_action :find_candidate_and_proposal
 
   def new
@@ -8,11 +8,11 @@ class AwnserProposalsController < ApplicationController
 
     if @awnser_proposal
       @choices = Choice.all
-      render :edit	
+      render :edit
     else
       @awnser_proposal = AwnserProposal.new
       @choices = Choice.all
-    end		
+    end
    end
 
   def create
@@ -20,15 +20,11 @@ class AwnserProposalsController < ApplicationController
     @awnser_proposal.proposal = @proposal
 
     if @awnser_proposal.save
-      if @awnser_proposal.choice.option === "Aceitar"
-        @proposal.accepted!
-      end
-      if @awnser_proposal.choice.option === "Recusar"
-       @proposal.rejected!
-      end
-     flash[:notice] = 'Resposta enviada com sucesso'	
-     redirect_to candidate_proposals_path(@candidate)
-    end	
+      @proposal.accepted! if @awnser_proposal.choice.option === 'Aceitar'
+      @proposal.rejected! if @awnser_proposal.choice.option === 'Recusar'
+      flash[:notice] = 'Resposta enviada com sucesso'
+      redirect_to candidate_proposals_path(@candidate)
+    end
   end
 
   def edit
@@ -39,19 +35,15 @@ class AwnserProposalsController < ApplicationController
   def update
     @awnser_proposal = AwnserProposal.find(id)
     if @awnser_proposal.update(require_params)
-      if @awnser_proposal.choice.option === "Aceitar"
-        @proposal.accepted!
-      end
-      if @awnser_proposal.choice.option === "Recusar"
-        @proposal.rejected!
-      end
-      flash[:notice] = 'Resposta atualizada com sucesso'	
+      @proposal.accepted! if @awnser_proposal.choice.option === 'Aceitar'
+      @proposal.rejected! if @awnser_proposal.choice.option === 'Recusar'
+      flash[:notice] = 'Resposta atualizada com sucesso'
       redirect_to candidate_proposals_path(@candidate)
     end
   end
 
   private
-	
+
   def require_params
     params.require(:awnser_proposal).permit(:message, :choice_id, :proposal_id)
   end
@@ -59,11 +51,9 @@ class AwnserProposalsController < ApplicationController
   def id
     params[:id]
   end
-    
+
   def authenticate_headhunter
-    if headhunter_signed_in?
-      redirect_to job_opportunities_path
-    end
+    redirect_to job_opportunities_path if headhunter_signed_in?
   end
 
   def find_candidate_and_proposal
@@ -72,16 +62,12 @@ class AwnserProposalsController < ApplicationController
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
-end  
+end

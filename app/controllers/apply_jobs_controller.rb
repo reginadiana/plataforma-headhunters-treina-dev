@@ -1,7 +1,7 @@
 class ApplyJobsController < ApplicationController
   before_action :authenticate_visitor_candidate_without_profile
   before_action :authenticate_head, except: [:show]
-  before_action :find_job_opportunity, only: [:show, :create, :new, :edit, :update, :destroy]
+  before_action :find_job_opportunity, only: %i[show create new edit update destroy]
   before_action :find_candidate
 
   def index
@@ -15,14 +15,14 @@ class ApplyJobsController < ApplicationController
   end
 
   def new
-    @apply_job = ApplyJob.new		
+    @apply_job = ApplyJob.new
   end
 
   def create
     @apply_job = ApplyJob.new(require_params)
     @apply_job.candidate = @candidate
     @apply_job.job_opportunity = @job_opportunity
- 
+
     if @apply_job.save
       @apply_job.hope!
       flash[:notice] = 'Candidatura realizada com sucesso'
@@ -33,12 +33,12 @@ class ApplyJobsController < ApplicationController
   end
 
   def edit
-     @apply_job = ApplyJob.find(id)
+    @apply_job = ApplyJob.find(id)
   end
 
   def update
     @apply_job = ApplyJob.find(id)
-    
+
     if @apply_job.update(require_params)
       redirect_to job_opportunity_apply_job_path(@job_opportunity)
       flash[:notice] = 'Mensagem para Candidatura atualizada com sucesso'
@@ -55,7 +55,7 @@ class ApplyJobsController < ApplicationController
   end
 
   private
-	
+
   def require_params
     params.require(:apply_job).permit(:message, :candidate_id, :job_opportunity_id)
   end
@@ -73,22 +73,16 @@ class ApplyJobsController < ApplicationController
   end
 
   def authenticate_head
-    if headhunter_signed_in?
-      redirect_to job_opportunities_path
-    end
+    redirect_to job_opportunities_path if headhunter_signed_in?
   end
 
   def authenticate_visitor_candidate_without_profile
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
-end  
+end

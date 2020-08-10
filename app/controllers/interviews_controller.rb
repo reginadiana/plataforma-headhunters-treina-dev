@@ -1,9 +1,9 @@
 class InterviewsController < ApplicationController
   before_action :authenticate_visitor
-  before_action :authenticate_candidate, only: [:show, :new, :create] 
-  before_action :find_candidate_job, except: [:show, :index] 
+  before_action :authenticate_candidate, only: %i[show new create]
+  before_action :find_candidate_job, except: %i[show index]
 
-  def index	
+  def index
     @candidate = Candidate.where(user: current_user)
     @interviews = Interview.where(candidate: @candidate)
   end
@@ -37,7 +37,7 @@ class InterviewsController < ApplicationController
   def update
     @interview = Interview.find(id)
     if @interview.update(require_params)
-      flash[:notice] = 'Entrevista atualizada com sucesso'	
+      flash[:notice] = 'Entrevista atualizada com sucesso'
       redirect_to interviews_path
     else
       render :edit
@@ -47,7 +47,7 @@ class InterviewsController < ApplicationController
   def destroy
     @interview = Interview.find(id)
     @interview.destroy
-    flash[:notice] = 'Entrevista desmarcada'	
+    flash[:notice] = 'Entrevista desmarcada'
     redirect_to interviews_path
   end
 
@@ -67,22 +67,16 @@ class InterviewsController < ApplicationController
   end
 
   def authenticate_candidate
-    if user_signed_in?
-      redirect_to job_opportunities_path
-     end
+    redirect_to job_opportunities_path if user_signed_in?
   end
 
   def authenticate_visitor
-    if not user_signed_in?
-      if not headhunter_signed_in?
-        redirect_to root_path
-      end
+    unless user_signed_in?
+      redirect_to root_path unless headhunter_signed_in?
     end
     if user_signed_in?
       candidate = Candidate.find_by(user: current_user)
-      if not candidate
-        redirect_to new_candidate_path
-      end
+      redirect_to new_candidate_path unless candidate
     end
   end
 end

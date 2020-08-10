@@ -10,7 +10,7 @@ feature 'Visitor tries to acess apply jobs and' do
     end
     scenario 'and must be authenticated to create a apply job' do
       visit new_job_opportunity_apply_job_path(rand(1..100))
-    end 
+    end
     scenario 'and must be authenticated to edit some apply job' do
       visit edit_job_opportunity_apply_job_path(rand(1..100), rand(1..100))
     end
@@ -28,7 +28,7 @@ feature 'Visitor tries to acess apply jobs and' do
     end
     scenario 'and must be authenticated to create a apply job' do
       visit new_job_opportunity_apply_job_path(rand(1..100))
-    end 
+    end
     scenario 'and must be authenticated to edit some apply job' do
       visit edit_job_opportunity_apply_job_path(rand(1..100), rand(1..100))
     end

@@ -1,84 +1,78 @@
 require 'rails_helper'
 
 feature 'Headhunter register a feedback' do
+  before :each do
+    headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
+    login_as headhunter, scope: :headhunter
 
-	before :each do
-		headhunter = Headhunter.create!(email: 'giovana@gmail.com.br', password: '12345678')
-		login_as headhunter, scope: :headhunter
+    @job_opportunity = create(:job_opportunity, headhunter: headhunter, title: 'Desenvolvedor React')
 
-		@job_opportunity = create(:job_opportunity, headhunter: headhunter, title: "Desenvolvedor React")
+    candidate = create(:candidate, full_name: 'Lais Lima')
+    @apply_job = create(:apply_job, candidate: candidate, job_opportunity: @job_opportunity)
 
-		candidate = create(:candidate, full_name: "Lais Lima")
-		@apply_job = create(:apply_job, candidate: candidate, job_opportunity: @job_opportunity)
+    @reject = create(:choice, option: 'Recusar')
 
-		@reject = create(:choice, option: "Recusar") 
+    visit job_opportunities_path
+    click_on 'Desenvolvedor React'
 
-		visit job_opportunities_path
-		click_on "Desenvolvedor React"
+    expect(page).to have_content('Lais Lima')
+  end
 
-		expect(page).to have_content("Lais Lima")		
-	end
+  context 'register' do
+    before :each do
+      acepted = create(:choice, option: 'Aceitar')
+      click_on 'Enviar Feedback'
+      expect(current_path).to eq new_job_opportunity_apply_job_feedback_path(@job_opportunity, @apply_job)
+    end
 
-	context "register" do
-		before :each do
-			acepted = create(:choice, option: "Aceitar")
-			click_on "Enviar Feedback"  
-			expect(current_path).to eq new_job_opportunity_apply_job_feedback_path(@job_opportunity, @apply_job)
-		end
+    scenario 'as accepted successfully' do
+      fill_in 'Mensagem de Feedback', with: 'Ola, podemos marcar uma entrevista?'
+      select 'Aceitar', from: 'Escolha'
 
-		scenario 'as accepted successfully' do
+      click_on 'Enviar Feedback'
 
-			fill_in 'Mensagem de Feedback', with: 'Ola, podemos marcar uma entrevista?'
-			select 'Aceitar', from: 'Escolha'
+      expect(page).to have_content('Feedback enviado com sucesso')
+      expect(page).to have_content('Lais Lima')
+      expect(page).to have_content('Aceito')
+    end
 
-			click_on "Enviar Feedback"
+    scenario 'as reject successfully' do
+      select 'Recusar', from: 'Escolha'
 
-			expect(page).to have_content("Feedback enviado com sucesso")
-			expect(page).to have_content("Lais Lima")
-			expect(page).to have_content("Aceito")
-		end
+      click_on 'Enviar Feedback'
 
-		scenario 'as reject successfully' do
-		
-			select 'Recusar', from: 'Escolha'
+      expect(page).to have_content('Feedback enviado com sucesso')
+      expect(page).to have_content('Lais Lima')
+      expect(page).to have_content('Rejeitado')
+    end
+  end
 
-			click_on "Enviar Feedback"
+  context 'edit' do
+    before :each do
+      feedback = create(:feedback,
+                        apply_job: @apply_job)
 
-			expect(page).to have_content("Feedback enviado com sucesso")
-			expect(page).to have_content("Lais Lima")
-			expect(page).to have_content("Rejeitado")
-		end
-	end
+      click_on 'Enviar Feedback'
+    end
 
-	context "edit" do
-		
-		before :each do
-			feedback = create(:feedback, 
-				apply_job: @apply_job)
+    scenario 'and can edit to reject' do
+      fill_in 'Mensagem de Feedback', with: 'Ola, por enquanto nao estamos procurando este perfil'
+      select 'Recusar', from: 'Escolha'
 
-			click_on "Enviar Feedback"
-		end
+      click_on 'Enviar Feedback'
 
-		scenario 'and can edit to reject' do 
+      expect(page).to have_content('Feedback atualizado com sucesso')
+      expect(page).to have_content('Lais Lima')
+      expect(page).to have_content('Rejeitado')
+    end
 
-			fill_in 'Mensagem de Feedback', with: 'Ola, por enquanto nao estamos procurando este perfil'
-			select "Recusar", from: 'Escolha'
+    scenario 'and can edit to accepted' do
+      select 'Aceitar', from: 'Escolha'
 
-			click_on "Enviar Feedback"
+      click_on 'Enviar Feedback'
 
-			expect(page).to have_content("Feedback atualizado com sucesso")
-			expect(page).to have_content("Lais Lima")
-			expect(page).to have_content("Rejeitado")
-		end
-
-		scenario 'and can edit to accepted' do 
-
-			select "Aceitar", from: 'Escolha'
-
-			click_on "Enviar Feedback"
-
-			expect(page).to have_content("Feedback atualizado com sucesso")
-			expect(page).to have_content("Aceito")
-		end
-	end
+      expect(page).to have_content('Feedback atualizado com sucesso')
+      expect(page).to have_content('Aceito')
+    end
+  end
 end
