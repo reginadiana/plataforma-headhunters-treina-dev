@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
   end
 
   create_table "apply_jobs", force: :cascade do |t|
-    t.integer "candidate_id", null: false
-    t.integer "job_opportunity_id", null: false
+    t.bigint "candidate_id", null: false
+    t.bigint "job_opportunity_id", null: false
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
   end
 
   create_table "awnser_proposals", force: :cascade do |t|
-    t.integer "choice_id", null: false
+    t.bigint "choice_id", null: false
     t.string "awnser_message"
-    t.integer "proposal_id", null: false
+    t.bigint "proposal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["choice_id"], name: "index_awnser_proposals_on_choice_id"
@@ -63,12 +63,12 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
     t.date "date_of_birth"
     t.string "profile_description"
     t.string "experience"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "formation"
     t.string "courses"
-    t.integer "level_id"
+    t.bigint "level_id"
     t.string "profession"
     t.string "feedback"
     t.index ["level_id"], name: "index_candidates_on_level_id"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "candidate_id", null: false
-    t.integer "headhunter_id", null: false
+    t.bigint "candidate_id", null: false
+    t.bigint "headhunter_id", null: false
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -93,10 +93,10 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.string "message"
-    t.integer "apply_job_id", null: false
+    t.bigint "apply_job_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "choice_id", null: false
+    t.bigint "choice_id", null: false
     t.index ["apply_job_id"], name: "index_feedbacks_on_apply_job_id"
     t.index ["choice_id"], name: "index_feedbacks_on_choice_id"
   end
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "job_opportunity_id", null: false
-    t.integer "candidate_id", null: false
+    t.bigint "job_opportunity_id", null: false
+    t.bigint "candidate_id", null: false
     t.index ["candidate_id"], name: "index_interviews_on_candidate_id"
     t.index ["job_opportunity_id"], name: "index_interviews_on_job_opportunity_id"
   end
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
     t.string "description_job"
     t.string "skills"
     t.decimal "salary_range"
-    t.integer "level_id", null: false
+    t.bigint "level_id", null: false
     t.date "deadline"
     t.string "region"
     t.string "benefits"
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
     t.string "company_expectations"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "headhunter_id", null: false
+    t.bigint "headhunter_id", null: false
     t.index ["headhunter_id"], name: "index_job_opportunities_on_headhunter_id"
     t.index ["level_id"], name: "index_job_opportunities_on_level_id"
   end
@@ -152,8 +152,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_183643) do
 
   create_table "proposals", force: :cascade do |t|
     t.string "message"
-    t.integer "job_opportunity_id", null: false
-    t.integer "candidate_id", null: false
+    t.bigint "job_opportunity_id", null: false
+    t.bigint "candidate_id", null: false
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
