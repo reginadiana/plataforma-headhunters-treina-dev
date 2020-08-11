@@ -25,7 +25,7 @@ feature 'Candidate view your interviews' do
                                        address: 'Rua Map, 11')
     end
 
-    scenario 'see a interview by details of job' do
+    xscenario 'see a interview by details of job' do
       visit root_path
 
       click_on 'Minhas Vagas'
@@ -69,7 +69,7 @@ feature 'Candidate view your interviews' do
       expect(page).to have_content('18:30')
       expect(page).to have_content('giovana@gmail.com.br')
     end
-    scenario 'have no interview for this job' do
+    xscenario 'have no interview for this job' do
       visit root_path
 
       click_on 'Minhas Vagas'

@@ -18,7 +18,7 @@ feature 'Candidate edit message of apply for job' do
     click_on 'Editar Informações'
   end
 
-  scenario 'successfully' do
+  xscenario 'successfully' do
     fill_in 'Mensagem para Candidatura', with: 'Eu, Bianca Rosa, brasileira, gostaria de me candidatar.'
 
     click_on 'Enviar Candidatura'
@@ -26,7 +26,7 @@ feature 'Candidate edit message of apply for job' do
     expect(page).to have_content('Mensagem para Candidatura atualizada com sucesso')
   end
 
-  scenario 'and can not be blank' do
+  xscenario 'and can not be blank' do
     fill_in 'Mensagem para Candidatura', with: ''
 
     click_on 'Enviar Candidatura'

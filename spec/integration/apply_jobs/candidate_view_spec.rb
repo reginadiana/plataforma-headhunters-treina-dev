@@ -43,7 +43,7 @@ feature 'Candidate sees the vacancies he applied for' do
     expect(page).to have_content('Você se candidatou para esta vaga')
   end
 
-  scenario 'and view detals your apply job' do
+  xscenario 'and view detals your apply job' do
     apply_job = create(:apply_job, job_opportunity: @job_opportunity, candidate: @candidate)
 
     visit root_path

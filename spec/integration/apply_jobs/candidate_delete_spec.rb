@@ -19,13 +19,13 @@ feature 'Candidate delete message of apply for job' do
     click_on 'Retirar minha candidatura'
   end
 
-  scenario 'successfully' do
+  xscenario 'successfully' do
     expect(current_path).to eq job_opportunity_path(@job_opportunity)
     expect(page).to have_content('Candidatura encerrada')
     expect(page).to have_link('Quero me candidatar')
   end
 
-  scenario 'and keep anothers' do
+  xscenario 'and keep anothers' do
     click_on 'Voltar'
     click_on @other_apply_job.job_opportunity.title.to_s
 

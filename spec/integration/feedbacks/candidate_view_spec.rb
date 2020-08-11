@@ -19,7 +19,7 @@ feature 'Candidate view feedback' do
     expect(page).to have_content(@apply_job.feedback.to_s)
   end
 
-  scenario 'in detals of candidature ' do
+  xscenario 'in detals of candidature ' do
     click_on @apply_job.job_opportunity.title.to_s
     click_on 'Ver minha candidatura'
 
