@@ -129,6 +129,8 @@ Algumas instalações serão necessárias antes de iniciar o projeto.
 
 :warning: [Yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#windows-stable) versão >=1.22.4 
 
+:warning: [Docker](https://docs.docker.com/engine/install/ubuntu/)
+
 ## Configurações
 
 ### Iniciando/Configurando banco de dados
@@ -142,15 +144,16 @@ Entre na pasta
 ```
 cd plataforma-headhunters-treina-dev
 ```
-Instale as dependencias e prepare o database
-```
-bin/setup
-```
 
-## Rodando a aplicação :arrow_forward:
+Agora vamos rodar a aplicação com Docker:
+
+`docker-compose build`
+`docker-compose run --service-ports rails bash`
+
+Um novo terminal irá abrir, então, execute:
 
 ```
-$ rails server or rails s
+$ rails s -b 0.0.0.0
 ```
 
 > Depois, acesse http://localhost:3000 para ver a aplicação
