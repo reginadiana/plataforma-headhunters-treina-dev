@@ -148,6 +148,7 @@ cd plataforma-headhunters-treina-dev
 Agora vamos rodar a aplicação com Docker:
 
 `docker-compose build`
+
 `docker-compose run --service-ports rails bash`
 
 Um novo terminal irá abrir, então, execute:
