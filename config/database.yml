@@ -7,18 +7,13 @@ default: &default
   host: <%= ENV.fetch("POSTGRES_HOST") %>
 
 development:
-  adapter: postgresql
+  <<: *default
   database: my_database_development
-  pool: 5
-  timeout: 5000
+
 test:
-  adapter: postgresql
+  <<: *default
   database: my_database_test
-  pool: 5
-  timeout: 5000
 
 production:
-  adapter: postgresql
+  <<: *default
   database: my_database_production
-  pool: 5
-  timeout: 5000
